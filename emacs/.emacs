@@ -453,3 +453,26 @@
 ;; -------------------- gud --------------------
 
 
+;; compile
+(setq compilation-read-command nil)	;don't prompt to press ENTER
+(global-set-key [(f7)] (lambda()
+			 (interactive)
+			 (save-some-buffers t)	   ;save all buffers
+			 (compile compile-command) ;compile
+			 ))
+
+(global-set-key [f4] 'eshell)
+
+;定制C/C++缩进风格
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (c-set-style "k&r")))
+(add-hook 'c++-mode-hook
+          '(lambda ()
+             (c-set-style "stroustrup")))
+
+
+;; 设置缩进字符数
+(setq c-basic-offset 4)
+
+(global-set-key [(f5)] 'speedbar)
