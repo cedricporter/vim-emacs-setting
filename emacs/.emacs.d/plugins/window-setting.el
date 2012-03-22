@@ -1,6 +1,6 @@
-;; Author:  Hua Liang [ Stupid ET ]
-;; email:   et@everet.org
-;; website: http://EverET.org
+;; Setting By:  Hua Liang [ Stupid ET ]
+;; email:       et@everet.org
+;; website:     http://EverET.org
 ;; This is about auto setting window style. 
 ;; You can read the diagram.
 
@@ -32,6 +32,18 @@
 
 (global-set-key (kbd "C-x 4 4") 'split-window-4)
 
+; +----------------+
+; |                |
+; +----------------+
+; |                |
+; +----------------+
+(defun split-window-up-down()
+  "Splite window into 2 up and down window"
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (split-window-vertically -10)
+    ))
+(global-set-key (kbd "C-x 4 2") 'split-window-up-down)
 
 ; +----------+-----------+
 ; |          |           |
@@ -44,11 +56,12 @@
   "Splite window into 3 sub-window"
   (interactive) 
   (if (= 1 (length (window-list))) 
-      (progn (split-window-horizontally) ;split to left and right
-	     (other-window 1)		 ;go to the right window
-	     (split-window-vertically)	 ;split the right window to two window
-	     (eshell)			 ;open shell at left top window
-	     (other-window 2) 		 ;go back to origin window
+      (progn (split-window-horizontally)         ;split to left and right
+	     (enlarge-window-horizontally 15)	 ;make the main window bigger
+	     (other-window 1)		         ;go to the right window
+	     (split-window-vertically)	         ;split the right window to two window
+	     (eshell)			         ;open shell at left top window
+	     (other-window 2) 		         ;go back to origin window
 	     ) 
     ) 
   ) 
@@ -62,11 +75,9 @@
 ;  |          |           |           /     |            |           |
 ;  |          |           |                 |            |           |
 ;  +----------+-----------+                 +------------+-----------+
-
 (defun split-v-3 () 
   "Change 3 window style from horizontal to vertical"
   (interactive) 
-
   (select-window (get-largest-window)) 
   (if (= 3 (length (window-list))) 
       (let ((winList (window-list))) 
@@ -74,7 +85,6 @@
 	      (2ndBuf (window-buffer (car (cdr winList)))) 
 	      (3rdBuf (window-buffer (car (cdr (cdr winList)))))) 
 	  (message "%s %s %s" 1stBuf 2ndBuf 3rdBuf) 
-
 	  (delete-other-windows) 
 	  (split-window-horizontally) 
 	  (set-window-buffer nil 1stBuf) 
