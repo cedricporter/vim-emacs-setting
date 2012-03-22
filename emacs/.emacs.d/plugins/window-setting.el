@@ -41,7 +41,10 @@
   "Splite window into 2 up and down window"
   (interactive)
   (if (= 1 (length (window-list)))
-      (split-window-vertically -10)
+      (progn (split-window-vertically -10)
+	     (other-window 1)
+	     (eshell) 
+	     )
     ))
 (global-set-key (kbd "C-x 4 2") 'split-window-up-down)
 
