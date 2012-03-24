@@ -330,7 +330,7 @@
 (define-key evil-normal-state-map ",i" 'ibuffer)
 (define-key evil-normal-state-map ",bs" 'ido-switch-buffer)
 (define-key evil-normal-state-map ",bd" 'kill-this-buffer)
-(define-key evil-normal-state-map ",m" 'magit-status)
+;(define-key evil-normal-state-map ",m" 'magit-status)
 (define-key evil-normal-state-map ",w" 'save-buffer)
 (define-key evil-normal-state-map "ZZ" (kbd "C-c C-c"))
 
@@ -465,6 +465,7 @@
 			 ))
 
 (global-set-key [f4] 'eshell)
+(global-set-key [(shift f4)] 'shell)
 
 ;定制C/C++缩进风格
 (add-hook 'c-mode-hook
@@ -560,3 +561,11 @@
 ;; git emacs
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
 (require 'git-emacs)
+
+;;==================== w3m ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m-1.4.4")
+;(require 'w3m-load)
+(require 'w3m-e21)
+(provide 'w3m-e23)
+
+;;-------------------- w3m --------------------
