@@ -1,12 +1,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim setting by Cedric Porter
-"    cedricporter@gmail.com
+" Vim setting by Hua Liang [Stupid ET [Cedric Porter]]
+"    email:   et@everet.org
+"    website: http://EverET.org
 "
 " How to upgrade:
 " Git：
-"   git svn clone http://et-vim-setting.googlecode.com/svn/ et-vim-setting-read-only
+"    https://github.com/cedricporter/vim-emacs-setting
 " How to install:
-"   copy the file you pull from git to the HOME folder
+"    copy the file you pull from git to the HOME folder
 "
 
 "tags
@@ -602,6 +603,12 @@ let g:DoxygenToolkit_maxFunctionProtoLines = 30
 "在光标所在行上，按下一次ctrl+h是注释，再按下一次是取消注释。
 "而其内建的指令\cm是多行注释，类似C++的/**/，\cu是取消注释。
 "let NERDShutUp=1
+
+map <F5> :call StartPython()<CR>
+function StartPython()
+    :w
+    :!python %:t
+endfunction
 
 
 "NERD_tree 提供展示文件/目录列表的功能，比自带的文件浏览器要好很多
