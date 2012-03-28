@@ -243,10 +243,6 @@
 (require 'url)
 (require 'tempo)
 
-(defvar user-website nil)
-(setq user-website "http://EverET.org")
-
-
 (defconst doxymacs-version "1.8.0"
   "Doxymacs version number")
 
@@ -319,7 +315,7 @@ Set to non-nil to use the external XML parser."
   :group 'doxymacs)
 
 (defcustom doxymacs-external-xml-parser-executable
-  "/home/cedricporter/bin/doxymacs_parser"
+  ""
   "*Where the external XML parser executable is."
   :type 'string
   :group 'doxymacs)
@@ -1130,17 +1126,16 @@ the completion or nil if canceled by the user."
 
 (defconst doxymacs-JavaDoc-file-comment-template
  '("/**" > n
-   " * " (doxymacs-doxygen-command-char) "file    "
+   " * " (doxymacs-doxygen-command-char) "file   "
    (if (buffer-file-name)
        (file-name-nondirectory (buffer-file-name))
      "") > n
-   " * " (doxymacs-doxygen-command-char) "author  " (user-full-name)
-   (doxymacs-user-mail-address) 
+   " * " (doxymacs-doxygen-command-char) "author " (user-full-name)
+   (doxymacs-user-mail-address)
    > n
-   " * " (doxymacs-doxygen-command-char) "Website " user-website > n
-   " * " (doxymacs-doxygen-command-char) "date    " (current-time-string) > n
+   " * " (doxymacs-doxygen-command-char) "date   " (current-time-string) > n
    " * " > n
-   " * " (doxymacs-doxygen-command-char) "brief   " (p "Brief description of this file: ") > n
+   " * " (doxymacs-doxygen-command-char) "brief  " (p "Brief description of this file: ") > n
    " * " > n
    " * " p > n
    " */" > n)
@@ -1148,17 +1143,16 @@ the completion or nil if canceled by the user."
 
 (defconst doxymacs-Qt-file-comment-template
  '("/*!" > n
-   " " (doxymacs-doxygen-command-char) "file    "
+   " " (doxymacs-doxygen-command-char) "file   "
    (if (buffer-file-name)
        (file-name-nondirectory (buffer-file-name))
      "") > n
-   " " (doxymacs-doxygen-command-char) "author  " (user-full-name)
+   " " (doxymacs-doxygen-command-char) "author " (user-full-name)
    (doxymacs-user-mail-address)
    > n
-   " " (doxymacs-doxygen-command-char) "Website " user-website > n
-   " " (doxymacs-doxygen-command-char) "date    " (current-time-string) > n
+   " " (doxymacs-doxygen-command-char) "date   " (current-time-string) > n
    " " > n
-   " " (doxymacs-doxygen-command-char) "brief   " (p "Brief description of this file: ") > n
+   " " (doxymacs-doxygen-command-char) "brief  " (p "Brief description of this file: ") > n
    " " > n
    " " p > n
    "*/" > n)
@@ -1166,17 +1160,16 @@ the completion or nil if canceled by the user."
 
 (defconst doxymacs-C++-file-comment-template
  '("///" > n
-   "/// " (doxymacs-doxygen-command-char) "file    "
+   "/// " (doxymacs-doxygen-command-char) "file   "
    (if (buffer-file-name)
        (file-name-nondirectory (buffer-file-name))
      "") > n
-   "/// " (doxymacs-doxygen-command-char) "author  " (user-full-name)
+   "/// " (doxymacs-doxygen-command-char) "author " (user-full-name)
    (doxymacs-user-mail-address)
-   > n 
-   "/// " (doxymacs-doxygen-command-char) "Website " user-website > n
-   "/// " (doxymacs-doxygen-command-char) "date    " (current-time-string) > n
+   > n
+   "/// " (doxymacs-doxygen-command-char) "date   " (current-time-string) > n
    "/// " > n
-   "/// " (doxymacs-doxygen-command-char) "brief   " (p "Brief description of this file: ") > n
+   "/// " (doxymacs-doxygen-command-char) "brief  " (p "Brief description of this file: ") > n
    "/// " > n
    "/// " p > n
    "///" > n)
