@@ -167,6 +167,10 @@
 ;; 用C-x C-d直接打开当前目录的Dired浏览模式；
 (require 'ido)
 (ido-mode t)
+(ffap-bindings)
+(global-set-key "\C-x\C-f" 'ido-dired)
+(global-set-key "\C-c\C-f" 'find-file-at-point)
+
 
 ;; 去掉滚动栏
 (scroll-bar-mode nil)
@@ -443,7 +447,7 @@
 
 ;; (setq semanticdb-project-roots (list (expand-file-name "/")))
 (defconst cedet-user-include-dirs
-  (list ".." "../include" "../inc" "../common" "../public" "../lib"
+  (list ".." "../include" "../Include" "../inc" "../common" "../public" "../lib"
         "../.." "../../include" "../../inc" "../../common" "../../public"))
 (defconst cedet-win32-include-dirs
   (list "C:/MinGW/include"
@@ -538,8 +542,11 @@
              (c-set-style "stroustrup")))
 
 
+(setq tab-width 4)
 ;; 设置缩进字符数
 (setq c-basic-offset 4)
+(setq tab-width 4)
+;(setq-default indent-tabs-mode nil)
 
 (global-set-key [(f5)] 'speedbar)
 
