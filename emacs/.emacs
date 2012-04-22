@@ -391,6 +391,7 @@
 (define-key ac-mode-map [(control tab)] 'auto-complete)
 
 (defun my-ac-config ()
+  (setq ac-clang-flags (split-string "-I../include -I../Include -I../ -I../inc -I../Inc -I../common -I../Common -I../lib -I../Lib"))
   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
   ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
