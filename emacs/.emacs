@@ -167,8 +167,8 @@
 ;; 用C-x C-d直接打开当前目录的Dired浏览模式；
 (require 'ido)
 (ido-mode t)
-(ffap-bindings)
-(global-set-key "\C-x\C-f" 'ido-dired)
+;(ffap-bindings)
+;(global-set-key "\C-x\C-f" 'ido-dired)
 (global-set-key "\C-c\C-f" 'find-file-at-point)
 
 
