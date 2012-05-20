@@ -77,6 +77,9 @@
 ;; 启动emacs时窗口最大化
 (my-maximized)
 
+(setq-default fill-column 81)
+(setq default-fill-column 80)
+
 ;; 启动窗口大小
 (setq default-frame-alist
       '((height . 35) (width . 125) (menu-bar-lines . 20) (tool-bar-lines . 0)))
@@ -432,6 +435,10 @@
 (add-hook 'python-mode-hook
 	  (lambda ()
 	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
+
+;;load pydb
+(require 'pydb)
+(autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
 ;;-------------------- python --------------------
 
 ;; (global-set-key (kbd "C-<f9>") 
@@ -456,7 +463,7 @@
 ;; (setq semanticdb-project-roots (list (expand-file-name "/")))
 (defconst cedet-user-include-dirs
   (list ".." "../include" "../Include" "../inc" "../common" "../public" "../lib"
-        "../.." "../../include" "../../inc" "../../common" "../../public"))
+        "../.." "../../include" "../../inc" "../../common" "../../public" "../../.." "../../../include" "../../../Include"))
 (defconst cedet-win32-include-dirs
   (list "C:/MinGW/include"
         "C:/MinGW/include/c++/3.4.5"
@@ -567,7 +574,12 @@
 ;定制C/C++缩进风格
 (add-hook 'c-mode-hook
           '(lambda ()
-             (c-set-style "k&r")))
+             (c-set-style "k&r")
+	     (setq c-basic-offset 4)
+	     (setq tab-width 4)
+	     (setq-default indent-tabs-mode nil)
+	     ;(setq indent-tabs-mode nil)
+	     ))
 (add-hook 'c++-mode-hook
           '(lambda ()
              (c-set-style "microsoft")
@@ -579,7 +591,6 @@
 (setq tab-width 4)
 ;; 设置缩进字符数
 (setq c-basic-offset 4)
-(setq tab-width 4)
 ;(setq-default indent-tabs-mode nil)
 
 (global-set-key [(f5)] 'speedbar)

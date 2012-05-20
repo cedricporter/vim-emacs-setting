@@ -1,4 +1,4 @@
-#Fri May 18 21:02:47 CST 2012
+#Sat May 19 15:09:33 CST 2012
 /instance/org.jboss.ide.eclipse.freemarker/color.string=149,228,84
 @com.mbartl.viplugin.eclipse.layer=2.9.0
 /instance/org.eclipse.team.ui/org.eclipse.team.ui.first_time=false
@@ -107,6 +107,7 @@
 /instance/com.adobe.flexide.mxml.core/mxmlComponentTagBold=false
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.method.color=243,246,238
 /instance/org.eclipse.dltk.ruby.ui/DLTK_string.eval=149,228,84
+/instance/org.eclipse.cdt.core.prj-ethttpd/indexer/preferenceScope=0
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_new_line_before_while_in_do_statement=do not insert
 /instance/org.eclipse.cdt.ui/c_braces=243,246,238
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_before_comma_in_declarator_list=do not insert
@@ -115,6 +116,7 @@
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.comment.min_distance_between_code_and_line_comment=1
 /instance/org.eclipse.dltk.ruby.ui/variable.pseudo=212,196,169
 /instance/org.eclipse.ui.editors/hyperlinkColor.SystemDefault=false
+/instance/org.eclipse.cdt.managedbuilder.core/properties/ethttpd.cdt.managedbuild.target.gnu.exe.1631198418/cdt.managedbuild.config.gnu.exe.debug.510242813=\#\n\#Sat May 19 15\:03\:16 CST 2012\ncdt.managedbuild.tool.gnu.archiver.base.1148233634\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.935387823\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.2074464687\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1210641697\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.751526600\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.654851149\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.1849029405\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.config.gnu.exe.debug.510242813\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrcState\\\=0\\nrebuildState\\\=false\\n\n
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_after_colon_in_labeled_statement=insert
 /instance/org.eclipse.cdt.managedbuilder.core/properties/apache.cdt.managedbuild.target.gnu.exe.1795180556/cdt.managedbuild.config.gnu.exe.release.1129023544=\#\n\#Fri May 18 19\:51\:16 CST 2012\ncdt.managedbuild.tool.gnu.archiver.base.1945375147\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.assembler.exe.release.2099197885\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.release.1610528223\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.release.663376032\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.toolchain.gnu.exe.release.2094789583\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.release.1987246163\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.release.84053510\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=true\\n\n
 /instance/org.eclipse.wst.xml.ui/doctypeExtrenalSysref=\#F3F6EE | null | null | null | null | null
@@ -152,6 +154,7 @@
 /instance/org.eclipse.ui/KEY_CONFIGURATION_ID=ViPluginKeyConfiguration
 /instance/org.scala-ide.sdt.core/syntaxColouring.keyword.colour=138,198,242
 /instance/org.eclipse.dltk.tcl.ui/DLTK_argument=246,243,232
+/instance/org.eclipse.ui.workbench/ENABLED_DECORATORS=org.eclipse.cdt.ui.indexedFiles\:false,org.eclipse.cdt.managedbuilder.ui.excludedFile\:true,org.eclipse.jdt.ui.override.decorator\:true,org.eclipse.jdt.ui.interface.decorator\:false,org.eclipse.jdt.ui.buildpath.decorator\:true,org.eclipse.pde.ui.binaryProjectDecorator\:false,org.eclipse.team.cvs.ui.decorator\:false,org.eclipse.ui.LinkedResourceDecorator\:true,org.eclipse.ui.VirtualResourceDecorator\:true,org.eclipse.ui.ContentTypeDecorator\:true,org.eclipse.ui.ResourceFilterDecorator\:false,org.python.pydev.navigator.decorator.problemsLabelDecorator\:true,
 /instance/org.epic.perleditor/numberColor=240,128,128
 /instance/org.eclipse.wst.xml.ui/cdataText=\#F6F3E8 | null | null | null | null | null
 /instance/org.eclipse.cdt.core/indexer/filesToParseUpFront=cstdarg, stdarg.h, stddef.h, sys/resource.h, ctime, sys/types.h, signal.h, cstdio
@@ -159,7 +162,7 @@
 /instance/org.eclipse.cdt.ui/semanticHighlighting.staticField.color=147,162,204
 /instance/org.eclipse.cdt.core.prj-Python2.7/indexer/preferenceScope=0
 @org.eclipse.ui=3.7.0.dist
-/instance/org.eclipse.cdt.managedbuilder.core/properties/Python2.7.cdt.managedbuild.target.gnu.exe.937713665/cdt.managedbuild.config.gnu.exe.release.763359986=\#\n\#Thu May 17 13\:19\:34 CST 2012\ncdt.managedbuild.toolchain.gnu.exe.release.1006632698\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.release.818379723\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.assembler.exe.release.1200784775\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.release.1900194522\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.release.907029938\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.archiver.base.727192526\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.release.83018479\=\\\#\\n\\\#Thu May 17 13\\\:19\\\:34 CST 2012\\nrebuildState\\\=true\\n\n
+/instance/org.eclipse.cdt.managedbuilder.core/properties/Python2.7.cdt.managedbuild.target.gnu.exe.937713665/cdt.managedbuild.config.gnu.exe.release.763359986=\#\n\#Sat May 19 15\:03\:16 CST 2012\ncdt.managedbuild.toolchain.gnu.exe.release.1006632698\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.release.818379723\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.assembler.exe.release.1200784775\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.release.1900194522\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.release.907029938\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.archiver.base.727192526\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.release.83018479\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\n
 /instance/org.eclipse.jdt.ui/semanticHighlighting.field.color=202,230,130
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.BasicSemanticHighlightGenerator.AS3.StaticSetter_enabled=true
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.XMLAttributeValue_enabled=true
@@ -196,6 +199,7 @@
 /instance/org.eclipse.cdt.managedbuilder.core/properties/Python2.7.cdt.managedbuild.target.gnu.exe.992385161/cdt.managedbuild.config.gnu.exe.debug.923172813=\#\n\#Thu May 10 22\:06\:57 CST 2012\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.2066059128\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.786831894\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.254456872\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.984060454\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1114176642\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.969995596\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.archiver.base.394112799\=\\\#\\n\\\#Thu May 10 22\\\:06\\\:57 CST 2012\\nrebuildState\\\=true\\n\n
 /instance/org.eclipse.ui.editors/org.eclipse.cdt.ui.overrideIndicatorColor=133,170,168
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FieldHighlighting.enabled=true
+/instance/org.eclipse.cdt.managedbuilder.core/properties/ethttpd.cdt.managedbuild.target.gnu.exe.1631198418/cdt.managedbuild.config.gnu.exe.release.621441916=\#\n\#Sat May 19 15\:03\:16 CST 2012\ncdt.managedbuild.tool.gnu.assembler.exe.release.669290185\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.archiver.base.1343545461\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.toolchain.gnu.exe.release.1278797038\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.release.1906829449\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.release.1890997519\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.release.626051571\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\ncdt.managedbuild.tool.gnu.c.compiler.exe.release.55478279\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=true\\n\n
 /instance/org.eclipse.cdt.core.prj-mattows/indexer/preferenceScope=0
 /instance/com.adobe.flexide.as.core/asOperatorColor=\#F3F6EE
 /instance/org.eclipse.wst.jsdt.ui/semanticHighlighting.methodDeclarationName.color=243,246,238
@@ -279,7 +283,7 @@
 /instance/org.eclipse.ui.editors/PHPWriteOccurrenceIndicationColor=148,133,103
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.staticFinalField.color=83,220,205
 /instance/org.eclipse.dltk.tcl.ui/sourceHoverBackgroundColor=161,152,121
-/instance/org.eclipse.cdt.ui/inactiveCodeColor=97,97,97
+/instance/org.eclipse.cdt.ui/inactiveCodeColor=77,77,77
 /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.constantStringsColor=149,228,84
 /instance/org.eclipse.wst.jsdt.ui/java_operator=243,246,238
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_before_comma_in_method_invocation_arguments=do not insert
@@ -396,7 +400,7 @@
 /instance/org.eclipse.dltk.ruby.ui/DLTK_number=240,128,128
 /instance/org.codehaus.groovy.eclipse.ui/semanticHighlighting.method.enabled=true
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_before_opening_angle_bracket_in_template_parameters=do not insert
-/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.selectedElement=CCONTENT_ASSIST_BACKGROUND_COLOR
+/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.selectedElement=CERROR_COLOR
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_before_closing_paren_in_parenthesized_expression=do not insert
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.XMLComment_enabled=true
 /instance/org.eclipse.help.base/dialog_infopop=false
@@ -492,7 +496,7 @@
 /instance/de.walware.statet.r.ui/text_R_rLogicalConstants.color=83,220,205
 /instance/org.eclipse.jdt.ui/java_bracket=243,246,238
 /instance/com.adobe.flexide.mxml.core/mxmlCommentColor=\#99968B
-/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="ViPluginKeyConfiguration"/>\n</org.eclipse.ui.commands>
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="ViPluginKeyConfiguration"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SPACE"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SPACE"/>\n<keyBinding commandId\="org.eclipse.ui.edit.text.contentAssist.proposals" contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="ViPluginKeyConfiguration" keySequence\="ALT+/"/>\n</org.eclipse.ui.commands>
 /instance/org.cfeclipse.cfml/javascriptColor=246,243,232
 /instance/org.epic.perleditor/literal2Color=149,228,84
 /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.tagsColor=243,246,238
@@ -562,7 +566,7 @@
 /instance/com.adobe.flexide.css.core/cssCommentColor=\#99968B
 /instance/de.walware.statet.base.ui/MatchingBrackets.color=97,97,97
 /instance/org.epic.perleditor/currentLineColor=101,101,101
-/instance/org.eclipse.cdt.managedbuilder.core/properties/Python2.7.cdt.managedbuild.target.gnu.exe.937713665/cdt.managedbuild.config.gnu.exe.debug.1053504798=\#\n\#Fri May 18 19\:51\:16 CST 2012\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.297084688\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.946758559\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.1269149580\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.985252131\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.config.gnu.exe.debug.1053504798\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrcState\\\=0\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.553570662\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.archiver.base.364613132\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.955763304\=\\\#\\n\\\#Fri May 18 19\\\:51\\\:16 CST 2012\\nrebuildState\\\=false\\n\n
+/instance/org.eclipse.cdt.managedbuilder.core/properties/Python2.7.cdt.managedbuild.target.gnu.exe.937713665/cdt.managedbuild.config.gnu.exe.debug.1053504798=\#\n\#Sat May 19 14\:47\:55 CST 2012\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.297084688\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.946758559\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.1269149580\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.985252131\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.config.gnu.exe.debug.1053504798\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrcState\\\=0\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.553570662\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.archiver.base.364613132\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.955763304\=\\\#\\n\\\#Sat May 19 14\\\:47\\\:55 CST 2012\\nrebuildState\\\=false\\n\n
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.alignment_for_member_access=0
 /instance/org.eclipse.cdt.core/org.eclipse.cdt.core.formatter.insert_space_after_comma_in_declarator_list=insert
 /instance/org.eclipse.ui.ide/PROBLEMS_FILTERS_MIGRATE=true
@@ -715,7 +719,7 @@ file_export_version=3.0
 /instance/com.powerflasher.fdt.ui/com.powerflasher.fdt.ui.AS3SemanticHighlightGenerator.AS3.RegEx_enabled=true
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.DeprecatedHighlighting.color=\#FFFFFF
 /instance/org.eclipse.php.ui/semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ConstantHighlighting.color=\#53DCCD
-/instance/org.eclipse.cdt.managedbuilder.core/properties/apache.cdt.managedbuild.target.gnu.exe.1795180556/cdt.managedbuild.config.gnu.exe.debug.1090856431=\#\n\#Fri May 18 17\:51\:24 CST 2012\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.1963230379\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.1162044126\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.config.gnu.exe.debug.1090856431\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrcState\\\=0\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.2132850421\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.1522551785\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.archiver.base.801449627\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1892709025\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1845054366\=\\\#\\n\\\#Fri May 18 17\\\:51\\\:24 CST 2012\\nrebuildState\\\=false\\n\n
+/instance/org.eclipse.cdt.managedbuilder.core/properties/apache.cdt.managedbuild.target.gnu.exe.1795180556/cdt.managedbuild.config.gnu.exe.debug.1090856431=\#\n\#Sat May 19 15\:03\:16 CST 2012\ncdt.managedbuild.tool.gnu.c.compiler.exe.debug.1963230379\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.c.linker.exe.debug.1162044126\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.config.gnu.exe.debug.1090856431\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrcState\\\=0\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.assembler.exe.debug.2132850421\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.toolchain.gnu.exe.debug.1522551785\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.archiver.base.801449627\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1892709025\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\ncdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1845054366\=\\\#\\n\\\#Sat May 19 15\\\:03\\\:16 CST 2012\\nrebuildState\\\=false\\n\n
 /instance/org.eclipse.ui.editors/asOccurencesIndicationColor=97,97,97
 /instance/org.eclipse.datatools.sqltools.sqleditor/Identifier=0,0,0,0,0,243,246,238
 /instance/com.adobe.flexide.css.core/cssPropertyValueColor=\#95E454
@@ -829,7 +833,6 @@ file_export_version=3.0
 /instance/org.eclipse.cdt.ui/c_type=138,198,242
 /configuration/org.eclipse.ui.ide/MAX_RECENT_WORKSPACES=5
 /instance/org.eclipse.jdt.ui/spelling_ignore_ampersand_in_properties=true
-/instance/org.eclipse.cdt.ui/matchingBracketsColor=165,42,42
 /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.6
 /instance/com.powerflasher.fdt.ui/AS_RETURN_color=138,198,242
 /instance/org.eclipse.debug.core//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug
