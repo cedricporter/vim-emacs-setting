@@ -66,8 +66,8 @@ map <silent> <leader>ee :e $HOME/.vimrc<cr>
 "autocmd! bufwritepost .vimrc source ~/.vimrc 
 
 "Language Setting
-set langmenu=zh_CN.UTF-8               "设置菜单语言
-language messages zh_CN.utf-8          "设置提示信息语言
+"set langmenu=zh_CN.UTF-8               "设置菜单语言
+"language messages zh_CN.utf-8          "设置提示信息语言
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -107,8 +107,10 @@ set tm=500
 syntax enable "Enable syntax hl
 
 " set position and the size of the window 
-winpos 130 20
-set lines=37 columns=150
+if has('gui_running')
+    winpos 130 20
+    set lines=37 columns=120
+endif
 
 " Set font according to system
 if MySys() == "mac"
@@ -471,7 +473,7 @@ let g:miniBufExplMapCTabSwitchBufs=1
 "let g:miniBufExplMapWindowNavArrows = 1
 "--------------------------------------------------
 "防止打开很多个
-let g:miniBufExplorerMoreThanOne=0
+"let g:miniBufExplorerMoreThanOne=0
 
 "c/h文件间相互切换 -- 插件: A
 ":A	在新Buffer中切换到c/h文件
