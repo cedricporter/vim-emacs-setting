@@ -93,6 +93,9 @@
 
 ;; ==================== Common Setting ====================
 
+(require 'ibus) 
+(add-hook 'after-init-hook 'ibus-mode-on) 
+
 ;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
 ;; 如果总是不显示工具栏，将下面代码加到.emacs中
 ;; 参考： http://www.emacswiki.org/emacs/ToolBar
@@ -323,6 +326,7 @@
 ;;(color-theme-charcoal-black)
 ;;(color-theme-taylor)
 (color-theme-taylor-et)
+;;(color-theme-infodoc)
 ;;-------------------- color theme --------------------
 
 ;;==================== evil ====================
