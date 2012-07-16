@@ -206,7 +206,7 @@ These modes include:
 
   ;; This ought to be a code helper, but it is still
   ;; a bit on the lame side.  Opinions?
-  (global-semantic-show-unmatched-syntax-mode 1)
+  (global-semantic-show-unmatched-syntax-mode 0)
 
   (global-semantic-show-parser-state-mode 1)
 

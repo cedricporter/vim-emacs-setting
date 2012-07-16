@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002, 2003, 2004, 2007 Richard Kim
 
-;; Author: root <root@cedricporter-virtual-machine>
-;; Created: 2012-03-21 00:50:30+0800
+;; Author: Cedric Porter <cedricporter@Stupid-ET>
+;; Created: 2012-07-16 20:41:04+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

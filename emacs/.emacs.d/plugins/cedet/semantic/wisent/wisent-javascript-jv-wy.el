@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2005 Joakim Verona, Eric Ludlam
 
-;; Author: root <root@cedricporter-virtual-machine>
-;; Created: 2012-03-21 00:50:34+0800
+;; Author: Cedric Porter <cedricporter@Stupid-ET>
+;; Created: 2012-07-16 20:41:04+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
