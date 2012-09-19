@@ -13,7 +13,7 @@ install Pymacs
 install rope-0.9.3
 install ropemode-0.1-rc2
 install ropemacs
-apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev cscope clang ibus-el
+apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev cscope clang
 
 
 install doxymacs-1.8.0

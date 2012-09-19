@@ -560,7 +560,7 @@ s,@EMACSLOADPATH@,|#_!!_#|,g
 s,@lispdir@,|#_!!_#|${datadir}/emacs/site-lisp,g
 s,@XML2_CONFIG@,|#_!!_#|/usr/bin/xml2-config,g
 s,@XML_CPPFLAGS@,|#_!!_#|-I/usr/include/libxml2,g
-s,@XML_LIBS@,|#_!!_#|-lxml2,g
+s,@XML_LIBS@,|#_!!_#|-L/usr/lib/x86_64-linux-gnu -lxml2,g
 s,@CPP@,|#_!!_#|gcc -E,g
 s,@GREP@,|#_!!_#|/bin/grep,g
 s,@EGREP@,|#_!!_#|/bin/grep -E,g
