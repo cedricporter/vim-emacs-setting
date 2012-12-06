@@ -1,0 +1,6 @@
+*.elc
+*.pyc
+.emacs.d/plugins/rope-0.9.3/build/
+.emacs.d/plugins/ropemacs/build/
+.emacs.d/plugins/ropemode-0.1-rc2/build/
+.emacs.d/session.*
