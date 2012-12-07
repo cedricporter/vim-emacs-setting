@@ -329,9 +329,18 @@
 
 ;; Key binding
 ;;(require 'misc)
-;; 跳到单词的开头
+
 (global-set-key "\M-f" 'forward-same-syntax) ; Make it behave like vim
 (global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
+
+(defun kill-syntax (&optional arg)
+  "Kill ARG sets of syntax characters after point."
+  (interactive "p")
+  (let ((opoint (point)))
+	(forward-same-syntax arg)
+	(kill-region opoint (point))) )
+(global-set-key "\M-d" 'kill-syntax)
+(global-set-key [(meta backspace)] (lambda() (interactive) (kill-syntax -1) ) )
 
 
 ;;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西。
