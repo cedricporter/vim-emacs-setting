@@ -206,7 +206,7 @@ This is supposed to be bug-to-bug compatible with moinmoin-1.5.2"
         (throw 'match t)))))
 
 (defun moinmoin-setup-font-lock ()
-  (setq font-lock-beginning-of-syntax-function '(lambda () (goto-char 1)))
+;;  (setq font-lock-beginning-of-syntax-function '(lambda () (goto-char 1)))
   (setq font-lock-multiline t)
   (make-local-variable 'font-lock-extra-managed-props)
   (add-to-list 'font-lock-extra-managed-props 'moinmoin-verbatim) ; Not Comment Start

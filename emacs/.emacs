@@ -22,6 +22,7 @@
 ;; 调用linum.el(line number)来显示行号：
 (require 'linum)
 (global-linum-mode t)
+;;(require 'hlinum)
 ;; --------------------      End         --------------------
 
 ;;======================    time setting        =====================
@@ -106,6 +107,7 @@
 (global-unset-key (kbd "C-SPC"))  
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
+(require 'screen-lines)
 (require 'moinmoin-mode)
 
 (require 'ibus) 
@@ -125,6 +127,8 @@
 
 ;; 方便的在 kill-ring 里寻找需要的东西。
 (require 'browse-kill-ring)
+(require 'second-sel)
+(require 'browse-kill-ring+)
 (browse-kill-ring-default-keybindings)
 (global-set-key "\C-c\C-k" 'browse-kill-ring)
 
@@ -419,11 +423,14 @@
 ;; ;; End of evil config copied from monotux@reddit
 ;; ;;-------------------- evil --------------------
 
+
 ;;==================== undo tree ====================
 (require 'undo-tree)
 ;;-------------------- undo tree --------------------
 
+
 (require 'window-setting)
+
 
 ;; ==================== htmlize ====================
 ;; 1) M-x htmlize-buffer
@@ -439,6 +446,7 @@
 ;; 这个命令可以把你标记好的目录下的所以文件都转成html。
 (require 'htmlize)
 ;; -------------------- htmlize -----------------------------
+
 
 ;;==================== yasnippt ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
@@ -475,6 +483,7 @@
 ;; ac-source-gtags
 (my-ac-config)
 ;; -------------------- end of auto complete --------------------
+
 
 ;;==================== python ====================
 (require 'python)
@@ -556,6 +565,7 @@
   (define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
   (define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all))
 
+
 ;; ==================== semantic ====================
 ;; (semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
@@ -584,6 +594,7 @@
 
 ;;(define-key c-mode-base-map (kbd "M-n") 'semantic-ia-complete-symbol)
 ;; -------------------- semantic --------------------
+
 
 ;; ==================== gud ====================
 
@@ -739,17 +750,19 @@
 ;; ;;; End Auto Completion                                                                                        
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 ;; git emacs
 (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
 (require 'git-emacs)
+
 
 ;;==================== w3m ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m-1.4.4")
 ;(require 'w3m-load)
 (require 'w3m-e21)
 (provide 'w3m-e23)
-
 ;;-------------------- w3m --------------------
+
 
 ;;==================== doxymacs ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/doxymacs-1.8.0")
@@ -783,6 +796,7 @@
 
 ;;-------------------- doxymacs --------------------
 
+
 ;; ==================== cscope ====================
 ;; +----------+--------------------------------------------------+
 ;; |C-c s a   |设定初始化的目录，一般是你代码的根目录            |
@@ -809,9 +823,12 @@
              (require 'xcscope)))
 ;; -------------------- cscope --------------------
 
+
 ;; ==================== lisp ====================
 (require 'slime)
 (slime-setup '(slime-fancy))
+;; -------------------- lisp --------------------
+
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
