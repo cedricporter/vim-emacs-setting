@@ -93,6 +93,12 @@
 
 ;; ==================== Common Setting ====================
 
+;;; shift the meaning of C-s and C-M-s
+(global-set-key [(control s)] 'isearch-forward-regexp)
+(global-set-key [(control meta s)] 'isearch-forward)
+(global-set-key [(control r)] 'isearch-backward-regexp)
+(global-set-key [(control meta r)] 'isearch-backward)
+
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -122,6 +128,23 @@
 (browse-kill-ring-default-keybindings)
 (global-set-key "\C-c\C-k" 'browse-kill-ring)
 
+;; 防止页面滚动时跳动，可以很好的看到上下文。
+(setq scroll-margin 3
+      scroll-conservatively 10000)
+
+;; 改造你的C-w和M-w键
+(defadvice kill-ring-save (before slickcopy activate compile)
+  "When called interactively with no active region, copy a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+	 (list (line-beginning-position)
+		   (line-beginning-position 2)))))
+(defadvice kill-region (before slickcut activate compile)
+  "When called interactively with no active region, kill a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+	 (list (line-beginning-position)
+		   (line-beginning-position 2)))))
 
 ;; 4.1 在单元格之间移动
 ;; table-forward-cell<==>tab
@@ -304,6 +327,13 @@
 ;; 显示ascii表
 (require 'ascii)
 
+;; Key binding
+;;(require 'misc)
+;; 跳到单词的开头
+(global-set-key "\M-f" 'forward-same-syntax) ; Make it behave like vim
+(global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
+
+
 ;;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西。
 (setq kill-ring-max 200)
 
@@ -385,6 +415,21 @@
 ;;-------------------- undo tree --------------------
 
 (require 'window-setting)
+
+;; ==================== htmlize ====================
+;; 1) M-x htmlize-buffer
+;; 把当前的buffer转为一个html文件，并保留当前你Emacs的色彩定义。运行这个命令后，Emacs会跳转到一个新的buffer里，你把这个buffer保存下来即可。
+;;  
+;; 2) M-x htmlize-file
+;; 这个命令会在mini-buffer里提示输入你需要转换的文件，自动帮你转换好，并保存为.html。
+;;  
+;; 3) M-x htmlize-many-files
+;; 这个命令和2)差不多的功能，不过可以让你同时转一批文件。
+;;  
+;; 4) M-x htmlize-many-files-dired
+;; 这个命令可以把你标记好的目录下的所以文件都转成html。
+(require 'htmlize)
+;; -------------------- htmlize -----------------------------
 
 ;;==================== yasnippt ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
@@ -754,6 +799,11 @@
           '(lambda ()
              (require 'xcscope)))
 ;; -------------------- cscope --------------------
+
+;; ==================== lisp ====================
+(require 'slime)
+(slime-setup '(slime-fancy))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -765,8 +815,10 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
  '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
+ '(moinmoin-code ((t (:foreground "purple"))))
  '(moinmoin-email ((t (:foreground "LightBlue2"))))
  '(moinmoin-inter-wiki-link ((t (:foreground "LightBlue3" :weight bold))))
  '(moinmoin-url ((t (:foreground "LightBlue2" :height 0.8))))
