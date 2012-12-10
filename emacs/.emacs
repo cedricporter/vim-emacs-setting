@@ -94,6 +94,17 @@
 
 ;; ==================== Common Setting ====================
 
+;;;_ xterm & console
+(when (eq system-type 'gnu/linux)
+  (if (not window-system)
+      (xterm-mouse-mode t))
+  ;;(gpm-mouse-mode t) ;;for Linux console
+
+  (load-library "help-mode")  ;; to avoid the error message "Symbol's value as variable is void: help-xref-following"
+  )
+
+;(setq tramp-default-method "ssh")
+ 
 ;;; shift the meaning of C-s and C-M-s
 (global-set-key [(control s)] 'isearch-forward-regexp)
 (global-set-key [(control meta s)] 'isearch-forward)
@@ -107,8 +118,12 @@
 (global-unset-key (kbd "C-SPC"))  
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
+;; moinmoin-mode
 (require 'screen-lines)
 (require 'moinmoin-mode)
+
+;; nginx-mode
+(require 'nginx-mode)
 
 (require 'ibus) 
 (add-hook 'after-init-hook 'ibus-mode-on) 
@@ -319,7 +334,7 @@
 ;(setq inhibit-startup-message t) 
 
 ;; 回车缩进
-(global-set-key "\C-m" 'newline-and-indent)
+;; (global-set-key "\C-m" 'newline-and-indent)
 (global-set-key (kbd "C-<return>") 'newline)
 
 ;; 显示括号匹配 
@@ -553,6 +568,23 @@
   (setq ac-sources (append '(ac-source-pycomplete)
 			   ac-sources)))
 (add-hook 'python-mode-hook 'ac-python-mode-setup)
+
+;; flymake
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+               'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+            temp-file
+            (file-name-directory buffer-file-name))))
+      (list "pycheckers"  (list local-file))))
+   (add-to-list 'flymake-allowed-file-name-masks
+             '("\\.py\\'" flymake-pyflakes-init)))
+(load-library "flymake-cursor")
+;(global-set-key [f10] 'flymake-goto-prev-error)
+;(global-set-key [f11] 'flymake-goto-next-error)
+
 ;; -------------------- new python --------------------
 
 
@@ -586,19 +618,6 @@
 ;; ;;load pydb
 ;; (require 'pydb)
 ;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
-;;  
-;; ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
-;; ;; (when (load "flymake" t)
-;; ;;   (defun flymake-pyflakes-init ()
-;; ;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;; ;;  					   'flymake-create-temp-inplace))
-;; ;;  		   (local-file (file-relative-name
-;; ;;  						temp-file
-;; ;;  						(file-name-directory buffer-file-name))))
-;; ;;       (list "pycheckers"  (list local-file))))
-;; ;;   (add-to-list 'flymake-allowed-file-name-masks
-;; ;;  			   '("\\.py\\'" flymake-pyflakes-init)))
-;; ;; (load-library "flymake-cursor")
 ;; ;;-------------------- python --------------------
 
 ;; (global-set-key (kbd "C-<f9>") 
