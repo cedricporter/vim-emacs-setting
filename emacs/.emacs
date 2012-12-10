@@ -381,6 +381,21 @@
 ;;(color-theme-infodoc)
 ;;-------------------- color theme --------------------
 
+
+;; ==================== ace-jump ====================
+;; "C-c SPC" ==> ace-jump-word-mode : enter first character of a word, select the highlighted key to move to it.
+;; "C-u C-c SPC" ==> ace-jump-char-mode : enter a character for query, select the highlighted key to move to it.
+;; "C-u C-u C-c SPC" ==> ace-jump-line-mode : each non-empty line will be marked, select the highlighted key to move to it.
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;; -------------------- ace-jump --------------------
+
+
 ;; ;;==================== evil ====================
 ;; ;;vi emulator
 ;; (setq evil-want-C-i-jump t)
@@ -463,7 +478,7 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict/")  
 (require 'auto-complete-clang)
 
-(setq ac-auto-start 1)
+(setq ac-auto-start t)
 (setq ac-quick-help-delay 0.5)
 ;; (ac-set-trigger-key "TAB")
 (define-key ac-mode-map [(control tab)] 'auto-complete)
@@ -484,38 +499,107 @@
 (my-ac-config)
 ;; -------------------- end of auto complete --------------------
 
+;; cua-mode: I want the rectangle C-return
+(setq cua-enable-cua-keys nil)
+(cua-mode t) 
+   
+;; ==================== new python ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.1.0")
 
-;;==================== python ====================
-(require 'python)
-
-(autoload 'python-mode "python-mode" "Python Mode." t)
+(require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-(add-to-list 'load-path "~/.emacs.d/plugins/Pymacs")
-
+ 
+(add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
+ 
 (require 'pymacs)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
-(autoload 'pymacs-autoload "pymacs")
-;;(eval-after-load "pymacs"
-;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
 
-;;; Initialize Rope
-(pymacs-load "ropemacs" "rope-")
-;;(setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+(require 'pycomplete)
+(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+(autoload 'python-mode "python-mode" "Python editing mode." t)
+(setq interpreter-mode-alist (cons '("python" . python-mode)
+				   interpreter-mode-alist))
 
-(ac-ropemacs-initialize)
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
+(defun ac-pycomplete-candidates ()
+  ;(message "Start ac-pycomplete-candidates: %s %s %s"   ; for debug
+  ; 		   (py-symbol-near-point)
+  ; 		   (py-find-global-imports)
+  ; 		     (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
+  (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
 
-;;load pydb
-(require 'pydb)
-(autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
-;;-------------------- python --------------------
+
+(defface ac-pycomplete-candidate-face
+  '((t (:background "burlywood1" :foreground "navy")))
+  "Face for clang candidate"
+  :group 'auto-complete)
+
+(defface ac-pycomplete-selection-face
+  '((t (:background "navy" :foreground "white")))
+  "Face for the clang selected candidate."
+  :group 'auto-complete)
+
+(ac-define-source pycomplete
+  '((candidates . ac-pycomplete-candidates)
+	(candidate-face . ac-pycomplete-candidate-face)
+	(selection-face . ac-pycomplete-selection-face)
+	)
+  )
+
+(defun ac-python-mode-setup ()
+  (setq ac-sources (append '(ac-source-pycomplete)
+			   ac-sources)))
+(add-hook 'python-mode-hook 'ac-python-mode-setup)
+;; -------------------- new python --------------------
+
+
+;; ;; ;;==================== python ====================
+;; (require 'python)
+;;  
+;; (autoload 'python-mode "python-mode" "Python Mode." t)
+;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
+;; (add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
+;;  
+;; (require 'pymacs)
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; (autoload 'pymacs-autoload "pymacs")
+;; ;;(eval-after-load "pymacs"
+;; ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+;;  
+;; ;;; Initialize Rope
+;; (pymacs-load "ropemacs" "rope-")
+;; (setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+;;  
+;; (ac-ropemacs-initialize)
+;; (add-hook 'python-mode-hook
+;;  	  (lambda ()
+;;  	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
+;;  
+;; ;;load pydb
+;; (require 'pydb)
+;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
+;;  
+;; ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
+;; ;; (when (load "flymake" t)
+;; ;;   (defun flymake-pyflakes-init ()
+;; ;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;; ;;  					   'flymake-create-temp-inplace))
+;; ;;  		   (local-file (file-relative-name
+;; ;;  						temp-file
+;; ;;  						(file-name-directory buffer-file-name))))
+;; ;;       (list "pycheckers"  (list local-file))))
+;; ;;   (add-to-list 'flymake-allowed-file-name-masks
+;; ;;  			   '("\\.py\\'" flymake-pyflakes-init)))
+;; ;; (load-library "flymake-cursor")
+;; ;;-------------------- python --------------------
 
 ;; (global-set-key (kbd "C-<f9>") 
 ;; 		(lambda ()
@@ -827,6 +911,29 @@
 ;; ==================== lisp ====================
 (require 'slime)
 (slime-setup '(slime-fancy))
+
+;; From http://d.hatena.ne.jp/tsz/20091222/1261492959
+(defvar ac-slime-modes
+  '(lisp-mode))
+
+(defun ac-slime-candidates ()
+  "Complete candidates of the symbol at point."
+  (if (memq major-mode ac-slime-modes)
+      (let* ((end (point))
+			 (beg (slime-symbol-start-pos))
+			 (prefix (buffer-substring-no-properties beg end))
+			 (result (slime-simple-completions prefix)))
+		(destructuring-bind (completions partial) result
+		  completions))))
+
+(defvar ac-source-slime
+  '((candidates . ac-slime-candidates)
+    (requires-num . 3)))
+
+(add-hook 'lisp-mode-hook (lambda ()
+							(slime-mode t)
+							(push 'ac-source-slime ac-sources)
+							(auto-complete-mode)))
 ;; -------------------- lisp --------------------
 
 
