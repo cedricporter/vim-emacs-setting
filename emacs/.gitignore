@@ -4,3 +4,5 @@
 .emacs.d/plugins/ropemacs/build/
 .emacs.d/plugins/ropemode-0.1-rc2/build/
 .emacs.d/session.*
+.emacs.d/semanticdb/
+.emacs.d/srecode-map.el

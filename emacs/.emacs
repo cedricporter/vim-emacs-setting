@@ -490,28 +490,29 @@
 ;; auto complete with clang
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
+(ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict/")  
-(require 'auto-complete-clang)
+;(require 'auto-complete-clang)
 
 (setq ac-auto-start t)
 (setq ac-quick-help-delay 0.5)
 ;; (ac-set-trigger-key "TAB")
 (define-key ac-mode-map [(control tab)] 'auto-complete)
 
-(defun my-ac-config ()
-  (setq ac-clang-flags (split-string "-I../include -I../Include -I../ -I../inc -I../Inc -I../common -I../Common -I../lib -I../Lib"))
-  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-  ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-  (add-hook 'css-mode-hook 'ac-css-mode-setup)
-  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-  (global-auto-complete-mode t))
-(defun my-ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
-(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-;; ac-source-gtags
-(my-ac-config)
+;; (defun my-ac-config ()
+;;   (setq ac-clang-flags (split-string "-I../include -I../Include -I../ -I../inc -I../Inc -I../common -I../Common -I../lib -I../Lib"))
+;;   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+;;   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+;;   ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+;;   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+;;   (add-hook 'css-mode-hook 'ac-css-mode-setup)
+;;   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+;;   (global-auto-complete-mode t))
+;; (defun my-ac-cc-mode-setup ()
+;;   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+;; (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; ;; ac-source-gtags
+;; (my-ac-config)
 ;; -------------------- end of auto complete --------------------
 
 ;; cua-mode: I want the rectangle C-return
@@ -620,77 +621,190 @@
 ;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
 ;; ;;-------------------- python --------------------
 
-;;==================== cedet ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/cedet-1.1/common/")
-(require 'cedet)
-(require 'semantic-ia)
+;; ;;==================== cedet ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/cedet-1.1/common/")
+;; (load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.elc")
+;; (require 'semantic-ia)
+;; (require 'semantic-gcc)
+;;  
+;; (semantic-add-system-include ".." 'c++-mode)
+;;  
+;; ;; Enable EDE (Project Management) features
+;; (global-ede-mode t)
+;;  
+;; ;; Enable SRecode (Template management) minor-mode.
+;; (global-srecode-minor-mode 1)
+;;  
+;; ;; ;; (setq semanticdb-project-roots (list (expand-file-name "/")))
+;; ;; (defconst cedet-user-include-dirs
+;; ;;   (list ".." "../include" "../Include" "../inc" "../common" "../public" "../lib"
+;; ;;         "../.." "../../include" "../../inc" "../../common" "../../public" "../../.." "../../../include" "../../../Include"))
+;; ;; (defconst cedet-win32-include-dirs
+;; ;;   (list "C:/MinGW/include"
+;; ;;         "C:/MinGW/include/c++/3.4.5"
+;; ;;         "C:/MinGW/include/c++/3.4.5/mingw32"
+;; ;;         "C:/MinGW/include/c++/3.4.5/backward"
+;; ;;         "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
+;; ;;         "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+;;  
+;; ;; (require 'semantic-c nil 'noerror)
+;; ;; (let ((include-dirs cedet-user-include-dirs))
+;; ;;   ;(when (eq system-type 'windows-nt)
+;; ;;   ;  (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
+;; ;;   (mapc (lambda (dir)
+;; ;;           (semantic-add-system-include dir 'c++-mode)
+;; ;;           (semantic-add-system-include dir 'c-mode))
+;; ;;         include-dirs))
+;; ;;-------------------- cedet --------------------
+;;  
+;;  
+;; ;; ==================== semantic ====================
+;; ;; (semantic-load-enable-minimum-features)
+;; (semantic-load-enable-code-helpers)
+;; ;; (semantic-load-enable-guady-code-helpers)
+;; ;; (semantic-load-enable-excessive-code-helpers)
+;; (semantic-load-enable-semantic-debugging-helpers)
+;;  
+;; ;; (semantic-decoration-mode 1)
+;;  
+;; ;; jump to definition
+;; (global-set-key [f12] 'semantic-ia-fast-jump)
+;;  
+;; ;; go back
+;; (global-set-key [S-f12]
+;;         	(lambda ()
+;;         	  (interactive)
+;;         	  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+;;         	      (error "Semantic Bookmark ring is currently empty"))
+;;         	  (let* ((ring (oref semantic-mru-bookmark-ring ring))
+;;         		 (alist (semantic-mrub-ring-to-assoc-list ring))
+;;         		 (first (cdr (car alist))))
+;;         	    (if (semantic-equivalent-tag-p (oref first tag)
+;;         					   (semantic-current-tag))
+;;         		(setq first (cdr (car (cdr alist)))))
+;;         	    (semantic-mrub-switch-tags first))))
+;;  
+;; ;;(define-key c-mode-base-map (kbd "M-n") 'semantic-ia-complete-symbol)
+;; ;; -------------------- semantic --------------------
 
-;; Enable EDE (Project Management) features
-(global-ede-mode 1)
+;; bzr cedet
+(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
+(semantic-mode 1)
 
-;; Enable SRecode (Template management) minor-mode.
+(require 'semantic/ia)
+(require 'semantic/bovine/c)
+(require 'semantic/bovine/clang)
+;; (require 'semantic/bovine/gcc)
+
+;; loading contrib...
+(require 'eassist)
+
+;; customisation of modes
+(defun alexott/cedet-hook ()
+  (local-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
+  (local-set-key "\C-c?" 'semantic-ia-complete-symbol)
+  ;;
+  (local-set-key "\C-c>" 'semantic-comsemantic-ia-complete-symbolplete-analyze-inline)
+  (local-set-key "\C-c=" 'semantic-decoration-include-visit)
+
+  (local-set-key "\C-cj" 'semantic-ia-fast-jump)
+  (local-set-key "\C-cq" 'semantic-ia-show-doc)
+  (local-set-key "\C-cs" 'semantic-ia-show-summary)
+  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+  ;;  (local-set-key (kbd "C-c <left>") 'semantic-tag-folding-fold-block)
+  ;;  (local-set-key (kbd "C-c <right>") 'semantic-tag-folding-show-block)
+
+  (add-to-list 'ac-sources 'ac-source-semantic)
+  )
+
+(add-hook 'c-mode-common-hook 'alexott/cedet-hook)
+(add-hook 'c++-mode-hook 'alexott/cedet-hook)
+(add-hook 'lisp-mode-hook 'alexott/cedet-hook)
+(add-hook 'scheme-mode-hook 'alexott/cedet-hook)
+(add-hook 'emacs-lisp-mode-hook 'alexott/cedet-hook)
+(add-hook 'erlang-mode-hook 'alexott/cedet-hook)
+
+(defun alexott/c-mode-cedet-hook ()
+ ;; (local-set-key "." 'semantic-complete-self-insert)
+ ;; (local-set-key ">" 'semantic-complete-self-insert)
+  (local-set-key "\C-ct" 'eassist-switch-h-cpp)
+  (local-set-key "\C-xt" 'eassist-switch-h-cpp)
+  (local-set-key "\C-ce" 'eassist-list-methods)
+  (local-set-key "\C-c\C-r" 'semantic-symref)
+
+  (add-to-list 'ac-sources 'ac-source-gtags)
+  )
+(add-hook 'c-mode-common-hook 'alexott/c-mode-cedet-hook)
+
+(when (cedet-gnu-global-version-check t)
+  (semanticdb-enable-gnu-global-databases 'c-mode t)
+  (semanticdb-enable-gnu-global-databases 'c++-mode t))
+
+(when (cedet-ectag-version-check t)
+  (semantic-load-enable-primary-ectags-support))
+
+;; SRecode
 (global-srecode-minor-mode 1)
 
-;; (setq semanticdb-project-roots (list (expand-file-name "/")))
-(defconst cedet-user-include-dirs
-  (list ".." "../include" "../Include" "../inc" "../common" "../public" "../lib"
-	"../.." "../../include" "../../inc" "../../common" "../../public" "../../.." "../../../include" "../../../Include"))
-(defconst cedet-win32-include-dirs
-  (list "C:/MinGW/include"
-	"C:/MinGW/include/c++/3.4.5"
-	"C:/MinGW/include/c++/3.4.5/mingw32"
-	"C:/MinGW/include/c++/3.4.5/backward"
-	"C:/MinGW/lib/gcc/mingw32/3.4.5/include"
-	"C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+;; EDE
+(global-ede-mode 1)
+(ede-enable-generic-projects)
 
-(require 'semantic-c nil 'noerror)
-(let ((include-dirs cedet-user-include-dirs))
-  ;(when (eq system-type 'windows-nt)
-  ;  (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
-  (mapc (lambda (dir)
-	  (semantic-add-system-include dir 'c++-mode)
-	  (semantic-add-system-include dir 'c-mode))
-	include-dirs))
-;;-------------------- cedet --------------------
+;; helper for boost setup...
+(defun recur-list-files (dir re)
+  "Returns list of files in directory matching to given regex"
+  (when (file-accessible-directory-p dir)
+    (let ((files (directory-files dir t))
+          matched)
+      (dolist (file files matched)
+        (let ((fname (file-name-nondirectory file)))
+          (cond
+           ((or (string= fname ".")
+                (string= fname "..")) nil)
+           ((and (file-regular-p file)
+                 (string-match re fname))
+            (setq matched (cons file matched)))
+           ((file-directory-p file)
+            (let ((tfiles (recur-list-files file re)))
+              (when tfiles (setq matched (append matched tfiles)))))))))))
 
-;; ;; code folding
-;; (when (and window-system (require 'semantic-tag-folding nil 'noerror))
-;;   (global-semantic-tag-folding-mode 1)
-;;   (global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
-;;   (define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
-;;   (define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
-;;   (define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
-;;   (define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all))
+(defun c++-setup-boost (boost-root)
+  (when (file-accessible-directory-p boost-root)
+    (let ((cfiles (recur-list-files boost-root "\\(config\\|user\\)\\.hpp")))
+      (dolist (file cfiles)
+        (add-to-list 'semantic-lex-c-preprocessor-symbol-file file)))))
+
+;; my functions for EDE
+(defun alexott/ede-get-local-var (fname var)
+  "fetch given variable var from :local-variables of project of file fname"
+  (let* ((current-dir (file-name-directory fname))
+         (prj (ede-current-project current-dir)))
+    (when prj
+      (let* ((ov (oref prj local-variables))
+            (lst (assoc var ov)))
+        (when lst
+          (cdr lst))))))
+
+;; setup compile package
+(require 'compile)
+(setq compilation-disable-input nil)
+(setq compilation-scroll-output t)
+(setq mode-compile-always-save-buffer-p t)
+
+(defun alexott/compile ()
+  "Saves all unsaved buffers, and runs 'compile'."
+  (interactive)
+  (save-some-buffers t)
+  (let* ((r (alexott/ede-get-local-var
+             (or (buffer-file-name (current-buffer)) default-directory)
+             'compile-command))
+         (cmd (if (functionp r) (funcall r) r)))
+    (set (make-local-variable 'compile-command) (or cmd compile-command))
+    (compile compile-command)))
+
+(global-set-key [f7] 'alexott/compile)
 
 
-;; ==================== semantic ====================
-;; (semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers)
-;; (semantic-load-enable-guady-code-helpers)
-;; (semantic-load-enable-excessive-code-helpers)
-(semantic-load-enable-semantic-debugging-helpers)
- 
-;; (semantic-decoration-mode 1)
- 
-;; jump to definition
-(global-set-key [f12] 'semantic-ia-fast-jump)
- 
-;; go back
-(global-set-key [S-f12]
-		(lambda ()
-		  (interactive)
-		  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-		      (error "Semantic Bookmark ring is currently empty"))
-		  (let* ((ring (oref semantic-mru-bookmark-ring ring))
-			 (alist (semantic-mrub-ring-to-assoc-list ring))
-			 (first (cdr (car alist))))
-		    (if (semantic-equivalent-tag-p (oref first tag)
-						   (semantic-current-tag))
-			(setq first (cdr (car (cdr alist)))))
-		    (semantic-mrub-switch-tags first))))
- 
-;;(define-key c-mode-base-map (kbd "M-n") 'semantic-ia-complete-symbol)
-;; -------------------- semantic --------------------
 
 
 ;; ==================== gud ====================
@@ -714,17 +828,36 @@
 ;; ecb
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
 (require 'ecb)
-(setq ecb-tip-of-the-day nil)
+(setq-default ecb-tip-of-the-day nil)
+
+(ecb-layout-define "my-cscope-layout" left nil
+                   (ecb-set-methods-buffer)
+                   (ecb-split-ver 0.5 t)
+                   (other-window 1)
+                   (ecb-set-sources-buffer) ; (ecb-set-history-buffer)
+                   (ecb-split-ver 0.25 t)
+                   (other-window 1)
+                   (ecb-set-cscope-buffer))
+
+(defecb-window-dedicator-to-ecb-buffer ecb-set-cscope-buffer
+    " *ECB cscope-buf*" nil
+  "docstring of cscope buffer"
+  (switch-to-buffer "*cscope*"))
+
+(setq ecb-layout-name "my-cscope-layout")
+
+(setq ecb-history-make-buckets 'never)
+  
 ;; end of ecb
 
 
-;; compile
-(setq compilation-read-command nil)	;don't prompt to press ENTER
-(global-set-key [(f7)] (lambda()
-			 (interactive)
-			 (save-some-buffers t)	   ;save all buffers
-			 (compile compile-command) ;compile
-			 ))
+;; ;; compile
+;; (setq compilation-read-command nil)	;don't prompt to press ENTER
+;; (global-set-key [(f7)] (lambda()
+;;         		 (interactive)
+;;         		 (save-some-buffers t)	   ;save all buffers
+;;         		 (compile compile-command) ;compile
+;;         		 ))
 
 (global-set-key [f4] 'eshell)
 (global-set-key [(shift f4)] 'shell)

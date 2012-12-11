@@ -1,0 +1,32 @@
+这是文件 .../info/dir，它含有 Info 层次
+结构的最顶层节点，称为 (dir)Top。
+您第一次调用 Info 您将从该节点开始。
+
+File: dir,	Node: Top	这是 INFO 树的顶
+
+  这里 (the Directory node) 给出了主要主题的菜单。
+  输入“q”将退出，输入“?”将列举所有 Info 命令，输入
+  “d”将返回这里。输入“h”将给初次使用的用户一个摘要，
+  输入“mEmacs<Return>”将访问 Emacs 手册，等等。
+
+  在 Emacs中，您可以在菜单项目或交叉引用上点击鼠标右键以
+  选择它。
+
+* Menu:
+
+Emacs
+* CEDET: (cedet).               Collection of Emacs Development Environment 
+                                  Tools
+* Semantic: (semantic).         Infrastructure for parser based text analysis.
+* Semantic Application Writer's guide: (semantic-appdev).
+* Semantic Grammar Framework: (grammar-fw).
+* Semantic Language Writer's guide: (semantic-langdev).
+* Semantic User's guide: (semantic-user).
+* Semantic Wisent parser development: (wisent).
+* Semantic bovine parser development: (bovine).
+* cogre: (cogre).               Graphs & UML for Emacs
+* srecode: (srecode).           Template code generator
+
+Emacs misc features
+* EDE: (ede).                   The Emacs Development Environment.
+* EIEIO: (eieio).               An objects system for Emacs Lisp.
