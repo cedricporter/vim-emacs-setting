@@ -407,7 +407,7 @@
   "Emacs quick move minor mode"
   t)
 ;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-;") 'ace-jump-mode)
 ;; -------------------- ace-jump --------------------
 
 
@@ -620,53 +620,47 @@
 ;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
 ;; ;;-------------------- python --------------------
 
-;; (global-set-key (kbd "C-<f9>") 
-;; 		(lambda ()
-;; 		  ;;(if (equal ac-auto-start 1)
-;; 		  ;;   (setq ac-auto-start nil)
-;; 		  (setq ac-auto-start 1)
-;; 		  )
-;; 		)
-
 ;;==================== cedet ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/cedet/common")
-;;(add-to-list 'load-path "~/.emacs.d/plugins/cedet/semantic")
+(add-to-list 'load-path "~/.emacs.d/plugins/cedet-1.1/common/")
 (require 'cedet)
 (require 'semantic-ia)
 
+;; Enable EDE (Project Management) features
 (global-ede-mode 1)
 
+;; Enable SRecode (Template management) minor-mode.
 (global-srecode-minor-mode 1)
-;;-------------------- cedet --------------------
 
 ;; (setq semanticdb-project-roots (list (expand-file-name "/")))
 (defconst cedet-user-include-dirs
   (list ".." "../include" "../Include" "../inc" "../common" "../public" "../lib"
-        "../.." "../../include" "../../inc" "../../common" "../../public" "../../.." "../../../include" "../../../Include"))
+	"../.." "../../include" "../../inc" "../../common" "../../public" "../../.." "../../../include" "../../../Include"))
 (defconst cedet-win32-include-dirs
   (list "C:/MinGW/include"
-        "C:/MinGW/include/c++/3.4.5"
-        "C:/MinGW/include/c++/3.4.5/mingw32"
-        "C:/MinGW/include/c++/3.4.5/backward"
-        "C:/MinGW/lib/gcc/mingw32/3.4.5/include"
-        "C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+	"C:/MinGW/include/c++/3.4.5"
+	"C:/MinGW/include/c++/3.4.5/mingw32"
+	"C:/MinGW/include/c++/3.4.5/backward"
+	"C:/MinGW/lib/gcc/mingw32/3.4.5/include"
+	"C:/Program Files/Microsoft Visual Studio/VC98/MFC/Include"))
+
 (require 'semantic-c nil 'noerror)
 (let ((include-dirs cedet-user-include-dirs))
   ;(when (eq system-type 'windows-nt)
   ;  (setq include-dirs (append include-dirs cedet-win32-include-dirs)))
   (mapc (lambda (dir)
-          (semantic-add-system-include dir 'c++-mode)
-          (semantic-add-system-include dir 'c-mode))
-        include-dirs))
+	  (semantic-add-system-include dir 'c++-mode)
+	  (semantic-add-system-include dir 'c-mode))
+	include-dirs))
+;;-------------------- cedet --------------------
 
-;; code folding
-(when (and window-system (require 'semantic-tag-folding nil 'noerror))
-  (global-semantic-tag-folding-mode 1)
-  (global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
-  (define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
-  (define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
-  (define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
-  (define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all))
+;; ;; code folding
+;; (when (and window-system (require 'semantic-tag-folding nil 'noerror))
+;;   (global-semantic-tag-folding-mode 1)
+;;   (global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
+;;   (define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
+;;   (define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
+;;   (define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
+;;   (define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all))
 
 
 ;; ==================== semantic ====================
@@ -675,26 +669,26 @@
 ;; (semantic-load-enable-guady-code-helpers)
 ;; (semantic-load-enable-excessive-code-helpers)
 (semantic-load-enable-semantic-debugging-helpers)
-
+ 
 ;; (semantic-decoration-mode 1)
-
+ 
 ;; jump to definition
 (global-set-key [f12] 'semantic-ia-fast-jump)
-
+ 
 ;; go back
 (global-set-key [S-f12]
-                (lambda ()
-                  (interactive)
-                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-                      (error "Semantic Bookmark ring is currently empty"))
-                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
-                         (alist (semantic-mrub-ring-to-assoc-list ring))
-                         (first (cdr (car alist))))
-                    (if (semantic-equivalent-tag-p (oref first tag)
-                                                   (semantic-current-tag))
-                        (setq first (cdr (car (cdr alist)))))
-                    (semantic-mrub-switch-tags first))))
-
+		(lambda ()
+		  (interactive)
+		  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+		      (error "Semantic Bookmark ring is currently empty"))
+		  (let* ((ring (oref semantic-mru-bookmark-ring ring))
+			 (alist (semantic-mrub-ring-to-assoc-list ring))
+			 (first (cdr (car alist))))
+		    (if (semantic-equivalent-tag-p (oref first tag)
+						   (semantic-current-tag))
+			(setq first (cdr (car (cdr alist)))))
+		    (semantic-mrub-switch-tags first))))
+ 
 ;;(define-key c-mode-base-map (kbd "M-n") 'semantic-ia-complete-symbol)
 ;; -------------------- semantic --------------------
 
@@ -716,6 +710,12 @@
 (global-set-key [f10] 'gud-next)
 
 ;; -------------------- gud --------------------
+
+;; ecb
+(add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
+(require 'ecb)
+(setq ecb-tip-of-the-day nil)
+;; end of ecb
 
 
 ;; compile
@@ -956,17 +956,13 @@
 ;; -------------------- lisp --------------------
 
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(session-use-package t nil (session)))
+
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
  '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
  '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
@@ -980,3 +976,10 @@
  '(xref-keyword-face ((t (:foreground "LightBlue"))))
  '(xref-list-pilot-face ((t (:foreground "blue violet"))))
  '(xref-list-symbol-face ((t (:foreground "light sky blue")))))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.40")
+ '(session-use-package t nil (session)))

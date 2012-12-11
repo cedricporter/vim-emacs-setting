@@ -9,11 +9,15 @@ install()
     cd ..
 }
 
+add-apt-repository ppa:irie/elisp
+apt-get update
+apt-get install ibus-el
+
 install pymacs
 install rope
 install ropemode
 install ropemacs
-apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev cscope clang slime sbcl clisp python-pip
+apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev cscope clang slime sbcl clisp python-pip ecb
 pip install pyflakes pep8
 
 install doxymacs-1.8.0
