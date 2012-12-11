@@ -687,7 +687,7 @@
 ;; ;;(define-key c-mode-base-map (kbd "M-n") 'semantic-ia-complete-symbol)
 ;; ;; -------------------- semantic --------------------
 
-;; bzr cedet
+;; ==================== bzr cedet ====================
 (load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 (semantic-mode 1)
 
@@ -803,7 +803,7 @@
     (compile compile-command)))
 
 (global-set-key [f7] 'alexott/compile)
-
+;; -------------------- bzr cedet --------------------
 
 
 
@@ -825,7 +825,8 @@
 
 ;; -------------------- gud --------------------
 
-;; ecb
+
+;; ==================== ecb ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
 (require 'ecb)
 (setq-default ecb-tip-of-the-day nil)
@@ -848,7 +849,7 @@
 
 (setq ecb-history-make-buckets 'never)
   
-;; end of ecb
+;; --------------------  ecb --------------------
 
 
 ;; ;; compile
@@ -897,7 +898,7 @@
 (add-hook 'c++-mode-hook
           '(lambda ()
              (c-set-style "microsoft")
-	     (set (make-local-variable 'ac-auto-start) nil) ;; shut down ac-auto-start in c++-mode
+;	     (set (make-local-variable 'ac-auto-start) nil) ;; shut down ac-auto-start in c++-mode
 	     ))
 
 
@@ -1054,6 +1055,7 @@
 ;; |C-c s i   |看看指定的文件被哪些文件include                   |
 ;; +----------+--------------------------------------------------+
 
+(add-to-list 'load-path "~/.emacs.d/plugins/cscope-15.8a/contrib/xcscope/")
 (add-hook 'c-mode-common-hook
           '(lambda ()
              (require 'xcscope)))

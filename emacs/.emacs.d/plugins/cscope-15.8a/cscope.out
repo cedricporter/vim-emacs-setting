@@ -1,0 +1,257 @@
+cscope 15 $HOME/.emacs.d/plugins/cscope-15.8a               0000001299
+	@config.h
+
+8 
+	#HAS_CURSES
+ 1
+
+	)
+
+11 
+	#HAVE_ASPRINTF
+ 1
+
+	)
+
+15 
+	#HAVE_DIRENT_H
+ 1
+
+	)
+
+18 
+	#HAVE_FCNTL_H
+ 1
+
+	)
+
+27 
+	#HAVE_GETCWD
+ 1
+
+	)
+
+30 
+	#HAVE_GETOPT_LONG
+ 1
+
+	)
+
+36 
+	#HAVE_INTTYPES_H
+ 1
+
+	)
+
+57 
+	#HAVE_LSTAT
+ 1
+
+	)
+
+60 
+	#HAVE_MEMCPY
+ 1
+
+	)
+
+63 
+	#HAVE_MEMORY_H
+ 1
+
+	)
+
+66 
+	#HAVE_MEMSET
+ 1
+
+	)
+
+78 
+	#HAVE_REGCOMP
+ 1
+
+	)
+
+84 
+	#HAVE_SIGNAL_H
+ 1
+
+	)
+
+87 
+	#HAVE_SIGSETJMP
+ 1
+
+	)
+
+90 
+	#HAVE_SNPRINTF
+ 1
+
+	)
+
+93 
+	#HAVE_STDARG_H
+ 1
+
+	)
+
+99 
+	#HAVE_STDINT_H
+ 1
+
+	)
+
+102 
+	#HAVE_STDLIB_H
+ 1
+
+	)
+
+105 
+	#HAVE_STRCHR
+ 1
+
+	)
+
+108 
+	#HAVE_STRERROR
+ 1
+
+	)
+
+111 
+	#HAVE_STRINGS_H
+ 1
+
+	)
+
+114 
+	#HAVE_STRING_H
+ 1
+
+	)
+
+131 
+	#HAVE_SYS_STAT_H
+ 1
+
+	)
+
+134 
+	#HAVE_SYS_TERMIOS_H
+ 1
+
+	)
+
+137 
+	#HAVE_SYS_TYPES_H
+ 1
+
+	)
+
+149 
+	#HAVE_UNISTD_H
+ 1
+
+	)
+
+158 
+	#HAVE_VASPRINTF
+ 1
+
+	)
+
+164 
+	#HAVE_VSNPRINTF
+ 1
+
+	)
+
+173 
+	#Löux
+ 1
+
+	)
+
+186 
+	#PACKAGE
+ "csc›e"
+
+	)
+
+189 
+	#PACKAGE_BUGREPORT
+ ""
+
+	)
+
+192 
+	#PACKAGE_NAME
+ ""
+
+	)
+
+195 
+	#PACKAGE_STRING
+ ""
+
+	)
+
+198 
+	#PACKAGE_TARNAME
+ ""
+
+	)
+
+201 
+	#PACKAGE_URL
+ ""
+
+	)
+
+204 
+	#PACKAGE_VERSION
+ ""
+
+	)
+
+207 
+	#RETSIGTYPE
+ 
+
+	)
+
+213 
+	#STDC_HEADERS
+ 1
+
+	)
+
+216 
+	#USE_NCURSES
+ 1
+
+	)
+
+228 
+	#VERSION
+ "15.8a"
+
+	)
+
+232 
+	#YYTEXT_POINTER
+ 1
+
+	)
+
+	@
+1
+.
+1
+/usr/include
+1
+9
+config.h
