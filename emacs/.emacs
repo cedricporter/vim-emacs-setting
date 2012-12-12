@@ -401,13 +401,18 @@
 ;; "C-c SPC" ==> ace-jump-word-mode : enter first character of a word, select the highlighted key to move to it.
 ;; "C-u C-c SPC" ==> ace-jump-char-mode : enter a character for query, select the highlighted key to move to it.
 ;; "C-u C-u C-c SPC" ==> ace-jump-line-mode : each non-empty line will be marked, select the highlighted key to move to it.
-(autoload
-  'ace-jump-mode
+(autoload 'ace-jump-mode
   "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
+(setq ace-jump-mode-scope 'window)      ; limit scope to current buffer(window)
+(setq ace-jump-mode-submode-list
+      '(ace-jump-word-mode              ; C-;
+        ace-jump-line-mode              ; C-u C-;
+        ace-jump-char-mode))            ; C-u C-u C-;
 ;; you can select the key you prefer to
 (define-key global-map (kbd "C-;") 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-char-mode)
 ;; -------------------- ace-jump --------------------
 
 
