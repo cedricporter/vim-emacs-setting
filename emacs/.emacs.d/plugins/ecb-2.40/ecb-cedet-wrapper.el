@@ -21,7 +21,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: ecb-cedet-wrapper.el,v 1.7 2010/02/21 13:10:12 berndl Exp $
+;; $Id$
 
 ;;; Commentary:
 
@@ -80,7 +80,7 @@ The meaning is as follows:
 3. 0 = alpha, 1 = beta, 2 = pre, 3 = nothing \(e.g. \"1.4\"), 4 = . \(e.g. \"1.4.3\"
 4. Subversion after the alpha, beta, pre or .")
 
-(defconst ecb-cedet-required-version-max '(1 2 0 0)
+(defconst ecb-cedet-required-version-max '(1 1 4 9)
   "Maximum version of CEDET currently accepted by ECB.
 See `ecb-required-cedet-version-min' for an explanation.")
 

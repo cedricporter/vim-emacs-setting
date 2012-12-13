@@ -25,7 +25,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: ecb.el,v 1.452 2010/02/23 16:09:08 berndl Exp $
+;; $Id$
 
 ;;; Commentary:
 ;;
@@ -1216,7 +1216,7 @@ value of VAR is as before storing a NEW-VALUE for variable-symbol VAR."
         (ecb-select-ecb-frame)
         (ecb-update-directories-buffer))
 
-    (let ((stack-trace-on-error stack-trace-on-error))
+    (let ((debug-on-error debug-on-error))
       ;; we activate only if all before-hooks return non nil
       (when (run-hook-with-args-until-failure 'ecb-before-activate-hook)
 

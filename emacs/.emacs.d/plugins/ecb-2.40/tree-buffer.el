@@ -24,7 +24,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: tree-buffer.el,v 1.188 2010/02/23 16:09:16 berndl Exp $
+;; $Id$
 
 ;;; Commentary:
 
@@ -2580,7 +2580,7 @@ Example for the usage of this macro:
                 "then the current node at point in the currently selected tree-buffer is used.\n"
                 "REST-ARG-LIST is a list of zero or more extra arguments passed to this command.")
        (interactive)
-       (let ((node (if (and (interactive-p) (null node))
+       (let ((node (if (and (called-interactively-p 'interactive) (null node))
                        (tree-buffer-get-node-at-point)
                      node)))
          (when node

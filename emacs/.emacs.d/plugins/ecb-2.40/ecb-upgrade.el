@@ -23,7 +23,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: ecb-upgrade.el,v 1.117 2010/02/21 13:10:12 berndl Exp $
+;; $Id$
 
 ;;; Commentary:
 ;;
@@ -1048,7 +1048,7 @@ your customization-file!"
     ;; now we display only the choice to save the ecb-options-version but only
     ;; if ecb-options-version != ecb-version and (either the command is called
     ;; interactively or first-time called by program)
-    (when (and (or (interactive-p)
+    (when (and (or (called-interactively-p 'interactive)
                    (not (get 'ecb-display-upgraded-options
                          'ecb-options-version-save-displayed)))
                (not (ecb-options-version=ecb-version-p)))
@@ -1111,7 +1111,7 @@ If FULL-NEWS is not nil then the NEWS-file is displayed in another window."
     (if (and ecb-old-ecb-version
              (or (not (get 'ecb-display-news-for-upgrade
                            'ecb-news-for-upgrade-displayed))
-                 (interactive-p)))
+                 (called-interactively-p 'interactive)))
         (progn
           (with-output-to-temp-buffer "*News for the new ECB-version*"
             (princ (format "You have upgraded ECB from version %s to %s.\n\n"

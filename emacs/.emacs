@@ -6,7 +6,7 @@
 (setq user-full-name "Hua Liang")
 (setq user-mail-address "et@everet.org") 
 
-;(set-frame-font "Ubuntu Mono-12")
+(set-frame-font "Ubuntu Mono-12")
 
 
 ;; Add plugins to load-path.

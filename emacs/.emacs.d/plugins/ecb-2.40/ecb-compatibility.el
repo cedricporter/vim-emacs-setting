@@ -23,7 +23,7 @@
 ;; GNU Emacs; see the file COPYING.  If not, write to the Free Software
 ;; Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-;; $Id: ecb-compatibility.el,v 1.17 2009/06/24 17:49:54 berndl Exp $
+;; $Id$
 
 ;;; Commentary:
 ;;
