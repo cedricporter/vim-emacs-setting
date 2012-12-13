@@ -1254,8 +1254,8 @@ with directories on your system.
 
 File: cedet.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: Maintenance,  Up: Top
 
-附录 A GNU Free Documentation License
-***************************************
+Appendix A GNU Free Documentation License
+*****************************************
 
                         Version 1.1, March 2000
 
@@ -1674,6 +1674,6 @@ Node: ID Utils40990
 Node: CScope42512
 Node: Maintenance44887
 Node: GNU Free Documentation License45297
-Node: Index65016
+Node: Index65020
 
 End Tag Table

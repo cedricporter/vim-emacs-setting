@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002, 2003, 2009 David Ponce
 
-;; Author: Cedric Porter <cedricporter@Stupid-ET>
-;; Created: 2012-12-12 01:11:37+0800
+;; Author: Cedric Porter <cedricporter@cedricporter-Lenovo-IdeaPad-Y550>
+;; Created: 2012-12-13 15:52:35+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

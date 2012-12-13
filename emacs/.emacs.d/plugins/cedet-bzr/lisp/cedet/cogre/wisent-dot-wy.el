@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2003, 2004, 2009 Eric M. Ludlam
 
-;; Author: Cedric Porter <cedricporter@Stupid-ET>
-;; Created: 2012-12-12 01:10:50+0800
+;; Author: Cedric Porter <cedricporter@cedricporter-Lenovo-IdeaPad-Y550>
+;; Created: 2012-12-13 15:53:37+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
@@ -217,9 +217,15 @@
 
 ;;; Analyzers
 ;;
-(define-lex-keyword-type-analyzer wisent-dot-wy--<keyword>-keyword-analyzer
-  "keyword analyzer for <keyword> tokens."
-  "\\(\\sw\\|\\s_\\)+")
+(define-lex-string-type-analyzer wisent-dot-wy--<punctuation>-string-analyzer
+  "string analyzer for <punctuation> tokens."
+  "\\s.+"
+  '((COMMA . ",")
+    (SEMI . ";")
+    (EQUAL . "=")
+    (LINK . "--")
+    (DILINK . "->"))
+  'punctuation)
 
 (define-lex-block-type-analyzer wisent-dot-wy--<block>-block-analyzer
   "block analyzer for <block> tokens."
@@ -238,26 +244,20 @@
   nil
   'symbol)
 
-(define-lex-sexp-type-analyzer wisent-dot-wy--<string>-sexp-analyzer
-  "sexp analyzer for <string> tokens."
-  "\\s\""
-  'string)
-
 (define-lex-regex-type-analyzer wisent-dot-wy--<number>-regexp-analyzer
   "regexp analyzer for <number> tokens."
   semantic-lex-number-expression
   nil
   'number)
 
-(define-lex-string-type-analyzer wisent-dot-wy--<punctuation>-string-analyzer
-  "string analyzer for <punctuation> tokens."
-  "\\s.+"
-  '((COMMA . ",")
-    (SEMI . ";")
-    (EQUAL . "=")
-    (LINK . "--")
-    (DILINK . "->"))
-  'punctuation)
+(define-lex-sexp-type-analyzer wisent-dot-wy--<string>-sexp-analyzer
+  "sexp analyzer for <string> tokens."
+  "\\s\""
+  'string)
+
+(define-lex-keyword-type-analyzer wisent-dot-wy--<keyword>-keyword-analyzer
+  "keyword analyzer for <keyword> tokens."
+  "\\(\\sw\\|\\s_\\)+")
 
 
 ;;; Epilogue

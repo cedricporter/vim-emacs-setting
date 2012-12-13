@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2010 Free Software Foundation
 
-;; Author: Cedric Porter <cedricporter@Stupid-ET>
-;; Created: 2012-12-12 01:11:49+0800
+;; Author: Cedric Porter <cedricporter@cedricporter-Lenovo-IdeaPad-Y550>
+;; Created: 2012-12-13 15:53:13+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

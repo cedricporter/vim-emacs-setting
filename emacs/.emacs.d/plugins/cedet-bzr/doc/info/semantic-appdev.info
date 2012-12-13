@@ -3565,8 +3565,8 @@ whatever your object is.  Use Emacs help to pick something out.
 
 File: semantic-appdev.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: Data Debugger,  Up: Top
 
-附录 A GNU Free Documentation License
-***************************************
+Appendix A GNU Free Documentation License
+*****************************************
 
                         Version 1.1, March 2000
 
@@ -4554,6 +4554,6 @@ Ref: semantic-adebug-mode149914
 Ref: semantic-adebug-new-buffer150495
 Ref: data-debug-insert-thing150892
 Node: GNU Free Documentation License151144
-Node: Index170872
+Node: Index170876
 
 End Tag Table

@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002-2012 Free Software Foundation, Inc.
 
-;; Author: Cedric Porter <cedricporter@Stupid-ET>
-;; Created: 2012-12-12 01:11:42+0800
+;; Author: Cedric Porter <cedricporter@cedricporter-Lenovo-IdeaPad-Y550>
+;; Created: 2012-12-13 15:52:50+0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
@@ -719,10 +719,6 @@
 
 ;;; Analyzers
 ;;
-(define-lex-keyword-type-analyzer wisent-python-wy--<keyword>-keyword-analyzer
-  "keyword analyzer for <keyword> tokens."
-  "\\(\\sw\\|\\s_\\)+")
-
 (define-lex-block-type-analyzer wisent-python-wy--<block>-block-analyzer
   "block analyzer for <block> tokens."
   "\\s(\\|\\s)"
@@ -733,18 +729,6 @@
     ("}" RBRACE)
     ("]" RBRACK))
   )
-
-(define-lex-regex-type-analyzer wisent-python-wy--<symbol>-regexp-analyzer
-  "regexp analyzer for <symbol> tokens."
-  "\\(\\sw\\|\\s_\\)+"
-  nil
-  'NAME)
-
-(define-lex-regex-type-analyzer wisent-python-wy--<number>-regexp-analyzer
-  "regexp analyzer for <number> tokens."
-  semantic-lex-number-expression
-  nil
-  'NUMBER_LITERAL)
 
 (define-lex-string-type-analyzer wisent-python-wy--<punctuation>-string-analyzer
   "string analyzer for <punctuation> tokens."
@@ -789,6 +773,22 @@
     (GTGTEQ . ">>=")
     (LTLTEQ . "<<="))
   'punctuation)
+
+(define-lex-regex-type-analyzer wisent-python-wy--<symbol>-regexp-analyzer
+  "regexp analyzer for <symbol> tokens."
+  "\\(\\sw\\|\\s_\\)+"
+  nil
+  'NAME)
+
+(define-lex-regex-type-analyzer wisent-python-wy--<number>-regexp-analyzer
+  "regexp analyzer for <number> tokens."
+  semantic-lex-number-expression
+  nil
+  'NUMBER_LITERAL)
+
+(define-lex-keyword-type-analyzer wisent-python-wy--<keyword>-keyword-analyzer
+  "keyword analyzer for <keyword> tokens."
+  "\\(\\sw\\|\\s_\\)+")
 
 
 ;;; Epilogue

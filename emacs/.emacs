@@ -6,7 +6,7 @@
 (setq user-full-name "Hua Liang")
 (setq user-mail-address "et@everet.org") 
 
-(set-default-font "Ubuntu Mono-12")
+;(set-frame-font "Ubuntu Mono-12")
 
 
 ;; Add plugins to load-path.
@@ -125,8 +125,8 @@
 ;; nginx-mode
 (require 'nginx-mode)
 
-(require 'ibus) 
-(add-hook 'after-init-hook 'ibus-mode-on) 
+;(require 'ibus) 
+;(add-hook 'after-init-hook 'ibus-mode-on) 
 
 ;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
 ;; 如果总是不显示工具栏，将下面代码加到.emacs中
@@ -230,7 +230,7 @@
 
 
 ;; 去掉滚动栏
-(scroll-bar-mode nil)
+(scroll-bar-mode -1)
 
 ;; 一打开就起用 text 模式。  
 (setq default-major-mode 'text-mode)
@@ -344,7 +344,7 @@
 (highlight-parentheses-mode 1)
 
 ;; 显示ascii表
-(require 'ascii)
+;(require 'ascii)
 
 ;; Key binding
 ;;(require 'misc)
@@ -525,7 +525,7 @@
 (cua-mode t) 
    
 ;; ==================== new python ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.1.0")
+(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.1.0")
 
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))

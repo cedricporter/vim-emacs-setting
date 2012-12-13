@@ -1697,8 +1697,8 @@ VALUE is the input `buffer-substring' from START to END.
 
 File: wisent.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: Wisent Semantic,  Up: Top
 
-附录 A GNU Free Documentation License
-***************************************
+Appendix A GNU Free Documentation License
+*****************************************
 
                         Version 1.1, March 2000
 
@@ -2204,6 +2204,6 @@ Node: Start nonterminals52086
 Node: Useful functions54902
 Node: Wisent Lex55455
 Node: GNU Free Documentation License56873
-Node: Index76594
+Node: Index76598
 
 End Tag Table
