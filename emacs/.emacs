@@ -94,6 +94,14 @@
 
 ;; ==================== Common Setting ====================
 
+;; Environment
+(push "~/.emacs.d/plugins/bin" exec-path)
+;; (setenv "PATH"
+;; 	(concat
+;; 	 "~/.emacs.d/plugins/bin" ":"
+;; 	 (getenv "PATH")
+;; 	 ))
+
 ;;;_ xterm & console
 (when (eq system-type 'gnu/linux)
   (if (not window-system)
@@ -147,9 +155,9 @@
 (browse-kill-ring-default-keybindings)
 (global-set-key "\C-c\C-k" 'browse-kill-ring)
 
-;; 防止页面滚动时跳动，可以很好的看到上下文。
-(setq scroll-margin 3
-      scroll-conservatively 10000)
+;; ;; 防止页面滚动时跳动，可以很好的看到上下文。
+;; (setq scroll-margin 3
+;;       scroll-conservatively 10000)
 
 ;; 改造你的C-w和M-w键
 (defadvice kill-ring-save (before slickcopy activate compile)
@@ -524,82 +532,12 @@
 (setq cua-enable-cua-keys nil)
 (cua-mode t) 
    
-;; ==================== new python ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.1.0")
-
-(require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
- 
-(add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
- 
-(require 'pymacs)
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-
-(require 'pycomplete)
-(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-				   interpreter-mode-alist))
-
-(defun ac-pycomplete-candidates ()
-  ;(message "Start ac-pycomplete-candidates: %s %s %s"   ; for debug
-  ; 		   (py-symbol-near-point)
-  ; 		   (py-find-global-imports)
-  ; 		     (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
-  (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
-
-
-(defface ac-pycomplete-candidate-face
-  '((t (:background "burlywood1" :foreground "navy")))
-  "Face for clang candidate"
-  :group 'auto-complete)
-
-(defface ac-pycomplete-selection-face
-  '((t (:background "navy" :foreground "white")))
-  "Face for the clang selected candidate."
-  :group 'auto-complete)
-
-(ac-define-source pycomplete
-  '((candidates . ac-pycomplete-candidates)
-	(candidate-face . ac-pycomplete-candidate-face)
-	(selection-face . ac-pycomplete-selection-face)
-	)
-  )
-
-(defun ac-python-mode-setup ()
-  (setq ac-sources (append '(ac-source-pycomplete)
-			   ac-sources)))
-(add-hook 'python-mode-hook 'ac-python-mode-setup)
-
-;; flymake
-(add-hook 'find-file-hook 'flymake-find-file-hook)
-(when (load "flymake" t)
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-               'flymake-create-temp-inplace))
-       (local-file (file-relative-name
-            temp-file
-            (file-name-directory buffer-file-name))))
-      (list "pycheckers"  (list local-file))))
-   (add-to-list 'flymake-allowed-file-name-masks
-             '("\\.py\\'" flymake-pyflakes-init)))
-(load-library "flymake-cursor")
-;(global-set-key [f10] 'flymake-goto-prev-error)
-;(global-set-key [f11] 'flymake-goto-next-error)
-
-;; -------------------- new python --------------------
-
-
-;; ;; ;;==================== python ====================
-;; (require 'python)
+;; ;; ==================== new python ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/python-mode.el-6.1.0")
 ;;  
-;; (autoload 'python-mode "python-mode" "Python Mode." t)
+;; (require 'python-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
+;;  
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
 ;;  
 ;; (require 'pymacs)
@@ -608,23 +546,99 @@
 ;; (autoload 'pymacs-eval "pymacs" nil t)
 ;; (autoload 'pymacs-exec "pymacs" nil t)
 ;; (autoload 'pymacs-load "pymacs" nil t)
-;; (autoload 'pymacs-autoload "pymacs")
-;; ;;(eval-after-load "pymacs"
-;; ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
 ;;  
-;; ;;; Initialize Rope
-;; (pymacs-load "ropemacs" "rope-")
-;; (setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+;; (require 'pycomplete)
+;; (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+;; (autoload 'python-mode "python-mode" "Python editing mode." t)
+;; (setq interpreter-mode-alist (cons '("python" . python-mode)
+;;  				   interpreter-mode-alist))
 ;;  
-;; (ac-ropemacs-initialize)
-;; (add-hook 'python-mode-hook
-;;  	  (lambda ()
-;;  	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
+;; ;; pycomplete for auto-complete
+;; (defun ac-pycomplete-candidates ()
+;;   ;(message "Start ac-pycomplete-candidates: %s %s %s"   ; for debug
+;;   ; 		   (py-symbol-near-point)
+;;   ; 		   (py-find-global-imports)
+;;   ; 		     (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
+;;   (pycomplete--get-all-completions (py-symbol-near-point) (py-find-global-imports)))
 ;;  
-;; ;;load pydb
-;; (require 'pydb)
-;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
-;; ;;-------------------- python --------------------
+;; (defface ac-pycomplete-candidate-face
+;;   '((t (:background "burlywood1" :foreground "navy")))
+;;   "Face for clang candidate"
+;;   :group 'auto-complete)
+;;  
+;; (defface ac-pycomplete-selection-face
+;;   '((t (:background "navy" :foreground "white")))
+;;   "Face for the clang selected candidate."
+;;   :group 'auto-complete)
+;;  
+;; (ac-define-source pycomplete
+;;   '((candidates . ac-pycomplete-candidates)
+;;  	(candidate-face . ac-pycomplete-candidate-face)
+;;  	(selection-face . ac-pycomplete-selection-face)
+;;  	)
+;;   )
+;;  
+;; (defun ac-python-mode-setup ()
+;;   (setq ac-sources (append '(ac-source-pycomplete)
+;;  			   ac-sources)))
+;; (add-hook 'python-mode-hook 'ac-python-mode-setup)
+;; ;; end of pycomplete for auto-complete
+;;  
+;; ;(require 'ipython)
+;; ;; -------------------- new python --------------------
+
+
+;; ;;==================== python ====================
+(require 'python)
+ 
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+(add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
+ 
+(require 'pymacs)
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-autoload "pymacs")
+;;(eval-after-load "pymacs"
+;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+ 
+;;; Initialize Rope
+(pymacs-load "ropemacs" "rope-")
+(setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+ 
+(ac-ropemacs-initialize)
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
+ 
+;;load pydb
+(require 'pydb)
+(autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
+;;-------------------- python --------------------
+
+;; ==================== flymake ====================
+;; flymake
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+	       'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+	    temp-file
+	    (file-name-directory buffer-file-name))))
+      (list "pycheckers"  (list local-file))))
+   (add-to-list 'flymake-allowed-file-name-masks
+	     '("\\.py\\'" flymake-pyflakes-init)))
+(load-library "flymake-cursor")
+
+;; ;(global-set-key [f10] 'flymake-goto-prev-error)
+;; ;(global-set-key [f11] 'flymake-goto-next-error)
+;;  
+;; -------------------- flymake --------------------
 
 ;; ;;==================== cedet ====================
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/cedet-1.1/common/")
@@ -1096,6 +1110,18 @@
 
 ;; ==================== eshell ====================
 (global-set-key [f4] 'eshell)
+(global-set-key [S-f4] 'term)
+
+(setq ansi-term-color-vector
+      [unspecified "black" "tomato" "PaleGreen2" "gold1"
+       "DeepSkyBlue1" "MediumOrchid1" "cyan" "white"])
+
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-bash-completion")
+(require 'bash-completion)
+(bash-completion-setup)
 
 (add-hook 'eshell-load-hook
           (lambda()(setq last-command-start-time (time-to-seconds))))
