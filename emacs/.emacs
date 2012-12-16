@@ -357,17 +357,18 @@
 ;; Key binding
 ;;(require 'misc)
 
-(global-set-key "\M-f" 'forward-same-syntax) ; Make it behave like vim
-(global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
-
-(defun kill-syntax (&optional arg)
-  "Kill ARG sets of syntax characters after point."
-  (interactive "p")
-  (let ((opoint (point)))
-	(forward-same-syntax arg)
-	(kill-region opoint (point))) )
-(global-set-key "\M-d" 'kill-syntax)
-(global-set-key [(meta backspace)] (lambda() (interactive) (kill-syntax -1) ) )
+;; ;; Make it behave like vim
+;; (global-set-key "\M-f" 'forward-same-syntax) 
+;; (global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
+;;  
+;; (defun kill-syntax (&optional arg)
+;;   "Kill ARG sets of syntax characters after point."
+;;   (interactive "p")
+;;   (let ((opoint (point)))
+;;  	(forward-same-syntax arg)
+;;  	(kill-region opoint (point))) )
+;; (global-set-key "\M-d" 'kill-syntax)
+;; (global-set-key [(meta backspace)] (lambda() (interactive) (kill-syntax -1) ) )
 
 
 ;;用一个很大的 kill ring. 这样防止我不小心删掉重要的东西。
@@ -635,8 +636,8 @@
 	     '("\\.py\\'" flymake-pyflakes-init)))
 (load-library "flymake-cursor")
 
-;; ;(global-set-key [f10] 'flymake-goto-prev-error)
-;; ;(global-set-key [f11] 'flymake-goto-next-error)
+(global-set-key "\C-c\C-ep" 'flymake-goto-prev-error)
+(global-set-key "\C-c\C-en" 'flymake-goto-next-error)
 ;;  
 ;; -------------------- flymake --------------------
 
