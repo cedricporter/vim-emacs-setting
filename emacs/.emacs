@@ -76,7 +76,8 @@
    '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
   )
 ;; 启动emacs时窗口最大化
-(my-maximized)
+(when window-system
+  (my-maximized)) 
 
 (setq-default fill-column 81)
 (setq default-fill-column 80)
