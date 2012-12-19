@@ -20,6 +20,8 @@
 
 (require 'my-small-tools)
 
+(require 'my-yasnippet-settings)
+
 (require 'my-autocomplete-settings)
 
 (require 'my-python-settings)

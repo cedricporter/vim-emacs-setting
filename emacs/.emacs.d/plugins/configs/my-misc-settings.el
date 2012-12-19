@@ -84,8 +84,14 @@
 
 ;; ==================== Common Setting ====================
 
+
+;; Re-open read-only files as root automte
+
+
+
 ;; 尽快显示按键序列
 (setq echo-keystrokes 0.1)
+
 
 (defadvice desktop-restore-file-buffer
   (around my-desktop-restore-file-buffer-advice)
@@ -215,7 +221,8 @@
 
 ;; 回车缩进
 ;; (global-set-key "\C-m" 'newline-and-indent)
-(global-set-key (kbd "C-<return>") 'newline)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-<return>") 'newline)
 
 ;; 显示括号匹配 
 (show-paren-mode t)
@@ -285,6 +292,20 @@
 (global-set-key [(f5)] 'speedbar)
 
 
+(defun sudo-reopen-file ()
+  (interactive)
+  (message (concat "/sudo::" buffer-file-name))
+  (let* ((file-name (expand-file-name buffer-file-name))
+	 (sudo-file-name (concat "/sudo::" file-name)))
+    (progn
+      (setq buffer-file-name sudo-file-name)
+      (rename-buffer sudo-file-name)
+      (setq buffer-read-only nil)
+      (message (concat "File name set to " sudo-file-name)))))
+(global-set-key (kbd "C-c o s") 'sudo-reopen-file)
+;; ==================== test ====================
+
+;; -------------------- {test} --------------------
 
 
 (provide 'my-misc-settings)
