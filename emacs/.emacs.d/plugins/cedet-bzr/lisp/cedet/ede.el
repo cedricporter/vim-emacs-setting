@@ -1161,18 +1161,15 @@ Optional argument OBJ is an object to find the parent of."
 (defun ede-current-project (&optional dir)
   "Return the current project file.
 If optional DIR is provided, get the project for DIR instead."
-  (let ((ans nil))
-    ;; If it matches the current directory, do we have a pre-existing project?
-    (when (and (or (not dir) (string= dir default-directory))
-	       ede-object-project)
-      (setq ans ede-object-project)
-      )
+  ;; If it matches the current directory, do we have a pre-existing project?
+  (let ((proj (when (and (or (not dir) (string= dir default-directory))
+			ede-object-project)
+	        ede-object-project)))
     ;; No current project.
-    (when (not ans)
+    (if proj
+	proj
       (let* ((ldir (or dir default-directory)))
-	(setq ans (ede-directory-get-open-project ldir))))
-    ;; Return what we found.
-    ans))
+	(ede-directory-get-open-project ldir)))))
 
 (defun ede-buffer-object (&optional buffer projsym)
   "Return the target object for BUFFER.

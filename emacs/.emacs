@@ -20,15 +20,17 @@
 
 (require 'my-small-tools)
 
-(require 'my-yasnippet-settings)
+(require 'window-setting)
 
 (require 'my-autocomplete-settings)
 
 (require 'my-python-settings)
 
-(require 'my-lisp-settings)
+;(require 'my-lisp-settings)
 
 (require 'my-cedet-settings)
+;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
+
 
 (require 'my-gud-settings)
 
@@ -36,9 +38,11 @@
 
 (require 'my-eshell-settings)
 
-(require 'my-ecb-settings)
+;(require 'my-ecb-settings)
 
 (require 'my-org-mode-settings)
+
+(require 'my-yasnippet-settings)
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated
@@ -50,6 +54,7 @@
  ;; If there is more than one, they won't work right.
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
  '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
+ '(hl-line ((t (:background "orange4"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
  '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
  '(moinmoin-code ((t (:foreground "purple"))))

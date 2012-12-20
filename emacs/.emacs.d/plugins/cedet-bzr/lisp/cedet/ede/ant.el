@@ -64,13 +64,13 @@
 Return nil if there isn't one.
 Argument DIR is the directory it is created for.
 ROOTPROJ is nil, since there is only one project."
-  (or (ede-files-find-existing dir ede-ant-project-list)
+  (or (ede-files-find-existing (file-truename dir) ede-ant-project-list)
       ;; Doesn't already exist, so lets make one.
       (let ((this
              (ede-ant-project "Ant"
 			      :name "Ant dir" ; make fancy name from dir here.
-			      :directory dir
-			      :file (expand-file-name ede-ant-project-file-name dir)
+			      :directory (file-truename dir)
+			      :file (file-truename (expand-file-name ede-ant-project-file-name dir))
 			      )))
 	(ede-add-project-to-global-list this)
 	this)))
@@ -167,6 +167,31 @@ Argument COMMAND is the command to use when compiling."
   (when (ede-jvm-base-file-updated-p proj)
     ;; TODO: fill information
     ))
+
+;; How to handle, when we have several files with the same name?
+(defmethod ede-expand-filename-impl ((proj ede-ant-project) name)
+  "Within this project PROJ, find the file NAME.
+This knows details about or source tree."
+  (let ((ans (call-next-method))) ;; using locatedb, etc
+    (unless ans
+      (let* ((dir (ede-project-root-directory proj))
+	     (src (or (oref proj :srcroot) '("")))
+	     (tname (expand-file-name name dir)))
+	(if (file-exists-p tname)
+	    (setq ans tname))
+	
+	;; Search srcroot
+	(while (and (not ans) src)
+	  (let* ((tdir (expand-file-name (car src) dir))
+		 (tname (expand-file-name name tdir)))
+	    (if (file-exists-p tname)
+		(setq ans tname)
+	      (let ((files (cedet-files-list-recursively tdir name)))
+		(when files
+		  (setq ans (car files))))))
+	  (setq src (cdr src)))
+	))
+    ans))
 
 ;;;###autoload
 (ede-add-project-autoload

@@ -50,12 +50,13 @@
 There is no completion at the prompt.  FILE is searched for within
 the current EDE project."
   (interactive "sFile: ")
-  (let ((fname (ede-expand-filename (ede-current-project) file))
+  (let* ((proj (ede-current-project))
+	 (fname (ede-expand-filename proj file))
 	)
     (unless fname
       (error "Could not find %s in %s"
 	     file
-	     (ede-project-root-directory (ede-current-project))))
+	     (ede-project-root-directory proj)))
     (find-file fname)))
 
 (defun ede-flush-project-hash ()

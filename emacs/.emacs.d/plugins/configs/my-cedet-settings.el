@@ -1,11 +1,15 @@
 ;; ==================== bzr cedet ====================
-(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
+;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
+(require 'cedet)                        ; can't use bzr at 24.3 now
+
 (semantic-mode 1)
 
-(require 'semantic/ia)
+;(require 'semantic/ia) ; bzr
 (require 'semantic/bovine/c)
-(require 'semantic/bovine/clang)
-;; (require 'semantic/bovine/gcc)
+;(require 'semantic/bovine/clang) ; bzr
+(require 'semantic/bovine/gcc)
+
+(global-semantic-mru-bookmark-mode 1)
 
 ;; loading contrib...
 (require 'eassist)
@@ -19,6 +23,19 @@
   (local-set-key "\C-c=" 'semantic-decoration-include-visit)
 
   (local-set-key "\C-cj" 'semantic-ia-fast-jump)
+  (local-set-key "\C-cJ"  ;; go back
+                 (lambda ()
+                   (interactive)
+                   (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+                       (error "Semantic Bookmark ring is currently empty!!!"))
+                   (let* ((ring (oref semantic-mru-bookmark-ring ring))
+                          (alist (semantic-mrub-ring-to-assoc-list ring))
+                          (first (cdr (car alist))))
+                     (if (semantic-equivalent-tag-p (oref first tag)
+                                                    (semantic-current-tag))
+                         (setq first (cdr (car (cdr alist)))))
+                     ;; (message "%s-%s" alist first)
+                     (semantic-mrub-switch-tags first))))
   (local-set-key "\C-cq" 'semantic-ia-show-doc)
   (local-set-key "\C-cs" 'semantic-ia-show-summary)
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
@@ -47,15 +64,19 @@
   )
 (add-hook 'c-mode-common-hook 'alexott/c-mode-cedet-hook)
 
-(when (cedet-gnu-global-version-check t)
-  (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'c++-mode t))
 
-(when (cedet-ectag-version-check t)
-  (semantic-load-enable-primary-ectags-support))
+;; ==================== make 24.3 hang ====================
+;; (when (cedet-gnu-global-version-check t)
+;;   (semanticdb-enable-gnu-global-databases 'c-mode t)
+;;   (semanticdb-enable-gnu-global-databases 'c++-mode t))
+
+;; (when (cedet-ectag-version-check t)
+;;   (semantic-load-enable-primary-ectags-support))
+;; -------------------- make 24.3 hang --------------------
+
 
 ;; SRecode
-(global-srecode-minor-mode 1)
+;(global-srecode-minor-mode 1)
 
 ;; EDE
 (global-ede-mode 1)

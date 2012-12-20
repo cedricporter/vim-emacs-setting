@@ -55,17 +55,17 @@
 
 (defvar recent-jump-hook-commands
   '(
+    backward-paragraph
     backward-sexp
     backward-word
-    backward-paragraph
     beginning-of-buffer
     beginning-of-defun
     end-of-buffer
     end-of-defun
     find-tag
+    forward-paragraph
     forward-sexp
     forward-word
-    forward-paragraph
     ido-switch-buffer
     imenu
     isearch-backward
@@ -75,8 +75,14 @@
     pager-page-down
     pager-page-up
     previous-line
+    rope-goto-definition
     scroll-down
     scroll-up
+    search-backward
+    search-backward-regexp
+    search-forward
+    search-forward-regexp
+    semantic-ia-fast-jump
     switch-to-buffer
     ))
     

@@ -145,7 +145,6 @@
 ;; (setq scroll-margin 3
 ;;       scroll-conservatively 10000)
 
-
 ;; ==================== 改造你的C-w和M-w键 ====================
 (defadvice kill-ring-save (before slickcopy activate compile)
   "When called interactively with no active region, copy a single line instead."
@@ -271,6 +270,14 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c b") 'comment-box)
 (global-set-key (kbd "C-c k") 'comment-kill)
+
+(defadvice comment-or-uncomment-region
+  (before autocommentuncomment activate compile)
+  "在没有region的时候，自动注释反注释当前行"
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+	   (line-beginning-position 2)))))
 ;;-------------------- end --------------------
 
 
@@ -297,6 +304,7 @@
 (global-set-key [(f5)] 'speedbar)
 
 
+;; ==================== sudo reopen ====================
 (defun sudo-reopen-file ()
   (interactive)
   (message (concat "/sudo::" buffer-file-name))
@@ -308,6 +316,7 @@
       (setq buffer-read-only nil)
       (message (concat "File name set to " sudo-file-name)))))
 (global-set-key (kbd "C-c o s") 'sudo-reopen-file)
+;; -------------------- sudo reopen --------------------
 
 
 ;; ==================== goto char ====================

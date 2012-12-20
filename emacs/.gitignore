@@ -7,3 +7,7 @@
 .emacs.d/semanticdb/
 .emacs.d/srecode-map.el
 .emacs.d/tramp
+.emacs.d/plugins/cedet-bzr/.bzr/
+.emacs.d/.emacs.desktop
+.emacs.d/.emacs.desktop.lock
+

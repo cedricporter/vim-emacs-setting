@@ -353,11 +353,10 @@ This knows details about or source tree."
   (let ((ans (call-next-method))) ;; using locatedb, etc
     (unless ans
       (let* ((lf (oref proj :locate-fcn))
-	     (dir (file-name-directory (oref proj :file))))
+	     (dir (ede-project-root-directory proj)))
 	(if lf
 	    (setq ans (funcall lf name dir))
 	  (let ((src (oref proj :srcroot))
-		(dir (file-name-directory (oref proj :file)))
 		(tmp nil))
 
 	    ;; Search srcroot
