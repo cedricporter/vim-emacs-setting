@@ -14,7 +14,7 @@ install()
 #install ropemode
 #install ropemacs
 
-apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev clang slime sbcl clisp python-pip texinfo
+apt-get install -y libxml2 libxml2-dev w3m ncurses-base libncurses5-dev clang slime sbcl clisp python-pip texinfo pydb texlive-latex-base
 pip install pyflakes pep8 rope ropemacs
 
 # install doxymacs-1.8.0

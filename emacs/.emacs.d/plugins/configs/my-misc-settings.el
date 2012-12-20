@@ -145,7 +145,8 @@
 ;; (setq scroll-margin 3
 ;;       scroll-conservatively 10000)
 
-;; 改造你的C-w和M-w键
+
+;; ==================== 改造你的C-w和M-w键 ====================
 (defadvice kill-ring-save (before slickcopy activate compile)
   "When called interactively with no active region, copy a single line instead."
   (interactive
@@ -158,6 +159,8 @@
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
 	   (line-beginning-position 2)))))
+;; -------------------- 改造你的C-w和M-w键 --------------------
+
 
 ;; 4.1 在单元格之间移动
 ;; table-forward-cell<==>tab
@@ -221,7 +224,7 @@
 
 ;; 回车缩进
 ;; (global-set-key "\C-m" 'newline-and-indent)
-(global-set-key (kbd "RET") 'newline-and-indent)
+;(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-<return>") 'newline)
 
 ;; 显示括号匹配 
@@ -271,7 +274,6 @@
 ;;-------------------- end --------------------
 
 
-
 ;;==================== color theme ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
 (require 'color-theme) 
@@ -284,9 +286,12 @@
 ;;-------------------- color theme --------------------
 
 
-;; cua-mode: I want the rectangle C-return
+;; ==================== cua-mode ====================
+;; cua-mode: I want the rectangle edit
 (setq cua-enable-cua-keys nil)
-(cua-mode t) 
+(setq cua-rectangle-mark-key (kbd "C-c . r"))
+(cua-mode t)
+;; -------------------- cua-mode --------------------
 
 
 (global-set-key [(f5)] 'speedbar)
@@ -303,9 +308,6 @@
       (setq buffer-read-only nil)
       (message (concat "File name set to " sudo-file-name)))))
 (global-set-key (kbd "C-c o s") 'sudo-reopen-file)
-;; ==================== test ====================
-
-;; -------------------- {test} --------------------
 
 
 (provide 'my-misc-settings)

@@ -3,9 +3,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
 
-; bug fix, ac is incompatible with yas 0.8
-(setq ac-sources (delq 'ac-source-yasnippet ac-sources))
-
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict/")  
 (setq ac-auto-start t)

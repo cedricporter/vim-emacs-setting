@@ -25,9 +25,9 @@
 	  (lambda ()
 	    (add-to-list 'ac-sources 'ac-source-ropemacs)))
 
-;;load pydb
-;;(require 'pydb)
-;;(autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
+;; ;;load pydb
+;; (require 'pydb)
+;; (autoload 'pydb "pydb" "Python Debugger mode via GUD and pydb" t)
 ;;-------------------- python --------------------
 
 
