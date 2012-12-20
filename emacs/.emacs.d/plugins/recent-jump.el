@@ -3,6 +3,7 @@
 ;; Copyright (C) 2005  Free Software Foundation, Inc.
 
 ;; Author: ChunYe Wang ;;Keywords: tools
+;; Modified by Stupid ET <et@everet.org>
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -53,27 +54,30 @@
 (defvar recent-jump-ring (make-ring recent-jump-ring-length))
 
 (defvar recent-jump-hook-commands
-  '(next-line 
-    previous-line
-    isearch-forward
-    isearch-backward
-    end-of-buffer
-    beginning-of-buffer
-    pager-page-down
-    pager-page-up
-    beginning-of-defun
-    end-of-defun
-    forward-word
-    backward-word
-    forward-sexp
+  '(
     backward-sexp
-    scroll-up
-    scroll-down
+    backward-word
+    backward-paragraph
+    beginning-of-buffer
+    beginning-of-defun
+    end-of-buffer
+    end-of-defun
     find-tag
-    mark-whole-buffer
-    switch-to-buffer
+    forward-sexp
+    forward-word
+    forward-paragraph
     ido-switch-buffer
     imenu
+    isearch-backward
+    isearch-forward
+    mark-whole-buffer
+    next-line 
+    pager-page-down
+    pager-page-up
+    previous-line
+    scroll-down
+    scroll-up
+    switch-to-buffer
     ))
     
 ;;this variable is set at pre-command-hook, and remember where are you before a

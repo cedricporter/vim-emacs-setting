@@ -8,7 +8,7 @@
 
 ;; ==================== recent-jump ====================
 ;; set recent-jump
-(setq recent-jump-threshold 4)
+(setq recent-jump-threshold 3)
 (setq recent-jump-ring-length 10)
 (global-set-key (kbd "C-o") 'recent-jump-jump-backward)
 (global-set-key (kbd "M-o") 'recent-jump-jump-forward)
@@ -151,12 +151,11 @@
   t)
 (setq ace-jump-mode-scope 'window)      ; limit scope to current buffer(window)
 (setq ace-jump-mode-submode-list
-      '(ace-jump-word-mode              ; C-t
-        ace-jump-line-mode              ; C-u C-t
-        ace-jump-char-mode))            ; C-u C-u C-t
+      '(ace-jump-word-mode              ; C-c SPC
+        ace-jump-line-mode              ; C-u C-c SPC
+        ace-jump-char-mode))            ; C-u C-u C-c SPC
 ;; you can select the key you prefer to
-(define-key global-map (kbd "C-t") 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-char-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 ;; -------------------- ace-jump --------------------
 
 

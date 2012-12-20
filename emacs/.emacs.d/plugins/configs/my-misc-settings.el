@@ -310,4 +310,24 @@
 (global-set-key (kbd "C-c o s") 'sudo-reopen-file)
 
 
+;; ==================== goto char ====================
+;; go-to-char 非常感谢 Oliver Scholz 提供这个函数
+;;有了这段代码之后，当你按 C-c a x (x 是任意一个字符) 时，光 标就会到下一个 x 处。再次按 x，光标就到下一个 x。比如 C-c a w w w w ..., C-c a b b b b b b ...
+(defun wy-go-to-char (n char)
+  "Move forward to Nth occurence of CHAR.
+Typing `wy-go-to-char-key' again will move forwad to the next Nth
+occurence of CHAR."
+  (interactive "p\ncGo to char: ")
+  (search-forward (string char) nil nil n)
+  (backward-char)
+  (while (char-equal (read-char)
+             char)
+    (forward-char)
+    (search-forward (string char) nil nil n)
+    (backward-char))
+  (setq unread-command-events (list last-input-event)))
+(global-set-key (kbd "C-t") 'wy-go-to-char)
+;; -------------------- goto char --------------------
+
+
 (provide 'my-misc-settings)
