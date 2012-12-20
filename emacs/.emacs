@@ -38,6 +38,7 @@
 
 (require 'my-ecb-settings)
 
+(require 'my-org-mode-settings)
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated
