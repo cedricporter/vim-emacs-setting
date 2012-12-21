@@ -37,7 +37,7 @@
                      ;; (message "%s-%s" alist first)
                      (semantic-mrub-switch-tags first))))
   (local-set-key "\C-cq" 'semantic-ia-show-doc)
-  (local-set-key "\C-cs" 'semantic-ia-show-summary)
+;  (local-set-key "\C-cs" 'semantic-ia-show-summary)
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
   ;;  (local-set-key (kbd "C-c <left>") 'semantic-tag-folding-fold-block)
   ;;  (local-set-key (kbd "C-c <right>") 'semantic-tag-folding-show-block)

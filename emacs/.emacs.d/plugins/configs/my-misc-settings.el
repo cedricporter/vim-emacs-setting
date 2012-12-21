@@ -339,4 +339,38 @@ occurence of CHAR."
 ;; -------------------- goto char --------------------
 
 
+;; ==================== 在最近两个buffer间切换 ====================
+(defun switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd "C-`") 'switch-to-previous-buffer)
+;; -------------------- 在最近两个buffer间切换 --------------------
+
+
+;; ==================== Transposing Two Buffers ====================
+(defun transpose-buffers (arg)
+  "Transpose the buffers shown in two windows."
+  (interactive "p")
+  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
+    (while (/= arg 0)
+      (let ((this-win (window-buffer))
+            (next-win (window-buffer (funcall selector))))
+        (set-window-buffer (selected-window) next-win)
+        (set-window-buffer (funcall selector) this-win)
+        (select-window (funcall selector)))
+      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
+(global-set-key (kbd "C-x 4 t") 'transpose-buffers)
+;; -------------------- Transposing Two Buffers --------------------
+
+
 (provide 'my-misc-settings)
+
+
+
+
+
+
+
+
+
+

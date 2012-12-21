@@ -3,6 +3,14 @@
 (require 'ecb)
 (setq-default ecb-tip-of-the-day nil)
 
+(defun my-ecb-active-or-deactive ()
+  (interactive)
+  (if ecb-minor-mode
+      (ecb-deactivate)
+    (ecb-activate)))
+(global-set-key (kbd "<C-f1>") 'my-ecb-active-or-deactive)
+(define-key ecb-mode-map (kbd "<C-f2>") 'ecb-toggle-ecb-windows)
+
 (ecb-layout-define "my-cscope-layout" left nil
                    (ecb-set-methods-buffer)
                    (ecb-split-ver 0.5 t)
@@ -17,9 +25,17 @@
   "docstring of cscope buffer"
   (switch-to-buffer "*cscope*"))
 
-(setq ecb-layout-name "my-cscope-layout")
+(defmacro set-key-for-ecb-layout (key layout-name)
+  `(define-key ecb-mode-map ,key
+    '(lambda ()
+       (interactive)
+       (ecb-layout-switch ,layout-name))))
 
-(setq ecb-history-make-buckets 'never)
+(set-key-for-ecb-layout (kbd "C-c . 1") "left1")
+(set-key-for-ecb-layout (kbd "C-c . 2") "my-cscope-layout")
+     
+
+;(setq ecb-history-make-buckets 'never)
 
 ;; --------------------  ecb --------------------
 

@@ -28,6 +28,8 @@
 
 ;(require 'my-lisp-settings)
 
+(require 'my-emacs-lisp-settings)
+
 (require 'my-cedet-settings)
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 
@@ -39,6 +41,7 @@
 (require 'my-eshell-settings)
 
 (require 'my-ecb-settings)
+(message "After load ecb")
 
 (require 'my-org-mode-settings)
 
