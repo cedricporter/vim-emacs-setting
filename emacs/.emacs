@@ -38,7 +38,7 @@
 
 (require 'my-eshell-settings)
 
-;(require 'my-ecb-settings)
+(require 'my-ecb-settings)
 
 (require 'my-org-mode-settings)
 
