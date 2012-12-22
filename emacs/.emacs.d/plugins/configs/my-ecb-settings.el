@@ -31,13 +31,10 @@
        (interactive)
        (ecb-layout-switch ,layout-name))))
 
-(set-key-for-ecb-layout (kbd "C-c . 1") "left1")
-(set-key-for-ecb-layout (kbd "C-c . 2") "my-cscope-layout")
-     
-
-;(setq ecb-history-make-buckets 'never)
+(set-key-for-ecb-layout (kbd "C-c . 1") "my-cscope-layout")
+(set-key-for-ecb-layout (kbd "C-c . 2") "left10")
+(set-key-for-ecb-layout (kbd "C-c . 3") "left-dir-plus-speedbar")
 
 ;; --------------------  ecb --------------------
-
 
 (provide 'my-ecb-settings)

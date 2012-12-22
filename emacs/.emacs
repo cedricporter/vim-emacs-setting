@@ -41,7 +41,6 @@
 (require 'my-eshell-settings)
 
 (require 'my-ecb-settings)
-(message "After load ecb")
 
 (require 'my-org-mode-settings)
 

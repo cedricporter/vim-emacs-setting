@@ -2,12 +2,12 @@
 (global-set-key [f4] 'eshell)
 (global-set-key [S-f4] 'term)
 
-(setq ansi-term-color-vector
-      [unspecified "black" "tomato" "PaleGreen2" "gold1"
-		   "DeepSkyBlue1" "MediumOrchid1" "cyan" "white"])
+;; (setq ansi-term-color-vector
+;;       [ "black" "tomato" "PaleGreen2" "gold1"
+;; 		   "DeepSkyBlue1" "MediumOrchid1" "cyan" "white"])
 
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/emacs-bash-completion")
 ;; (require 'bash-completion)
