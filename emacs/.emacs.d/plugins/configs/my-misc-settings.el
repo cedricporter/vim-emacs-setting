@@ -378,14 +378,8 @@ occurence of CHAR."
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 ;; -------------------- zap up to char --------------------
 
+;; ==================== kill-emacs ====================
+(global-set-key (kbd "C-x C-S-c") 'kill-emacs)
+;; -------------------- kill-emacs --------------------
+
 (provide 'my-misc-settings)
-
-
-
-
-
-
-
-
-
-
