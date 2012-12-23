@@ -147,7 +147,7 @@
 ;  |            |           |                 |                        |
 ;  +------------+-----------+                 +------------+-----------+
 
-(defun change-split-type-3 () 
+(defun change-split-type-3 (&optional arg) 
   "Change 3 window style from horizontal to vertical and vice-versa"
   (interactive) 
 
@@ -183,7 +183,66 @@
 
 	  )))) 
 
-(global-set-key (kbd "C-x 4 c") (quote change-split-type-3)) 
+
+;; (defun change-split-type-2 ()
+;;   "change between horizonal and vertical"
+;;   (interactive)
+;;   (if (= 2 (length (window-list)))
+;;       (let ((next-buffer (window-buffer (next-window))))
+;;         (delete-other-windows)
+;;         (split-window-right)
+;;         (other-window 0)
+;;         (set-window-buffer (next-window) next-buffer)
+;;         (other-window 0)
+;;         )
+;;     )
+;;   )
+
+;; ==================== change-split-type ====================
+(defun change-split-type (split-fn &optional arg)
+  "Change 3 window style from horizontal to vertical and vice-versa"
+  (let ((bufList (mapcar 'window-buffer (window-list))))
+    (select-window (get-largest-window))
+    (funcall split-fn arg)
+    (mapcar* 'set-window-buffer (window-list) bufList)))
+;; -------------------- change-split-type --------------------
+
+
+;  +----------------------+                +---------- +----------+
+;  |                      |          \     |           |          |
+;  |                      |  +-------+\    |           |          |
+;  +----------------------+  +-------+/    |           |          |
+;  |                      |          /     |           |          |
+;  |                      |                |           |          |
+;  +----------------------+                +---------- +----------+
+;
+;  +--------- +-----------+                +----------------------+
+;  |          |           |          \     |                      |
+;  |          |           |  +-------+\    |                      |
+;  |          |           |  +-------+/    +----------------------+
+;  |          |           |          /     |                      |
+;  |          |           |                |                      |
+;  +--------- +-----------+                +----------------------+
+
+(defun change-split-type-2 (&optional arg)
+  "Changes splitting from vertical to horizontal and vice-versa"
+  (interactive "P")
+  (let ((split-type (lambda (&optional arg)
+                      (delete-other-windows-internal)
+                      (if arg (split-window-vertically)
+                        (split-window-horizontally)))))
+    (change-split-type split-type arg)))
+
+(defun change-split-type-auto (&optional arg)
+  "Changes splitting auto"
+  (interactive "P")
+  (let ((window-list-length (length (window-list))))
+    (message "Length %s" window-list-length)
+    (cond ((= window-list-length 2) (change-split-type-2 arg))
+          ((= window-list-length 3) (change-split-type-3 arg)))
+    ))
+
+(global-set-key (kbd "C-x 4 c") 'change-split-type-auto)
 
 
 ;;==================== buffer =====================
