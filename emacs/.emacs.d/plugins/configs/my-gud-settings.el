@@ -18,6 +18,13 @@
 ;; (add-hook 'gdb-mode-hook '(lambda ()
 ;;   			    )) 
 
+;; (defadvice gdb-setup-windows (around setup-more-gdb-windows activate)
+;;   ad-do-it
+;;   (split-window-horizontally)
+;;   (other-window 1)
+;;   (gdb-set-window-buffer
+;;    (gdb-get-buffer-create 'gdb-assembler-buffer)))
+
 
 ;; -------------------- gud --------------------
 

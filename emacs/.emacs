@@ -26,6 +26,8 @@
 
 (require 'my-python-settings)
 
+(require 'my-ruby-mode-settings)
+
 ;(require 'my-lisp-settings)
 
 (require 'my-emacs-lisp-settings)
@@ -54,6 +56,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ecb-analyse-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
+ '(ecb-default-highlight-face ((t (:background "dark magenta"))))
+ '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
+ '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
  '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
  '(hl-line ((t (:background "orange4"))))

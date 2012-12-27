@@ -237,7 +237,6 @@
   "Changes splitting auto"
   (interactive "P")
   (let ((window-list-length (length (window-list))))
-    (message "Length %s" window-list-length)
     (cond ((= window-list-length 2) (change-split-type-2 arg))
           ((= window-list-length 3) (change-split-type-3 arg)))
     ))

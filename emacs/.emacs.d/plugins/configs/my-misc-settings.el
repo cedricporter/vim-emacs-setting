@@ -382,4 +382,43 @@ occurence of CHAR."
 (global-set-key (kbd "C-x C-S-c") 'kill-emacs)
 ;; -------------------- kill-emacs --------------------
 
+;; ==================== bookmark ====================
+(setq bookmark-save-flag 1)
+;; -------------------- bookmark --------------------
+
+;; ==================== jump to next/previous buffer ====================
+(global-set-key (kbd "C-S-j") 'previous-buffer)
+(global-set-key (kbd "C-S-k") 'next-buffer)
+;; -------------------- jump to next/previous buffer --------------------
+
+
+;; ==================== yaml ====================
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+;; -------------------- yaml --------------------
+
+
+;; ==================== markdown-mode ====================
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+;; -------------------- markdown-mode --------------------
+
+
+;; ==================== octopress ====================
+(require 'octopress)
+(setq octopress-workdir (expand-file-name "~/octopress"))
+(global-set-key (kbd "C-c o n") 'octopress-new-post)
+(global-set-key (kbd "C-c o p") 'octopress-new-page)
+
+;; -------------------- octopress --------------------
+
+
+;; ==================== scss-mode ====================
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+;; -------------------- scss-mode --------------------
+
+
 (provide 'my-misc-settings)

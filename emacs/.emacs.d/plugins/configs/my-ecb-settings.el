@@ -13,11 +13,11 @@
 
 (ecb-layout-define "my-cscope-layout" left nil
                    (ecb-set-methods-buffer)
-                   (ecb-split-ver 0.5 t)
+                   (ecb-split-ver 0.65 t)
                    (other-window 1)
-                   (ecb-set-sources-buffer) ; (ecb-set-history-buffer)
-                   (ecb-split-ver 0.25 t)
-                   (other-window 1)
+                   ;(ecb-set-sources-buffer) ; (ecb-set-history-buffer)
+                   ;(ecb-split-ver 0.25 t)
+                   ;(other-window 1)
                    (ecb-set-cscope-buffer))
 
 (defecb-window-dedicator-to-ecb-buffer ecb-set-cscope-buffer

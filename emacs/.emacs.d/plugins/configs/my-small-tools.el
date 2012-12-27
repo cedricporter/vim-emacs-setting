@@ -214,6 +214,17 @@
 ;; ;; -------------------- o-blog --------------------
 
 
+;; ==================== org2blog ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/org2blog")
+(require 'org2blog-autoloads)
+
+(setq org2blog/wp-blog-alist
+      '(("EverET.org"
+         :url "http://EverET.org/xmlrpc.php"
+         :username "cedricporter"
+         :default-title "无题")))
+
+;; -------------------- org2blog --------------------
 
 
 

@@ -7,5 +7,8 @@ Font=Monaco,10,-1,5,50,0,0,0,0,0
 Name=Shell
 Parent=FALLBACK/
 
+[Scrolling]
+HistoryMode=2
+
 [Terminal Features]
 BidiRenderingEnabled=true

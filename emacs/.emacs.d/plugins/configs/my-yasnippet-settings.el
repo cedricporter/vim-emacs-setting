@@ -3,6 +3,9 @@
 (require 'yasnippet)
 (yas/global-mode 1)
 
+(add-hook 'eshell-mode-hook '(lambda ()
+			       (yas-minor-mode -1)))
+
 ;; automatic reload after snippets changed
 (defun reload-yasnippets-on-save-snippets ()
   (when (string-match "/snippets/" buffer-file-name)

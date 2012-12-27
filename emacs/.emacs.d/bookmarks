@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("main"
+ (filename . "~/projects/nginx-1.2.5/src/core/nginx.c")
+ (front-context-string . "main(int argc, c")
+ (rear-context-string . "\n\nint ngx_cdecl\n")
+ (position . 5397))
+("nginx.c"
+ (filename . "~/projects/nginx-1.2.5/src/core/nginx.c")
+ (front-context-string . "\n\n    if (ngx_sh")
+ (rear-context-string . " return 1;\n    }")
+ (position . 5715))
+)
