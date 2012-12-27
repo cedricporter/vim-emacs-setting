@@ -14,6 +14,8 @@
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 
+(require 'my-functions)
+
 (require 'my-misc-settings)
 
 (require 'my-coding-style)
@@ -31,6 +33,8 @@
 ;(require 'my-lisp-settings)
 
 (require 'my-emacs-lisp-settings)
+
+(require 'my-octopress-settings)
 
 (require 'my-cedet-settings)
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")

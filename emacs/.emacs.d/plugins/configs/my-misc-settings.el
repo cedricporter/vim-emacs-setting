@@ -399,20 +399,13 @@ occurence of CHAR."
 
 
 ;; ==================== markdown-mode ====================
+(require 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 ;; -------------------- markdown-mode --------------------
 
-
-;; ==================== octopress ====================
-(require 'octopress)
-(setq octopress-workdir (expand-file-name "~/octopress"))
-(global-set-key (kbd "C-c o n") 'octopress-new-post)
-(global-set-key (kbd "C-c o p") 'octopress-new-page)
-
-;; -------------------- octopress --------------------
 
 
 ;; ==================== scss-mode ====================
