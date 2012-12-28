@@ -1,0 +1,4 @@
+#!/bin/sh
+cp .bashrc ~/vim-emacs-setting/
+cp .profile ~/vim-emacs-setting/
+cp -rf ~/.kde/share/apps/konsole ~/vim-emacs-setting/
