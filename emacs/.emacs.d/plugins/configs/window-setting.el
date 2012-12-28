@@ -14,8 +14,8 @@
 (global-set-key (kbd "M-3") 'split-window-right)
 (global-set-key (kbd "M-0") 'delete-window)
 
-(global-set-key (kbd "M-5") 'winner-undo)
-(global-set-key (kbd "M-6") 'winner-redo)
+(global-set-key (kbd "M-4") 'winner-undo)
+(global-set-key (kbd "M-5") 'winner-redo)
 
 
 ;;use meta and direction key to go to the window
