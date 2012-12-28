@@ -373,7 +373,7 @@ occurence of CHAR."
 
 
 ;; ==================== backup files ====================
-(setq backup-directory-alist '(("." . "~/.emacs.backups")))
+(setq backup-directory-alist '(("." . "~/.emacs_backups")))
 ;; -------------------- backup files --------------------
 
 
