@@ -4,9 +4,59 @@
 ;; This is about auto setting window style. 
 ;; You can read the diagram.
 
-;;==================== window ====================
 
 (eval-when-compile (require 'cl))
+
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-0") 'delete-window)
+
+
+;;use meta and direction key to go to the window
+(windmove-default-keybindings 'meta)
+
+
+;; 实现全屏效果，快捷键为f11
+(global-set-key [(control f11)] 'my-fullscreen) 
+(defun my-fullscreen ()
+  (interactive)
+  (x-send-client-message
+   nil 0 nil "_NET_WM_STATE" 32
+   '(2 "_NET_WM_STATE_FULLSCREEN" 0))
+  )
+;; 最大化
+(defun my-maximized ()
+  (interactive)
+  (x-send-client-message
+   nil 0 nil "_NET_WM_STATE" 32
+   '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+  (x-send-client-message
+   nil 0 nil "_NET_WM_STATE" 32
+   '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+  )
+;; 启动emacs时窗口最大化
+(when window-system
+  (my-maximized)) 
+
+
+;; ==================== Transposing Two Buffers ====================
+(defun transpose-buffers (arg)
+  "Transpose the buffers shown in two windows."
+  (interactive "p")
+  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
+    (while (/= arg 0)
+      (let ((this-win (window-buffer))
+            (next-win (window-buffer (funcall selector))))
+        (set-window-buffer (selected-window) next-win)
+        (set-window-buffer (funcall selector) this-win)
+        (select-window (funcall selector)))
+      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
+(global-set-key (kbd "C-x 4 t") 'transpose-buffers)
+;; -------------------- Transposing Two Buffers --------------------
+
+
+;;==================== window ====================
 
 (winner-mode 1)
 

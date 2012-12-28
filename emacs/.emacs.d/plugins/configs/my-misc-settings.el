@@ -44,28 +44,6 @@
   (frame-setting))
 
 
-;; 实现全屏效果，快捷键为f11
-(global-set-key [(control f11)] 'my-fullscreen) 
-(defun my-fullscreen ()
-  (interactive)
-  (x-send-client-message
-   nil 0 nil "_NET_WM_STATE" 32
-   '(2 "_NET_WM_STATE_FULLSCREEN" 0))
-  )
-;; 最大化
-(defun my-maximized ()
-  (interactive)
-  (x-send-client-message
-   nil 0 nil "_NET_WM_STATE" 32
-   '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  (x-send-client-message
-   nil 0 nil "_NET_WM_STATE" 32
-   '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
-  )
-;; 启动emacs时窗口最大化
-(when window-system
-  (my-maximized)) 
-
 
 (setq-default fill-column 81)
 (setq default-fill-column 80)
@@ -214,9 +192,6 @@
 ;; 语法高亮
 (global-font-lock-mode t)
 
-;;use meta and direction key to go to the window
-(windmove-default-keybindings 'meta)
-
 
 ;;禁用启动信息
 ;(setq inhibit-startup-message t) 
@@ -356,22 +331,6 @@ occurence of CHAR."
 ;; -------------------- 在最近两个buffer间切换 --------------------
 
 
-;; ==================== Transposing Two Buffers ====================
-(defun transpose-buffers (arg)
-  "Transpose the buffers shown in two windows."
-  (interactive "p")
-  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
-    (while (/= arg 0)
-      (let ((this-win (window-buffer))
-            (next-win (window-buffer (funcall selector))))
-        (set-window-buffer (selected-window) next-win)
-        (set-window-buffer (funcall selector) this-win)
-        (select-window (funcall selector)))
-      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
-(global-set-key (kbd "C-x 4 t") 'transpose-buffers)
-;; -------------------- Transposing Two Buffers --------------------
-
-
 ;; ==================== zap up to char ====================
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR.")
@@ -407,11 +366,16 @@ occurence of CHAR."
 ;; -------------------- markdown-mode --------------------
 
 
-
 ;; ==================== scss-mode ====================
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 ;; -------------------- scss-mode --------------------
+
+
+;; ==================== backup files ====================
+(setq backup-directory-alist '(("." . "~/.emacs.backups")))
+;; -------------------- backup files --------------------
+
 
 
 (provide 'my-misc-settings)
