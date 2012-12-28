@@ -227,7 +227,12 @@
 ;; -------------------- org2blog --------------------
 
 
-
+;; ==================== find-func in emacs lisp ====================
+(require 'find-func)
+(define-key emacs-lisp-mode-map (kbd "C-c g") 'find-function)
+(define-key emacs-lisp-mode-map (kbd "C-c v") 'find-variable)
+(define-key emacs-lisp-mode-map (kbd "C-c d") 'describe-function)
+;; -------------------- find-func in emacs lisp --------------------
 
 
 

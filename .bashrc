@@ -88,6 +88,7 @@ alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
 alias ra='ranger'
+alias i='info'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
