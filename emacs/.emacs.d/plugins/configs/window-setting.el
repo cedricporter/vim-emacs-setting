@@ -7,10 +7,15 @@
 
 (eval-when-compile (require 'cl))
 
+(winner-mode 1)
+
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-below)
 (global-set-key (kbd "M-3") 'split-window-right)
 (global-set-key (kbd "M-0") 'delete-window)
+
+(global-set-key (kbd "M-5") 'winner-undo)
+(global-set-key (kbd "M-6") 'winner-redo)
 
 
 ;;use meta and direction key to go to the window
@@ -58,7 +63,6 @@
 
 ;;==================== window ====================
 
-(winner-mode 1)
 
 ; +----------+-----------+
 ; |          |           |

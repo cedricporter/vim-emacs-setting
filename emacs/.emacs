@@ -67,6 +67,7 @@
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
  '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
  '(hl-line ((t (:background "orange4"))))
+ '(magit-item-highlight ((t (:inherit highlight :background "dark green"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
  '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
  '(moinmoin-code ((t (:foreground "purple"))))

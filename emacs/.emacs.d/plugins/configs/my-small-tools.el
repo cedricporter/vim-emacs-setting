@@ -194,10 +194,17 @@
 ;; -------------------- htmlize -----------------------------
 
 
-;; ==================== git emacs ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
-(require 'git-emacs)
-;; -------------------- git emacs --------------------
+;; ;; ==================== git emacs ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
+;; (require 'git-emacs)
+;; ;; -------------------- git emacs --------------------
+
+
+;; ==================== magit ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/magit-1.2.0")
+(require 'magit)
+(global-set-key (kbd "C-x g s") 'magit-status)
+;; -------------------- magit --------------------
 
 
 ;; ;;==================== w3m ====================
