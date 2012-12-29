@@ -23,8 +23,28 @@
 (add-hook 'c-mode-common-hook
           '(lambda ()
              (require 'xcscope)))
+
+(define-key c-mode-base-map (kbd "<f12>") 'cscope-find-global-definition-no-prompting)
+(define-key c-mode-base-map (kbd "S-<f12>") 'cscope-pop-mark)
+(define-key cscope-list-entry-keymap (kbd "S-<f12>") 'cscope-pop-mark)
+
 ;; -------------------- cscope --------------------
 
 
 
 (provide 'my-cscope-settings)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
