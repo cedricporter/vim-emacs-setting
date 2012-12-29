@@ -25,7 +25,9 @@
              (require 'xcscope)))
 
 (define-key c-mode-base-map (kbd "<f12>") 'cscope-find-global-definition-no-prompting)
+(define-key c-mode-base-map (kbd "<C-f12>") 'cscope-find-this-symbol)
 (define-key c-mode-base-map (kbd "S-<f12>") 'cscope-pop-mark)
+(define-key cscope-list-entry-keymap (kbd "<f12>") 'cscope-select-entry-other-window)
 (define-key cscope-list-entry-keymap (kbd "S-<f12>") 'cscope-pop-mark)
 
 ;; -------------------- cscope --------------------
