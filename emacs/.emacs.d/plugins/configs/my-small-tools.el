@@ -6,14 +6,27 @@
 ;; --------------------      End         --------------------
 
 
-;; ==================== recent-jump ====================
-;; set recent-jump
-(setq recent-jump-threshold 3)
-(setq recent-jump-ring-length 10)
-(global-set-key (kbd "C-o") 'recent-jump-jump-backward)
-(global-set-key (kbd "M-o") 'recent-jump-jump-forward)
+;; ==================== fast-jump-back ====================
+;(require 'fast-jump-back)
+;; -------------------- fast-jump-back --------------------
+
+
+;; ;; ==================== recent-jump ====================
+;; ;; set recent-jump
+;; (setq recent-jump-threshold 3)
+;; (setq recent-jump-ring-length 10)
+;; (global-set-key (kbd "C-o") 'recent-jump-jump-backward)
+;; (global-set-key (kbd "M-o") 'recent-jump-jump-forward)
+;; (require 'recent-jump)
+;; ;; -------------------- end of recent-jump --------------------
+
+;; ==================== ahei recent-jump ====================
+(setq rj-ring-length 10000)
 (require 'recent-jump)
-;; -------------------- end of recent-jump --------------------
+(global-set-key (kbd "C-o") 'recent-jump-backward)
+(global-set-key (kbd "M-o") 'recent-jump-forward)
+;; -------------------- ahei recent-jump --------------------
+
 
 
 ;; ==================== moinmoin-mode ====================
@@ -238,6 +251,7 @@
 ;; ==================== find-func in emacs lisp ====================
 (require 'find-func)
 (define-key emacs-lisp-mode-map (kbd "C-c g") 'find-function)
+(define-key emacs-lisp-mode-map (kbd "<f12>") 'find-function)
 (define-key emacs-lisp-mode-map (kbd "C-c v") 'find-variable)
 ;; -------------------- find-func in emacs lisp --------------------
 

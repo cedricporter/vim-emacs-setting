@@ -1,164 +1,145 @@
-;;; recent-jump.el --- jump back to where you start a big jump
+;; -*- Emacs-Lisp -*-
 
-;; Copyright (C) 2005  Free Software Foundation, Inc.
+;; Time-stamp: <2009-11-27 00:41:09 Friday by ahei>
 
-;; Author: ChunYe Wang ;;Keywords: tools
-;; Modified by Stupid ET <et@everet.org>
-
-;; This file is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 2, or (at your option)
-;; any later version.
-
-;; This file is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-;; Boston, MA 02111-1307, USA.
-
-;;; Commentary:
-;; 
-;; sometimes, we start a big jump, e.g. go to the beginning of buffer, search,
-;; page down etc, it is handy that you can go back to where you start. For
-;; example, when we writing program source code, we ofter search for some
-;; reference and go back to where you start and continue writing. But how can we
-;; define "Big Jump". I can not find a proper hook for the big jump, so at last
-;; I choose the pre-command-hook. Now what my defination for "Big Jump" is :
-;; 
-;; 1. you issued some special command, it can be defined by
-;; recent-jump-hook-commands 
-;;
-;; 2. you jumped really much. that is you move more than `recent-jump-threshold'
-;; lines.
-;;
-;; C-o is binded for open-lines, I not used to very often, and VI bind C-o for
-;; go to old point, so it is a good idea to bind "C-o" for jumping back where
-;; you start. and "M-o" is suitable for jump forward, i.e. undo the jumping back.
-;;
-;; sample configuration
-;; (setq recent-jump-threshold 4)
-;; (setq recent-jump-ring-length 10)
-;; (global-set-key (kbd "C-o") 'recent-jump-jump-backward)
-;; (global-set-key (kbd "M-o") 'recent-jump-jump-forward)
+;; 使用
+;; (setq rj-ring-length 10000)
 ;; (require 'recent-jump)
+;; (global-set-key (kbd "M-,") 'recent-jump-backward)
+;; (global-set-key (kbd "M-.") 'recent-jump-forward)
 
-;;; Code:
+(require 'desktop)
 
-(defvar recent-jump-threshold 5
-  "how to define a big jump.")
-(defvar recent-jump-ring-length 10)
-(defvar recent-jump-ring (make-ring recent-jump-ring-length))
+(defvar rj-line-threshold 5 "*The line threshold of a big-jump")
+(defvar rj-column-threshold 20 "*The column threshold of a big-jump")
+(defvar rj-ring-length 10000 "*The length of `rj-ring'")
 
-(defvar recent-jump-hook-commands
-  '(
-    backward-paragraph
-    backward-sexp
-    backward-word
-    beginning-of-buffer
-    beginning-of-defun
-    end-of-buffer
-    end-of-defun
-    find-tag
-    forward-paragraph
-    forward-sexp
-    forward-word
-    ido-switch-buffer
-    imenu
-    isearch-backward
-    isearch-forward
-    mark-whole-buffer
-    next-line 
-    pager-page-down
-    pager-page-up
-    previous-line
-    rope-goto-definition
-    scroll-down
-    scroll-up
-    search-backward
-    search-backward-regexp
-    search-forward
-    search-forward-regexp
-    semantic-ia-fast-jump
-    switch-to-buffer
-    ))
-    
-;;this variable is set at pre-command-hook, and remember where are you before a
-;;command, and after the command executed, check this variable, weather it is a
-;;big jump, if so, remember where you start the jump in the recent-jump-ring.
-(setq recent-jump-where-are-you nil)
-(defun recent-jump-pre-command()
-  (if (memq this-command recent-jump-hook-commands)
-      (progn (setq recent-jump-where-are-you (make-marker))
-             (set-marker recent-jump-where-are-you (point)))
-    (if (or (active-minibuffer-window)
-            isearch-mode)
-        nil; 
-      (setq recent-jump-where-are-you nil))))
-(defun recent-jump-insert-point()
-  (if (and (not (ring-empty-p recent-jump-ring))
-           (equal recent-jump-where-are-you (ring-ref recent-jump-ring 0)))
-      nil ; don't insert the point if it is already exists.
-    (ring-insert recent-jump-ring recent-jump-where-are-you)))
-(defun recent-jump-post-command()
-  (when recent-jump-where-are-you
-    ;; only remember jump in a the same buffer.
-    (let* ((distance (if (eq (marker-buffer recent-jump-where-are-you)
-                             (current-buffer))
-                         (count-lines (point) recent-jump-where-are-you)
-                       (1+ recent-jump-threshold))))
-      (if (> distance recent-jump-threshold) 
-          (recent-jump-insert-point)))))
+(defvar rj-ring (make-ring rj-ring-length) "存放光标所经过的位置的环")
+(defvar rj-index 0 "`recent-jump-backward'的时候当前位置在`rj-ring'中的序号")
+(defvar rj-position-before nil "以前光标所在的位置")
+(defvar rj-position-pre-command nil "命令执行前光标所在的位置")
+(defvar rj-command-ignore
+  '(recent-jump-backward
+    recent-jump-forward
+    recent-jump-small-backward
+    recent-jump-small-forward))
 
-(add-hook 'pre-command-hook 'recent-jump-pre-command)
-(add-hook 'post-command-hook 'recent-jump-post-command)
+(defvar rj-mode-line-format " RJ" "*Mode line format of `recent-jump-mode'.")
 
-;;(remove-hook 'pre-command-hook 'recent-jump-pre-command)
-;;(remove-hook 'post-command-hook 'recent-jump-post-command)
+(defun column-number-at-pos (&optional pos)
+  "得到位置POS的列号"
+  (save-excursion
+    (if pos (goto-char pos))
+    (current-column)))
 
-(defun recent-jump-jump-backward (arg)
+(defun rj-insert-point (ring position)
+  "将位置POSITION插入ring RING中去."
+    (when (or (ring-empty-p ring)
+              (let ((latest (ring-ref ring 0)))
+                (not (and (equal (nth 0 position) (nth 0 latest)) (equal (nth 2 position) (nth 2 latest))))))
+      (ring-insert ring position)))
+
+(defun rj-insert-big-jump-point (ring line column position-before position-after &optional position)
+  "位置POSITION-BEFORE和POSITION-AFTER是否是一个big-jump.
+如果是的话返回t, 将位置POSITION插入到ring RING中, 否则返回nil"
+  (let* (is-big-jump
+         (buffer-before (nth 1 position-before))
+         (point-before (nth 2 position-before))
+         (point-after (nth 2 position-after)))
+    (if (and (buffer-live-p buffer-before) (equal buffer-before (nth 1 position-after)))
+        (setq is-big-jump
+              (or
+               (> (count-lines (min point-before (point-max)) (min point-after (point-max))) line)
+               (> (abs (- (column-number-at-pos point-before) (column-number-at-pos point-after))) column)))
+      (setq is-big-jump t))
+    (when is-big-jump
+      (rj-insert-point ring (if position position position-after))
+      t)))
+
+(defun rj-pre-command ()
+  "每个命令执行前执行这个函数"
+  (unless (or (active-minibuffer-window) isearch-mode)
+    (unless (memq this-command rj-command-ignore)
+      (let ((position (list (buffer-file-name) (current-buffer) (point))))
+        (unless rj-position-before
+          (setq rj-position-before position))
+        (setq rj-position-pre-command position))
+      (if (memq last-command '(recent-jump-backward recent-jump-forward))
+          (progn
+            (let ((index (1- rj-index)) (list nil))
+              (while (> index 0)
+                (push (ring-ref rj-ring index) list)
+                (setq index (1- index)))
+              (while list
+                (ring-insert rj-ring (car list))
+                (pop list))))))))
+
+(defun rj-post-command ()
+  "每个命令执行后执行这个函数"
+  (let ((position (list (buffer-file-name) (current-buffer) (point))))
+    (if (or (and rj-position-pre-command
+                 (rj-insert-big-jump-point rj-ring rj-line-threshold rj-column-threshold rj-position-pre-command position rj-position-pre-command))
+            (and rj-position-before
+                 (rj-insert-big-jump-point rj-ring rj-line-threshold rj-column-threshold rj-position-before position rj-position-before)))
+        (setq rj-position-before nil)))
+  (setq rj-position-pre-command nil))
+
+(defun recent-jump-backward (arg)
+  "跳到命令执行前的位置"
   (interactive "p")
-  (setq recent-jump-back-internal-counter 
-        (if (eq last-command 'recent-jump-jump-backward)
-            (+ recent-jump-back-internal-counter arg)
-           (setq recent-jump-where-are-you (make-marker))
-          (set-marker recent-jump-where-are-you (point))
-          (recent-jump-insert-point)
-          1))
-  (if (ring-empty-p recent-jump-ring)
-      (error "jump ring is empty.")
-    (let ((m (ring-ref recent-jump-ring recent-jump-back-internal-counter)))
-      (switch-to-buffer (marker-buffer m))
-      (goto-char m))))
-(defun recent-jump-jump-forward (arg)
+  (let ((index rj-index)
+        (last-is-rj (memq last-command '(recent-jump-backward recent-jump-forward))))
+    (if (ring-empty-p rj-ring)
+        (message (if (> arg 0) "Can't backward, ring is empty" "Can't forward, ring is empty"))
+      (if last-is-rj
+          (setq index (+ index arg))
+        (setq index arg)
+        (let ((position (list (buffer-file-name) (current-buffer) (point))))
+          (setq rj-position-before nil)
+          (unless (rj-insert-big-jump-point rj-ring rj-line-threshold rj-column-threshold (ring-ref rj-ring 0) position)
+            (ring-remove rj-ring 0)
+            (ring-insert rj-ring position))))
+      (if (>= index (ring-length rj-ring))
+          (message "Can't backward, reach bottom of ring")
+        (if (<= index -1)
+            (message "Can't forward, reach top of ring")
+          (let* ((position (ring-ref rj-ring index))
+                (file (nth 0 position))
+                (buffer (nth 1 position)))
+            (if (not (or file (buffer-live-p buffer)))
+                (progn
+                  (ring-remove rj-ring index)
+                  (message "要跳转的位置所在的buffer为无文件关联buffer, 但该buffer已被删除"))
+              (if file
+                  (find-file (nth 0 position))
+                (assert (buffer-live-p buffer))
+                (switch-to-buffer (nth 1 position)))
+              (goto-char (nth 2 position))
+              (setq rj-index index))))))))
+
+(defun recent-jump-forward (arg)
+  "重新跳到刚才的位置"
   (interactive "p")
-  (setq this-command 'recent-jump-jump-backward)
-  (recent-jump-jump-backward(* -1 arg)))
-(defun recent-jump--describe-key (key)
-  "Display documentation of the function invoked by KEY.  KEY is a string."
-  (interactive "kDescribe key: ")
-  (let ((modifiers (event-modifiers (aref key 0)))
-        window position)
-    ;; For a mouse button event, go to the button it applies to
-    ;; to get the right key bindings.  And go to the right place
-    ;; in case the keymap depends on where you clicked.
-    (if (or (memq 'click modifiers) (memq 'down modifiers)
-            (memq 'drag modifiers))
-        (setq window (posn-window (event-start (aref key 0)))
-              position (posn-point (event-start (aref key 0)))))
-    (if (windowp window)
-        (progn
-          (set-buffer (window-buffer window))
-          (goto-char position)))
-    (let ((defn (or (string-key-binding key) (key-binding key))))
-      (if (or (null defn) (integerp defn))
-          (message "%s is undefined" (key-description key))
-        (insert (format "%S" defn))
-        (lisp-indent-line)
-        (insert "\n")))))
+  (recent-jump-backward (* -1 arg)))
+
+(defun rj-clean ()
+  "清除相关变量"
+  (interactive)
+  (setq rj-index 0)
+  (setq rj-position-pre-command nil)
+  (setq rj-position-before nil)
+  (while (not (ring-empty-p rj-ring))
+    (ring-remove rj-ring)))
+
+(define-minor-mode recent-jump-mode
+  "Toggle recent-jump mode."
+  :lighter rj-mode-line-format
+  :global t
+  (let ((hook-action (if recent-jump-mode 'add-hook 'remove-hook)))
+    (funcall hook-action 'pre-command-hook 'rj-pre-command)
+    (funcall hook-action 'post-command-hook 'rj-post-command)))
+
+(dolist (var (list 'rj-ring 'rj-index 'rj-position-before))
+  (add-to-list 'desktop-globals-to-save var))
 
 (provide 'recent-jump)
-;;; recent-jump.el ends here
