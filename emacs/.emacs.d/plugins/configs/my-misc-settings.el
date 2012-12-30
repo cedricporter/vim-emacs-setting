@@ -307,14 +307,14 @@ occurence of CHAR."
       (progn                            ; forward
         (search-forward (string char) nil nil n)
         (backward-char)
-        (while (equal (read-char)
+        (while (equal (read-key)
                            char)
           (forward-char)
           (search-forward (string char) nil nil n)
           (backward-char)))
     (progn                              ; backward
       (search-backward (string char) nil nil )
-      (while (equal (read-char)
+      (while (equal (read-key)
                          char)
         (search-backward (string char) nil nil ))))
   (setq unread-command-events (list last-input-event)))
