@@ -22,13 +22,13 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/cscope-15.8a/contrib/xcscope/")
 (add-hook 'c-mode-common-hook
           '(lambda ()
-             (require 'xcscope)))
-
-(define-key c-mode-base-map (kbd "<f12>") 'cscope-find-global-definition-no-prompting)
-(define-key c-mode-base-map (kbd "<C-f12>") 'cscope-find-this-symbol)
-(define-key c-mode-base-map (kbd "S-<f12>") 'cscope-pop-mark)
-(define-key cscope-list-entry-keymap (kbd "<f12>") 'cscope-select-entry-other-window)
-(define-key cscope-list-entry-keymap (kbd "S-<f12>") 'cscope-pop-mark)
+             (require 'xcscope)
+             (define-key c-mode-base-map (kbd "<f12>") 'cscope-find-global-definition-no-prompting)
+             (define-key c-mode-base-map (kbd "<C-f12>") 'cscope-find-this-symbol)
+             (define-key c-mode-base-map (kbd "S-<f12>") 'cscope-pop-mark)
+             (define-key cscope-list-entry-keymap (kbd "<f12>") 'cscope-select-entry-other-window)
+             (define-key cscope-list-entry-keymap (kbd "S-<f12>") 'cscope-pop-mark)
+             ))
 
 ;; -------------------- cscope --------------------
 
