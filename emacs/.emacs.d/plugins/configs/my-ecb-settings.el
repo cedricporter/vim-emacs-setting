@@ -35,6 +35,8 @@
 (set-key-for-ecb-layout (kbd "C-c . 2") "left10")
 (set-key-for-ecb-layout (kbd "C-c . 3") "left-dir-plus-speedbar")
 
+(setq ecb-layout-name "my-cscope-layout")
+
 ;; --------------------  ecb --------------------
 
 (provide 'my-ecb-settings)

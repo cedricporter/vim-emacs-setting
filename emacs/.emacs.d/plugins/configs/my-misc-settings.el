@@ -295,10 +295,9 @@
 
 
 ;; ==================== goto char ====================
-;; go-to-char 非常感谢 Oliver Scholz 提供这个函数有了这段代码之后，当你按 C-t x
-;; (x 是任意一个字符) 时，光 标就会到下一个 x 处。再次按 x，光标就到下一个 x。
-;; 比如 C-t w w w w ..., C-t b b b b b b ... 我改造了一下，按C-u C-t则是相反方
-;; 向。
+;; based on:  Oliver Scholz
+;; 当你按 C-t x (x 是任意一个字符) 时，光 标就会到下一个 x 处。再次按 x，光标就到下一个 x。
+;; 比如 C-t w w w w ..., C-t b b b b b b ... 我改造了一下，按C-u C-t则是相反方向。
 (defun wy-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
 Typing `wy-go-to-char-key' again will move forwad to the next Nth
@@ -308,14 +307,14 @@ occurence of CHAR."
       (progn                            ; forward
         (search-forward (string char) nil nil n)
         (backward-char)
-        (while (char-equal (read-char)
+        (while (equal (read-char)
                            char)
           (forward-char)
           (search-forward (string char) nil nil n)
           (backward-char)))
     (progn                              ; backward
       (search-backward (string char) nil nil )
-      (while (char-equal (read-char)
+      (while (equal (read-char)
                          char)
         (search-backward (string char) nil nil ))))
   (setq unread-command-events (list last-input-event)))
