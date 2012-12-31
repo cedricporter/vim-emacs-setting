@@ -3,7 +3,7 @@
 ;; website:     http://EverET.org
 ;; This is about auto setting window style. 
 ;; You can read the diagram.
-
+;; Time-stamp: <2012-12-31 16:38:07 by Hua Liang>
 
 (eval-when-compile (require 'cl))
 

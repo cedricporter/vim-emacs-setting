@@ -1,3 +1,7 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:37:57 by Hua Liang>
+
+
 ;;==================== yasnippt ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)

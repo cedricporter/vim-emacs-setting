@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:32:58 by Hua Liang>
+
 ;;==================== auto complete ====================
 ;; auto complete with clang
 (add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")

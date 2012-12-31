@@ -1,7 +1,18 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:39:37 by Hua Liang>
+
+
+
+;; ==================== time-stamp ====================
+(add-hook 'write-file-hooks 'time-stamp)
+(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S by %U") 
+;; -------------------- time-stamp --------------------
+
+
 (defun open-setting-file()
   (interactive)
   (find-file "~/.emacs"))
-
+(global-set-key (kbd "C-c , e") 'open-setting-file)
 
 ;;======================    time setting        =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -336,13 +347,16 @@ occurence of CHAR."
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 ;; -------------------- zap up to char --------------------
 
+
 ;; ==================== kill-emacs ====================
 (global-set-key (kbd "C-x C-S-c") 'kill-emacs)
 ;; -------------------- kill-emacs --------------------
 
+
 ;; ==================== bookmark ====================
 (setq bookmark-save-flag 1)
 ;; -------------------- bookmark --------------------
+
 
 ;; ==================== jump to next/previous buffer ====================
 (global-set-key (kbd "C-S-j") 'previous-buffer)

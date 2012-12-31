@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:33:12 by Hua Liang>
+
 ;; ==================== bzr cedet ====================
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 (require 'cedet)                        ; can't use bzr at 24.3 now

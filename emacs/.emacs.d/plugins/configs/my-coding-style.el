@@ -1,3 +1,5 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:33:23 by Hua Liang>
 
 ;;自定义的代码风格
 (defconst my-c-style

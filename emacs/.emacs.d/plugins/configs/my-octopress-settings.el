@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:37:24 by Hua Liang>
+
 ;; ==================== octopress ====================
 (require 'octopress)
 (setq octopress-workdir (expand-file-name "~/octopress"))

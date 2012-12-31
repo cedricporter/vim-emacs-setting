@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:37:14 by Hua Liang>
+
 ;; ==================== lisp ====================
 (require 'slime)
 (slime-setup '(slime-fancy))

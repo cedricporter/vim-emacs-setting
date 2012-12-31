@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:31:44 by Hua Liang>
+
 ;; ==================== ecb ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
 (require 'ecb)

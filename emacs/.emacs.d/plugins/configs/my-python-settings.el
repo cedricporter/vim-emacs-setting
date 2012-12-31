@@ -1,3 +1,7 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:37:40 by Hua Liang>
+
+
 ;;==================== python ====================
 (require 'python)
 

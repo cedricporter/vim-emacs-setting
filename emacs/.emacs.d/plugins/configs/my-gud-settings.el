@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:37:03 by Hua Liang>
+
 ;; ==================== gud ====================
 
 (defun set-my-gud-key-binding ()

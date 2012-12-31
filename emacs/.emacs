@@ -1,6 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
+;; Time-stamp: <2012-12-31 16:32:13 by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")

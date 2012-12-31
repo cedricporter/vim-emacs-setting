@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:32:42 by Hua Liang>
+
 ;;==================== doxymacs ====================
 ;;doxymacs
 ;;添加doxymacs所在的路径

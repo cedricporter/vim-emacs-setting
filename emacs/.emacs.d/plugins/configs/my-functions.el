@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:36:51 by Hua Liang>
+
 
 ;; ==================== My Functions ====================
 

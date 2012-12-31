@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:36:43 by Hua Liang>
+
 ;; ==================== flymake ====================
 ;; flymake
 (add-hook 'find-file-hook 'flymake-find-file-hook)
@@ -15,8 +18,7 @@
 
 (global-set-key "\C-c\C-ep" 'flymake-goto-prev-error)
 (global-set-key "\C-c\C-en" 'flymake-goto-next-error)
-;;  
--------------------- flymake --------------------
+;; -------------------- flymake --------------------
 
 
 

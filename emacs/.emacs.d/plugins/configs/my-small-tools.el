@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:31:21 by Hua Liang>
+
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
 (require 'linum)

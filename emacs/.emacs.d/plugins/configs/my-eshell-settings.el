@@ -1,3 +1,6 @@
+;; author: Hua Liang [Stupid ET]
+;; Time-stamp: <2012-12-31 16:36:02 by Hua Liang>
+
 ;; ==================== eshell ====================
 (setq eshell-cmpl-cycle-completions nil)
 
