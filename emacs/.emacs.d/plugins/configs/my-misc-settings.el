@@ -1,18 +1,21 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:39:37 by Hua Liang>
+;; Time-stamp: <2012-12-31 16:54:04 Mon by Hua Liang>
 
 
 
 ;; ==================== time-stamp ====================
 (add-hook 'write-file-hooks 'time-stamp)
-(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S by %U") 
+(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S %3a by %U") 
 ;; -------------------- time-stamp --------------------
 
 
+;; ==================== fast-open-dot-emacs ====================
 (defun open-setting-file()
   (interactive)
   (find-file "~/.emacs"))
 (global-set-key (kbd "C-c , e") 'open-setting-file)
+;; -------------------- fast-open-dot-emacs --------------------
+
 
 ;;======================    time setting        =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -20,6 +23,7 @@
 
 ;;时间使用24小时制
 (setq display-time-24hr-format t)
+(setq display-time-format "%02H:%02M:%02S %Y-%02m-%02d %3a")
 
 ;;时间显示包括日期和具体时间
 (setq display-time-day-and-date t)
@@ -72,9 +76,6 @@
 
 
 ;; ==================== Common Setting ====================
-
-
-;; Re-open read-only files as root automte
 
 
 

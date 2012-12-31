@@ -3,19 +3,11 @@
 ;; website:     http://EverET.org
 ;; This is about auto setting window style. 
 ;; You can read the diagram.
-;; Time-stamp: <2012-12-31 16:38:07 by Hua Liang>
+;; Time-stamp: <2012-12-31 16:53:15 Mon by Hua Liang>
 
 (eval-when-compile (require 'cl))
 
 (winner-mode 1)
-
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-2") 'split-window-below)
-(global-set-key (kbd "M-3") 'split-window-right)
-(global-set-key (kbd "M-0") 'delete-window)
-
-(global-set-key (kbd "M-4") 'winner-undo)
-(global-set-key (kbd "M-5") 'winner-redo)
 
 
 ;;use meta and direction key to go to the window
@@ -57,7 +49,6 @@
         (set-window-buffer (funcall selector) this-win)
         (select-window (funcall selector)))
       (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
-(global-set-key (kbd "C-x 4 t") 'transpose-buffers)
 ;; -------------------- Transposing Two Buffers --------------------
 
 
@@ -295,7 +286,6 @@
           ((= window-list-length 3) (change-split-type-3 arg)))
     ))
 
-(global-set-key (kbd "C-x 4 c") 'change-split-type-auto)
 
 
 ;;==================== buffer =====================
@@ -342,6 +332,26 @@
 
 (global-set-key (kbd "C-x 4 r")  (quote roll-v-3)) 
 ;;-------------------- window -------------------
+
+
+;; ==================== key bindings ====================
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-below)
+(global-set-key (kbd "M-3") 'split-window-right)
+(global-set-key (kbd "M-0") 'delete-window)
+
+(global-unset-key (kbd "C-x 1"))
+(global-unset-key (kbd "C-x 2"))
+(global-unset-key (kbd "C-x 3"))
+(global-unset-key (kbd "C-x 0"))
+
+(global-set-key (kbd "M-4") 'winner-undo)
+(global-set-key (kbd "M-5") 'winner-redo)
+
+(global-set-key (kbd "M-7") 'transpose-buffers)
+(global-set-key (kbd "M-8") 'change-split-type-auto)
+;; -------------------- key bindings --------------------
+
 
 (provide 'window-setting)
 
