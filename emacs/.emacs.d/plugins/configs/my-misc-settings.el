@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-01 22:40:18 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-02 01:00:21 Wednesday by Hua Liang>
 
 
 
@@ -32,7 +32,7 @@
 					;(setq display-time-use-mail-icon t)
 
 ;;时间的变化频率
-(setq display-time-interval 10)
+(setq display-time-interval 1)
 
 ;;显示时间，格式如下
 (display-time-mode 1)
@@ -394,8 +394,8 @@ occurence of CHAR."
 ;; ==================== emacs-chrome ====================
 (require 'edit-server)
 (edit-server-start)
-(add-hook 'edit-server-start-hook '(lambda ()
-                                     (moinmoin-mode)))
+;; (add-hook 'edit-server-start-hook '(lambda ()
+;;                                      (moinmoin-mode)))
 ;; -------------------- emacs-chrome --------------------
 
 
