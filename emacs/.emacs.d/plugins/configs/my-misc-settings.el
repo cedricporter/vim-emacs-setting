@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-01 22:22:47 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-01 22:40:18 Tuesday by Hua Liang>
 
 
 
@@ -394,6 +394,8 @@ occurence of CHAR."
 ;; ==================== emacs-chrome ====================
 (require 'edit-server)
 (edit-server-start)
+(add-hook 'edit-server-start-hook '(lambda ()
+                                     (moinmoin-mode)))
 ;; -------------------- emacs-chrome --------------------
 
 
