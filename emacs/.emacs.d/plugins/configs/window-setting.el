@@ -3,7 +3,7 @@
 ;; website:     http://EverET.org
 ;; This is about auto setting window style. 
 ;; You can read the diagram.
-;; Time-stamp: <2012-12-31 16:53:15 Mon by Hua Liang>
+;; Time-stamp: <2013-01-01 01:26:14 Tuesday by Hua Liang>
 
 (eval-when-compile (require 'cl))
 
@@ -340,10 +340,10 @@
 (global-set-key (kbd "M-3") 'split-window-right)
 (global-set-key (kbd "M-0") 'delete-window)
 
-(global-unset-key (kbd "C-x 1"))
-(global-unset-key (kbd "C-x 2"))
-(global-unset-key (kbd "C-x 3"))
-(global-unset-key (kbd "C-x 0"))
+;; (global-unset-key (kbd "C-x 1"))
+;; (global-unset-key (kbd "C-x 2"))
+;; (global-unset-key (kbd "C-x 3"))
+;; (global-unset-key (kbd "C-x 0"))
 
 (global-set-key (kbd "M-4") 'winner-undo)
 (global-set-key (kbd "M-5") 'winner-redo)

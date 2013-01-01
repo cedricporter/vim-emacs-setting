@@ -1,11 +1,11 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:54:04 Mon by Hua Liang>
+;; Time-stamp: <2013-01-01 22:22:47 Tuesday by Hua Liang>
 
 
 
 ;; ==================== time-stamp ====================
 (add-hook 'write-file-hooks 'time-stamp)
-(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S %3a by %U") 
+(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S %:a by %U")
 ;; -------------------- time-stamp --------------------
 
 
@@ -17,7 +17,7 @@
 ;; -------------------- fast-open-dot-emacs --------------------
 
 
-;;======================    time setting        =====================
+;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
 (display-time-mode 1)
 
@@ -310,9 +310,9 @@
 ;; based on:  Oliver Scholz
 ;; 当你按 C-t x (x 是任意一个字符) 时，光 标就会到下一个 x 处。再次按 x，光标就到下一个 x。
 ;; 比如 C-t w w w w ..., C-t b b b b b b ... 我改造了一下，按C-u C-t则是相反方向。
-(defun wy-go-to-char (n char)
+(defun my-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
-Typing `wy-go-to-char-key' again will move forwad to the next Nth
+Typing `my-go-to-char-key' again will move forwad to the next Nth
 occurence of CHAR."
   (interactive "p\ncGo to char: ")
   (if (eq n 1)
@@ -330,7 +330,7 @@ occurence of CHAR."
                          char)
         (search-backward (string char) nil nil ))))
   (setq unread-command-events (list last-input-event)))
-(global-set-key (kbd "C-t") 'wy-go-to-char)
+(global-set-key (kbd "C-t") 'my-go-to-char)
 ;; -------------------- goto char --------------------
 
 
@@ -390,6 +390,11 @@ occurence of CHAR."
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 ;; -------------------- backup files --------------------
 
+
+;; ==================== emacs-chrome ====================
+(require 'edit-server)
+(edit-server-start)
+;; -------------------- emacs-chrome --------------------
 
 
 (provide 'my-misc-settings)
