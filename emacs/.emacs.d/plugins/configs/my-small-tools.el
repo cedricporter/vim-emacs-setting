@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:31:21 by Hua Liang>
+;; Time-stamp: <2013-01-02 10:27:34 Wednesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -107,6 +107,9 @@
     ((eq major-mode 'python-mode)  
      "python"  
      )  
+    ((eq major-mode 'ruby-mode)  
+     "ruby"  
+     )  
     ((memq major-mode
 	   '(php-mode nxml-mode nxhtml-mode))
      "WebDev"
@@ -115,7 +118,7 @@
      "Emacs-lisp"
      )
     ((memq major-mode
-	   '(tex-mode latex-mode text-mode snippet-mode))
+	   '(tex-mode latex-mode text-mode snippet-mode markdown-mode))
      "Text"
      )
     ((string-equal "*" (substring (buffer-name) 0 1))  
@@ -130,7 +133,7 @@
 ;;;; 设置tabbar外观
 ;; 设置默认主题: 字体, 背景和前景颜色，大小
 (set-face-attribute 'tabbar-default nil
-                    :family "Vera Sans YuanTi Mono"
+                    :family "Comic Sans MS" ;"Vera Sans YuanTi Mono"
                     :background "gray80"
                     :foreground "gray10"
                     :height 1.0
