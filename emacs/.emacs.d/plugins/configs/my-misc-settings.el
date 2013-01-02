@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-02 01:42:11 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-02 18:53:05 Wednesday by Hua Liang>
 
 
 
@@ -398,7 +398,7 @@ occurence of CHAR."
 
 (setq edit-server-url-major-mode-alist
       '(("github\\.com" . markdown-mode)
-	("i\\.everet\\.org" . markdown-mode)))
+	("i\\.everet\\.org" . moinmoin-mode)))
 ;; -------------------- emacs-chrome --------------------
 
 
