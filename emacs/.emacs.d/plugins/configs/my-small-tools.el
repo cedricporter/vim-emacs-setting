@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-02 10:27:34 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-02 16:10:53 Wednesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -85,6 +85,7 @@
 (setq-default save-place t)
 ;; -------------------- saveplace --------------------
 
+
 ;; ==================== tabbar ====================
 ;;tabbar
 (require 'tabbar)  
@@ -98,12 +99,15 @@
   "tabbar group"  
   (list  
    (cond  
-    ((memq major-mode '(shell-mode dired-mode))  
+    ((memq major-mode '(shell-mode sh-mode))  
      "shell"  
      )  
     ((memq major-mode '(c-mode c++-mode))  
      "cc"  
-     )  
+     )
+    ((memq major-mode '(dired-mode ibuffer-mode))
+     "files"
+     )
     ((eq major-mode 'python-mode)  
      "python"  
      )  
@@ -118,7 +122,7 @@
      "Emacs-lisp"
      )
     ((memq major-mode
-	   '(tex-mode latex-mode text-mode snippet-mode markdown-mode))
+	   '(tex-mode latex-mode text-mode snippet-mode org-mode moinmoin-mode markdown-mode))
      "Text"
      )
     ((string-equal "*" (substring (buffer-name) 0 1))  
