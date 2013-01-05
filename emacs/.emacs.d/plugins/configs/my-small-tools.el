@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-02 16:10:53 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-05 12:58:55 Saturday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -266,6 +266,34 @@
 ;; -------------------- find-func in emacs lisp --------------------
 
 
+;; ==================== moinmoin2markdown ====================
+(setq moinmoin2markdown-reg-pat
+      '(; header
+        ("^= \\(.*?\\) =" . "# \\1")
+        ("^== \\(.*?\\) ==" . "## \\1")
+        ("^=== \\(.*?\\) ===" . "### \\1")
+        ("^==== \\(.*?\\) ====" . "#### \\1")
+        ("^===== \\(.*?\\) =====" . "##### \\1")
+        ; code block
+        ("^{{{ *?\n\\([[:ascii:][:nonascii:]]*?\\)}}}"
+         . "```\n\\1\n```")
+        ("^{{{#!highlight \\(.*?\\)\n\\([[:ascii:][:nonascii:]]*?\\)}}}"
+         . "``` \\1\n\\2\n```")
+        ; link
+        
+        ))
+
+(defun moinmoin2markdown ()
+  "Convert moinmoin syntax to markdown syntax"
+  (interactive)
+  (let ((origin-pos (point)))
+    (dolist (pattern moinmoin2markdown-reg-pat)
+      (replace-regexp (car pattern) (cdr pattern))
+      (goto-char 0))
+    (goto-char origin-pos))
+  (markdown-mode)
+  )
+;; -------------------- moinmoin2markdown --------------------
 
 
 (provide 'my-small-tools)

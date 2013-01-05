@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-02 18:53:05 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-05 11:10:03 Saturday by Hua Liang>
 
 
 
@@ -393,7 +393,7 @@ occurence of CHAR."
 
 ;; ==================== emacs-chrome ====================
 (when (and (require 'edit-server nil t) (not (daemonp)))
-  (setq edit-server-new-frame nil)
+;  (setq edit-server-new-frame nil)
   (edit-server-start))
 
 (setq edit-server-url-major-mode-alist
