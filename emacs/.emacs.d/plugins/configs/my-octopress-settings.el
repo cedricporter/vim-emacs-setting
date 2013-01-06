@@ -1,11 +1,12 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:37:24 by Hua Liang>
+;; Time-stamp: <2013-01-06 10:42:50 Sunday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
 (setq octopress-workdir (expand-file-name "~/octopress"))
 (global-set-key (kbd "C-c o n") 'octopress-new-post)
 (global-set-key (kbd "C-c o p") 'octopress-new-page)
+(global-set-key (kbd "C-c o i") 'octopress-isolate)
 ;; -------------------- octopress --------------------
 
 
@@ -30,7 +31,7 @@
 
 ;; Insert Image From Clip Board
 (defun markdown-insert-image-from-clipboard (arg)
-  "Insert an image from clipboard and copy it to disired path"
+  "Insert an image from clipboard and copy it to desired path"
   (interactive "P")
   (let ((url (concat octopress-image-url (copy-file-from-clipboard-to-path octopress-image-dir))))
     (if arg

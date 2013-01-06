@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-05 11:10:03 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-05 22:41:40 Saturday by Hua Liang>
 
 
 
@@ -44,9 +44,15 @@
 ;; ==================== UI setting ====================
 
 ;; Font Setting
+
+(setq my-font "Monaco-11")
+
+(add-to-list 'default-frame-alist
+             '(font . my-font))
+
 ;(set-frame-font "Ubuntu Mono-12")
 (defun frame-setting ()
-  (set-frame-font "Monaco-11")
+  (set-frame-font my-font)
   (set-fontset-font "fontset-default"
 		    'chinese-gbk "WenQuanYi Micro Hei Mono 11"))
 
