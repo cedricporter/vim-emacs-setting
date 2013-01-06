@@ -1,10 +1,12 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-06 10:42:50 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-06 11:13:32 Sunday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
 (setq octopress-workdir (expand-file-name "~/octopress"))
-(global-set-key (kbd "C-c o n") 'octopress-new-post)
+(global-set-key (kbd "C-c o n") '(lambda () ;isolate new post for better preview
+                                   (octopress-new-post)
+                                   (octopress-isolate)))
 (global-set-key (kbd "C-c o p") 'octopress-new-page)
 (global-set-key (kbd "C-c o i") 'octopress-isolate)
 ;; -------------------- octopress --------------------
