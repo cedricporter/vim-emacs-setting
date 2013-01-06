@@ -311,8 +311,9 @@ Any other non-nil value, every submenu is listed."
                  (const :tag "No menu" nil))
   :group 'yasnippet)
 
-(defcustom yas-trigger-symbol (if (eq window-system 'mac)
-                                  (char-to-string ?\x21E5) ;; little ->| sign
+(defcustom yas-trigger-symbol (or (and (eq window-system 'mac)
+                                       (ignore-errors
+                                         (char-to-string ?\x21E5))) ;; little ->| sign
                                   " =>")
   "The text that will be used in menu to represent the trigger."
   :type 'string
@@ -1320,7 +1321,7 @@ them all in `yas--menu-table'"
 
 Optional KIND is as documented at `called-interactively-p'
 in GNU Emacs 24.1 or higher."
-  (if (string< "24.1" emacs-version)
+  (if (string< emacs-version "24.1")
       '(called-interactively-p)
     `(called-interactively-p ,kind)))
 
@@ -1861,20 +1862,24 @@ loading."
             ;; `yas--editing-template' to nil, make it guess it next time around
             (mapc #'(lambda (buffer) (setq yas--editing-template nil)) (buffer-list))))
 
-      ;; Empty all snippet tables, parenting info and all menu tables
+      ;; Empty all snippet tables and parenting info
       ;;
       (setq yas--tables (make-hash-table))
       (setq yas--parents (make-hash-table))
+
+      ;; Before killing `yas--menu-table' use its keys to cleanup the
+      ;; mode menu parts of `yas--minor-mode-menu' (thus also cleaning
+      ;; up `yas-minor-mode-map', which points to it)
+      ;;
+      (maphash #'(lambda (menu-symbol keymap)
+                   (define-key yas--minor-mode-menu (vector menu-symbol) nil))
+               yas--menu-table)
+      ;; Now empty `yas--menu-table' as well
       (setq yas--menu-table (make-hash-table))
 
       ;; Cancel all pending 'yas--scheduled-jit-loads'
       ;;
       (setq yas--scheduled-jit-loads (make-hash-table))
-
-      ;; Init the `yas-minor-mode-map', taking care not to break the
-      ;; menu....
-      ;;
-      (setcdr yas-minor-mode-map (cdr (yas--init-minor-keymap)))
 
       ;; Reload the directories listed in `yas-snippet-dirs' or prompt
       ;; the user to select one.
@@ -2653,8 +2658,9 @@ whether (and where) to save the snippet, then quit the window."
 
 (defun yas-active-keys ()
   "Return all active trigger keys for current buffer and point."
-  (remove-duplicates (mapcan #'yas--table-all-keys (yas--get-snippet-tables))
-                     :test #'string=))
+  (remove-duplicates
+   (remove-if-not #'stringp (mapcan #'yas--table-all-keys (yas--get-snippet-tables)))
+   :test #'string=))
 
 (defun yas--template-fine-group (template)
   (car (last (or (yas--template-group template)
@@ -2903,7 +2909,16 @@ Use this in primary and mirror transformations to tget."
   force-exit)
 
 (defstruct (yas--field (:constructor yas--make-field (number start end parent-field)))
-  "A field."
+  "A field.
+
+NUMBER is the field number.
+START and END are mostly buffer markers, but see \"apropos markers-to-points\".
+PARENT-FIELD is a `yas--field' this field is nested under, or nil.
+MIRRORS is a list of `yas--mirror's
+TRANSFORM is a lisp form.
+MODIFIED-P is a boolean set to true once user inputs text.
+NEXT is another `yas--field' or `yas--mirror' or `yas--exit'.
+"
   number
   start end
   parent-field
@@ -2912,12 +2927,20 @@ Use this in primary and mirror transformations to tget."
   (modified-p nil)
   next)
 
+
 (defstruct (yas--mirror (:constructor yas--make-mirror (start end transform)))
-  "A mirror."
+  "A mirror.
+
+START and END are mostly buffer markers, but see \"apropos markers-to-points\".
+TRANSFORM is a lisp form.
+PARENT-FIELD is a `yas--field' this mirror is nested under, or nil.
+NEXT is another `yas--field' or `yas--mirror' or `yas--exit'
+DEPTH is a count of how many nested mirrors can affect this mirror"
   start end
   (transform nil)
   parent-field
-  next)
+  next
+  depth)
 
 (defstruct (yas--exit (:constructor yas--make-exit (marker)))
   marker
@@ -4149,6 +4172,26 @@ When multiple expressions are found, only the last one counts."
               #'(lambda (r1 r2)
                   (>= (car r1) (car r2))))))
 
+(defun yas--calculate-mirror-depth (mirror &optional traversed)
+  (let* ((parent (yas--mirror-parent-field mirror))
+         (parents-mirrors (and parent
+                               (yas--field-mirrors parent))))
+    (or (yas--mirror-depth mirror)
+        (setf (yas--mirror-depth mirror)
+              (cond ((memq mirror traversed)
+                     0)
+                    ((and parent parents-mirrors)
+                     (1+ (reduce #'max
+                                 (mapcar #'(lambda (m)
+                                             (yas--calculate-mirror-depth m
+                                                                          (cons mirror
+                                                                                traversed)))
+                                         parents-mirrors))))
+                    (parent
+                     1)
+                    (t
+                     0))))))
+
 (defun yas--update-mirrors (snippet)
   "Updates all the mirrors of SNIPPET."
   (save-excursion
@@ -4167,7 +4210,8 @@ When multiple expressions are found, only the last one counts."
                                ;; another mirror to need reupdating
                                ;;
                                #'(lambda (field-and-mirror1 field-and-mirror2)
-                                   (yas--mirror-parent-field (cdr field-and-mirror1)))))
+                                   (> (yas--calculate-mirror-depth (cdr field-and-mirror1))
+                                      (yas--calculate-mirror-depth (cdr field-and-mirror2))))))
       (let* ((field (car field-and-mirror))
              (mirror (cdr field-and-mirror))
              (parent-field (yas--mirror-parent-field mirror)))
