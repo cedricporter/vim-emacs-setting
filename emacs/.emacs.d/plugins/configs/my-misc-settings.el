@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-07 08:40:54 Monday by Hua Liang>
+;; Time-stamp: <2013-01-07 11:18:18 Monday by Hua Liang>
 
 
 
@@ -366,8 +366,8 @@ occurence of CHAR."
 
 
 ;; ==================== jump to next/previous buffer ====================
-(global-set-key (kbd "M-8") 'previous-buffer)
-(global-set-key (kbd "M-9") 'next-buffer)
+(global-set-key (kbd "M-7") 'previous-buffer)
+(global-set-key (kbd "M-8") 'next-buffer)
 ;; -------------------- jump to next/previous buffer --------------------
 
 
