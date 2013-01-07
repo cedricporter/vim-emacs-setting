@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-06 15:13:22 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-06 23:08:53 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -189,7 +189,7 @@
         ace-jump-line-mode              ; C-u C-c SPC
         ace-jump-char-mode))            ; C-u C-u C-c SPC
 ;; you can select the key you prefer to
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "M-l") 'ace-jump-mode)
 ;; -------------------- ace-jump --------------------
 
 
@@ -299,6 +299,13 @@
   (markdown-mode)
   )
 ;; -------------------- moinmoin2markdown --------------------
+
+
+;; ==================== toggle-case ====================
+(require 'toggle-case)
+(global-set-key (kbd "M-u") 'toggle-case)
+;; -------------------- toggle-case --------------------
+
 
 
 ;; ==================== helm ====================
