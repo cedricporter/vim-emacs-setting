@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2012-12-31 16:32:13 by Hua Liang>
+;; Time-stamp: <2013-01-09 11:31:48 Wednesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -66,7 +66,7 @@
  '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
- '(highlight ((t (:background "black" :foreground "LightGoldenrod"))))
+ '(highlight ((t (:background "RoyalBlue2" :foreground "black"))))
  '(hl-line ((t (:background "orange4"))))
  '(magit-item-highlight ((t (:inherit highlight :background "dark green"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
@@ -77,6 +77,7 @@
  '(moinmoin-url ((t (:foreground "LightBlue2" :height 0.8))))
  '(moinmoin-url-title ((t (:foreground "LightBlue4" :underline t))))
  '(moinmoin-wiki-link ((t (:foreground "LightBlue4" :weight bold))))
+ '(org-hide ((t (:foreground "DimGray"))))
  '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))))
  '(xref-keyword-face ((t (:foreground "LightBlue"))))
  '(xref-list-pilot-face ((t (:foreground "blue violet"))))
