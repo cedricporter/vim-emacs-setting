@@ -32,6 +32,13 @@
   (octopress-new "page" title))
 
 
+(defun octopress-isolate ()
+  "isolate current buffer"
+  (interactive)
+  (octopress-rake (format "isolate[%s]" (buffer-name)))
+  (message (format "isolate %s OK" (buffer-name))))
+
+
 (defun octopress-generate ()
   "generate jekyll site"
   (interactive)
