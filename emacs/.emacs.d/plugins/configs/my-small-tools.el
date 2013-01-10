@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-09 21:21:06 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-10 23:44:58 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -314,8 +314,13 @@
 ;(helm-mode 1)
 (global-set-key (kbd "C-x b") 'helm-mini)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-
 ;; -------------------- helm --------------------
+
+
+;; ==================== graphviz ====================
+(load-file "~/.emacs.d/plugins/graphviz-dot-mode.el")
+;; -------------------- graphviz --------------------
+
 
 
 (provide 'my-small-tools)

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-09 01:21:52 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-10 15:06:03 Thursday by Hua Liang>
 
 ;; ==================== gud ====================
 
@@ -16,8 +16,12 @@
 
 (gud-tooltip-mode 1)
 
-(global-set-key [(f11)] 'gud-step)
-(global-set-key [(f10)] 'gud-next)
+(define-key gud-mode-map [(f11)] 'gud-step)
+(define-key gud-mode-map [(f10)] 'gud-next)
+
+(define-key gud-mode-map [(f9)] 'gud-cont)
+(define-key gud-mode-map [(f8)] 'gud-finish)
+
 
 
 (defadvice gdb-setup-windows (after my-setup-gdb-windows activate)
