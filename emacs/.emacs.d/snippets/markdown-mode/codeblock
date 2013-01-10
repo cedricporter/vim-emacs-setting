@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: codeblock
+# key: code
+# --
+{% codeblock ${1:[Title]} lang:${2:[language]} %}
+$0
+{% endcodeblock %}

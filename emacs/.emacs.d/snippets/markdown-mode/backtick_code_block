@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: backtick code block
+# key: ```
+# --
+\`\`\` ${1:[Language]} ${2:[Title]} 
+$0
+`\`\`

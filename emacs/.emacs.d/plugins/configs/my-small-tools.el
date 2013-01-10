@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-06 23:08:53 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-09 21:21:06 Wednesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -311,7 +311,7 @@
 ;; ==================== helm ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/helm")
 (require 'helm-config)
-(helm-mode 1)
+;(helm-mode 1)
 (global-set-key (kbd "C-x b") 'helm-mini)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
