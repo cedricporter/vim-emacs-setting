@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-07 11:18:18 Monday by Hua Liang>
+;; Time-stamp: <2013-01-10 11:33:41 Thursday by Hua Liang>
 
 
 
@@ -56,15 +56,18 @@
   (set-fontset-font "fontset-default"
 		    'chinese-gbk "WenQuanYi Micro Hei Mono 11"))
 
-;; 解决汉字表格对齐问题，也就是设置等宽汉字
-(if (and (fboundp 'daemonp) (daemonp))
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (with-selected-frame frame
-		  (frame-setting))))
-  (frame-setting))
+;; ;; 解决汉字表格对齐问题，也就是设置等宽汉字
+;; (if (and (fboundp 'daemonp) (daemonp))
+;;     (add-hook 'after-make-frame-functions
+;;               (lambda (frame)
+;;                 (with-selected-frame frame
+;; 		  (frame-setting))))
+;;   (frame-setting))
 
-
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (frame-setting))))
 
 (setq-default fill-column 81)
 (setq default-fill-column 80)
