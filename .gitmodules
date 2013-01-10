@@ -10,3 +10,6 @@
 [submodule "emacs/.emacs.d/plugins/auto-complete"]
 	path = emacs/.emacs.d/plugins/auto-complete
 	url = git://github.com/auto-complete/auto-complete.git
+[submodule "emacs/.emacs.d/plugins/helm"]
+	path = emacs/.emacs.d/plugins/helm
+	url = git://github.com/emacs-helm/helm.git
