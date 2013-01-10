@@ -4,3 +4,9 @@
 [submodule "emacs/.emacs.d/plugins/yasnippet"]
 	path = emacs/.emacs.d/plugins/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "emacs/.emacs.d/plugins/ecb-2.40"]
+	path = emacs/.emacs.d/plugins/ecb-2.40
+	url = git://github.com/alexott/ecb.git
+[submodule "emacs/.emacs.d/plugins/auto-complete"]
+	path = emacs/.emacs.d/plugins/auto-complete
+	url = git://github.com/auto-complete/auto-complete.git
