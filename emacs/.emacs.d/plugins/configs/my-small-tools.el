@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-10 23:44:58 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-11 00:20:52 Friday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -321,6 +321,14 @@
 (load-file "~/.emacs.d/plugins/graphviz-dot-mode.el")
 ;; -------------------- graphviz --------------------
 
+
+;; ==================== evil-number ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/evil-numbers")
+(require 'evil-numbers) 
+
+(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+;; -------------------- evil-number --------------------
 
 
 (provide 'my-small-tools)
