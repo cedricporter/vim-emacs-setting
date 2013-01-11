@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-11 00:20:52 Friday by Hua Liang>
+;; Time-stamp: <2013-01-11 20:09:47 Friday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -329,6 +329,11 @@
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 ;; -------------------- evil-number --------------------
+
+
+;; ==================== ws ====================
+(require 'ws)
+;; -------------------- ws --------------------
 
 
 (provide 'my-small-tools)

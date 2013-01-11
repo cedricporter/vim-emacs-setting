@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-10 11:33:41 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-11 12:34:26 Friday by Hua Liang>
 
 
 
@@ -68,6 +68,8 @@
           (lambda (frame)
             (with-selected-frame frame
               (frame-setting))))
+(if (not (and (fboundp 'daemonp) (daemonp)))
+    (frame-setting))
 
 (setq-default fill-column 81)
 (setq default-fill-column 80)
