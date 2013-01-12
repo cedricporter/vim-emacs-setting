@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-11 12:34:26 Friday by Hua Liang>
+;; Time-stamp: <2013-01-12 13:48:24 Saturday by Hua Liang>
 
 
 
@@ -258,7 +258,9 @@
 (setq x-select-enable-clipboard t) 
 
 ;;在标题栏提示当前位置
-(setq frame-title-format "ET@%b")
+(setq frame-title-format
+      (list "ψωETωψ ◎ "
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;;使用C-k删掉指针到改行末的所有东西
 (setq-default kill-whole-line t)
