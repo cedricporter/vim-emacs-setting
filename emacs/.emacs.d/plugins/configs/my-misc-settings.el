@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-12 13:48:24 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-13 19:58:38 Sunday by Hua Liang>
 
 
 
@@ -200,10 +200,10 @@
 (autoload 'table-insert "table" "WYGIWYS table editor")
 
 
-;;设置句尾
+;; 设置句尾
 (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
 
-;;直接打开图片
+;; 直接打开图片
 (auto-image-file-mode)
 
 ;; 去掉滚动栏
@@ -328,20 +328,21 @@
 Typing `my-go-to-char-key' again will move forwad to the next Nth
 occurence of CHAR."
   (interactive "p\ncGo to char: ")
-  (if (eq n 1)
-      (progn                            ; forward
-        (search-forward (string char) nil nil n)
-        (backward-char)
-        (while (equal (read-key)
-                           char)
-          (forward-char)
+  (let ((case-fold-search nil))
+    (if (eq n 1)
+        (progn                            ; forward
           (search-forward (string char) nil nil n)
-          (backward-char)))
-    (progn                              ; backward
-      (search-backward (string char) nil nil )
-      (while (equal (read-key)
-                         char)
-        (search-backward (string char) nil nil ))))
+          (backward-char)
+          (while (equal (read-key)
+                        char)
+            (forward-char)
+            (search-forward (string char) nil nil n)
+            (backward-char)))
+      (progn                              ; backward
+        (search-backward (string char) nil nil )
+        (while (equal (read-key)
+                      char)
+          (search-backward (string char) nil nil )))))
   (setq unread-command-events (list last-input-event)))
 (global-set-key (kbd "C-t") 'my-go-to-char)
 ;; -------------------- goto char --------------------
