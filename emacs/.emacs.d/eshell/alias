@@ -4,3 +4,5 @@ alias la ls -a $*
 alias ll ls -al $*
 alias n4 ssh -l root -p 1990 new.everet.org $*
 alias rgp rake generate && rake preview
+alias gp git push
+alias gs git status
