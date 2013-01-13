@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-10 10:02:16 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-13 15:23:33 Sunday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -52,6 +52,8 @@
 (require 'my-org-mode-settings)
 
 (require 'my-yasnippet-settings)
+
+;; (require 'my-el-get-settings)
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated

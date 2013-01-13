@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-13 14:41:23 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-13 15:40:53 Sunday by Hua Liang>
 
 
 ;; ==================== jedi ====================
@@ -23,9 +23,11 @@
 (setq jedi:setup-keys t)
 (autoload 'jedi:setup "jedi" nil t)
 
-(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook '(lambda ()
+                               (define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
+                               (jedi:setup))
+          )
 
-(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
 ;; -------------------- jedi --------------------
 
 
