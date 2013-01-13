@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: time
+# key: date
+# --
+`(insert (format-time-string "## %Y-%m-%d %T %A"))` ${1:宿舍}
+
+$0

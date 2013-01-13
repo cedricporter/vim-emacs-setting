@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: time
-# key: date
-# --
-`(insert (format-time-string "## %Y-%m-%d %T %A\n"))`
-$0
