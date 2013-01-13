@@ -13,3 +13,15 @@
 [submodule "emacs/.emacs.d/plugins/helm"]
 	path = emacs/.emacs.d/plugins/helm
 	url = git://github.com/emacs-helm/helm.git
+[submodule "emacs/.emacs.d/plugins/deferred"]
+	path = emacs/.emacs.d/plugins/deferred
+	url = git://github.com/kiwanami/emacs-deferred.git
+[submodule "emacs/.emacs.d/plugins/epc"]
+	path = emacs/.emacs.d/plugins/epc
+	url = git://github.com/kiwanami/emacs-epc.git
+[submodule "emacs/.emacs.d/plugins/ctable"]
+	path = emacs/.emacs.d/plugins/ctable
+	url = git://github.com/kiwanami/emacs-ctable.git
+[submodule "emacs/.emacs.d/plugins/jedi"]
+	path = emacs/.emacs.d/plugins/jedi
+	url = git://github.com/tkf/emacs-jedi.git
