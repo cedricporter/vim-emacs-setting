@@ -25,3 +25,6 @@
 [submodule "emacs/.emacs.d/plugins/jedi"]
 	path = emacs/.emacs.d/plugins/jedi
 	url = git://github.com/tkf/emacs-jedi.git
+[submodule "emacs/.emacs.d/plugins/ace-jump-mode"]
+	path = emacs/.emacs.d/plugins/ace-jump-mode
+	url = git://github.com/winterTTr/ace-jump-mode.git
