@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-10 15:06:03 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-14 14:49:45 Monday by Hua Liang>
 
 ;; ==================== gud ====================
 
@@ -20,7 +20,7 @@
 (define-key gud-mode-map [(f10)] 'gud-next)
 
 (define-key gud-mode-map [(f9)] 'gud-cont)
-(define-key gud-mode-map [(f8)] 'gud-finish)
+(define-key gud-mode-map [(shift f11)] 'gud-finish)
 
 
 
