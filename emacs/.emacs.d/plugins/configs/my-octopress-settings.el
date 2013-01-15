@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-14 14:43:01 Monday by Hua Liang>
+;; Time-stamp: <2013-01-16 01:58:22 Wednesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -17,11 +17,24 @@
 				   (search-forward "---")
 				   (search-forward "---")
 				   (insert (format-time-string
-					    (concat "\n#### %Y-%m-%d %T %A " (if arg "" "宿舍") "\n\n\n\n-----")))
-				   (backward-char 7)
+					    (concat "\n#### %Y-%m-%d %T %A " (if arg "" "宿舍") "\n\n\n\n-----\n")))
+				   (backward-char 8)
 				   ))
 
 ;; -------------------- octopress --------------------
+
+
+;; ==================== markdown-mode ====================
+(defun add-strike-for-list ()
+  (interactive)
+  (beginning-of-line)
+  (forward-char 3)
+  (insert "<del>")
+  (end-of-line)
+  (insert "</del>")
+  )
+(define-key markdown-mode-map (kbd "C-c d") 'add-strike-for-list)
+;; -------------------- markdown-mode --------------------
 
 
 ;; ==================== orgmode-octopress ====================

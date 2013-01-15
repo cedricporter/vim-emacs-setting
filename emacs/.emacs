@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-14 00:48:44 Monday by Hua Liang>
+;; Time-stamp: <2013-01-16 01:49:55 Wednesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -54,6 +54,10 @@
 (require 'my-yasnippet-settings)
 
 (require 'my-iimage-settings)
+
+(load "~/.emacs.d/plugins/configs/my-flymake-settings.el")
+
+(load "~/.emacs.d/plugins/configs/my-auto-insert-settings.el")
 
 ;; (require 'my-el-get-settings)
 

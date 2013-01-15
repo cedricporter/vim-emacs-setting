@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: del
+# key: del
+# --
+<del>${1:text}</del>$0

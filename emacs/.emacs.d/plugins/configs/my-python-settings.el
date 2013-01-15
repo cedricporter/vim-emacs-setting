@@ -1,6 +1,17 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-13 15:40:53 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-15 10:14:37 Tuesday by Hua Liang>
 
+
+;; Python Hook
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (setq indent-tabs-mode nil tab-width 4)
+             (setq python-indent-offset 4)
+             (setq python-indent 4)
+             (
+              )))
+
+(setq python-check-command "pyflakes")
 
 ;; ==================== jedi ====================
 
