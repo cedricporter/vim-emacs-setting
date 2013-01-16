@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-16 01:58:22 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-16 15:28:54 Wednesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -17,7 +17,7 @@
 				   (search-forward "---")
 				   (search-forward "---")
 				   (insert (format-time-string
-					    (concat "\n#### %Y-%m-%d %T %A " (if arg "" "宿舍") "\n\n\n\n-----\n")))
+					    (concat "\n# %Y-%m-%d %T %A " (if arg "" "宿舍") "\n\n\n\n-----\n")))
 				   (backward-char 8)
 				   ))
 

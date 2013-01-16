@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-16 14:21:40 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-16 17:59:49 Wednesday by Hua Liang>
 
 
 
@@ -285,9 +285,9 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
 (require 'color-theme) 
 (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
-;(color-theme-taylor-et)
+(color-theme-taylor-et)
 
-(load-theme 'tango t)
+;(load-theme 'tango t)
 
 ;; solarized
 (add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
