@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-16 13:06:12 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-16 14:21:40 Wednesday by Hua Liang>
 
 
 
@@ -282,18 +282,17 @@
 
 
 ;;==================== color theme ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
-;; (require 'color-theme) 
-;; (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
-;; ;;(require 'color-theme-library)
-;; ;;(color-theme-charcoal-black)
-;; ;;(color-theme-taylor)
-;; (color-theme-taylor-et)
-;; ;;(color-theme-infodoc)
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
+(require 'color-theme) 
+(load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
+;(color-theme-taylor-et)
+
+(load-theme 'tango t)
 
 ;; solarized
-(setq custom-theme-directory "~/.emacs.d/themes")
-(load-theme 'solarized-light t)
+(add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(require 'color-theme-solarized)
+;(load-theme 'solarized-light t)
 
 ;;-------------------- color theme --------------------
 

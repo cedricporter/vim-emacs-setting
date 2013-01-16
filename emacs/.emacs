@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-16 01:49:55 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-16 14:16:51 Wednesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -75,7 +75,7 @@
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
  '(highlight ((t (:background "tomato" :foreground "black"))))
- '(hl-line ((t (:background "orange4"))))
+ '(hl-line ((t (:background "orange4"))) t)
  '(magit-item-highlight ((t (:inherit highlight :background "dark green"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
  '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
@@ -86,15 +86,16 @@
  '(moinmoin-url-title ((t (:foreground "LightBlue4" :underline t))))
  '(moinmoin-wiki-link ((t (:foreground "LightBlue4" :weight bold))))
  '(org-hide ((t (:foreground "DimGray"))))
- '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))))
- '(xref-keyword-face ((t (:foreground "LightBlue"))))
- '(xref-list-pilot-face ((t (:foreground "blue violet"))))
- '(xref-list-symbol-face ((t (:foreground "light sky blue")))))
+ '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))) t)
+ '(xref-keyword-face ((t (:foreground "LightBlue"))) t)
+ '(xref-list-pilot-face ((t (:foreground "blue violet"))) t)
+ '(xref-list-symbol-face ((t (:foreground "light sky blue"))) t))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(ecb-options-version "2.40")
  '(session-use-package t nil (session)))
 
