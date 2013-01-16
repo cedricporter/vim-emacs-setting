@@ -28,3 +28,6 @@
 [submodule "emacs/.emacs.d/plugins/ace-jump-mode"]
 	path = emacs/.emacs.d/plugins/ace-jump-mode
 	url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule "emacs/.emacs.d/themes/emacs-color-theme-solarized"]
+	path = emacs/.emacs.d/themes/emacs-color-theme-solarized
+	url = git://github.com/sellout/emacs-color-theme-solarized.git
