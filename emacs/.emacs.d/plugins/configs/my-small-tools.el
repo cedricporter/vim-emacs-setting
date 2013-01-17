@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 19:11:30 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 21:43:16 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -351,6 +351,26 @@
 ;; ==================== ws ====================
 ;; (require 'ws)
 ;; -------------------- ws --------------------
+
+
+;; ;; ==================== ack-and-a-half ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/ack-and-a-half")
+;; (require 'ack-and-a-half)
+;; ;; Create shorter aliases
+;; (defalias 'ack 'ack-and-a-half)
+;; (defalias 'ack-same 'ack-and-a-half-same)
+;; (defalias 'ack-find-file 'ack-and-a-half-find-file)
+;; (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
+;; ;; -------------------- ack-and-a-half --------------------
+
+
+;; ==================== full-ack ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/full-ack")
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
+;; -------------------- full-ack --------------------
 
 
 (provide 'my-small-tools)

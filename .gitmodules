@@ -31,3 +31,6 @@
 [submodule "emacs/.emacs.d/plugins/yasnippet"]
 	path = emacs/.emacs.d/plugins/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "emacs/.emacs.d/plugins/ack-and-a-half"]
+	path = emacs/.emacs.d/plugins/ack-and-a-half
+	url = git://github.com/jhelwig/ack-and-a-half.git

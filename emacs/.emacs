@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-17 16:17:06 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 21:27:03 Thursday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -83,8 +83,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("a81bc918eceaee124247648fc9682caddd713897d7fd1398856a5b61a592cb62" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(ansi-color-names-vector ["#3f3f3f" "#cc9393" "#7f9f7f" "#f0dfaf" "#8cd0d3" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(ansi-term-color-vector ["#3f3f3f" "#cc9393" "#7f9f7f" "#f0dfaf" "#8cd0d3" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(custom-safe-themes (quote ("8f0ed281527c8916f0c2dd580a37536ae37af194f7c7102a1fe9a3467b853671" "a81bc918eceaee124247648fc9682caddd713897d7fd1398856a5b61a592cb62" "27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(ecb-options-version "2.40")
+ '(fci-rule-color "#383838")
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(session-use-package t nil (session)))
 

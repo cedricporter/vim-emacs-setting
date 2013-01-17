@@ -52,7 +52,7 @@
       ;; colors with +x are lighter, colors with -x are darker
       (zenburn-fg "#dcdccc")
       (zenburn-fg-1 "#656555")
-      (zenburn-bg-1 "#2b2b2b")
+      (zenburn-bg-1 "#1b1b1b")
       (zenburn-bg-05 "#383838")
       (zenburn-bg "#3f3f3f")
       (zenburn-bg+1 "#4f4f4f")
@@ -545,7 +545,7 @@
 
    ;; show-paren
    `(show-paren-mismatch ((t (:foreground ,zenburn-red-3 :background ,zenburn-bg :weight bold))))
-   `(show-paren-match ((t (:foreground ,zenburn-blue-1 :background ,zenburn-bg :weight bold))))
+   `(show-paren-match ((t (:foreground ,zenburn-blue-1 :background ,zenburn-bg-1 :weight bold))))
 
    ;; sml-mode-line
    '(sml-modeline-end-face ((t :inherit default :width condensed)))
