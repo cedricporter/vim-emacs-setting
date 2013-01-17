@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 15:22:00 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:40:16 Thursday by Hua Liang>
 
 
 
@@ -310,6 +310,7 @@
 (setq my-theme-list '((1 . color-theme-taylor-et)
                       (2 . (lambda () (load-theme 'tango t)))
                       (3 . (lambda () (load-theme 'zenburn t)))
+                      (4 . (lambda () (load-theme 'Amelie t)))
                       ))
 
 (dolist (item my-theme-list)
