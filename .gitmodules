@@ -28,3 +28,6 @@
 [submodule "emacs/.emacs.d/themes/emacs-color-theme-solarized"]
 	path = emacs/.emacs.d/themes/emacs-color-theme-solarized
 	url = git://github.com/sellout/emacs-color-theme-solarized.git
+[submodule "emacs/.emacs.d/plugins/yasnippet"]
+	path = emacs/.emacs.d/plugins/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
