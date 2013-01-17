@@ -1,6 +1,6 @@
 [Appearance]
-BoldIntense=false
-ColorScheme=ET Color Scheme
+BoldIntense=true
+ColorScheme=zenburn-dark
 Font=Monaco,10,-1,5,50,0,0,0,0,0
 
 [General]

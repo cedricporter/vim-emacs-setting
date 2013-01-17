@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-17 15:38:38 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:47:07 Thursday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -74,18 +74,6 @@
  '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
- '(hl-line ((t (:background "orange4"))) t)
- '(magit-item-highlight ((t (:inherit highlight :background "dark green"))))
- '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
- '(moinmoin-anchor-ref-title ((t (:foreground "LightBlue4" :underline t))))
- '(moinmoin-code ((t (:foreground "purple"))))
- '(moinmoin-email ((t (:foreground "LightBlue2"))))
- '(moinmoin-inter-wiki-link ((t (:foreground "LightBlue3" :weight bold))))
- '(moinmoin-url ((t (:foreground "LightBlue2" :height 0.8))))
- '(moinmoin-url-title ((t (:foreground "LightBlue4" :underline t))))
- '(moinmoin-wiki-link ((t (:foreground "LightBlue4" :weight bold))))
- '(org-hide ((t (:foreground "DimGray"))))
- '(tabbar-default ((t (:inherit variable-pitch :background "gray20" :foreground "gray10" :height 1.0 :family "Comic Sans MS"))))
  '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))) t)
  '(xref-keyword-face ((t (:foreground "LightBlue"))))
  '(xref-list-pilot-face ((t (:foreground "blue violet"))))

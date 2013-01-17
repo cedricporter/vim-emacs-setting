@@ -89,6 +89,9 @@ alias gp='git push'
 alias gpt='git push --tags'
 alias ra='ranger'
 alias i='info'
+alias rp='rake publish'
+alias rgp='rake generate && rake preview'
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -105,3 +108,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+function _update_ps1()
+{
+   export PS1="$(~/powerline-bash.py $? --mode compatible)"
+}
+
+export PROMPT_COMMAND="_update_ps1"
