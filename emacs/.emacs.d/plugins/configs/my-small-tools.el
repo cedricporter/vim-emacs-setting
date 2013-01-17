@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 17:25:53 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 17:35:22 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -39,6 +39,9 @@
 
 ;; ==================== nginx-mode ====================
 (require 'nginx-mode)
+(add-hook 'find-file '(lambda ()
+                        (when (string-match "^(/etc/nginx|/home/cedricporter/my).*?(com|org)" buffer-file-name)
+                          (nginx-mode))))
 ;; -------------------- nginx-mode --------------------
 
 
