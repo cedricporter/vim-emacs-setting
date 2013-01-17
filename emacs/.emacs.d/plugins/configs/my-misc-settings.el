@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 12:42:18 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 12:44:01 Thursday by Hua Liang>
 
 
 
@@ -296,7 +296,10 @@
       (while (search-forward-regexp "^(set-theme [0-9]+)" nil t)
         (save-restriction
           (narrow-to-region (match-beginning 0) (match-end 0))
-          (replace-match (format "(set-theme %d)" theme-num))))
+          (replace-match (format "(set-theme %d)" theme-num))
+          (eval-region (region-beginning) (region-end))
+          )
+        )
       (save-buffer)
       (switch-to-buffer origin-buffer)
       ))))
