@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-16 17:59:49 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-17 12:42:18 Thursday by Hua Liang>
 
 
 
@@ -285,9 +285,38 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
 (require 'color-theme) 
 (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
-(color-theme-taylor-et)
 
-;(load-theme 'tango t)
+;; change font key bindings
+(defun change-my-theme (theme-num)
+  (save-excursion
+    (progn
+      (let ((origin-buffer (current-buffer)))
+      (find-file "~/.emacs.d/plugins/configs/my-misc-settings.el")
+      (goto-char 0)
+      (while (search-forward-regexp "^(set-theme [0-9]+)" nil t)
+        (save-restriction
+          (narrow-to-region (match-beginning 0) (match-end 0))
+          (replace-match (format "(set-theme %d)" theme-num))))
+      (save-buffer)
+      (switch-to-buffer origin-buffer)
+      ))))
+
+(setq my-theme-list '((1 . color-theme-taylor)
+                      (2 . (lambda () (load-theme 'tango t)))))
+
+(dolist (item my-theme-list)
+  (let ((theme-num (car item)))
+    (global-set-key (kbd (format "C-c , t %d" theme-num))
+                    `(lambda ()
+                       (interactive)
+                       (change-my-theme ,theme-num)))))
+
+(defun set-theme (what-theme)
+  (funcall (cdr (assoc what-theme my-theme-list))))
+
+;; set theme according to theme number
+(set-theme 2)
+;; end
 
 ;; solarized
 (add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
