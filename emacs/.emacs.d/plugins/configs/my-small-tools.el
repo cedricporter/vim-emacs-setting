@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 15:55:58 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 17:25:53 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -139,29 +139,37 @@
 (set-face-attribute 'tabbar-default nil
                     :family "Comic Sans MS" ;"Vera Sans YuanTi Mono"
                     :background "gray30"
-                    :foreground "gray10"
+                    :foreground "#dcdccc"
                     :height 1.0
                     )
 ;; 设置左边按钮外观：外框框边大小和颜色
 (set-face-attribute 'tabbar-button nil
                     :inherit 'tabbar-default
-                    :box '(:line-width 1 :color "gray30")
+                    :box '(:line-width 2 :color "gray30")
                     )
+(set-face-attribute 'tabbar-separator nil
+                    :inherit 'tabbar-default
+                    :foreground "blue"
+                    :background "dark gray"
+                    :box '(:line-width 2 :color "dark gray" :style 'released-button)
+                    )
+;(setq tabbar-separator-value "§")
+(setq tabbar-separator (list 0.5))
 ;; 设置当前tab外观：颜色，字体，外框大小和颜色
 (set-face-attribute 'tabbar-selected nil
                     :inherit 'tabbar-default
-                    :foreground "DarkGreen"
-                    :background "LightGoldenrod"
-                    :box '(:line-width 2 :color "DarkGoldenrod")
-                    ;; :overline "black"
-                    ;; :underline "black"
+                    :foreground "orange" ;"DarkGreen"
+                    :background "dark magenta" ;"LightGoldenrod"
+                    :box '(:line-width 2
+                                       :color "DarkGoldenrod"
+                                       :style 'pressed-button)
                     :weight 'bold
                     )
 ;; 设置非当前tab外观：外框大小和颜色
 (set-face-attribute 'tabbar-unselected nil
                     :inherit 'tabbar-default
-                    :box '(:line-width 2 :color "dark gray")
-                    )
+                    :box '(:line-width 2 :color "dark gray" :style 'released-button))
+
 ;; cancel grouping
 ;;(setq tabbar-buffer-groups-function
 ;;    (lambda (b) (list “All Buffers”)))

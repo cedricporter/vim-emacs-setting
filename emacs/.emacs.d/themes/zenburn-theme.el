@@ -554,14 +554,17 @@
    `(slime-repl-inputed-output-face ((t (:foreground ,zenburn-red))))
 
    ;; tabbar
+   `(tabbar-default ((t (:background ,zenburn-bg :foreground ,zenburn-fg))))
    `(tabbar-button ((t (:foreground ,zenburn-fg
-                                    :background ,zenburn-bg))))
+                                    :background ,zenburn-bg
+                                    (:box (:line-width 2 :color ,zenburn-fg :style released-button))))))
    `(tabbar-selected ((t (:foreground ,zenburn-fg
                                       :background ,zenburn-bg
-                                      :box (:line-width -1 :style pressed-button)))))
+                                      :box (:line-width 2 :style pressed-button)))))
    `(tabbar-unselected ((t (:foreground ,zenburn-fg
                                         :background ,zenburn-bg+1
-                                        :box (:line-width -1 :style released-button)))))
+                                        :box (:line-width 2 :style released-button)))))
+   `(tabbar-separator ((t (:foreground ,zenburn-fg :background ,zenburn-bg))))
 
    ;; volatile-highlights
    `(vhl/default-face ((t (:background ,zenburn-bg+1))))
