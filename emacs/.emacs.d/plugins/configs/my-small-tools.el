@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 15:15:32 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:55:58 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -138,7 +138,7 @@
 ;; 设置默认主题: 字体, 背景和前景颜色，大小
 (set-face-attribute 'tabbar-default nil
                     :family "Comic Sans MS" ;"Vera Sans YuanTi Mono"
-                    :background "gray80"
+                    :background "gray30"
                     :foreground "gray10"
                     :height 1.0
                     )
