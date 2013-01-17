@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 21:43:16 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 21:57:29 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -365,7 +365,7 @@
 
 
 ;; ==================== full-ack ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/full-ack")
+;(add-to-list 'load-path "~/.emacs.d/plugins/full-ack")
 (autoload 'ack-same "full-ack" nil t)
 (autoload 'ack "full-ack" nil t)
 (autoload 'ack-find-same-file "full-ack" nil t)
