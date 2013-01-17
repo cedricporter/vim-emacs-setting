@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-16 17:35:48 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:29:04 Thursday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -74,7 +74,6 @@
  '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
- '(highlight ((t (:background "tomato" :foreground "black"))))
  '(hl-line ((t (:background "orange4"))) t)
  '(magit-item-highlight ((t (:inherit highlight :background "dark green"))))
  '(moinmoin-anchor-ref-id ((t (:foreground "LightBlue2" :underline t :height 0.8))))
@@ -86,16 +85,18 @@
  '(moinmoin-url-title ((t (:foreground "LightBlue4" :underline t))))
  '(moinmoin-wiki-link ((t (:foreground "LightBlue4" :weight bold))))
  '(org-hide ((t (:foreground "DimGray"))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "gray20" :foreground "gray10" :height 1.0 :family "Comic Sans MS"))))
  '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))) t)
- '(xref-keyword-face ((t (:foreground "LightBlue"))) t)
- '(xref-list-pilot-face ((t (:foreground "blue violet"))) t)
- '(xref-list-symbol-face ((t (:foreground "light sky blue"))) t))
+ '(xref-keyword-face ((t (:foreground "LightBlue"))))
+ '(xref-list-pilot-face ((t (:foreground "blue violet"))))
+ '(xref-list-symbol-face ((t (:foreground "light sky blue")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(custom-safe-themes (quote ("27470eddcaeb3507eca2760710cc7c43f1b53854372592a3afa008268bcf7a75" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
  '(ecb-options-version "2.40")
+ '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(session-use-package t nil (session)))
 

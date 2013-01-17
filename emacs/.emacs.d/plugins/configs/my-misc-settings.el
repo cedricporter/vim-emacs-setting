@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 12:44:01 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:22:00 Thursday by Hua Liang>
 
 
 
@@ -286,6 +286,9 @@
 (require 'color-theme) 
 (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
+
 ;; change font key bindings
 (defun change-my-theme (theme-num)
   (save-excursion
@@ -304,8 +307,10 @@
       (switch-to-buffer origin-buffer)
       ))))
 
-(setq my-theme-list '((1 . color-theme-taylor)
-                      (2 . (lambda () (load-theme 'tango t)))))
+(setq my-theme-list '((1 . color-theme-taylor-et)
+                      (2 . (lambda () (load-theme 'tango t)))
+                      (3 . (lambda () (load-theme 'zenburn t)))
+                      ))
 
 (dolist (item my-theme-list)
   (let ((theme-num (car item)))
@@ -318,12 +323,12 @@
   (funcall (cdr (assoc what-theme my-theme-list))))
 
 ;; set theme according to theme number
-(set-theme 2)
+(set-theme 3)
 ;; end
 
 ;; solarized
-(add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
-(require 'color-theme-solarized)
+;(add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+;(require 'color-theme-solarized)
 ;(load-theme 'solarized-light t)
 
 ;;-------------------- color theme --------------------

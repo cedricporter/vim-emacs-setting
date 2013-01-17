@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-13 20:12:22 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-17 15:15:32 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -160,7 +160,7 @@
 ;; 设置非当前tab外观：外框大小和颜色
 (set-face-attribute 'tabbar-unselected nil
                     :inherit 'tabbar-default
-                    :box '(:line-width 2 :color "gray70")
+                    :box '(:line-width 2 :color "dark gray")
                     )
 ;; cancel grouping
 ;;(setq tabbar-buffer-groups-function
