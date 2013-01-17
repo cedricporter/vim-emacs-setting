@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -av --delete /media/Garage/QQ\ log/ /media/Primary\ Database/QQ\ log/
+rsync -av --delete /media/BACKUP/QQ\ log/ /media/Primary\ Database/QQ\ log/
