@@ -2,10 +2,10 @@
 
 # link to $HOME
 echo "# Creating link in your $HOME dir..." 
-ln -vs $PWD/emacs/.emacs ~/.emacs
-ln -vs $PWD/emacs/.emacs.d ~/.emacs.d
-ln -vs $PWD/vim/.vimrc ~/.vimrc
-ln -vs $PWD/vim/.vim ~/.vim
+ln -vsf $PWD/emacs/.emacs ~/.emacs
+ln -vsf $PWD/emacs/.emacs.d ~/.emacs.d
+ln -vsf $PWD/vim/.vimrc ~/.vimrc
+ln -vsf $PWD/vim/.vim ~/.vim
 
 # pull submodule
 echo "# Pulling submodule"
