@@ -1,11 +1,13 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 22:00:14 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-20 13:22:06 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
 (require 'linum)
 (global-linum-mode t)
 ;;(require 'hlinum)
+
+(line-number-mode -1)
 ;; --------------------      End         --------------------
 
 
