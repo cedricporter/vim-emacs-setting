@@ -34,3 +34,6 @@
 [submodule "emacs/.emacs.d/plugins/ack-and-a-half"]
 	path = emacs/.emacs.d/plugins/ack-and-a-half
 	url = git://github.com/jhelwig/ack-and-a-half.git
+[submodule "emacs/.emacs.d/plugins/org-mode-markdown"]
+	path = emacs/.emacs.d/plugins/org-mode-markdown
+	url = git@github.com:cedricporter/ORGMODE-Markdown.git

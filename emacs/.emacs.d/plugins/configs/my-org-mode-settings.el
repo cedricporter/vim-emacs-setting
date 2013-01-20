@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:37:32 by Hua Liang>
+;; Time-stamp: <2013-01-18 01:41:30 Friday by Hua Liang>
 
 
 (require 'org)
@@ -19,5 +19,7 @@
             (setq yas/trigger-key [tab])
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)))
+
+;(load "~/.emacs.d/plugins/org-mode-markdown/markdown.el")
 
 (provide 'my-org-mode-settings)

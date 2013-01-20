@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 16:58:10 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-20 12:11:57 Sunday by Hua Liang>
 
 
 
@@ -124,6 +124,9 @@
 
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+; hide all buffers starting with an asterisk. http://www.emacswiki.org/emacs/IbufferMode
+(require 'ibuf-ext)
+(add-to-list 'ibuffer-never-show-predicates "^\\*")
 
 ;; Mark Set
 (global-unset-key (kbd "C-SPC"))  

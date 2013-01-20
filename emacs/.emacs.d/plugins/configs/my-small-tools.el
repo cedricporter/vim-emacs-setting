@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-17 21:57:29 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-17 22:00:14 Thursday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -14,22 +14,12 @@
 ;; -------------------- fast-jump-back --------------------
 
 
-;; ;; ==================== recent-jump ====================
-;; ;; set recent-jump
-;; (setq recent-jump-threshold 3)
-;; (setq recent-jump-ring-length 10)
-;; (global-set-key (kbd "C-o") 'recent-jump-jump-backward)
-;; (global-set-key (kbd "M-o") 'recent-jump-jump-forward)
-;; (require 'recent-jump)
-;; ;; -------------------- end of recent-jump --------------------
-
-;; ==================== ahei recent-jump ====================
+;; ==================== ahei's recent-jump ====================
 (setq rj-ring-length 10000)
 (require 'recent-jump)
 (global-set-key (kbd "C-o") 'recent-jump-backward)
 (global-set-key (kbd "M-o") 'recent-jump-forward)
-;; -------------------- ahei recent-jump --------------------
-
+;; -------------------- ahei's recent-jump --------------------
 
 
 ;; ==================== moinmoin-mode ====================
