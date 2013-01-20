@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-16 15:28:54 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-21 00:45:47 Monday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -13,12 +13,15 @@
 (global-set-key (kbd "C-c o d") '(lambda (arg) ; write diary
 				   (interactive "P")
 				   (find-file "~/diary/index.md")
-				   (goto-char 0)
-				   (search-forward "---")
-				   (search-forward "---")
-				   (insert (format-time-string
-					    (concat "\n# %Y-%m-%d %T %A " (if arg "" "宿舍") "\n\n\n\n-----\n")))
-				   (backward-char 8)
+				   (if arg
+				       (goto-char 0)
+				     (search-forward "---")
+				     (search-forward "---")
+				     (insert (format-time-string
+					      (concat "\n# %Y-%m-%d %T %A "
+						      (if arg "" "宿舍")
+						      "\n\n\n\n-----\n")))
+				     (backward-char 8))
 				   ))
 
 ;; -------------------- octopress --------------------

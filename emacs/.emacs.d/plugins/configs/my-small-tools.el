@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-20 13:22:06 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-20 18:04:35 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -187,6 +187,8 @@
 ;; "C-u C-c SPC" ==> ace-jump-char-mode : enter a character for query, select the highlighted key to move to it.
 ;; "C-u C-u C-c SPC" ==> ace-jump-line-mode : each non-empty line will be marked, select the highlighted key to move to it.
 (add-to-list 'load-path "~/.emacs.d/plugins/ace-jump-mode")
+
+(setq ace-jump-mode-case-fold t)
 
 (autoload 'ace-jump-mode
   "ace-jump-mode"

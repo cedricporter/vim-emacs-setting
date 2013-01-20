@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-03 00:13:02 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-20 19:27:56 Sunday by Hua Liang>
 
 ;; ==================== ecb ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
@@ -23,6 +23,9 @@
                    ;(other-window 1)
                    (ecb-set-cscope-buffer))
 
+(ecb-layout-define "my-python-layout" left nil
+                   (ecb-set-methods-buffer))
+
 (defecb-window-dedicator-to-ecb-buffer ecb-set-cscope-buffer
     " *ECB cscope-buf*" nil
   "docstring of cscope buffer"
@@ -35,7 +38,7 @@
        (ecb-layout-switch ,layout-name))))
 
 (set-key-for-ecb-layout (kbd "C-c . 1") "my-cscope-layout")
-(set-key-for-ecb-layout (kbd "C-c . 2") "left10")
+(set-key-for-ecb-layout (kbd "C-c . 2") "my-python-layout")
 (set-key-for-ecb-layout (kbd "C-c . 3") "left-dir-plus-speedbar")
 
 (setq ecb-layout-name "my-cscope-layout")
