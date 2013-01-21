@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-21 13:23:09 Monday by Hua Liang>
+;; Time-stamp: <2013-01-21 13:24:26 Monday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -14,6 +14,7 @@
 				   (interactive "P")
 				   (find-file "~/diary/index.md")
 				   (if arg
+				       (message "just open diary")
 				       (progn 
 					 (goto-char 0)
 					 (search-forward "---")

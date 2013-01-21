@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-15 10:14:37 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-21 20:55:18 Monday by Hua Liang>
 
 
 ;; Python Hook
@@ -10,6 +10,12 @@
              (setq python-indent 4)
              (
               )))
+
+;; 删除行尾的空白字符
+(add-hook 'python-mode-hook (lambda ()
+			      (add-to-list 
+			       'write-file-functions
+			       'delete-trailing-whitespace)))
 
 (setq python-check-command "pyflakes")
 
