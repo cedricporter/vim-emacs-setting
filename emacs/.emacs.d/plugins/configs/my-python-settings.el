@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-21 20:55:18 Monday by Hua Liang>
+;; Time-stamp: <2013-01-21 20:57:16 Monday by Hua Liang>
 
 
 ;; Python Hook
@@ -8,11 +8,10 @@
              (setq indent-tabs-mode nil tab-width 4)
              (setq python-indent-offset 4)
              (setq python-indent 4)
-             (
-              )))
+             ))
 
 ;; 删除行尾的空白字符
-(add-hook 'python-mode-hook (lambda ()
+(add-hook 'python-mode-hook '(lambda ()
 			      (add-to-list 
 			       'write-file-functions
 			       'delete-trailing-whitespace)))

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-21 13:24:26 Monday by Hua Liang>
+;; Time-stamp: <2013-01-22 01:58:28 Tuesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -15,7 +15,7 @@
 				   (find-file "~/diary/index.md")
 				   (if arg
 				       (message "just open diary")
-				       (progn 
+				       (progn
 					 (goto-char 0)
 					 (search-forward "---")
 					 (search-forward "---")
@@ -40,6 +40,29 @@
   )
 (define-key markdown-mode-map (kbd "C-c d") 'add-strike-for-list)
 ;; -------------------- markdown-mode --------------------
+
+
+;; ==================== ac-source ====================
+(defun mysource-octopress ()
+  (let ((line-text (thing-at-point 'line)))
+    (cond ((string-match "^tags:" line-text)
+	   (directory-files "~/octopress/public/tag"))
+	  ((string-match "^categories:" line-text)
+	   (directory-files "~/octopress/public/category")))
+    ))
+
+(defvar ac-source-octopress
+  '((candidates . mysource-octopress)
+    ))
+
+(defun ac-octopress-setup ()
+  (setq ac-sources '(ac-source-octopress)))
+
+(add-to-list 'ac-modes 'markdown-mode)
+
+(add-hook 'markdown-mode-hook 'ac-octopress-setup)
+;; -------------------- ac-source --------------------
+
 
 
 ;; ==================== orgmode-octopress ====================
