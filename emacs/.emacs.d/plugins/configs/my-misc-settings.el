@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 20:26:52 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-22 22:17:16 Tuesday by Hua Liang>
 
 
 
@@ -476,14 +476,19 @@ occurence of CHAR."
        (split-window-horizontally)
        (coffee-compile-file)
        (find-file-other-window (coffee-compiled-file-name))
-       (other-window 1))))
+       (other-window 1)))
+  (define-key coffee-mode-map (kbd "C-j")
+    'coffee-newline-and-indent)
+  )
 
 (defun revert-compiled-coffee-buffer ()
   (interactive)
   (coffee-compile-file)
-  (with-current-buffer
-      (concat (file-name-sans-extension (buffer-name (current-buffer))) ".js")
-    (revert-buffer nil t)))
+  (let ((js-buffer-name (concat (file-name-sans-extension (buffer-name (current-buffer))) ".js")))
+    (if (not (get-buffer js-buffer-name))
+	my-coffee-script-setup)
+    (with-current-buffer js-buffer-name
+      (revert-buffer nil t))))
 
 (add-hook 'coffee-mode-hook
 	  '(lambda ()
@@ -491,6 +496,8 @@ occurence of CHAR."
 	     (add-hook 'after-save-hook
 		       'revert-compiled-coffee-buffer
 		       nil t)))
+
+(add-to-list 'ac-modes 'coffee-mode)
 ;; -------------------- coffee-script --------------------
 
 
