@@ -37,3 +37,6 @@
 [submodule "emacs/.emacs.d/plugins/org-mode-markdown"]
 	path = emacs/.emacs.d/plugins/org-mode-markdown
 	url = git@github.com:cedricporter/ORGMODE-Markdown.git
+[submodule "emacs/.emacs.d/plugins/gc-refresh-mode"]
+	path = emacs/.emacs.d/plugins/gc-refresh-mode
+	url = git://github.com/Alexandre-Strzelewicz/gc-refresh-mode.git
