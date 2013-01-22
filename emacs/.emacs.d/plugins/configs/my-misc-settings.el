@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-20 12:11:57 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-22 12:58:52 Tuesday by Hua Liang>
 
 
 
@@ -37,7 +37,7 @@
 ;;显示时间，格式如下
 (display-time-mode 1)
 (setq display-time-24hr-format t)
-(setq display-time-day-and-date t) 
+(setq display-time-day-and-date t)
 ;;----------------------    END    time setting    ---------------------
 
 
@@ -129,14 +129,14 @@
 (add-to-list 'ibuffer-never-show-predicates "^\\*")
 
 ;; Mark Set
-(global-unset-key (kbd "C-SPC"))  
+(global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
 
 ;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
 ;; 如果总是不显示工具栏，将下面代码加到.emacs中
 ;; 参考： http://www.emacswiki.org/emacs/ToolBar
-;; 注意：在menu-bar不显示的情况下，按ctrl+鼠标右键还是能调出菜单选项的 
+;; 注意：在menu-bar不显示的情况下，按ctrl+鼠标右键还是能调出菜单选项的
 (tool-bar-mode -1)
 ;; 如果总是不显示菜单，将下面代码加到.emacs中
 ;;参考： http://www.emacswiki.org/emacs/MenuBar
@@ -168,17 +168,17 @@
 ;; 4.1 在单元格之间移动
 ;; table-forward-cell<==>tab
 ;; table-backward-cell<==>shift+tab
-;; 
+;;
 ;; 4.2 合并单元格
 ;; table-span-cell
-;; 
+;;
 ;; 4.3 拆分单元格
 ;; +---------------------------------------+---------------+
 ;; |table-split-cell-horizontally          |C-c C-c -      |
 ;; +---------------------------------------+---------------+
 ;; |table-split-cell-vertically            |C-c C-c |      |
 ;; +---------------------------------------+---------------+
-;; 
+;;
 ;; 4.4 扩大或缩小单元格的宽度、高度
 ;; +--------------------------------------+----------+
 ;; |垂直扩大：table-highten-cell          |C-c C-c } |
@@ -193,7 +193,7 @@
 ;; |水平缩小：table-narrow-cell           |C-c C-c < |
 ;; |                                      |          |
 ;; +--------------------------------------+----------+
-;; 
+;;
 ;; 5、单元格对齐方式
 ;; +---------------------------------------+-----------+
 ;; |命令：table-justify                    |C-c C-c :  |
@@ -212,7 +212,7 @@
 ;; 去掉滚动栏
 (scroll-bar-mode -1)
 
-;; 一打开就起用 text 模式。  
+;; 一打开就起用 text 模式。
 (setq default-major-mode 'text-mode)
 
 ;; 语法高亮
@@ -220,14 +220,14 @@
 
 
 ;;禁用启动信息
-;(setq inhibit-startup-message t) 
+;(setq inhibit-startup-message t)
 
 ;; 回车缩进
 ;; (global-set-key "\C-m" 'newline-and-indent)
 ;(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-<return>") 'newline)
 
-;; 显示括号匹配 
+;; 显示括号匹配
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 (require 'highlight-parentheses)
@@ -238,9 +238,9 @@
 
 
 ;; ;; Make it behave like vim
-;; (global-set-key "\M-f" 'forward-same-syntax) 
+;; (global-set-key "\M-f" 'forward-same-syntax)
 ;; (global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
-;;  
+;;
 ;; (defun kill-syntax (&optional arg)
 ;;   "Kill ARG sets of syntax characters after point."
 ;;   (interactive "p")
@@ -255,10 +255,10 @@
 (setq kill-ring-max 200)
 
 ;;高亮显示选中的区域
-(transient-mark-mode t) 
+(transient-mark-mode t)
 
 ;;支持emacs和外部程序的拷贝粘贴
-(setq x-select-enable-clipboard t) 
+(setq x-select-enable-clipboard t)
 
 ;;在标题栏提示当前位置
 (setq frame-title-format
@@ -285,8 +285,8 @@
 
 
 ;;==================== color theme ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/") 
-(require 'color-theme) 
+(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/")
+(require 'color-theme)
 (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -460,5 +460,10 @@ occurence of CHAR."
 	("i\\.everet\\.org" . moinmoin-mode)))
 ;; -------------------- emacs-chrome --------------------
 
+
+;; ==================== js2-mode ====================
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; -------------------- js2-mode --------------------
 
 (provide 'my-misc-settings)
