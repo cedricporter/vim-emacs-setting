@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 20:09:52 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-22 20:26:52 Tuesday by Hua Liang>
 
 
 
@@ -468,7 +468,29 @@ occurence of CHAR."
 
 
 ;; ==================== coffee-script ====================
+(defun my-coffee-script-setup ()
+  (define-key coffee-mode-map (kbd "<f7>")
+    '(lambda ()
+       (interactive)
+       (delete-other-windows)
+       (split-window-horizontally)
+       (coffee-compile-file)
+       (find-file-other-window (coffee-compiled-file-name))
+       (other-window 1))))
 
+(defun revert-compiled-coffee-buffer ()
+  (interactive)
+  (coffee-compile-file)
+  (with-current-buffer
+      (concat (file-name-sans-extension (buffer-name (current-buffer))) ".js")
+    (revert-buffer nil t)))
+
+(add-hook 'coffee-mode-hook
+	  '(lambda ()
+	     (my-coffee-script-setup)
+	     (add-hook 'after-save-hook
+		       'revert-compiled-coffee-buffer
+		       nil t)))
 ;; -------------------- coffee-script --------------------
 
 
