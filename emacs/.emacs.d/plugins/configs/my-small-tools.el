@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 18:19:10 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-22 23:42:26 Tuesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -365,6 +365,12 @@
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
 ;; -------------------- full-ack --------------------
+
+
+;; ==================== reload chrome ====================
+(add-to-list 'load-path "~/.emacs.d/plugins/gc-refresh-mode")
+(require 'gc-refresh-mode)
+;; -------------------- reload chrome --------------------
 
 
 (provide 'my-small-tools)
