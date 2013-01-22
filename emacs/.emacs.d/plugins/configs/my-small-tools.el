@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-20 18:04:35 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-22 18:19:10 Tuesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -41,7 +41,7 @@
 ;; -------------------- nginx-mode --------------------
 
 
-;(require 'ibus) 
+;(require 'ibus)
 ;(add-hook 'after-init-hook 'ibus-mode-on)
 
 
@@ -71,10 +71,10 @@
 
 ;; ==================== session ====================
 ;; session
-(require 'session) 
-(add-hook 'after-init-hook 'session-initialize) 
-(load "desktop") 
-(desktop-save-mode) 
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(load "desktop")
+(desktop-save-mode)
 ;; -------------------- session --------------------
 
 
@@ -87,32 +87,32 @@
 
 ;; ==================== tabbar ====================
 ;;tabbar
-(require 'tabbar)  
-(tabbar-mode 1)  
-(global-set-key [(meta j)] 'tabbar-backward)  
+(require 'tabbar)
+(tabbar-mode 1)
+(global-set-key [(meta j)] 'tabbar-backward)
 (global-set-key [(meta k)] 'tabbar-forward)
 (global-set-key [(control meta j)] 'tabbar-backward-group)
 (global-set-key [(control meta k)] 'tabbar-forward-group)
 ;;set group strategy
-(defun tabbar-buffer-groups ()  
-  "tabbar group"  
-  (list  
-   (cond  
-    ((memq major-mode '(shell-mode sh-mode))  
-     "shell"  
-     )  
-    ((memq major-mode '(c-mode c++-mode))  
-     "cc"  
+(defun tabbar-buffer-groups ()
+  "tabbar group"
+  (list
+   (cond
+    ((memq major-mode '(shell-mode sh-mode))
+     "shell"
+     )
+    ((memq major-mode '(c-mode c++-mode))
+     "cc"
      )
     ((memq major-mode '(dired-mode ibuffer-mode))
      "files"
      )
-    ((eq major-mode 'python-mode)  
-     "python"  
-     )  
-    ((eq major-mode 'ruby-mode)  
-     "ruby"  
-     )  
+    ((eq major-mode 'python-mode)
+     "python"
+     )
+    ((eq major-mode 'ruby-mode)
+     "ruby"
+     )
     ((memq major-mode
 	   '(php-mode nxml-mode nxhtml-mode))
      "WebDev"
@@ -124,14 +124,14 @@
 	   '(tex-mode latex-mode text-mode snippet-mode org-mode moinmoin-mode markdown-mode))
      "Text"
      )
-    ((string-equal "*" (substring (buffer-name) 0 1))  
-     "emacs"  
-     )  
-    (t  
-     "other"  
-     )  
-    )))  
-(setq tabbar-buffer-groups-function 'tabbar-buffer-groups) 
+    ((string-equal "*" (substring (buffer-name) 0 1))
+     "emacs"
+     )
+    (t
+     "other"
+     )
+    )))
+(setq tabbar-buffer-groups-function 'tabbar-buffer-groups)
 
 ;;;; 设置tabbar外观
 ;; 设置默认主题: 字体, 背景和前景颜色，大小
@@ -215,13 +215,13 @@
 ;; ==================== htmlize ====================
 ;; 1) M-x htmlize-buffer
 ;; 把当前的buffer转为一个html文件，并保留当前你Emacs的色彩定义。运行这个命令后，Emacs会跳转到一个新的buffer里，你把这个buffer保存下来即可。
-;;  
+;;
 ;; 2) M-x htmlize-file
 ;; 这个命令会在mini-buffer里提示输入你需要转换的文件，自动帮你转换好，并保存为.html。
-;;  
+;;
 ;; 3) M-x htmlize-many-files
 ;; 这个命令和2)差不多的功能，不过可以让你同时转一批文件。
-;;  
+;;
 ;; 4) M-x htmlize-many-files-dired
 ;; 这个命令可以把你标记好的目录下的所以文件都转成html。
 (require 'htmlize)
@@ -271,7 +271,7 @@
 
 ;; ==================== find-func in emacs lisp ====================
 (require 'find-func)
-(define-key emacs-lisp-mode-map (kbd "C-c g") 'find-function)
+(define-key emacs-lisp-mode-map (kbd "C-.") 'find-function)
 (define-key emacs-lisp-mode-map (kbd "<f12>") 'find-function)
 (define-key emacs-lisp-mode-map (kbd "C-c v") 'find-variable)
 ;; -------------------- find-func in emacs lisp --------------------
@@ -335,7 +335,7 @@
 
 ;; ==================== evil-number ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/evil-numbers")
-(require 'evil-numbers) 
+(require 'evil-numbers)
 
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)

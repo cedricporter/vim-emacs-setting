@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 12:58:52 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-22 20:09:52 Tuesday by Hua Liang>
 
 
 
@@ -465,5 +465,11 @@ occurence of CHAR."
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;; -------------------- js2-mode --------------------
+
+
+;; ==================== coffee-script ====================
+
+;; -------------------- coffee-script --------------------
+
 
 (provide 'my-misc-settings)
