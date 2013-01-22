@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 22:17:16 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-23 01:09:02 Wednesday by Hua Liang>
 
 
 
@@ -497,7 +497,6 @@ occurence of CHAR."
 		       'revert-compiled-coffee-buffer
 		       nil t)))
 
-(add-to-list 'ac-modes 'coffee-mode)
 ;; -------------------- coffee-script --------------------
 
 

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 01:58:28 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-23 01:09:44 Wednesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -57,8 +57,6 @@
 
 (defun ac-octopress-setup ()
   (setq ac-sources '(ac-source-octopress)))
-
-(add-to-list 'ac-modes 'markdown-mode)
 
 (add-hook 'markdown-mode-hook 'ac-octopress-setup)
 ;; -------------------- ac-source --------------------
