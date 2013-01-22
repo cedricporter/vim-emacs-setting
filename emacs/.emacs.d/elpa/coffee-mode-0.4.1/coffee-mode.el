@@ -1,57 +1,77 @@
-;;; coffee-mode.el --- Major mode to edit CoffeeScript files in Emacs
+;;; coffee-mode.el --- Major mode for CoffeeScript files
 
-;; Copyright (C) 2010 Chris Wanstrath
+;; Copyright (C) 2010-2012 Free Software Foundation, Inc.
 
 ;; Version: 0.4.1
 ;; Keywords: CoffeeScript major mode
 ;; Author: Chris Wanstrath <chris@ozmm.org>
 ;; URL: http://github.com/defunkt/coffee-mode
 
-;; This file is not part of GNU Emacs.
+;; This file is part of GNU Emacs.
 
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 2, or (at your option)
-;; any later version.
+;; GNU Emacs is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published
+;; by the Free Software Foundation, either version 3 of the License,
+;; or (at your option) any later version.
 
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
+;; GNU Emacs is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with this program; if not, write to the Free Software
-;; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary
 
-;; For commentary please see the README.md or
-;; http://github.com/defunkt/coffee-mode#readme
+;; CoffeeScript mode is an Emacs major mode for [CoffeeScript][cs],
+;; unfancy JavaScript.  It provides syntax highlighting, indentation
+;; support, imenu support, a menu bar, and a few cute commands.
 
-;;; Installation
+;; Installing this package enables CoffeeScript mode for file named
+;; *.coffee and Cakefile.
 
-;; In your shell:
+;; Commands:
 
-;;     $ cd ~/.emacs.d/vendor
-;;     $ git clone git://github.com/defunkt/coffee-mode.git
+;; M-x coffee-compile-file compiles the current file as a JavaScript
+;; file.  Operating on "basic.coffee" and running this command will
+;; save a "basic.js" in the same directory.  Subsequent runs will
+;; overwrite the file.
+;;
+;; If there are compilation errors and we the compiler have returned a
+;; line number to us for the first error, the point is moved to that
+;; line, so you can investigate.  If this annoys you, you can set
+;; `coffee-compile-jump-to-error` to `nil`.
+;;
+;; M-x coffee-compile-buffer compiles the current buffer to JavaScript
+;; using the command specified by the `coffee-command` variable, and
+;; opens the contents in a new buffer using the mode configured for
+;; ".js" files.
+;;
+;; M-x coffee-compile-region compiles the selected region to
+;; JavaScript using the same configuration variables as
+;; `coffee-compile-buffer`.
+;;
+;; `C-c C-o C-s' (coffee-cos-mode) toggles a minor mode implementing
+;; "compile-on-save" behavior.
+;;
+;; M-x coffee-repl starts a repl via `coffee-command` in a new buffer.
 
-;; In your emacs config:
+;; Options:
+;;
+;; `coffee-tab-width' - Tab width to use when indenting.
+;; `coffee-command'   - CoffeeScript command for evaluating code.
+;;                      Must be in your path.
+;; `coffee-args-repl' - Command line arguments for `coffee-command'
+;;                      when starting a REPL.
+;; `coffee-args-compile'          - Arguments for `coffee-command'
+;;                                  when compiling a file.
+;; `coffee-compiled-buffer-name'  - Name of the scratch buffer used
+;;                                  when compiling CoffeeScript.
+;; `coffee-compile-jump-to-error' - Whether to jump to the first error
+;;                                  if compilation fails.
 
-;;     (add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
-;;     (require 'coffee-mode)
-
-;;; Thanks
-
-;; Major thanks to http://xahlee.org/emacs/elisp_syntax_coloring.html
-;; the instructions.
-
-;; Also thanks to Jason Blevins's markdown-mode.el and Steve Yegge's
-;; js2-mode for guidance.
-
-;; TODO:
-;; - Execute {buffer,region,line} and show output in new buffer
-;; - Make prototype accessor assignments like `String::length: -> 10` pretty.
-;; - mirror-mode - close brackets and parens automatically
+;; Please file bugs at <http://github.com/defunkt/coffee-mode/issues>
 
 ;;; Code:
 
