@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 23:26:44 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:45:32 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -25,7 +25,7 @@
    rainbow-mode				; show color
    org-mode
    graphviz-dot-mode
-   nrepl
+   ;; nrepl
    slime
    coffee-mode
    htmlize
