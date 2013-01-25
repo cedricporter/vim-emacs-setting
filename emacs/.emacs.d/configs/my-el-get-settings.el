@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 23:19:38 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:26:44 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -135,4 +135,4 @@
 		   ;; when using AZERTY keyboard, consider C-x C-_
 		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))))
 
-(el-get 'sync)				; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
+(el-get 'sync (mapcar 'el-get-source-name el-get-sources))				; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
