@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-23 01:09:02 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-25 22:28:36 Friday by Hua Liang>
 
 
 
@@ -424,80 +424,11 @@ occurence of CHAR."
 ;; -------------------- jump to next/previous buffer --------------------
 
 
-;; ==================== yaml ====================
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; -------------------- yaml --------------------
-
-
-;; ==================== markdown-mode ====================
-(require 'markdown-mode)
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
-(setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-;; -------------------- markdown-mode --------------------
-
-
-;; ==================== scss-mode ====================
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-;; -------------------- scss-mode --------------------
-
 
 ;; ==================== backup files ====================
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 ;; -------------------- backup files --------------------
 
-
-;; ==================== emacs-chrome ====================
-(when (and (require 'edit-server nil t) (not (daemonp)))
-;  (setq edit-server-new-frame nil)
-  (edit-server-start))
-
-(setq edit-server-url-major-mode-alist
-      '(("github\\.com" . markdown-mode)
-	("i\\.everet\\.org" . moinmoin-mode)))
-;; -------------------- emacs-chrome --------------------
-
-
-;; ==================== js2-mode ====================
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;; -------------------- js2-mode --------------------
-
-
-;; ==================== coffee-script ====================
-(defun my-coffee-script-setup ()
-  (define-key coffee-mode-map (kbd "<f7>")
-    '(lambda ()
-       (interactive)
-       (delete-other-windows)
-       (split-window-horizontally)
-       (coffee-compile-file)
-       (find-file-other-window (coffee-compiled-file-name))
-       (other-window 1)))
-  (define-key coffee-mode-map (kbd "C-j")
-    'coffee-newline-and-indent)
-  )
-
-(defun revert-compiled-coffee-buffer ()
-  (interactive)
-  (coffee-compile-file)
-  (let ((js-buffer-name (concat (file-name-sans-extension (buffer-name (current-buffer))) ".js")))
-    (if (not (get-buffer js-buffer-name))
-	my-coffee-script-setup)
-    (with-current-buffer js-buffer-name
-      (revert-buffer nil t))))
-
-(add-hook 'coffee-mode-hook
-	  '(lambda ()
-	     (my-coffee-script-setup)
-	     (add-hook 'after-save-hook
-		       'revert-compiled-coffee-buffer
-		       nil t)))
-
-;; -------------------- coffee-script --------------------
 
 
 ;; (provide 'my-misc-settings)

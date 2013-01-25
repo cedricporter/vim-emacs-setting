@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 20:48:07 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 22:29:21 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -26,7 +26,6 @@
    org-mode
    graphviz-dot-mode
    yasnippet
-   markdown-mode
    auto-complete
    auto-complete-emacs-lisp
    auto-complete-latex
@@ -34,12 +33,29 @@
    auto-complete-etags
    nrepl
    slime
-   js2-mode
    coffee-mode
    htmlize
    undo-tree
    full-ack
-   edit-server
+   scss-mode
+   yaml-mode
+
+   (:name markdown-mode
+	  :after (progn
+		   (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+		   (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))))
+
+   (:name edit-server
+	  :after (progn
+		   (when (not (daemonp))
+		     (edit-server-start)
+		     (setq edit-server-url-major-mode-alist
+			   '(("github\\.com" . markdown-mode)
+			     ("i\\.everet\\.org" . moinmoin-mode))))))
+
+   (:name js2-mode
+	  :after (progn
+		   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
 
    (:name evil-numbers
 	  :after (progn

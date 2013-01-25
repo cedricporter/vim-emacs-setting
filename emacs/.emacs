@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-25 20:44:10 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 22:24:40 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -61,6 +61,7 @@
 
 (load "~/.emacs.d/configs/my-auto-insert-settings.el")
 
+(load "~/.emacs.d/configs/my-coffee-script.el")
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated
