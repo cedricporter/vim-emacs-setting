@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 22:29:21 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:17:41 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -26,11 +26,6 @@
    org-mode
    graphviz-dot-mode
    yasnippet
-   auto-complete
-   auto-complete-emacs-lisp
-   auto-complete-latex
-   auto-complete-css
-   auto-complete-etags
    nrepl
    slime
    coffee-mode
@@ -39,6 +34,15 @@
    full-ack
    scss-mode
    yaml-mode
+
+   (:name auto-complete
+	  :after (progn
+		   (load "~/.emacs.d/configs/my-autocomplete-settings.el")))
+
+   auto-complete-emacs-lisp
+   auto-complete-latex
+   auto-complete-css
+   auto-complete-etags
 
    (:name markdown-mode
 	  :after (progn

@@ -1,13 +1,12 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-23 01:09:48 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:16:11 Friday by Hua Liang>
 
 ;;==================== auto complete ====================
 ;; auto complete with clang
-(add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
 
 (ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/ac-dict/")  
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
 (setq ac-auto-start t)
 (setq ac-quick-help-delay 0.5)
 ;; (ac-set-trigger-key "TAB")
