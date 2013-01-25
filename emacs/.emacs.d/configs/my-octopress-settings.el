@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-23 01:09:44 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:05:57 Friday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -38,7 +38,7 @@
   (end-of-line)
   (insert "</del>")
   )
-(define-key markdown-mode-map (kbd "C-c d") 'add-strike-for-list)
+
 ;; -------------------- markdown-mode --------------------
 
 
@@ -91,7 +91,12 @@
 	(insert "![](" url ")")
       (insert "{% img " url " %}"))))
 
-(define-key markdown-mode-map (kbd "C-c C-s s") 'markdown-screenshot)
-(define-key markdown-mode-map (kbd "C-c C-s i") 'markdown-insert-image-from-clipboard)
+
+(add-hook 'markdown-mode-hook
+	  '(lambda ()
+	     (define-key markdown-mode-map (kbd "C-c d") 'add-strike-for-list)
+	     (define-key markdown-mode-map (kbd "C-c C-s s") 'markdown-screenshot)
+	     (define-key markdown-mode-map (kbd "C-c C-s i") 'markdown-insert-image-from-clipboard)
+	     ))
 
 ;; (provide 'my-octopress-settings)

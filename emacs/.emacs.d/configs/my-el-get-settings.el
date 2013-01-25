@@ -47,7 +47,7 @@
 
    (:name edit-server
 	  :after (progn
-		   (when (not (daemonp))
+		   (when (and (require 'edit-server nil t) (not (daemonp)))
 		     (edit-server-start)
 		     (setq edit-server-url-major-mode-alist
 			   '(("github\\.com" . markdown-mode)
