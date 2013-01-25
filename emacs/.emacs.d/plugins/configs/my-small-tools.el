@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-22 23:42:26 Tuesday by Hua Liang>
+;; Time-stamp: <2013-01-25 20:14:41 Friday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -30,17 +30,6 @@
 ;; -------------------- moinmoin-mode --------------------
 
 
-;; ==================== nginx-mode ====================
-(require 'nginx-mode)
-(add-hook 'find-file-hook '(lambda ()
-                             (when (string-match
-                                    "^\\(/etc/nginx\\|/home/cedricporter/my\\).*?\\.\\(com\\|org\\|net\\|conf\\)$"
-                                    (buffer-file-name))
-                               (nginx-mode)
-                               )))
-;; -------------------- nginx-mode --------------------
-
-
 ;(require 'ibus)
 ;(add-hook 'after-init-hook 'ibus-mode-on)
 
@@ -69,13 +58,13 @@
 ;; -------------------- ido --------------------
 
 
-;; ==================== session ====================
-;; session
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(load "desktop")
-(desktop-save-mode)
-;; -------------------- session --------------------
+;; ;; ==================== session ====================
+;; ;; session
+;; (require 'session)
+;; (add-hook 'after-init-hook 'session-initialize)
+;; (load "desktop")
+;; (desktop-save-mode)
+;; ;; -------------------- session --------------------
 
 
 ;; ==================== saveplace ====================
@@ -181,92 +170,16 @@
 ;; -------------------- tabbar --------------------
 
 
+;; ;; ==================== org2blog ====================
+;; (add-to-list 'load-path "~/.emacs.d/plugins/org2blog")
+;; (require 'org2blog-autoloads)
 
-;; ==================== ace-jump ====================
-;; "C-c SPC" ==> ace-jump-word-mode : enter first character of a word, select the highlighted key to move to it.
-;; "C-u C-c SPC" ==> ace-jump-char-mode : enter a character for query, select the highlighted key to move to it.
-;; "C-u C-u C-c SPC" ==> ace-jump-line-mode : each non-empty line will be marked, select the highlighted key to move to it.
-(add-to-list 'load-path "~/.emacs.d/plugins/ace-jump-mode")
-
-(setq ace-jump-mode-case-fold t)
-
-(autoload 'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-(setq ace-jump-mode-scope 'window)      ; limit scope to current buffer(window)
-(setq ace-jump-mode-submode-list
-      '(ace-jump-word-mode              ; C-c SPC
-        ace-jump-line-mode              ; C-u C-c SPC
-        ace-jump-char-mode))            ; C-u C-u C-c SPC
-;; you can select the key you prefer to
-(global-set-key (kbd "M-l") 'ace-jump-mode)
-;; -------------------- ace-jump --------------------
-
-
-
-;;==================== undo tree ====================
-(require 'undo-tree)
-;;-------------------- undo tree --------------------
-
-
-
-
-;; ==================== htmlize ====================
-;; 1) M-x htmlize-buffer
-;; 把当前的buffer转为一个html文件，并保留当前你Emacs的色彩定义。运行这个命令后，Emacs会跳转到一个新的buffer里，你把这个buffer保存下来即可。
-;;
-;; 2) M-x htmlize-file
-;; 这个命令会在mini-buffer里提示输入你需要转换的文件，自动帮你转换好，并保存为.html。
-;;
-;; 3) M-x htmlize-many-files
-;; 这个命令和2)差不多的功能，不过可以让你同时转一批文件。
-;;
-;; 4) M-x htmlize-many-files-dired
-;; 这个命令可以把你标记好的目录下的所以文件都转成html。
-(require 'htmlize)
-;; -------------------- htmlize -----------------------------
-
-
-;; ;; ==================== git emacs ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/git-emacs/")
-;; (require 'git-emacs)
-;; ;; -------------------- git emacs --------------------
-
-
-;; ==================== magit ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/magit-1.2.0")
-(require 'magit)
-(require 'magit-svn)
-(global-set-key (kbd "C-x g s") 'magit-status)
-;; -------------------- magit --------------------
-
-
-;; ;;==================== w3m ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/emacs-w3m-1.4.4")
-;; ;(require 'w3m-load)
-;; (require 'w3m-e21)
-;; (provide 'w3m-e23)
-;; ;;-------------------- w3m --------------------
-
-
-;; ;; ==================== o-blog ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/o-blog")
-;; (require 'o-blog)
-;; ;; -------------------- o-blog --------------------
-
-
-;; ==================== org2blog ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/org2blog")
-(require 'org2blog-autoloads)
-
-(setq org2blog/wp-blog-alist
-      '(("EverET.org"
-         :url "http://EverET.org/xmlrpc.php"
-         :username "cedricporter"
-         :default-title "无题")))
-
-;; -------------------- org2blog --------------------
+;; (setq org2blog/wp-blog-alist
+;;       '(("EverET.org"
+;;          :url "http://EverET.org/xmlrpc.php"
+;;          :username "cedricporter"
+;;          :default-title "无题")))
+;; ;; -------------------- org2blog --------------------
 
 
 ;; ==================== find-func in emacs lisp ====================
@@ -318,44 +231,9 @@
 ;; -------------------- toggle-case --------------------
 
 
-
-;; ==================== helm ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/helm")
-(require 'helm-config)
-;(helm-mode 1)
-(global-set-key (kbd "C-x b") 'helm-mini)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; -------------------- helm --------------------
-
-
-;; ==================== graphviz ====================
-(load-file "~/.emacs.d/plugins/graphviz-dot-mode.el")
-;; -------------------- graphviz --------------------
-
-
-;; ==================== evil-number ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/evil-numbers")
-(require 'evil-numbers)
-
-(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
-(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
-;; -------------------- evil-number --------------------
-
-
 ;; ==================== ws ====================
 ;; (require 'ws)
 ;; -------------------- ws --------------------
-
-
-;; ;; ==================== ack-and-a-half ====================
-;; (add-to-list 'load-path "~/.emacs.d/plugins/ack-and-a-half")
-;; (require 'ack-and-a-half)
-;; ;; Create shorter aliases
-;; (defalias 'ack 'ack-and-a-half)
-;; (defalias 'ack-same 'ack-and-a-half-same)
-;; (defalias 'ack-find-file 'ack-and-a-half-find-file)
-;; (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
-;; ;; -------------------- ack-and-a-half --------------------
 
 
 ;; ==================== full-ack ====================

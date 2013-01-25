@@ -1,19 +1,21 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-17 21:27:03 Thursday by Hua Liang>
+;; Time-stamp: <2013-01-25 19:45:02 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
-(setq user-mail-address "et@everet.org") 
+(setq user-mail-address "et@everet.org")
 
 ;; Add plugins to load-path.
 ;; We will put some tiny plugins in it
-(add-to-list 'load-path "~/.emacs.d/plugins/") 
-(add-to-list 'load-path "~/.emacs.d/plugins/configs") 
+(add-to-list 'load-path "~/.emacs.d/plugins/")
+(add-to-list 'load-path "~/.emacs.d/plugins/configs")
 
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
+
+(load "~/.emacs.d/plugins/configs/my-el-get-settings.el")
 
 (require 'my-functions)
 
@@ -59,7 +61,6 @@
 
 (load "~/.emacs.d/plugins/configs/my-auto-insert-settings.el")
 
-;; (require 'my-el-get-settings)
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated
@@ -90,4 +91,3 @@
  '(fci-rule-color "#383838")
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(session-use-package t nil (session)))
-

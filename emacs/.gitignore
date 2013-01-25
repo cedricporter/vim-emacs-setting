@@ -10,4 +10,6 @@
 .emacs.d/plugins/cedet-bzr/.bzr/
 .emacs.d/.emacs.desktop
 .emacs.d/.emacs.desktop.lock
+.emacs.d/.smex-items
+.emacs.d/el-get/
 

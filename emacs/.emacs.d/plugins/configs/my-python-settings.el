@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-21 20:57:16 Monday by Hua Liang>
+;; Time-stamp: <2013-01-25 19:14:06 Friday by Hua Liang>
 
 
 ;; Python Hook
@@ -20,31 +20,23 @@
 
 ;; ==================== jedi ====================
 
-;; deferred
-(add-to-list 'load-path "~/.emacs.d/plugins/deferred")
-(require 'deferred)
-(require 'concurrent)
+;; ;; deferred
+;; (add-to-list 'load-path "~/.emacs.d/plugins/deferred")
+;; (require 'deferred)
+;; (require 'concurrent)
 
-;; ctable
-(add-to-list 'load-path "~/.emacs.d/plugins/ctable")
-(require 'ctable)
+;; ;; ctable
+;; (add-to-list 'load-path "~/.emacs.d/plugins/ctable")
+;; (require 'ctable)
 
-;; epc
-(add-to-list 'load-path "~/.emacs.d/plugins/epc")
-(require 'epc)
+;; ;; epc
+;; (add-to-list 'load-path "~/.emacs.d/plugins/epc")
+;; (require 'epc)
 
-;; jedi
-(add-to-list 'load-path "~/.emacs.d/plugins/jedi")
+;; ;; jedi
+;; (add-to-list 'load-path "~/.emacs.d/plugins/jedi")
 
-(setq jedi:setup-keys t)
-(autoload 'jedi:setup "jedi" nil t)
-
-(add-hook 'python-mode-hook '(lambda ()
-                               (define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
-                               (jedi:setup))
-          )
-
-;; -------------------- jedi --------------------
+;; ;; -------------------- jedi --------------------
 
 
 
