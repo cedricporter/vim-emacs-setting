@@ -47,4 +47,4 @@
 ;(setq-default indent-tabs-mode nil)
 
 
-(provide 'my-coding-style)
+;; (provide 'my-coding-style)

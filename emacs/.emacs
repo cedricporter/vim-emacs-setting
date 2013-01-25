@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-25 19:45:02 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 20:44:10 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -10,56 +10,56 @@
 ;; Add plugins to load-path.
 ;; We will put some tiny plugins in it
 (add-to-list 'load-path "~/.emacs.d/plugins/")
-(add-to-list 'load-path "~/.emacs.d/plugins/configs")
+(add-to-list 'load-path "~/.emacs.d/configs")
 
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 
-(load "~/.emacs.d/plugins/configs/my-el-get-settings.el")
+(load "~/.emacs.d/configs/my-el-get-settings.el")
 
-(require 'my-functions)
+(load "~/.emacs.d/configs/my-functions.el")
 
-(require 'my-misc-settings)
+(load "~/.emacs.d/configs/my-misc-settings.el")
 
-(require 'my-coding-style)
+(load "~/.emacs.d/configs/my-coding-style.el")
 
-(require 'my-small-tools)
+(load "~/.emacs.d/configs/my-small-tools.el")
 
-(require 'window-setting)
+(load "~/.emacs.d/configs/window-setting.el")
 
-(require 'my-autocomplete-settings)
+(load "~/.emacs.d/configs/my-autocomplete-settings.el")
 
-(require 'my-python-settings)
+(load "~/.emacs.d/configs/my-python-settings.el")
 
-(require 'my-ruby-mode-settings)
+(load "~/.emacs.d/configs/my-ruby-mode-settings.el")
+
+(load "~/.emacs.d/configs/my-emacs-lisp-settings.el")
+
+(load "~/.emacs.d/configs/my-octopress-settings.el")
+
+(load "~/.emacs.d/configs/my-cedet-settings.el")
 
 ;(require 'my-lisp-settings)
 
-(require 'my-emacs-lisp-settings)
-
-(require 'my-octopress-settings)
-
-(require 'my-cedet-settings)
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 
+(load "~/.emacs.d/configs/my-gud-settings.el")
 
-(require 'my-gud-settings)
+(load "~/.emacs.d/configs/my-cscope-settings.el")
 
-(require 'my-cscope-settings)
+(load "~/.emacs.d/configs/my-eshell-settings.el")
 
-(require 'my-eshell-settings)
+(load "~/.emacs.d/configs/my-ecb-settings.el")
 
-(require 'my-ecb-settings)
+(load "~/.emacs.d/configs/my-org-mode-settings.el")
 
-(require 'my-org-mode-settings)
+(load "~/.emacs.d/configs/my-yasnippet-settings.el")
 
-(require 'my-yasnippet-settings)
+(load "~/.emacs.d/configs/my-iimage-settings.el")
 
-(require 'my-iimage-settings)
+(load "~/.emacs.d/configs/my-flymake-settings.el")
 
-(load "~/.emacs.d/plugins/configs/my-flymake-settings.el")
-
-(load "~/.emacs.d/plugins/configs/my-auto-insert-settings.el")
+(load "~/.emacs.d/configs/my-auto-insert-settings.el")
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

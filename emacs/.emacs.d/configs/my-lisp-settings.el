@@ -29,4 +29,4 @@
 			    (auto-complete-mode)))
 ;; -------------------- lisp --------------------
 
-(provide 'my-lisp-settings)
+;; (provide 'my-lisp-settings)

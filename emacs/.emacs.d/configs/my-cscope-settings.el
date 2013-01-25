@@ -37,7 +37,7 @@
 
 
 
-(provide 'my-cscope-settings)
+;; (provide 'my-cscope-settings)
 
 
 

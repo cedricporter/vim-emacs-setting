@@ -26,4 +26,4 @@
 			   "\\))") 1))
  
 
-(provide 'my-iimage-settings)
+;; (provide 'my-iimage-settings)

@@ -22,4 +22,4 @@
 
 ;(load "~/.emacs.d/plugins/org-mode-markdown/markdown.el")
 
-(provide 'my-org-mode-settings)
+;; (provide 'my-org-mode-settings)

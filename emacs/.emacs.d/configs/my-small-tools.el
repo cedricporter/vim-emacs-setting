@@ -251,4 +251,4 @@
 ;; -------------------- reload chrome --------------------
 
 
-(provide 'my-small-tools)
+;; (provide 'my-small-tools)

@@ -94,4 +94,4 @@
 (define-key markdown-mode-map (kbd "C-c C-s s") 'markdown-screenshot)
 (define-key markdown-mode-map (kbd "C-c C-s i") 'markdown-insert-image-from-clipboard)
 
-(provide 'my-octopress-settings)
+;; (provide 'my-octopress-settings)

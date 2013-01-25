@@ -500,4 +500,4 @@ occurence of CHAR."
 ;; -------------------- coffee-script --------------------
 
 
-(provide 'my-misc-settings)
+;; (provide 'my-misc-settings)

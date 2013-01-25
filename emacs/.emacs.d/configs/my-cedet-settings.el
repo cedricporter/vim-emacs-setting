@@ -141,4 +141,4 @@
 ;; -------------------- bzr cedet --------------------
 
 
-(provide 'my-cedet-settings)
+;; (provide 'my-cedet-settings)

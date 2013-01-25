@@ -360,5 +360,5 @@
 ;; -------------------- key bindings --------------------
 
 
-(provide 'window-setting)
+;; (provide 'window-setting)
 

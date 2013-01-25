@@ -18,4 +18,4 @@
 (add-hook 'after-save-hook 'reload-yasnippets-on-save-snippets)
 ;;-------------------- yasnippt --------------------
 
-(provide 'my-yasnippet-settings)
+;; (provide 'my-yasnippet-settings)

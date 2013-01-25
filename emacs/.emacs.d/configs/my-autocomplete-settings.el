@@ -18,4 +18,4 @@
 
 ;; -------------------- end of auto complete --------------------
 
-(provide 'my-autocomplete-settings)
+;; (provide 'my-autocomplete-settings)
