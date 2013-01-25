@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 23:17:41 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:19:38 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -25,7 +25,6 @@
    rainbow-mode				; show color
    org-mode
    graphviz-dot-mode
-   yasnippet
    nrepl
    slime
    coffee-mode
@@ -43,6 +42,10 @@
    auto-complete-latex
    auto-complete-css
    auto-complete-etags
+
+   (:name yasnippet
+	  :after (progn
+		   (load "~/.emacs.d/configs/my-yasnippet-settings.el")))
 
    (:name markdown-mode
 	  :after (progn

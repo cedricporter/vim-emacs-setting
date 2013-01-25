@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-25 23:16:44 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 23:19:07 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -50,8 +50,6 @@
 (load "~/.emacs.d/configs/my-ecb-settings.el")
 
 (load "~/.emacs.d/configs/my-org-mode-settings.el")
-
-(load "~/.emacs.d/configs/my-yasnippet-settings.el")
 
 (load "~/.emacs.d/configs/my-iimage-settings.el")
 
