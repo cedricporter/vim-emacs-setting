@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 20:13:58 Friday by Hua Liang>
+;; Time-stamp: <2013-01-25 20:48:07 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -85,9 +85,10 @@
 	  :after (progn
 		   (setq jedi:setup-keys t)
 		   (autoload 'jedi:setup "jedi" nil t)
-		   (add-hook 'python-mode-hook '(lambda ()
-						  (define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
-						  (jedi:setup)))))
+		   (add-hook 'python-mode-hook
+			     '(lambda ()
+				(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
+				(jedi:setup)))))
 
    (:name buffer-move			; have to add your own keys
 	  :after (progn
