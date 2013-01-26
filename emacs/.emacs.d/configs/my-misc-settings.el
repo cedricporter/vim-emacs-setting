@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-26 15:55:52 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-26 17:41:26 Saturday by Hua Liang>
 
 
 
@@ -70,15 +70,6 @@
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
-
-;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
-;; 如果总是不显示工具栏，将下面代码加到.emacs中
-;; 参考： http://www.emacswiki.org/emacs/ToolBar
-;; 注意：在menu-bar不显示的情况下，按ctrl+鼠标右键还是能调出菜单选项的
-(tool-bar-mode -1)
-;; 如果总是不显示菜单，将下面代码加到.emacs中
-;;参考： http://www.emacswiki.org/emacs/MenuBar
-(menu-bar-mode -1)
 
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)

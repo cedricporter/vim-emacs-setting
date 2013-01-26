@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 19:14:06 Friday by Hua Liang>
+;; Time-stamp: <2013-01-26 17:57:50 Saturday by Hua Liang>
 
 
 ;; Python Hook
@@ -12,31 +12,11 @@
 
 ;; 删除行尾的空白字符
 (add-hook 'python-mode-hook '(lambda ()
-			      (add-to-list 
+			      (add-to-list
 			       'write-file-functions
 			       'delete-trailing-whitespace)))
 
 (setq python-check-command "pyflakes")
-
-;; ==================== jedi ====================
-
-;; ;; deferred
-;; (add-to-list 'load-path "~/.emacs.d/plugins/deferred")
-;; (require 'deferred)
-;; (require 'concurrent)
-
-;; ;; ctable
-;; (add-to-list 'load-path "~/.emacs.d/plugins/ctable")
-;; (require 'ctable)
-
-;; ;; epc
-;; (add-to-list 'load-path "~/.emacs.d/plugins/epc")
-;; (require 'epc)
-
-;; ;; jedi
-;; (add-to-list 'load-path "~/.emacs.d/plugins/jedi")
-
-;; ;; -------------------- jedi --------------------
 
 
 
@@ -74,4 +54,3 @@
 
 
 ;; (provide 'my-python-settings)
-

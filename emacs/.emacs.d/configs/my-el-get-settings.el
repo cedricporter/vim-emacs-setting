@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-26 15:54:08 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-26 16:02:59 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -45,6 +45,7 @@
    xcscope
    xcscope+
    tabbar
+   google-c-style
 
 
    (:name auto-complete

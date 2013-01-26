@@ -1,8 +1,7 @@
 ;;; my-ui.el ---
-
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-26 15:55:41 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-26 17:41:36 Saturday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -68,6 +67,16 @@
 
 ;; 去掉滚动栏
 (scroll-bar-mode -1)
+
+;;去掉菜单栏，将F10绑定为显示菜单栏，需要菜单栏了可以摁F10调出，再摁F10就去掉菜单
+;; 如果总是不显示工具栏，将下面代码加到.emacs中
+;; 参考： http://www.emacswiki.org/emacs/ToolBar
+;; 注意：在menu-bar不显示的情况下，按ctrl+鼠标右键还是能调出菜单选项的
+(tool-bar-mode -1)
+;; 如果总是不显示菜单，将下面代码加到.emacs中
+;;参考： http://www.emacswiki.org/emacs/MenuBar
+(menu-bar-mode -1)
+
 
 ;; -------------------- UI setting --------------------
 
