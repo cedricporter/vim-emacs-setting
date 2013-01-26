@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-26 11:32:40 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-26 15:56:35 Saturday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -15,7 +15,15 @@
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 
+;; UI
+(when (not (string= (system-name) "everet.org"))
+  (load "~/.emacs.d/configs/my-themes.el"))
+
+(load "~/.emacs.d/configs/my-ui.el")
+
 (load "~/.emacs.d/configs/my-el-get-settings.el")
+
+(load "~/.emacs.d/configs/my-tabbar.el")
 
 (load "~/.emacs.d/configs/my-functions.el")
 
@@ -59,10 +67,6 @@
 
 (load "~/.emacs.d/configs/my-coffee-script.el")
 
-(when (not (string= (system-name) "everet.org"))
-  (load "~/.emacs.d/configs/my-themes.el"))
-
-(load "~/.emacs.d/configs/my-tabbar.el")
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; auto-generated

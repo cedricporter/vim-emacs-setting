@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 23:45:32 Friday by Hua Liang>
+;; Time-stamp: <2013-01-26 15:54:08 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -32,11 +32,23 @@
    undo-tree
    full-ack
    scss-mode
+   ascii
+   autopair
+   eassist
    yaml-mode
+   highlight-parentheses
+   flymake-cursor
+   browse-kill-ring
+   browse-kill-ring+
+   xml-rpc
+   second-sel
+   xcscope
+   xcscope+
+   tabbar
+
 
    (:name auto-complete
-	  :after (progn
-		   (load "~/.emacs.d/configs/my-autocomplete-settings.el")))
+	  :after (load "~/.emacs.d/configs/my-autocomplete-settings.el"))
 
    auto-complete-emacs-lisp
    auto-complete-latex

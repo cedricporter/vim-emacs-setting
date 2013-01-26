@@ -2,11 +2,10 @@
 
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-26 11:32:21 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-26 15:40:15 Saturday by Hua Liang>
 
 ;; ==================== tabbar ====================
 ;;tabbar
-(require 'tabbar)
 (tabbar-mode 1)
 (global-set-key [(meta j)] 'tabbar-backward)
 (global-set-key [(meta k)] 'tabbar-forward)
