@@ -1,0 +1,15 @@
+#!/bin/sh
+
+src=~/diary
+
+inotifywait -mrq --timefmt '%d/%m/%y %H:%M' \
+    --format  '%T %w%f'  \
+    -e modify,delete,create  \
+    --exclude "(#|\.git)" ${src} | while read file
+do
+    cd ${src} && git add . &&
+    git commit -am 'new' &&
+    git push origin master &&
+    echo "diary is deployed."
+    echo "------------------------------------------"
+done

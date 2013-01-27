@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:36:51 by Hua Liang>
+;; Time-stamp: <2013-01-27 01:51:03 Sunday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -53,6 +53,7 @@ opinion. "
 				 (format-time-string "_%Y%m%d_%H%M%S_"))) ext))
 	  (setq new-full-file-name (concat dst-dir new-file-name))
 	  (copy-file full-file-name new-full-file-name)
+	  (chmod new-full-file-name 664)
 	  new-file-name
 	  )
       )))
