@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-26 15:56:35 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-27 20:58:43 Sunday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -66,6 +66,10 @@
 (load "~/.emacs.d/configs/my-auto-insert-settings.el")
 
 (load "~/.emacs.d/configs/my-coffee-script.el")
+
+;; 解决一些global按键绑定被minor给覆盖的问题
+(load "~/.emacs.d/configs/my-minor-key-map.el")
+
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
