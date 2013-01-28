@@ -1,15 +1,21 @@
 ;;; my-minor-key-map.el
 ;;
-;; Time-stamp: <2013-01-27 20:56:58 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-28 20:59:57 Monday by Hua Liang>
 
 ;; Took from http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
 
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
+;; tabbar
 (define-key my-keys-minor-mode-map (kbd "M-j") 'tabbar-backward)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'tabbar-forward)
 (define-key my-keys-minor-mode-map (kbd "C-M-j") 'tabbar-backward-group)
 (define-key my-keys-minor-mode-map (kbd "C-M-k") 'tabbar-forward-group)
+
+;; open new line
+(define-key my-keys-minor-mode-map (kbd "<C-return>") 'open-line-below)
+(define-key my-keys-minor-mode-map (kbd "<C-S-return>") 'open-line-above)
+
 
 
 (define-minor-mode my-keys-minor-mode

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-26 17:41:26 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-28 21:00:35 Monday by Hua Liang>
 
 
 
@@ -290,11 +290,37 @@ occurence of CHAR."
 ;; -------------------- jump to next/previous buffer --------------------
 
 
-
 ;; ==================== backup files ====================
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 ;; -------------------- backup files --------------------
 
+
+;; ==================== open new line ====================
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "<C-return>") 'open-line-below) ; conflict with semantic, set in my minor
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+;; -------------------- open new line --------------------
+
+
+;; ==================== highlight-parenthese ====================
+;; (define-globalized-minor-mode global-highlight-parentheses-mode
+;;   highlight-parentheses-mode
+;;   (lambda ()
+;;     (highlight-parentheses-mode t)))
+;; (global-highlight-parentheses-mode t)
+;; -------------------- highlight-parenthese --------------------
 
 
 ;; (provide 'my-misc-settings)
