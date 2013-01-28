@@ -1,7 +1,7 @@
 ;;; my-themes.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-26 16:01:01 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-28 11:16:09 Monday by Hua Liang>
 
 
 ;;==================== color theme ====================
@@ -17,7 +17,7 @@
   (save-excursion
     (progn
       (let ((origin-buffer (current-buffer)))
-      (find-file "~/.emacs.d/plugins/configs/my-misc-settings.el")
+      (find-file "~/.emacs.d/configs/my-themes.el")
       (goto-char 0)
       (while (search-forward-regexp "^(set-theme [0-9]+)" nil t)
         (save-restriction
@@ -47,7 +47,7 @@
   (funcall (cdr (assoc what-theme my-theme-list))))
 
 ;; set theme according to theme number
-(set-theme 3)
+(set-theme 2)
 ;; end
 
 ;; solarized

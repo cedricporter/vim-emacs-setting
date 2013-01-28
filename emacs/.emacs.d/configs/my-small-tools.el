@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-26 11:32:16 Saturday by Hua Liang>
+;; Time-stamp: <2013-01-28 14:43:29 Monday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -155,6 +155,12 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/gc-refresh-mode")
 (require 'gc-refresh-mode)
 ;; -------------------- reload chrome --------------------
+
+
+;; ==================== log4j-mode ====================
+(autoload 'log4j-mode "log4j-mode" "Major mode for viewing log files." t)
+(add-to-list 'auto-mode-alist '("\\.log\\'" . log4j-mode))
+;; -------------------- log4j-mode --------------------
 
 
 ;; (provide 'my-small-tools)
