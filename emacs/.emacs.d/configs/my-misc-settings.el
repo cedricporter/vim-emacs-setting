@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 21:00:35 Monday by Hua Liang>
+;; Time-stamp: <2013-01-28 21:02:08 Monday by Hua Liang>
 
 
 
@@ -312,6 +312,17 @@ occurence of CHAR."
 (global-set-key (kbd "<C-return>") 'open-line-below) ; conflict with semantic, set in my minor
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 ;; -------------------- open new line --------------------
+
+
+;; ==================== auto revert ====================
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+;; -------------------- auto revert --------------------
+
 
 
 ;; ==================== highlight-parenthese ====================
