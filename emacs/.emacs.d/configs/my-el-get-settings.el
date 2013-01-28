@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 16:59:56 Monday by Hua Liang>
+;; Time-stamp: <2013-01-28 20:38:56 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -49,7 +49,7 @@
 
    (:name expand-region
           :after (progn
-                   (global-set-key (kbd "C-=") 'er/expand-region)))
+                   (global-set-key (kbd "C-M-SPC") 'er/expand-region)))
 
    (:name auto-complete
 	  :after (load "~/.emacs.d/configs/my-autocomplete-settings.el"))
