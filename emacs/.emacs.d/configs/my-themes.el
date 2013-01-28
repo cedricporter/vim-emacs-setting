@@ -1,7 +1,7 @@
 ;;; my-themes.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-28 11:16:09 Monday by Hua Liang>
+;; Time-stamp: <2013-01-28 16:14:05 Monday by Hua Liang>
 
 
 ;;==================== color theme ====================
@@ -47,7 +47,7 @@
   (funcall (cdr (assoc what-theme my-theme-list))))
 
 ;; set theme according to theme number
-(set-theme 2)
+(set-theme 3)
 ;; end
 
 ;; solarized
