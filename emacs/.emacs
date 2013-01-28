@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-01-27 20:58:43 Sunday by Hua Liang>
+;; Time-stamp: <2013-01-28 21:34:43 Monday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -70,6 +70,8 @@
 ;; 解决一些global按键绑定被minor给覆盖的问题
 (load "~/.emacs.d/configs/my-minor-key-map.el")
 
+;; 隐藏modeline的minor mode
+(load "~/.emacs.d/configs/my-diminish.el")
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

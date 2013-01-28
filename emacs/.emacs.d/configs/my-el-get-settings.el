@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 20:58:43 Monday by Hua Liang>
+;; Time-stamp: <2013-01-28 21:29:35 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -46,7 +46,7 @@
    xcscope+
    tabbar
    google-c-style
-   ;; dired-details
+   diminish
 
    (:name expand-region
           :after (progn
@@ -150,6 +150,8 @@
    (:name goto-last-change		; move pointer back to last change
 	  :after (progn
 		   ;; when using AZERTY keyboard, consider C-x C-_
-		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))))
+		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))
+
+    ))
 
 (el-get 'sync (mapcar 'el-get-source-name el-get-sources))				; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
