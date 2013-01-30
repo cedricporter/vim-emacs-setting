@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 21:18:16 Monday by Hua Liang>
+;; Time-stamp: <2013-01-31 00:34:52 Thursday by Hua Liang>
 
 
 
@@ -332,6 +332,13 @@ occurence of CHAR."
 ;;     (highlight-parentheses-mode t)))
 ;; (global-highlight-parentheses-mode t)
 ;; -------------------- highlight-parenthese --------------------
+
+
+;; ==================== stop asking active process when exit ====================
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (flet ((process-list ())) ad-do-it))
+;; -------------------- stop asking active process when exit --------------------
 
 
 ;; (provide 'my-misc-settings)

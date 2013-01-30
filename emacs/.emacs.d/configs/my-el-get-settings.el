@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-30 21:21:28 Wednesday by Hua Liang>
+;; Time-stamp: <2013-01-31 00:56:25 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -49,7 +49,11 @@
    diminish
    web-mode
    mmm-mode
-   ipython
+
+   (:name ipython
+   	  :after (progn
+   		   (setq ipython-completion-command-string ;fix completion bug
+   			 "print(';'.join(get_ipython().Completer.complete('%s')[1])) #PYTHON-MODE SILENT\n")))
 
    (:name expand-region
           :after (progn
@@ -149,11 +153,6 @@
    (:name magit				; git meet emacs, and a binding
 	  :after (progn
 		   (global-set-key (kbd "C-x g s") 'magit-status)))
-
-   (:name goto-last-change		; move pointer back to last change
-	  :after (progn
-		   ;; when using AZERTY keyboard, consider C-x C-_
-		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))
 
     ))
 
