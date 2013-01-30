@@ -1,9 +1,10 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-25 23:05:57 Friday by Hua Liang>
+;; Time-stamp: <2013-01-30 23:10:15 Wednesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
 (setq octopress-workdir (expand-file-name "~/octopress"))
+
 (global-set-key (kbd "C-c o n") '(lambda (title) ;isolate new post for better preview
                                    (interactive "MTitle: ")
                                    (octopress-new-post title)
@@ -45,10 +46,11 @@
 ;; ==================== ac-source ====================
 (defun mysource-octopress ()
   (let ((line-text (thing-at-point 'line)))
-    (cond ((string-match "^tags:" line-text)
-	   (directory-files "~/octopress/public/tag"))
-	  ((string-match "^categories:" line-text)
-	   (directory-files "~/octopress/public/category")))
+    (cond ((string-match "^\\(tags:\\|categories:\\)" line-text)
+	   (split-string (shell-command-to-string (concat "~/bin/tags.py " "~/octopress/source"))))
+	  ;; ((string-match "^categories:" line-text)
+	  ;;  (directory-files "~/octopress/public/category")))
+	  )
     ))
 
 (defvar ac-source-octopress

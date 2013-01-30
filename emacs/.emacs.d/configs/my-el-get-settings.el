@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 21:29:35 Monday by Hua Liang>
+;; Time-stamp: <2013-01-30 21:21:28 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -47,6 +47,9 @@
    tabbar
    google-c-style
    diminish
+   web-mode
+   mmm-mode
+   ipython
 
    (:name expand-region
           :after (progn
