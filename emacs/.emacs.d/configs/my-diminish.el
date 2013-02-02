@@ -4,7 +4,7 @@
 
 (diminish 'highlight-parentheses-mode)
 (diminish 'my-keys-minor-mode)
-(diminish 'recent-jump-mode)
+;; (diminish 'recent-jump-mode)
 (diminish 'undo-tree-mode)
 (diminish 'my-keys-minor-mode)
 

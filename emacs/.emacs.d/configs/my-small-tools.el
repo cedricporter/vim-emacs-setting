@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-28 14:43:29 Monday by Hua Liang>
+;; Time-stamp: <2013-02-02 12:08:41 Saturday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -56,6 +56,27 @@
 ;(global-set-key "\C-x\C-f" 'ido-dired)
 (global-set-key "\C-c\C-f" 'find-file-at-point)
 ;; -------------------- ido --------------------
+
+
+;; ==================== dired ====================
+;; http://whattheemacsd.com//setup-dired.el-02.html
+(defun dired-back-to-top ()
+  (interactive)
+  (beginning-of-buffer)
+  (dired-next-line 4))
+
+(define-key dired-mode-map
+  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+
+(defun dired-jump-to-bottom ()
+  (interactive)
+  (end-of-buffer)
+  (dired-next-line -1))
+
+(define-key dired-mode-map
+  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+;; -------------------- dired --------------------
+
 
 
 ;; ;; ==================== session ====================
