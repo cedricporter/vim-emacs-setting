@@ -1,6 +1,6 @@
 ;;; my-minor-key-map.el
 ;;
-;; Time-stamp: <2013-01-28 21:22:36 Monday by Hua Liang>
+;; Time-stamp: <2013-02-03 00:02:19 Sunday by Hua Liang>
 
 ;; Took from http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
 
@@ -15,6 +15,8 @@
 ;; open new line
 (define-key my-keys-minor-mode-map (kbd "<C-return>") 'open-line-below)
 (define-key my-keys-minor-mode-map (kbd "<C-S-return>") 'open-line-above)
+
+(define-key my-keys-minor-mode-map (kbd "C->") 'mc/mark-next-like-this)
 
 
 

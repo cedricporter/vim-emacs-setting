@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-02 23:50:50 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-03 00:23:13 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -50,6 +50,8 @@
    web-mode
    mmm-mode
    python-magic
+   dired-details
+   dired-details+
 
    (:name multiple-cursors
           :after (progn
@@ -164,4 +166,5 @@
 
     ))
 
-(el-get 'sync (mapcar 'el-get-source-name el-get-sources))				; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
+;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
+(el-get 'sync (mapcar 'el-get-source-name el-get-sources))				
