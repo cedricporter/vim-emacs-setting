@@ -14,6 +14,12 @@ Emacs is the most powerful tool for me.
 
 I love my Emacs very much.
 
+### 使用提示
+
+#### 依赖
+
+我的软件包通过el-get进行管理，而el-get会使用git。对于一些软件包的下载可能会用到svn，hg。所以请先安装这些依赖程序。
+
 ### 修改的按键绑定 ###
 
 1. `(define-key my-keys-minor-mode-map (kbd "M-j") 'tabbar-backward)`
