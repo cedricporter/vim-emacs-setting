@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-31 00:34:52 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-02 17:37:39 Saturday by Hua Liang>
 
 
 
@@ -326,11 +326,21 @@ occurence of CHAR."
 
 
 ;; ==================== highlight-parenthese ====================
-;; (define-globalized-minor-mode global-highlight-parentheses-mode
-;;   highlight-parentheses-mode
-;;   (lambda ()
-;;     (highlight-parentheses-mode t)))
-;; (global-highlight-parentheses-mode t)
+(add-hook 'highlight-parentheses-mode-hook
+          '(lambda ()
+             (setq autopair-handle-action-fns
+                   (append
+                    (if autopair-handle-action-fns
+                        autopair-handle-action-fns
+                      '(autopair-default-handle-action))
+                    '((lambda (action pair pos-before)
+                        (hl-paren-color-update)))))))
+
+(define-globalized-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  (lambda ()
+    (highlight-parentheses-mode t)))
+(global-highlight-parentheses-mode t)
 ;; -------------------- highlight-parenthese --------------------
 
 

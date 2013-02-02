@@ -1,14 +1,16 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-26 17:57:50 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-02 17:11:15 Saturday by Hua Liang>
 
 
 ;; Python Hook
 (add-hook 'python-mode-hook
           '(lambda ()
-             (setq indent-tabs-mode nil tab-width 4)
-             (setq python-indent-offset 4)
-             (setq python-indent 4)
-             ))
+             (setq indent-tabs-mode nil
+		   tab-width 4
+		   python-indent-offset 4
+		   python-indent 4
+		   comment-start " # "
+		   )))
 
 ;; 删除行尾的空白字符
 (add-hook 'python-mode-hook '(lambda ()
