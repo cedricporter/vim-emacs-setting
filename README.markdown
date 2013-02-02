@@ -22,26 +22,6 @@ I love my Emacs very much.
 1. (define-key my-keys-minor-mode-map (kbd "C-M-k") 'tabbar-forward-group)
 1. (define-key my-keys-minor-mode-map (kbd "<C-return>") 'open-line-below)
 1. (define-key my-keys-minor-mode-map (kbd "<C-S-return>") 'open-line-above)
-1. ;;(global-set-key [(kdb "C-u")] 'evil-scroll-up)
-1. (define-key evil-normal-state-map ",i" 'ibuffer)
-1. (define-key evil-normal-state-map ",bs" 'ido-switch-buffer)
-1. (define-key evil-normal-state-map ",bd" 'kill-this-buffer)
-1. ;(define-key evil-normal-state-map ",m" 'magit-status)
-1. (define-key evil-normal-state-map ",w" 'save-buffer)
-1. (define-key evil-normal-state-map ",ee" 'open-setting-file)
-1. (define-key evil-normal-state-map "ZZ" (kbd "C-c C-c"))
-1. (define-key evil-normal-state-map ",a" 'org-agenda)
-1. (define-key evil-normal-state-map ",hv" 'describe-variable)
-1. (define-key evil-normal-state-map ",hk" 'describe-key)
-1. (define-key evil-normal-state-map ",hf" 'describe-function)
-1. (define-key evil-normal-state-map ",hm" 'describe-mode)
-1. (define-key evil-normal-state-map ",0" 'delete-window)         ;delete this window, same as C-x 0 
-1. (define-key evil-normal-state-map ",1" 'delete-other-windows)  ;delete other windows
-1. (define-key evil-normal-state-map ",2" 'split-window-up-down)  ;split the window to up and down windows, which the upper one is bigger
-1. (define-key evil-normal-state-map ",3" 'split-window-3)        ;split the window to 3 window, left big
-1. (define-key evil-normal-state-map ",4" 'split-window-4)        ;split the window into 4 equal size window
-1. (define-key evil-normal-state-map ",q" 'winner-undo)	       ;undo, in other word, restore to previous window style
-1. (define-key evil-normal-state-map ",Q" 'winner-redo)	       ;redo window style change
 1. (global-set-key (kbd (format "C-c , t %d" theme-num))
 1. (global-set-key [(control f11)] 'my-fullscreen)
 1. (global-set-key (kbd "C-x 4 4") 'split-window-4)
@@ -67,13 +47,7 @@ I love my Emacs very much.
 1. (global-set-key [(control meta r)] 'isearch-backward)
 1. (global-set-key (kbd "C-x C-b") 'ibuffer)
 1. (global-set-key (kbd "M-SPC") 'set-mark-command)
-1. ;; (global-set-key "\C-m" 'newline-and-indent)
-1. ;(global-set-key (kbd "RET") 'newline-and-indent)
 1. (global-set-key (kbd "M-<return>") 'newline)
-1. ;; (global-set-key "\M-f" 'forward-same-syntax)
-1. ;; (global-set-key "\M-b" (lambda () (interactive) (forward-same-syntax -1)))
-1. ;; (global-set-key "\M-d" 'kill-syntax)
-1. ;; (global-set-key [(meta backspace)] (lambda() (interactive) (kill-syntax -1) ) )
 1. (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 1. (global-set-key (kbd "C-c b") 'comment-box)
 1. (global-set-key (kbd "C-c k") 'comment-kill)
@@ -109,12 +83,7 @@ I love my Emacs very much.
 1. (local-set-key (kbd "C-.") 'semantic-ia-fast-jump)
 1. (local-set-key (kbd "C->")  ;; go back
 1. (local-set-key "\C-cq" 'semantic-ia-show-doc)
-1. ;  (local-set-key "\C-cs" 'semantic-ia-show-summary)
 1. (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-1. ;;  (local-set-key (kbd "C-c <left>") 'semantic-tag-folding-fold-block)
-1. ;;  (local-set-key (kbd "C-c <right>") 'semantic-tag-folding-show-block)
-1. ;; (local-set-key "." 'semantic-complete-self-insert)
-1. ;; (local-set-key ">" 'semantic-complete-self-insert)
 1. (local-set-key "\C-ct" 'eassist-switch-h-cpp)
 1. (local-set-key "\C-xt" 'eassist-switch-h-cpp)
 1. (local-set-key "\C-ce" 'eassist-list-methods)
@@ -122,7 +91,6 @@ I love my Emacs very much.
 1. (global-set-key [f7] 'alexott/compile)
 1. (global-set-key [f4] 'eshell)
 1. (global-set-key [S-f4] 'term)
-1. ;(global-set-key (kbd "s-s") 'my-screenshot)
 1. (global-set-key "\C-c\C-ep" 'flymake-goto-prev-error)
 1. (global-set-key "\C-c\C-en" 'flymake-goto-next-error)
 1. (global-set-key (kbd "C-=") 'er/expand-region)))
@@ -161,7 +129,6 @@ I love my Emacs very much.
 1. (global-set-key (kbd "C-o") 'recent-jump-backward)
 1. (global-set-key (kbd "M-o") 'recent-jump-forward)
 1. (global-set-key "\C-c\C-k" 'browse-kill-ring)
-1. ;(global-set-key "\C-x\C-f" 'ido-dired)
 1. (global-set-key "\C-c\C-f" 'find-file-at-point)
 1. (define-key dired-mode-map
 1. (define-key dired-mode-map
