@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-02 12:08:41 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-02 23:06:14 Saturday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -182,6 +182,24 @@
 (autoload 'log4j-mode "log4j-mode" "Major mode for viewing log files." t)
 (add-to-list 'auto-mode-alist '("\\.log\\'" . log4j-mode))
 ;; -------------------- log4j-mode --------------------
+
+
+;; ==================== hs-mode ====================
+;; http://t.arboreus.com/post/28062002232/easy-folding-in-emacs-for-python
+(defun hs-enable-and-toggle ()
+  (interactive)
+  (hs-minor-mode 1)
+  (hs-toggle-hiding))
+(defun hs-enable-and-hideshow-all (&optional arg)
+  "Hide all blocks. If prefix argument is given, show all blocks."
+  (interactive "P")
+  (hs-minor-mode 1)
+  (if arg
+      (hs-show-all)
+      (hs-hide-all)))
+(global-set-key (kbd "C-c C-h") 'hs-enable-and-toggle)
+(global-set-key (kbd "C-c C-j") 'hs-enable-and-hideshow-all)
+;; -------------------- hs-mode --------------------
 
 
 ;; (provide 'my-small-tools)

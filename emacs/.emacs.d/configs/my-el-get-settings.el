@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-31 00:56:25 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-02 23:50:50 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -49,6 +49,14 @@
    diminish
    web-mode
    mmm-mode
+   python-magic
+
+   (:name multiple-cursors
+          :after (progn
+                   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+                   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+                   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+                   ))
 
    (:name ipython
    	  :after (progn
