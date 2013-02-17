@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-07 13:40:43 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-07 23:21:18 Thursday by Hua Liang>
 
 
 (require 'org)
@@ -20,14 +20,19 @@
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)))
 
+(setq org-src-fontify-natively t)
 
 ;; ==================== css ====================
 (setq org-export-html-style-include-scripts nil
       org-export-html-style-include-default nil)
 
 (setq org-export-html-style
-      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/org-style.css\" />")
+      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/worg.css\" />")
 ;; -------------------- css --------------------
+
+(setq org-export-html-postamble t)
+(setq org-export-html-postamble-format
+      '(("en" "<p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
 
 
 ;; ==================== wiki ====================
@@ -42,6 +47,10 @@
 	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4             ; Just the default for this project.
 	 :auto-preamble t
+	 :author "Hua Liang [Stupid ET]"
+ 	 :auto-sitemap t
+	 :sitemap-filename "index.org"
+	 :sitemap-title "My Wiki"
 	 )
 	("org-wiki-static"
 	 :base-directory "~/org-wiki/"
@@ -51,6 +60,19 @@
 	 :publishing-function org-publish-attachment
 	 )
 	("wiki" :components ("org-wiki-notes" "org-wiki-static"))
+
+	;; new
+	("owiki"
+	 :base-directory "~/octopress/source/_org_posts/"
+	 :base-extension "org"
+	 :publishing-directory "~/octopress/source/wiki/"
+	 :sub-superscript ""
+	 :recursive t
+	 :publishing-function org-publish-org-to-html
+	 :headline-levels 4
+	 :html-extension "markdown"
+	 :body-only t)
+
 	))
 ;; -------------------- wiki --------------------
 

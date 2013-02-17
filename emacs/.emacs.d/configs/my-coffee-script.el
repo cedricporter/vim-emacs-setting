@@ -2,7 +2,7 @@
 
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-25 22:24:11 Friday by Hua Liang>
+;; Time-stamp: <2013-02-08 19:02:27 Friday by Hua Liang>
 
 ;; ==================== coffee-script ====================
 (defun my-coffee-script-setup ()
@@ -27,12 +27,15 @@
     (with-current-buffer js-buffer-name
       (revert-buffer nil t))))
 
+(setq coffee-tab-width 4)
+
 (add-hook 'coffee-mode-hook
 	  '(lambda ()
 	     (my-coffee-script-setup)
 	     (add-hook 'after-save-hook
 		       'revert-compiled-coffee-buffer
-		       nil t)))
+		       nil t)
+	     ))
 
 ;; -------------------- coffee-script --------------------
 

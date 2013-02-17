@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-02 17:37:39 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-17 11:36:22 Sunday by Hua Liang>
 
 
 
@@ -326,6 +326,7 @@ occurence of CHAR."
 
 
 ;; ==================== highlight-parenthese ====================
+;; http://www.emacswiki.org/HighlightParentheses
 (add-hook 'highlight-parentheses-mode-hook
           '(lambda ()
              (setq autopair-handle-action-fns

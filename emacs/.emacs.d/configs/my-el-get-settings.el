@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-03 00:23:13 Sunday by Hua Liang>
+;; Time-stamp: <2013-02-10 11:30:30 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -47,11 +47,19 @@
    tabbar
    google-c-style
    diminish
-   web-mode
    mmm-mode
    python-magic
    dired-details
    dired-details+
+   python-mode
+
+   (:name web-mode
+	  :after (progn
+		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))))
+
+   (:name flymake-coffee
+	  :after (progn
+		   (add-hook 'coffee-mode-hook 'flymake-coffee-load)))
 
    (:name multiple-cursors
           :after (progn
@@ -139,9 +147,11 @@
 		   (global-set-key (kbd "C-x b") 'helm-mini)))
 
    (:name jedi
+	  :prepare (progn
+		     (setq jedi:setup-keys t))
 	  :after (progn
-		   (setq jedi:setup-keys t)
 		   (autoload 'jedi:setup "jedi" nil t)
+		   (message "my jedi after")
 		   (add-hook 'python-mode-hook
 			     '(lambda ()
 				(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
@@ -164,7 +174,7 @@
 	  :after (progn
 		   (global-set-key (kbd "C-x g s") 'magit-status)))
 
-    ))
+   ))
 
 ;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
-(el-get 'sync (mapcar 'el-get-source-name el-get-sources))				
+(el-get 'sync (mapcar 'el-get-source-name el-get-sources))
