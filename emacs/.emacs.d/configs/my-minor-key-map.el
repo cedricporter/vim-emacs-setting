@@ -1,6 +1,6 @@
 ;;; my-minor-key-map.el
 ;;
-;; Time-stamp: <2013-02-03 00:02:19 Sunday by Hua Liang>
+;; Time-stamp: <2013-02-19 20:25:29 Tuesday by Hua Liang>
 
 ;; Took from http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
 
@@ -27,9 +27,10 @@
 (my-keys-minor-mode 1)
 
 
-(defun my-minibuffer-setup-hook ()
+(defun disable-my-keys-minor-mode ()
   (my-keys-minor-mode 0))
 
-(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-setup-hook 'disable-my-keys-minor-mode)
+(add-hook 'org-mode-hook 'disable-my-keys-minor-mode)
 
 ;;; my-minor-key-map.el ends here

@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-19 20:06:42 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-19 20:28:55 Tuesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -99,29 +99,7 @@
     ;; the buffer name; the file name as a tool tip
     '(:eval (propertize "%b " 'face 'font-lock-keyword-face
 			'help-echo (buffer-file-name)))
-
-    ;; line and column
-    "(" ;; '%02' to set to 2 chars at least; prevents flickering
-    (propertize "%01l" 'face 'font-lock-type-face) ","
-    (propertize "%02c" 'face 'font-lock-type-face) 
-    ") "
-
-    ;; relative position, size of file
-    "["
-    (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-    "/"
-    (propertize "%I" 'face 'font-lock-constant-face) ;; size
-    ;; (format "%d" (count-lines (point-min) (point-max)))
-    "] "
-
-    ;; the current major mode for the buffer.
-    "["
-
-    '(:eval (propertize "%m" 'face 'font-lock-string-face
-			'help-echo buffer-file-coding-system))
-    "] "
     
-
     "[" ;; insert vs overwrite mode, input-method in a tooltip
     '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
 			'face 'font-lock-preprocessor-face
@@ -140,6 +118,28 @@
 				       'face 'font-lock-type-face
 				       'help-echo "Buffer is read-only"))))  
     "] "
+
+    ;; ;; line and column
+    ;; "(" ;; '%02' to set to 2 chars at least; prevents flickering
+    ;; (propertize "%01l" 'face 'font-lock-type-face) ","
+    ;; (propertize "%02c" 'face 'font-lock-type-face) 
+    ;; ") "
+
+    ;; relative position, size of file
+    "["
+    (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+    "/"
+    (propertize "%I" 'face 'font-lock-constant-face) ;; size
+    ;; (format "%d" (count-lines (point-min) (point-max)))
+    "] "
+
+    ;; the current major mode for the buffer.
+    "["
+
+    '(:eval (propertize "%m" 'face 'font-lock-string-face
+			'help-echo buffer-file-coding-system))
+    "] "
+    
 
     ;; add the time, with the date and the emacs uptime in the tooltip
     '(:eval (propertize (format-time-string "%H:%M:%S")
