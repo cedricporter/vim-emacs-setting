@@ -1,6 +1,7 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-18 20:14:09 Monday by Hua Liang>
+;; Time-stamp: <2013-02-19 13:35:27 Tuesday by Hua Liang>
 
+(require 'python)
 
 ;; Python Hook
 (add-hook 'python-mode-hook
@@ -24,9 +25,7 @@
 (setq python-check-command "pyflakes")
 
 
-
 ;; ;;==================== python ====================
-;; (require 'python)
 
 ;; (autoload 'python-mode "python-mode" "Python Mode." t)
 ;; (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))

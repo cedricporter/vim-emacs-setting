@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-19 12:03:59 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-19 17:48:37 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -172,6 +172,11 @@
    (:name magit				; git meet emacs, and a binding
 	  :after (progn
 		   (global-set-key (kbd "C-x g s") 'magit-status)))
+
+   (:name goto-last-change		; move pointer back to last change
+	  :after (progn
+		   ;; when using AZERTY keyboard, consider C-x C-_
+		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))
 
    ;; (:name python-mode
    ;; 	  :after (progn

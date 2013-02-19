@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-02 23:06:14 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-19 17:46:51 Tuesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -21,6 +21,7 @@
 (require 'recent-jump)
 (global-set-key (kbd "C-o") 'recent-jump-backward)
 (global-set-key (kbd "M-o") 'recent-jump-forward)
+(recent-jump-mode)
 ;; -------------------- ahei's recent-jump --------------------
 
 
