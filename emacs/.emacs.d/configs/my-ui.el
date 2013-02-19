@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-19 20:01:30 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-19 20:06:42 Tuesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -145,15 +145,23 @@
     '(:eval (propertize (format-time-string "%H:%M:%S")
 			'face 'font-lock-type-face
 			'help-echo
-			(concat (format-time-string "%Y-%02m-%02d %02H:%02M:%02S %Y-%02m-%02d %3a %3a; ")
+			(concat (format-time-string "%Y-%02m-%02d %02H:%02M:%02S %Y-%02m-%02d %3a; ")
 				(emacs-uptime "Uptime:%hh"))))
+
+    ;; show buffer file name
+    '(:eval (when show-buffer-file-name
+	      (format " [%s]" (buffer-file-name))))
+
+    " "
+    
+    ;; date
+    '(:eval (propertize (format-time-string "%Y-%02m-%02d %3a")
+			'face 'font-lock-type-face))
+	
+
     " --"
     ;; i don't want to see minor-modes; but if you want, uncomment this:
     ;; minor-mode-alist  ;; list of minor modes
-    
-    '(:eval (when show-buffer-file-name
-	      (format "[%s]" (buffer-file-name))))
-
     "%-" ;; fill with '-'
     ))
   ;; 这里不知道Emacs发生啥事，初始化完成后，mode-line-format就被设置回默认值。
