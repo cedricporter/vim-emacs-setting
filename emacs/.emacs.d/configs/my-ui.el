@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-19 19:54:32 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-19 20:01:30 Tuesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -93,7 +93,7 @@
 ;; use setq-default to set it for /all/ modes
 ;; http://emacs-fu.blogspot.com/2011/08/customizing-mode-line.html
 (defun my-mode-line ()
-  (setq
+  (setq-default
    mode-line-format
    (list
     ;; the buffer name; the file name as a tool tip
@@ -111,6 +111,7 @@
     (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
     "/"
     (propertize "%I" 'face 'font-lock-constant-face) ;; size
+    ;; (format "%d" (count-lines (point-min) (point-max)))
     "] "
 
     ;; the current major mode for the buffer.
@@ -156,7 +157,7 @@
     "%-" ;; fill with '-'
     ))
   ;; 这里不知道Emacs发生啥事，初始化完成后，mode-line-format就被设置回默认值。
-  (setq default-mode-line-format mode-line-format) ; 奇葩了，没有这行它就没法设置成功
+  ;; (setq default-mode-line-format mode-line-format) ; 奇葩了，没有这行它就没法设置成功
   )
 (my-mode-line)
 ;; -------------------- mode line --------------------
