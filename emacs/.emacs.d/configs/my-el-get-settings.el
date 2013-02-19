@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-19 17:48:37 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-19 19:05:12 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -46,7 +46,7 @@
    xcscope+
    tabbar
    google-c-style
-   diminish
+   ;; diminish
    mmm-mode
    ;;python-magic
    dired-details
