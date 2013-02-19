@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-10 11:30:30 Sunday by Hua Liang>
+;; Time-stamp: <2013-02-19 12:03:59 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -48,10 +48,9 @@
    google-c-style
    diminish
    mmm-mode
-   python-magic
+   ;;python-magic
    dired-details
    dired-details+
-   python-mode
 
    (:name web-mode
 	  :after (progn
@@ -174,7 +173,11 @@
 	  :after (progn
 		   (global-set-key (kbd "C-x g s") 'magit-status)))
 
-   ))
+   ;; (:name python-mode
+   ;; 	  :after (progn
+   ;; 		   (require 'python-mode)))
+   )
+ )
 
 ;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
 (el-get 'sync (mapcar 'el-get-source-name el-get-sources))

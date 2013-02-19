@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-02 17:11:15 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-18 20:14:09 Monday by Hua Liang>
 
 
 ;; Python Hook
@@ -11,6 +11,9 @@
 		   python-indent 4
 		   comment-start " # "
 		   )))
+
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+
 
 ;; 删除行尾的空白字符
 (add-hook 'python-mode-hook '(lambda ()
