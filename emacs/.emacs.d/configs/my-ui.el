@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-19 20:28:55 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-20 11:23:03 Wednesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -39,8 +39,28 @@
 ;(set-frame-font "Ubuntu Mono-12")
 (defun frame-setting ()
   (set-frame-font my-font)
-  (set-fontset-font "fontset-default"
-		    'chinese-gbk "WenQuanYi Micro Hei Mono 11"))
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+		      charset (font-spec :family "WenQuanYi Micro Hei Mono"
+					 :size 18
+					 )))
+  ;; Fix rescale
+  (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
+  )
+(frame-setting)
+
+
+;; ==================== 滚动缩放 ====================
+;; http://zhuoqiang.me/torture-emacs.html
+;; For Linux
+(global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+ 
+;; For Windows
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+;; -------------------- 滚动缩放 --------------------
+
 
 ;; ;; 解决汉字表格对齐问题，也就是设置等宽汉字
 ;; (if (and (fboundp 'daemonp) (daemonp))

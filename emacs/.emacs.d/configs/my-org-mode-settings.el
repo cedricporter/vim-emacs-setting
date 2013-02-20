@@ -1,6 +1,11 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-07 23:21:18 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-20 10:42:35 Wednesday by Hua Liang>
 
+;; ; org-mode install
+;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
+;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+;; (require 'org-install)
 
 (require 'org)
 (define-key org-mode-map (kbd "C-<tab>") 'pcomplete)
@@ -71,7 +76,8 @@
 	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4
 	 :html-extension "markdown"
-	 :body-only t)
+	 :body-only t
+	 )
 
 	))
 ;; -------------------- wiki --------------------

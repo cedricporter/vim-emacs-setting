@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-19 19:05:12 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-20 10:42:26 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -23,7 +23,7 @@
    switch-window			; takes over C-x o
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    rainbow-mode				; show color
-   org-mode
+   ;; org-mode
    graphviz-dot-mode
    ;; nrepl
    slime
