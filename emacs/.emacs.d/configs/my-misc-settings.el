@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 19:33:42 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 20:44:20 Wednesday by Hua Liang>
 
 
 
@@ -25,8 +25,9 @@
 
 
 ;; ==================== Common Setting ====================
+;;-------------------- end --------------------
 
-
+;; ==================== 缩进 ====================
 ;; 自动indent
 (electric-indent-mode 1)
 
@@ -38,6 +39,18 @@
   )
 (add-hook 'org-mode-hook 'disable-eletric-indent-mode-local)
 (add-hook 'python-mode-hook 'disable-eletric-indent-mode-local)
+
+
+(defadvice indent-region
+  (before autoindentregion activate compile)
+  "在没有region的时候，自动缩进当前行"
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+	   (line-beginning-position 2)))))
+;; -------------------- 缩进 --------------------
+
+
 
 
 ;; 尽快显示按键序列

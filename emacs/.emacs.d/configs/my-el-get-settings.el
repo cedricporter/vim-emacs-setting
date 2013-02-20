@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 16:20:05 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 20:02:47 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -51,6 +51,13 @@
    ;;python-magic
    dired-details
    dired-details+
+
+   ;; use `M-x hc`
+   (:name httpcode
+          :website "https://github.com/rspivak/httpcode.el"
+          :description "Explains the meaning of an HTTP status code in minibuffer."
+          :type github
+          :pkgname "rspivak/httpcode.el")
 
    (:name jedi
 	  :prepare (progn
