@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-20 11:23:03 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 13:26:40 Wednesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -37,13 +37,20 @@
              '(font . my-font))
 
 ;(set-frame-font "Ubuntu Mono-12")
+;; 可以用 C-u C-x = 来看当前汉字是用什么字体显示的。
+;; 另一个有用的函数是 describe-fontset
 (defun frame-setting ()
+  ;; English Font
   (set-frame-font my-font)
+
+  ;; http://baohaojun.github.com/perfect-emacs-chinese-font.html
+  ;; Chinese Font，太大了，除了在表格的地方用到，其他地方严重影响视觉。
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
-		      charset (font-spec :family "WenQuanYi Micro Hei Mono"
-					 :size 18
-					 )))
+  		      charset (font-spec :family "WenQuanYi Micro Hei Mono"
+  					 :size 15  ; 18
+  					 )))
+  
   ;; Fix rescale
   (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
   )
@@ -142,15 +149,17 @@
     ;; ;; line and column
     ;; "(" ;; '%02' to set to 2 chars at least; prevents flickering
     ;; (propertize "%01l" 'face 'font-lock-type-face) ","
-    ;; (propertize "%02c" 'face 'font-lock-type-face) 
+    ;; (propertize "%02c" 'face 'font-lock-type-face)
     ;; ") "
 
     ;; relative position, size of file
     "["
     (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
     "/"
-    (propertize "%I" 'face 'font-lock-constant-face) ;; size
-    ;; (format "%d" (count-lines (point-min) (point-max)))
+    ;; (propertize "%I" 'face 'font-lock-constant-face) ;; size
+    '(:eval (propertize (format "%dL" (count-lines (point-min) (point-max))) ;; total line 
+			'face 'font-lock-type-face
+			))
     "] "
 
     ;; the current major mode for the buffer.
@@ -176,7 +185,7 @@
     
     ;; date
     '(:eval (propertize (format-time-string "%Y-%02m-%02d %3a")
-			'face 'font-lock-type-face))
+			'face 'font-lock-comment-face))
 	
 
     " --"

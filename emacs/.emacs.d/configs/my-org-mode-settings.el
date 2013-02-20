@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 10:42:35 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 12:11:42 Wednesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -32,12 +32,12 @@
       org-export-html-style-include-default nil)
 
 (setq org-export-html-style
-      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/worg.css\" />")
+      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />")
 ;; -------------------- css --------------------
 
 (setq org-export-html-postamble t)
 (setq org-export-html-postamble-format
-      '(("en" "<p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
+      '(("en" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
 
 
 ;; ==================== wiki ====================
