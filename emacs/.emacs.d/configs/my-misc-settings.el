@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-17 11:36:22 Sunday by Hua Liang>
+;; Time-stamp: <2013-02-20 19:33:42 Wednesday by Hua Liang>
 
 
 
@@ -26,6 +26,18 @@
 
 ;; ==================== Common Setting ====================
 
+
+;; 自动indent
+(electric-indent-mode 1)
+
+;; 对某些mode关闭自动electric-indent
+(defun disable-eletric-indent-mode-local ()
+  "Make electric indent function local to disable it"
+  (set (make-local-variable 'electric-indent-functions)
+       (list (lambda (arg) 'no-indent)))
+  )
+(add-hook 'org-mode-hook 'disable-eletric-indent-mode-local)
+(add-hook 'python-mode-hook 'disable-eletric-indent-mode-local)
 
 
 ;; 尽快显示按键序列

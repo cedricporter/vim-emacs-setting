@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 19:02:46 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 19:04:04 Wednesday by Hua Liang>
 
 (require 'python)
 
@@ -30,9 +30,8 @@
         (indent-flag (looking-back "\\s-")) ; 如果前面是空白，那么进行缩进
         )
     (self-insert-command count)
-    (save-excursion
-      (when indent-flag
-        (indent-region (line-beginning-position) (line-end-position))))))
+    (when indent-flag
+      (indent-region (line-beginning-position) (line-end-position)))))
 
 (defun my-python-mode-hook ()
   (local-set-key (kbd "}") 'my-electric-keys)
