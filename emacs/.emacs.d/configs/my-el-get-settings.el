@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 10:42:26 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-20 16:20:05 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -51,6 +51,16 @@
    ;;python-magic
    dired-details
    dired-details+
+
+   (:name jedi
+	  :prepare (progn
+		     (setq jedi:setup-keys t))
+	  :after (progn
+		   (autoload 'jedi:setup "jedi" nil t)
+		   (add-hook 'python-mode-hook
+			     '(lambda ()
+				(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
+				(jedi:setup)))))
 
    (:name web-mode
 	  :after (progn
@@ -111,12 +121,6 @@
 		   (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 		   ))
 
-   (:name session
-	  :after (progn
-		   (add-hook 'after-init-hook 'session-initialize)
-		   (load "desktop")
-		   (desktop-save-mode)))
-
    (:name nginx-mode
 	  :after (progn
 		   (add-hook
@@ -145,17 +149,6 @@
 		   (require 'helm-config)
 		   (global-set-key (kbd "C-x b") 'helm-mini)))
 
-   (:name jedi
-	  :prepare (progn
-		     (setq jedi:setup-keys t))
-	  :after (progn
-		   (autoload 'jedi:setup "jedi" nil t)
-		   (message "my jedi after")
-		   (add-hook 'python-mode-hook
-			     '(lambda ()
-				(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
-				(jedi:setup)))))
-
    (:name buffer-move			; have to add your own keys
 	  :after (progn
 		   (global-set-key (kbd "<C-S-up>")     'buf-move-up)
@@ -177,6 +170,12 @@
 	  :after (progn
 		   ;; when using AZERTY keyboard, consider C-x C-_
 		   (global-set-key (kbd "C-x C-/") 'goto-last-change)))
+
+   (:name session
+	  :after (progn
+		   (add-hook 'after-init-hook 'session-initialize)
+		   (load "desktop")
+		   (desktop-save-mode)))
 
    ;; (:name python-mode
    ;; 	  :after (progn
