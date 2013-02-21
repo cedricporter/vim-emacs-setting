@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 20:02:47 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-21 19:29:47 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -23,7 +23,6 @@
    switch-window			; takes over C-x o
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    rainbow-mode				; show color
-   ;; org-mode
    graphviz-dot-mode
    ;; nrepl
    slime
@@ -51,6 +50,16 @@
    ;;python-magic
    dired-details
    dired-details+
+
+   (:name org-mode
+	  :prepare (progn
+		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
+		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
+		     )
+          :after (progn
+		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
+		   )
+	  )
 
    ;; use `M-x hc`
    (:name httpcode

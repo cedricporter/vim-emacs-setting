@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 12:11:42 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-21 19:45:12 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -28,20 +28,21 @@
 (setq org-src-fontify-natively t)
 
 ;; ==================== css ====================
-(setq org-export-html-style-include-scripts nil
-      org-export-html-style-include-default nil)
 
-(setq org-export-html-style
+(setq org-html-style-include-scripts nil
+      org-html-style-include-default nil)
+
+(setq org-html-style
       "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />")
 ;; -------------------- css --------------------
 
-(setq org-export-html-postamble t)
-(setq org-export-html-postamble-format
+(setq org-html-postamble t)
+(setq org-html-postamble-format
       '(("en" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
 
 
 ;; ==================== wiki ====================
-(require 'org-publish)
+;; (require 'org-publish)
 (setq org-publish-project-alist
       '(
 	("org-wiki-notes"
@@ -49,7 +50,7 @@
 	 :base-extension "org"
 	 :publishing-directory "~/wiki_public_html/"
 	 :recursive t
-	 :publishing-function org-publish-org-to-html
+	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
 	 :auto-preamble t
 	 :author "Hua Liang [Stupid ET]"
@@ -73,7 +74,7 @@
 	 :publishing-directory "~/octopress/source/wiki/"
 	 :sub-superscript ""
 	 :recursive t
-	 :publishing-function org-publish-org-to-html
+	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4
 	 :html-extension "markdown"
 	 :body-only t
