@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-21 19:45:12 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-21 22:18:48 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -34,11 +34,22 @@
 
 (setq org-html-style
       "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />")
+
 ;; -------------------- css --------------------
 
-(setq org-html-postamble t)
-(setq org-html-postamble-format
-      '(("en" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
+(setq org-html-postamble
+      '(lambda (options)
+	 "定制末尾显示"
+	 (let ((author "Hua Liang [Stupid ET]"))
+	   (format
+	    "<hr/><p class=\"author\">Author: %s</p>\n<p class=\"date\">Date: %s<\p>\n"
+	    author
+	    (format-time-string "%Y-%m-%d %H:%M:%S %A")
+	    )
+	   )
+	 ))
+;; (setq org-html-postamble-format
+;;       '(("en" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
 
 
 ;; ==================== wiki ====================
@@ -48,20 +59,23 @@
 	("org-wiki-notes"
 	 :base-directory "~/org-wiki/"
 	 :base-extension "org"
-	 :publishing-directory "~/wiki_public_html/"
+	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
 	 :auto-preamble t
 	 :author "Hua Liang [Stupid ET]"
  	 :auto-sitemap t
+         :with-date
+         :section-numbers t
 	 :sitemap-filename "index.org"
 	 :sitemap-title "My Wiki"
+         ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
 	 )
 	("org-wiki-static"
 	 :base-directory "~/org-wiki/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "~/wiki_public_html/"
+	 :publishing-directory "~/octopress/source/notes/"
 	 :recursive t
 	 :publishing-function org-publish-attachment
 	 )

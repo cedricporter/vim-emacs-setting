@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-21 19:29:47 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-21 21:39:30 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -23,6 +23,7 @@
    switch-window			; takes over C-x o
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    rainbow-mode				; show color
+   rainbow-delimiters
    graphviz-dot-mode
    ;; nrepl
    slime
@@ -50,6 +51,10 @@
    ;;python-magic
    dired-details
    dired-details+
+   ido-ubiquitous
+
+   (:name flymake-easy
+          :type elpa)
 
    (:name org-mode
 	  :prepare (progn
