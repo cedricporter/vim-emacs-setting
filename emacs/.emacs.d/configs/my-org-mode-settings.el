@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-21 22:18:48 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-22 21:31:49 Friday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -9,6 +9,7 @@
 
 (require 'org)
 (define-key org-mode-map (kbd "C-<tab>") 'pcomplete)
+
 
 (add-hook 'org-mode-hook
           (lambda ()
@@ -42,7 +43,12 @@
 	 "定制末尾显示"
 	 (let ((author "Hua Liang [Stupid ET]"))
 	   (format
-	    "<hr/><p class=\"author\">Author: %s</p>\n<p class=\"date\">Date: %s<\p>\n"
+	    (concat
+	     "<a href=\"http://EverET.org/notes/\">[Back to Notes]</a>"
+	     "<hr/>"
+	     "<p class=\"author\">Author: %s</p>\n"
+	     "<p class=\"date\">Date: %s<\p>\n"
+	     )
 	    author
 	    (format-time-string "%Y-%m-%d %H:%M:%S %A")
 	    )
@@ -57,25 +63,24 @@
 (setq org-publish-project-alist
       '(
 	("org-wiki-notes"
-	 :base-directory "~/org-wiki/"
+	 :base-directory "~/octopress/org-wiki/"
 	 :base-extension "org"
-	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
+	 :publishing-directory "~/octopress/public/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
+         :section-numbers t
 	 :auto-preamble t
 	 :author "Hua Liang [Stupid ET]"
  	 :auto-sitemap t
-         :with-date
-         :section-numbers t
 	 :sitemap-filename "index.org"
-	 :sitemap-title "My Wiki"
+	 :sitemap-title "Wiki of Stupid ET"
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
 	 )
 	("org-wiki-static"
-	 :base-directory "~/org-wiki/"
+	 :base-directory "~/octopress/org-wiki/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "~/octopress/source/notes/"
+	 :publishing-directory "~/octopress/public/notes/"
 	 :recursive t
 	 :publishing-function org-publish-attachment
 	 )
