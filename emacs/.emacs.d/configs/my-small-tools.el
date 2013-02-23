@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-19 17:46:51 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-23 10:51:56 Saturday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -56,6 +56,7 @@
 ;(ffap-bindings)
 ;(global-set-key "\C-x\C-f" 'ido-dired)
 (global-set-key "\C-c\C-f" 'find-file-at-point)
+(global-set-key (kbd "C-x 4 o") 'ido-display-buffer)
 ;; -------------------- ido --------------------
 
 

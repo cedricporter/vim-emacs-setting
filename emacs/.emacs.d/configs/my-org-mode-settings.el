@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-22 21:31:49 Friday by Hua Liang>
+;; Time-stamp: <2013-02-23 09:45:55 Saturday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -73,8 +73,8 @@
 	 :auto-preamble t
 	 :author "Hua Liang [Stupid ET]"
  	 :auto-sitemap t
-	 :sitemap-filename "index.org"
-	 :sitemap-title "Wiki of Stupid ET"
+	 :sitemap-filename "sitemap.org"
+	 :sitemap-title "" ;"Stupid ET's Wiki"
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
 	 )
 	("org-wiki-static"
