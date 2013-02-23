@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-20 20:44:20 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-23 11:08:57 Saturday by Hua Liang>
 
 
 
@@ -50,6 +50,27 @@
 	   (line-beginning-position 2)))))
 ;; -------------------- 缩进 --------------------
 
+
+
+;; ==================== 控制右括号的缩进 ====================
+(defun my-electric-keys (arg)
+  "indent if necessary"
+  (interactive "*P")
+  (let ((count (prefix-numeric-value arg))
+        (indent-flag (looking-back "\\s-")) ; 如果前面是空白，那么进行缩进
+        )
+    (self-insert-command count)
+    (when indent-flag
+      (indent-region (line-beginning-position) (line-end-position)))))
+
+(defun my-electric-keys-hook ()
+  (local-set-key (kbd "}") 'my-electric-keys)
+  (local-set-key (kbd "]") 'my-electric-keys)
+  )
+
+(add-hook 'python-mode-hook 'my-electric-keys-hook)
+(add-hook 'js2-mode-hook 'my-electric-keys-hook)
+;; -------------------- 控制右括号的缩进 --------------------
 
 
 
