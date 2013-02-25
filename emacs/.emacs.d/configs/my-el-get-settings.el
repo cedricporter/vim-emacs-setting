@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-25 18:47:28 Monday by Hua Liang>
+;; Time-stamp: <2013-02-25 19:00:43 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -90,7 +90,15 @@
 
    (:name web-mode
 	  :after (progn
-		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))))
+		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+		   (add-hook
+		    'web-mode-hook
+		    '(lambda ()
+		       (local-set-key (kbd "<f7>")
+				      '(lambda ()
+					 (interactive)
+					 (browse-url (buffer-file-name))))))
+		   ))
 
    (:name flymake-coffee
 	  :after (progn
