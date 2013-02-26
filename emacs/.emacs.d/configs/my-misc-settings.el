@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-23 11:08:57 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-25 19:21:21 Monday by Hua Liang>
 
 
 
@@ -39,6 +39,7 @@
   )
 (add-hook 'org-mode-hook 'disable-eletric-indent-mode-local)
 (add-hook 'python-mode-hook 'disable-eletric-indent-mode-local)
+(add-hook 'coffee-mode-hook 'disable-eletric-indent-mode-local)
 
 
 (defadvice indent-region

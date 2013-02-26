@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-23 09:45:55 Saturday by Hua Liang>
+;; Time-stamp: <2013-02-26 15:18:53 Tuesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -10,7 +10,7 @@
 (require 'org)
 (define-key org-mode-map (kbd "C-<tab>") 'pcomplete)
 
-
+;; ==================== Fix yasnippet's TAB ====================
 (add-hook 'org-mode-hook
           (lambda ()
             (org-set-local 'yas/trigger-key [tab])
@@ -25,6 +25,12 @@
             (setq yas/trigger-key [tab])
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)))
+;; -------------------- Fix yasnippet's TAB --------------------
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<f7>") 'org-publish-current-project)))
+
 
 (setq org-src-fontify-natively t)
 
