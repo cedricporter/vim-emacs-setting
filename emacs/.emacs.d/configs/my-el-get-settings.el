@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-25 19:00:43 Monday by Hua Liang>
+;; Time-stamp: <2013-02-26 19:35:35 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -63,6 +63,7 @@
 		     )
           :after (progn
 		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
+		   (require 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
 		   )
 	  )
 

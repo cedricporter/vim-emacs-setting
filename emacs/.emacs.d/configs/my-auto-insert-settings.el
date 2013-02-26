@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-01-15 10:03:04 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-26 15:33:57 Tuesday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
@@ -13,6 +13,7 @@
                           ("\\.lisp$" . ["insert.lisp" alexott/auto-update-defaults])
                           ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
                           ("\\.py$" . ["insert.py" alexott/auto-update-defaults])
+                          ("\\.org$" . ["insert.org" alexott/auto-update-defaults])
                           ))
 
 (add-to-list 'auto-insert-alist '(".*/projects/.*\\.cpp$" . ["insert-home.cpp" alexott/auto-update-c-source-file]))

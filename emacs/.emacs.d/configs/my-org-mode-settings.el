@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-26 15:18:53 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-26 17:43:06 Tuesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -40,29 +40,14 @@
       org-html-style-include-default nil)
 
 (setq org-html-style
-      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />")
+      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css?v=1\" />")
 
 ;; -------------------- css --------------------
 
-(setq org-html-postamble
-      '(lambda (options)
-	 "定制末尾显示"
-	 (let ((author "Hua Liang [Stupid ET]"))
-	   (format
-	    (concat
-	     "<a href=\"http://EverET.org/notes/\">[Back to Notes]</a>"
-	     "<hr/>"
-	     "<p class=\"author\">Author: %s</p>\n"
-	     "<p class=\"date\">Date: %s<\p>\n"
-	     )
-	    author
-	    (format-time-string "%Y-%m-%d %H:%M:%S %A")
-	    )
-	   )
-	 ))
-;; (setq org-html-postamble-format
-;;       '(("en" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
-
+;; (setq org-html-postamble 'my-org-html-postamble)
+(setq org-html-postamble t)
+(setq org-html-postamble-format
+      '(("zh-CN" "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n")))
 
 ;; ==================== wiki ====================
 ;; (require 'org-publish)
@@ -79,6 +64,7 @@
 	 :auto-preamble t
 	 :author "Hua Liang [Stupid ET]"
  	 :auto-sitemap t
+	 :language "zh-CN"
 	 :sitemap-filename "sitemap.org"
 	 :sitemap-title "" ;"Stupid ET's Wiki"
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
