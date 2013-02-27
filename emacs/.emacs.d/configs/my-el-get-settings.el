@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-26 19:35:35 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-27 11:25:52 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -182,7 +182,7 @@
    (:name helm
 	  :after (progn
 		   (require 'helm-config)
-		   (global-set-key (kbd "C-x b") 'helm-mini)))
+		   (global-set-key (kbd "C-x b") 'helm-for-files)))
 
    (:name buffer-move			; have to add your own keys
 	  :after (progn

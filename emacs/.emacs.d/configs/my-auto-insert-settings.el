@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-02-26 15:33:57 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-26 20:14:13 Tuesday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
@@ -89,6 +89,7 @@
   (alexott/auto-replace-file-name)
   (alexott/auto-replace-file-name-no-ext)
   (alexott/auto-replace-date-time)
+  (end-of-buffer)
   )
 
 ;;; my-autocomplete-settings.el ends here
