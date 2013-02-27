@@ -115,7 +115,7 @@ fi
 
 function _update_ps1()
 {
-   export PS1="$(~/powerline-bash.py $? --mode compatible)"
+   export PS1="$(~/powerline-shell.py $? --mode compatible)"
 }
 
 export PROMPT_COMMAND="_update_ps1"
