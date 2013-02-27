@@ -91,7 +91,9 @@ alias ra='ranger'
 alias i='info'
 alias rp='rake publish'
 alias rgp='rake generate && rake preview'
-
+alias ipy='ipython'
+alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'    
+    
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -115,3 +117,6 @@ function _update_ps1()
 }
 
 export PROMPT_COMMAND="_update_ps1"
+
+[[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
+

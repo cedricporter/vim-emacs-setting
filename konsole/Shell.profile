@@ -1,6 +1,6 @@
 [Appearance]
 BoldIntense=true
-ColorScheme=zenburn-dark
+ColorScheme=zenburn
 Font=Monaco,10,-1,5,50,0,0,0,0,0
 
 [General]
