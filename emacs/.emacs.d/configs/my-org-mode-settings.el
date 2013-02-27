@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-26 17:43:06 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-27 17:18:41 Wednesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -56,7 +56,7 @@
 	("org-wiki-notes"
 	 :base-directory "~/octopress/org-wiki/"
 	 :base-extension "org"
-	 :publishing-directory "~/octopress/public/notes/" ; "/ssh:user@host:~/html/notebook/"
+	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
@@ -67,12 +67,15 @@
 	 :language "zh-CN"
 	 :sitemap-filename "sitemap.org"
 	 :sitemap-title "" ;"Stupid ET's Wiki"
+	 :completion-function (lambda ()
+				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
+				 )
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
 	 )
 	("org-wiki-static"
 	 :base-directory "~/octopress/org-wiki/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	 :publishing-directory "~/octopress/public/notes/"
+	 :publishing-directory "~/octopress/source/notes/"
 	 :recursive t
 	 :publishing-function org-publish-attachment
 	 )
