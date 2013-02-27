@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-27 17:18:41 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-27 18:39:59 Wednesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -29,7 +29,8 @@
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (local-set-key (kbd "<f7>") 'org-publish-current-project)))
+            (local-set-key (kbd "<f7>") 'org-publish-current-project)
+	    ))
 
 
 (setq org-src-fontify-natively t)

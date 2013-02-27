@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-02-26 20:23:06 Tuesday by Hua Liang>
+;; Time-stamp: <2013-02-27 18:37:42 Wednesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -102,6 +102,6 @@
  '(ecb-options-version "2.40")
  '(fci-rule-color "#383838")
  '(org-startup-folded nil)
- '(org-startup-truncated t)
+ '(org-startup-truncated nil)
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(session-use-package t nil (session)))
