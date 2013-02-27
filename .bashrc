@@ -93,7 +93,9 @@ alias rp='rake publish'
 alias rgp='rake generate && rake preview'
 alias ipy='ipython'
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'    
-    
+alias sc='screen'
+alias scb='screen -dr normaltask || screen -S normaltask'
+alias tmb='tmux attach -t normaltask || tmux new -s normaltask'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
