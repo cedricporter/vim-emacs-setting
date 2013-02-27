@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-20 13:26:40 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-27 16:11:59 Wednesday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -45,14 +45,16 @@
 
   ;; http://baohaojun.github.com/perfect-emacs-chinese-font.html
   ;; Chinese Font，太大了，除了在表格的地方用到，其他地方严重影响视觉。
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-  		      charset (font-spec :family "WenQuanYi Micro Hei Mono"
-  					 :size 15  ; 18
-  					 )))
-  
-  ;; Fix rescale
-  (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
+  (if (display-graphic-p)
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        (set-fontset-font (frame-parameter nil 'font)
+                          charset (font-spec :family "WenQuanYi Micro Hei Mono"
+                                             :size 15  ; 18
+                                             )))
+
+    ;; Fix rescale
+    (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
+    )
   )
 (frame-setting)
 
@@ -62,7 +64,7 @@
 ;; For Linux
 (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
 (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
- 
+
 ;; For Windows
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
@@ -126,7 +128,7 @@
     ;; the buffer name; the file name as a tool tip
     '(:eval (propertize "%b " 'face 'font-lock-keyword-face
 			'help-echo (buffer-file-name)))
-    
+
     "[" ;; insert vs overwrite mode, input-method in a tooltip
     '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
 			'face 'font-lock-preprocessor-face
@@ -143,7 +145,7 @@
     '(:eval (when buffer-read-only
 	      (concat ","  (propertize "RO"
 				       'face 'font-lock-type-face
-				       'help-echo "Buffer is read-only"))))  
+				       'help-echo "Buffer is read-only"))))
     "] "
 
     ;; ;; line and column
@@ -157,7 +159,7 @@
     (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
     "/"
     ;; (propertize "%I" 'face 'font-lock-constant-face) ;; size
-    '(:eval (propertize (format "%dL" (count-lines (point-min) (point-max))) ;; total line 
+    '(:eval (propertize (format "%dL" (count-lines (point-min) (point-max))) ;; total line
 			'face 'font-lock-type-face
 			))
     "] "
@@ -168,7 +170,7 @@
     '(:eval (propertize "%m" 'face 'font-lock-string-face
 			'help-echo buffer-file-coding-system))
     "] "
-    
+
 
     ;; add the time, with the date and the emacs uptime in the tooltip
     '(:eval (propertize (format-time-string "%H:%M:%S")
@@ -182,11 +184,11 @@
 	      (format " [%s]" (buffer-file-name))))
 
     " "
-    
+
     ;; date
     '(:eval (propertize (format-time-string "%Y-%02m-%02d %3a")
 			'face 'font-lock-comment-face))
-	
+
 
     " --"
     ;; i don't want to see minor-modes; but if you want, uncomment this:
