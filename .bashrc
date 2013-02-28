@@ -124,3 +124,22 @@ export PROMPT_COMMAND="_update_ps1"
 
 [[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
+# export MANPAGER="/usr/bin/most -s"
+
+vman () {
+    export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+                     vim -R \
+                     -c 'set ft=man nomod nolist' \
+                     -c 'map q :q!<CR>' \
+                     -c 'map d <C-D>' \
+                     -c 'map u <C-U>' \
+                     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
+
+    # invoke man page
+    man $1
+
+    # we muse unset the PAGER, so regular man pager is used afterwards
+    unset PAGER
+}
+
+alias man=vman
