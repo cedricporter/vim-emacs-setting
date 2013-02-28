@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-27 16:11:59 Wednesday by Hua Liang>
+;; Time-stamp: <2013-02-28 08:47:39 Thursday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -46,14 +46,16 @@
   ;; http://baohaojun.github.com/perfect-emacs-chinese-font.html
   ;; Chinese Font，太大了，除了在表格的地方用到，其他地方严重影响视觉。
   (if (display-graphic-p)
-      (dolist (charset '(kana han symbol cjk-misc bopomofo))
-        (set-fontset-font (frame-parameter nil 'font)
-                          charset (font-spec :family "WenQuanYi Micro Hei Mono"
-                                             :size 15  ; 18
-                                             )))
+      (progn
+	(dolist (charset '(kana han symbol cjk-misc bopomofo))
+	  (set-fontset-font (frame-parameter nil 'font)
+			    charset (font-spec :family "WenQuanYi Micro Hei Mono"
+					       ;; :size 15  ; 18
+					       )))
 
-    ;; Fix rescale
-    (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
+	;; Fix rescale
+	(setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2)))
+	)
     )
   )
 (frame-setting)
