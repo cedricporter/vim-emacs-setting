@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-28 08:42:18 Thursday by Hua Liang>
+;; Time-stamp: <2013-02-28 08:53:00 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -59,12 +59,12 @@
 		     "Toggle minimap for current buffer."
 		     (interactive)
 		     (if (not (boundp 'minimap-bufname))
-			 (setf minimap-bufname nil))
+		   	 (setf minimap-bufname nil))
 		     (if (null minimap-bufname)
-			 (progn (minimap-create)
-				(set-frame-width (selected-frame) 100))
+		   	 (progn (minimap-create)
+		   		(set-frame-width (selected-frame) 100))
 		       (progn (minimap-kill)
-			      (set-frame-width (selected-frame) 80))))
+		   	      (set-frame-width (selected-frame) 80))))
 		   (global-set-key (kbd "M-<f7>") 'minimap-toggle)
 		   ))
 
