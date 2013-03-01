@@ -1,6 +1,4 @@
 #!/bin/sh
 cp copyconfig ~/vim-emacs-setting/
-cp .bashrc ~/vim-emacs-setting/
 cp .profile ~/vim-emacs-setting/
 cp -rf ~/.kde/share/apps/konsole ~/vim-emacs-setting/
-cp .tmux.conf ~/vim-emacs-setting/
