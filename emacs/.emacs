@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-02-27 18:37:42 Wednesday by Hua Liang>
+;; Time-stamp: <2013-03-01 08:19:09 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -16,8 +16,7 @@
 (push "~/.emacs.d/plugins/bin" exec-path)
 
 ;; UI
-(when (not (string= (system-name) "everet.org"))
-  (load "~/.emacs.d/configs/my-themes.el"))
+(load "~/.emacs.d/configs/my-themes.el")
 
 (load "~/.emacs.d/configs/my-ui.el")
 
