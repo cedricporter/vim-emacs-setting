@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-01 10:07:50 Friday by Hua Liang>
+;; Time-stamp: <2013-03-01 11:15:19 Friday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -49,7 +49,7 @@
 (setq org-html-postamble t)
 (setq org-html-postamble-format
       '(("zh-CN"
-	 "<hr/><p class=\"author\">Author: %a (%e)</p>\n<p class=\"date\">Date: %d</p>\n
+	 "<hr/><p class=\"author\">Author: %a </p>\n<p class=\"date\">Date: %d</p>\n
     <div id=\"disqus_thread\"></div>
     <script type=\"text/javascript\">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
