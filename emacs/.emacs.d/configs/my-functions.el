@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-10 12:49:38 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-01 08:36:36 Friday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -67,6 +67,23 @@ opinion. "
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
+
+;; borrow from http://alpha-blog.wanglianghome.org/2010/08/26/emacs-startup-log/
+(defmacro require-maybe (feature &optional file)
+  "*Try to require FEATURE, but don't signal an error if `require' fails."
+  `(let ((require-result (require ,feature ,file 'noerror)))
+     (with-current-buffer (get-buffer-create "*Startup Log*")
+       (let* ((startup-log-format-string-prefix "%-20s--------[")
+              (startup-log-format-string-postfix "%s")
+              (startup-status (if require-result "LOADED" "FAILED"))
+              (startup-status-face `(face (:foreground
+                                           ,(if require-result "green" "red")))))
+         (insert (format startup-log-format-string-prefix ,feature))
+         (let ((start-pos (point)))
+           (insert (format startup-log-format-string-postfix startup-status))
+           (add-text-properties start-pos (point) startup-status-face)
+           (insert "]\n"))))
+     require-result))
 
 ;; -------------------- My Functions --------------------
 
