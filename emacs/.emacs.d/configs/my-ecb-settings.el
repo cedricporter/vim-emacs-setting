@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-20 19:27:56 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-02 09:30:48 Saturday by Hua Liang>
 
 ;; ==================== ecb ====================
 (add-to-list 'load-path "~/.emacs.d/plugins/ecb-2.40")
@@ -41,7 +41,7 @@
 (set-key-for-ecb-layout (kbd "C-c . 2") "my-python-layout")
 (set-key-for-ecb-layout (kbd "C-c . 3") "left-dir-plus-speedbar")
 
-(setq ecb-layout-name "my-cscope-layout")
+(setq ecb-layout-name "my-python-layout")
 
 (global-set-key (kbd "C-M-1") 'ecb-goto-window-methods)
 (global-set-key (kbd "C-M-2") 'ecb-goto-window-edit1)

@@ -89,6 +89,7 @@ alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias ra='ranger'
 alias i='info'
 alias rp='rake publish'
