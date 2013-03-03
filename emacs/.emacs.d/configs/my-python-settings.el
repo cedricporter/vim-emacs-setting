@@ -1,7 +1,21 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-23 11:08:13 Saturday by Hua Liang>
+;; Time-stamp: <2013-03-03 10:54:41 Sunday by Hua Liang>
 
 (require 'python)
+
+(defun switch-python-web-mode ()
+  "切换python-mode和web-mode"
+  (interactive)
+  (cond
+   ((eq major-mode 'python-mode)
+    (web-mode)
+    )
+   ((eq major-mode 'web-mode)
+    (python-mode)
+    )
+   ))
+(global-set-key (kbd "<S-f8>") 'switch-python-web-mode)
+
 
 ;; Python Hook
 (add-hook 'python-mode-hook
@@ -11,7 +25,8 @@
 		   python-indent-offset 4
 		   python-indent 4
 		   ;; comment-start " # "
-		   )))
+		   )
+	     ))
 
 ;; 删除行尾的空白字符
 (add-hook 'python-mode-hook '(lambda ()
