@@ -1,11 +1,14 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:36:02 by Hua Liang>
+;; Time-stamp: <2013-03-04 10:16:44 Monday by Hua Liang>
 
 ;; ==================== eshell ====================
 (setq eshell-cmpl-cycle-completions nil)
 
-(global-set-key [f4] 'eshell)
-(global-set-key [S-f4] 'term)
+(global-set-key [f4] '(lambda()
+			(interactive)
+			(split-window-right)
+			(other-window 1)
+			(eshell)))
 
 ;; (setq ansi-term-color-vector
 ;;       [ "black" "tomato" "PaleGreen2" "gold1"
