@@ -1,9 +1,8 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-04 10:16:44 Monday by Hua Liang>
+;; Time-stamp: <2013-03-04 13:09:32 Monday by Hua Liang>
 
 ;; ==================== eshell ====================
 (setq eshell-cmpl-cycle-completions nil)
-
 (global-set-key [f4] '(lambda()
 			(interactive)
 			(split-window-right)

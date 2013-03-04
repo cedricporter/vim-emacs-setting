@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-01 08:35:03 Friday by Hua Liang>
+;; Time-stamp: <2013-03-04 19:42:36 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -52,6 +52,12 @@
    dired-details
    dired-details+
    ido-ubiquitous
+
+   ;; (:name python
+   ;; 	  :website "https://github.com/fgallina/python.el"
+   ;; 	  :description "improved python.el from Fabián Ezequiel Gallina"
+   ;; 	  :type github
+   ;; 	  :pkgname "fgallina/python.el")
 
    (:name minimap
 	  :after (progn
@@ -227,9 +233,6 @@
 		   (load "desktop")
 		   (desktop-save-mode)))
 
-   ;; (:name python-mode
-   ;; 	  :after (progn
-   ;; 		   (require 'python-mode)))
    )
  )
 

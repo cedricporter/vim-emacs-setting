@@ -1,7 +1,22 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-03 10:54:41 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-04 19:48:01 Monday by Hua Liang>
 
-(require 'python)
+(assq-delete-all "\\.py$" auto-mode-alist)
+(assq-delete-all "\\.py\\" auto-mode-alist)
+
+;; (add-to-list 'load-path "~/.emacs.d/el-get/python-mode/")
+(autoload 'python-mode "~/.emacs.d/el-get/python-mode/python-mode.el" "Python Mode." t)
+(load "~/.emacs.d/el-get/python-mode/python-mode.el")
+(add-to-list 'auto-mode-alist '("\\.py$\\'" . python-mode))
+;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+;; (defun run-python (&rest args) nil)
+;; (defun python-mode (&rest args) nil)
+;; (defun jython-mode (&rest args) nil)
+;; (defun python-shell (&rest args) nil)
+
+
+;; (require 'python)
 
 (defun switch-python-web-mode ()
   "切换python-mode和web-mode"
@@ -23,9 +38,10 @@
              (setq indent-tabs-mode nil
 		   tab-width 4
 		   python-indent-offset 4
-		   python-indent 4
 		   ;; comment-start " # "
 		   )
+	     (set-variable 'python-indent-offset 4)
+	     (set-variable 'python-indent-guess-indent-offset nil)
 	     ))
 
 ;; 删除行尾的空白字符
