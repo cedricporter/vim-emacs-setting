@@ -100,6 +100,7 @@ alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
 alias sc='screen'
 alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
+alias ms='mysql -u root -p'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
