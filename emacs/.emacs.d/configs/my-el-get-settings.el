@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-04 19:42:36 Monday by Hua Liang>
+;; Time-stamp: <2013-03-07 14:58:43 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -52,12 +52,7 @@
    dired-details
    dired-details+
    ido-ubiquitous
-
-   ;; (:name python
-   ;; 	  :website "https://github.com/fgallina/python.el"
-   ;; 	  :description "improved python.el from Fabián Ezequiel Gallina"
-   ;; 	  :type github
-   ;; 	  :pkgname "fgallina/python.el")
+   python-mode
 
    (:name minimap
 	  :after (progn
@@ -140,7 +135,10 @@
 
    (:name expand-region
           :after (progn
-                   (global-set-key (kbd "C-=") 'er/expand-region)))
+		   (setq expand-region-guess-python-mode nil)
+		   (setq expand-region-preferred-python-mode 'python-mode)
+                   (global-set-key (kbd "C-=") 'er/expand-region)
+		   ))
 
    (:name auto-complete
 	  :after (load "~/.emacs.d/configs/my-autocomplete-settings.el"))
