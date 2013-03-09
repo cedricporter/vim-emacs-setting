@@ -3,3 +3,4 @@ cp copyconfig ~/vim-emacs-setting/
 cp .profile ~/vim-emacs-setting/
 cp -rf ~/.kde/share/apps/konsole ~/vim-emacs-setting/
 cp .kde/share/config/kglobalshortcutsrc vim-emacs-setting/
+cp .gitconfig ~/vim-emacs-setting/

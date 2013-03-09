@@ -1,0 +1,10 @@
+[user]
+	name = Cedric Porter
+	email = cedricporter@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	co = checkout
+	ci = commit
+	cl = clone
+	br = branch
