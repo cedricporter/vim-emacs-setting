@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-28 08:47:39 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-09 16:33:28 Saturday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -173,6 +173,9 @@
 			'help-echo buffer-file-coding-system))
     "] "
 
+    "["
+    '(:eval (propertize (if vc-mode (string-strip (format "%s" vc-mode)) "") 'face 'font-lock-variable-name-face))
+    "] "
 
     ;; add the time, with the date and the emacs uptime in the tooltip
     '(:eval (propertize (format-time-string "%H:%M:%S")
