@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-10 14:29:14 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-10 15:56:26 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -34,7 +34,7 @@
    coffee-mode
    htmlize
    ;; undo-tree
-   ;; yascroll 
+   ;; yascroll
    full-ack
    scss-mode
    ascii
@@ -77,17 +77,17 @@
    (:name flymake-easy
           :type elpa)
 
-   ; (:name org-mode
-   ;  	  :prepare (progn
-   ;  		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
-   ;  		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
-   ;  		     )
-   ;        :after (progn
-   ;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
-   ;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
-   ;  		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
-   ;  		   )
-   ;  	  )
+   (:name org-mode
+    	  :prepare (progn
+    		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
+    		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
+    		     )
+          :after (progn
+    		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
+    		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
+    		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
+    		   )
+    	  )
 
    ;; use `M-x hc`
    (:name httpcode
@@ -207,7 +207,12 @@
    (:name helm
 	  :after (progn
 		   (require 'helm-config)
-		   (global-set-key (kbd "C-x b") 'helm-for-files)))
+		   (setq helm-idle-delay 0.1)
+		   (setq helm-input-idle-delay 0.1)
+		   (global-set-key (kbd "C-x b") 'helm-for-files)
+		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$")
+			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
+		   ))
 
    (:name buffer-move			; have to add your own keys
 	  :after (progn
