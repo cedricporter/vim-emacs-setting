@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-02-23 10:51:56 Saturday by Hua Liang>
+;; Time-stamp: <2013-03-10 19:17:39 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -53,6 +53,7 @@
 ;; 用C-x C-d直接打开当前目录的Dired浏览模式；
 (require 'ido)
 (ido-mode t)
+(icomplete-mode 1)
 ;(ffap-bindings)
 ;(global-set-key "\C-x\C-f" 'ido-dired)
 (global-set-key "\C-c\C-f" 'find-file-at-point)
