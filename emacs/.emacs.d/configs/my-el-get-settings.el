@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-07 14:58:43 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-10 14:29:14 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -10,6 +10,10 @@
     (let (el-get-master-branch)
       (goto-char (point-max))
       (eval-print-last-sexp))))
+
+;; temp
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 (require 'el-get-status)
 
@@ -29,7 +33,8 @@
    slime
    coffee-mode
    htmlize
-   undo-tree
+   ;; undo-tree
+   ;; yascroll 
    full-ack
    scss-mode
    ascii
@@ -72,16 +77,17 @@
    (:name flymake-easy
           :type elpa)
 
-   (:name org-mode
-	  :prepare (progn
-		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
-		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
-		     )
-          :after (progn
-		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
-		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
-		   )
-	  )
+   ; (:name org-mode
+   ;  	  :prepare (progn
+   ;  		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
+   ;  		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
+   ;  		     )
+   ;        :after (progn
+   ;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
+   ;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
+   ;  		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
+   ;  		   )
+   ;  	  )
 
    ;; use `M-x hc`
    (:name httpcode
@@ -169,11 +175,11 @@
 	  :after (progn
 		   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
 
-   (:name evil-numbers
-	  :after (progn
-		   (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
-		   (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
-		   ))
+   ;; (:name evil-numbers
+   ;;  	  :after (progn
+   ;;  		   (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+   ;;  		   (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+   ;;  		   ))
 
    (:name nginx-mode
 	  :after (progn
