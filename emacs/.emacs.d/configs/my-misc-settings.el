@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-01 11:12:04 Friday by Hua Liang>
+;; Time-stamp: <2013-03-10 19:54:00 Sunday by Hua Liang>
 
 
 
@@ -259,7 +259,7 @@
 ;; -------------------- cua-mode --------------------
 
 
-(global-set-key [(f5)] 'speedbar)
+;; (global-set-key [(f5)] 'speedbar)
 
 
 ;; ==================== sudo reopen ====================

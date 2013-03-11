@@ -8,7 +8,7 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
 (setq ac-auto-start t)
-(setq ac-quick-help-delay 0.1)
+(setq ac-quick-help-delay 0.2)
 ;; (ac-set-trigger-key "TAB")
 (define-key ac-mode-map [(control tab)] 'auto-complete)
 
