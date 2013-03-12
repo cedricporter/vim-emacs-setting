@@ -1,19 +1,14 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-04 19:48:01 Monday by Hua Liang>
+;; Time-stamp: <2013-03-12 20:53:18 Tuesday by Hua Liang>
 
-(assq-delete-all "\\.py$" auto-mode-alist)
-(assq-delete-all "\\.py\\" auto-mode-alist)
+;; (assq-delete-all "\\.py$" auto-mode-alist)
+;; (assq-delete-all "\\.py\\" auto-mode-alist)
 
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/python-mode/")
-(autoload 'python-mode "~/.emacs.d/el-get/python-mode/python-mode.el" "Python Mode." t)
-(load "~/.emacs.d/el-get/python-mode/python-mode.el")
-(add-to-list 'auto-mode-alist '("\\.py$\\'" . python-mode))
+;; (autoload 'python-mode "~/.emacs.d/el-get/python-mode/python-mode.el" "Python Mode." t)
+;; (load "~/.emacs.d/el-get/python-mode/python-mode.el")
+;; (add-to-list 'auto-mode-alist '("\\.py$\\'" . python-mode))
 ;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
-;; (defun run-python (&rest args) nil)
-;; (defun python-mode (&rest args) nil)
-;; (defun jython-mode (&rest args) nil)
-;; (defun python-shell (&rest args) nil)
 
 
 ;; (require 'python)
@@ -42,6 +37,7 @@
 		   )
 	     (set-variable 'python-indent-offset 4)
 	     (set-variable 'python-indent-guess-indent-offset nil)
+	     (local-set-key (kbd "<f5>") 'flymake-goto-next-error)
 	     ))
 
 ;; 删除行尾的空白字符

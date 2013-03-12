@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-10 20:12:42 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-11 09:27:35 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -77,17 +77,18 @@
    (:name flymake-easy
           :type elpa)
 
-   (:name org-mode
-    	  :prepare (progn
-    		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
-    		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
-    		     )
-          :after (progn
-    		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
-    		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
-    		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
-    		   )
-    	  )
+   ;; use builtin org-mode
+   ;; (:name org-mode
+   ;;  	  :prepare (progn
+   ;;  		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
+   ;;  		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
+   ;;  		     )
+   ;;        :after (progn
+   ;;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
+   ;;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
+   ;;  		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
+   ;;  		   )
+   ;;  	  )
 
    ;; use `M-x hc`
    (:name httpcode

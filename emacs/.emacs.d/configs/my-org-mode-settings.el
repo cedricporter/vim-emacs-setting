@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-01 11:15:19 Friday by Hua Liang>
+;; Time-stamp: <2013-03-11 09:35:58 Monday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -35,21 +35,24 @@
 
 (setq org-src-fontify-natively t)
 
+(setq org-export-date-timestamp-format "%Y-%m-%d %H:%M %A")
+(setq org-export-html-date-format-string "%Y-%m-%d %H:%M %A")
+
 ;; ==================== css ====================
 
-(setq org-html-style-include-scripts nil
-      org-html-style-include-default nil)
+(setq org-export-html-style-include-scripts nil
+      org-export-html-style-include-default nil)
 
-(setq org-html-style
-      "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css?v=1\" />")
+;; (setq org-export-html-style
+;;       "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css?v=1\" />")
 
 ;; -------------------- css --------------------
 
 ;; (setq org-html-postamble 'my-org-html-postamble)
-(setq org-html-postamble t)
-(setq org-html-postamble-format
+(setq org-export-html-postamble t)
+(setq org-export-html-postamble-format
       '(("zh-CN"
-	 "<hr/><p class=\"author\">Author: %a </p>\n<p class=\"date\">Date: %d</p>\n
+	 "<hr/><p class=\"author\">Author: %a </p>\n<p class=\"date\">Last Updated: %d</p>\n
     <div id=\"disqus_thread\"></div>
     <script type=\"text/javascript\">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -76,7 +79,7 @@
 	 :base-extension "org"
 	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
-	 :publishing-function org-html-publish-to-html
+	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4             ; Just the default for this project.
          :section-numbers t
 	 :auto-preamble t
@@ -88,7 +91,7 @@
 	 :completion-function (lambda ()
 				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
 				 )
-         ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
+         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
 	 )
 	("org-wiki-static"
 	 :base-directory "~/octopress/org-wiki/"
@@ -106,7 +109,7 @@
 	 :publishing-directory "~/octopress/source/wiki/"
 	 :sub-superscript ""
 	 :recursive t
-	 :publishing-function org-html-publish-to-html
+	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4
 	 :html-extension "markdown"
 	 :body-only t
