@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-11 09:35:58 Monday by Hua Liang>
+;; Time-stamp: <2013-03-14 16:37:41 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -51,7 +51,7 @@
 ;; (setq org-html-postamble 'my-org-html-postamble)
 (setq org-export-html-postamble t)
 (setq org-export-html-postamble-format
-      '(("zh-CN"
+      '(("en"
 	 "<hr/><p class=\"author\">Author: %a </p>\n<p class=\"date\">Last Updated: %d</p>\n
     <div id=\"disqus_thread\"></div>
     <script type=\"text/javascript\">
@@ -71,7 +71,6 @@
 	 )))
 
 ;; ==================== wiki ====================
-;; (require 'org-publish)
 (setq org-publish-project-alist
       '(
 	("org-wiki-notes"

@@ -1,12 +1,14 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-14 01:35:03 Monday by Hua Liang>
+;; Time-stamp: <2013-03-14 15:56:42 Thursday by Hua Liang>
 
 (require 'iimage)
 
 (add-hook 'info-mode-hook 'iimage-mode)
 (add-hook 'markdown-mode-hook '(lambda()
-				 (define-key markdown-mode-map
-				   (kbd "<f12>") 'turn-on-iimage-mode)))
+				 (local-set-key (kbd "<f12>") 'turn-on-iimage-mode)))
+(add-hook 'org-mode-hook '(lambda()
+				 (local-set-key (kbd "<f12>") 'turn-on-iimage-mode)))
+
 
 (setq iimage-mode-image-search-path '(list "." ".."))
 
@@ -24,6 +26,6 @@
 	     (cons (concat "!\\[.*?\\](http://everet.org/\\(wp-content/"
 			   iimage-mode-image-filename-regex
 			   "\\))") 1))
- 
+
 
 ;; (provide 'my-iimage-settings)
