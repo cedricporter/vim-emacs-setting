@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-14 16:37:41 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-14 17:01:30 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -51,8 +51,12 @@
 ;; (setq org-html-postamble 'my-org-html-postamble)
 (setq org-export-html-postamble t)
 (setq org-export-html-postamble-format
-      '(("en"
-	 "<hr/><p class=\"author\">Author: %a </p>\n<p class=\"date\">Last Updated: %d</p>\n
+      '(;; for common html export
+	("en"
+	 "<hr/><p class=\"author\">Author: <a href=\"http://everet.org/about-me/\">%a</a> </p>\n<p class=\"date\">Last Updated: %d</p>")
+	;; for org-notes
+	("zh-CN"
+	 "<hr/><p class=\"author\">Author: <a href=\"http://everet.org/about-me/\">%a</a> </p>\n<p class=\"date\">Last Updated: %d</p>\n
     <div id=\"disqus_thread\"></div>
     <script type=\"text/javascript\">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

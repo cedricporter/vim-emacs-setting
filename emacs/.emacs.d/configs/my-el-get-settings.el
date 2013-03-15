@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-11 09:27:35 Monday by Hua Liang>
+;; Time-stamp: <2013-03-15 21:04:13 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -25,7 +25,6 @@
    escreen            			; screen for emacs, C-\ C-h
    php-mode-improved			; if you're into php...
    switch-window			; takes over C-x o
-   zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    rainbow-mode				; show color
    rainbow-delimiters
    graphviz-dot-mode
@@ -58,6 +57,14 @@
    dired-details+
    ido-ubiquitous
    python-mode
+
+   (:name zencoding-mode					; http://www.emacswiki.org/emacs/ZenCoding
+	  :after (progn
+		   (add-hook 'web-mode 'zencoding-mode)
+		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
+		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
+		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
+		   ))
 
    (:name minimap
 	  :after (progn
@@ -121,7 +128,11 @@
 		       (local-set-key (kbd "<f7>")
 				      '(lambda ()
 					 (interactive)
-					 (browse-url (buffer-file-name))))))
+					 (browse-url (buffer-file-name))))
+		       (define-key web-mode-map (kbd "C-;") nil) 
+		       (local-set-key (kbd "C-c c") 'web-mode-comment-or-uncomment)
+		       (setq zencoding-indentation 2)
+		       ))
 		   ))
 
    (:name flymake-coffee
