@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-15 21:04:13 Friday by Hua Liang>
+;; Time-stamp: <2013-03-19 00:13:40 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -129,7 +129,7 @@
 				      '(lambda ()
 					 (interactive)
 					 (browse-url (buffer-file-name))))
-		       (define-key web-mode-map (kbd "C-;") nil) 
+		       (define-key web-mode-map (kbd "C-;") nil)
 		       (local-set-key (kbd "C-c c") 'web-mode-comment-or-uncomment)
 		       (setq zencoding-indentation 2)
 		       ))
@@ -223,6 +223,7 @@
 		   (setq helm-idle-delay 0.1)
 		   (setq helm-input-idle-delay 0.1)
 		   (global-set-key (kbd "C-x b") 'helm-for-files)
+		   (global-set-key (kbd "C-c i") 'helm-imenu)
 		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.odt$" "\\.pdf$")
 			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
 		   ))
