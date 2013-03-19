@@ -11,31 +11,6 @@ export TERM=xterm-256color
 export SHELL=zsh
 
 
-# Example aliases
-alias zshconfig="ec ~/.zshrc"
-alias ohmyzsh="ec ~/.oh-my-zsh"
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias n4='ssh -l root -p 1990 new.everet.org'
-alias ras='ssh -l root -p 1990 ras.everet.org'
-alias ec='emacsclient -t -a=""'
-alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
-alias gs='git status'
-alias gp='git push'
-alias gpt='git push --tags'
-alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-alias ra='ranger'
-alias i='info'
-alias rp='rake publish'
-alias rgp='rake generate && rake preview'
-alias ipy='ipython'
-alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
-alias sc='screen'
-alias scb='screen -dr normaltask || screen -S normaltask'
-alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
-alias ms='mysql -u root -p'
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -63,6 +38,32 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
+
+# Example aliases
+alias zshconfig="ec ~/.zshrc"
+alias ohmyzsh="ec ~/.oh-my-zsh"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias n4='ssh -l root -p 1990 new.everet.org'
+alias ras='ssh -l root -p 1990 ras.everet.org'
+alias ec='emacsclient -t -a=""'
+alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
+alias gs='git status'
+alias gp='git push'
+alias gpt='git push --tags'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias ra='ranger'
+alias i='info'
+alias rp='rake publish'
+alias rgp='rake generate && rake preview'
+alias ipy='ipython'
+alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
+alias sc='screen'
+alias scb='screen -dr normaltask || screen -S normaltask'
+alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
+alias ms='mysql -u root -p'
+
 
 # disable auto correct
 unsetopt correct_all
