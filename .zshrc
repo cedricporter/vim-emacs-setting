@@ -64,6 +64,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# disable auto correct
+unsetopt correct_all
+
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
