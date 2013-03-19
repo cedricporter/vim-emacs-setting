@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-10 19:54:00 Sunday by Hua Liang>
+;; Time-stamp: <2013-03-19 15:55:22 Tuesday by Hua Liang>
 
 
 
@@ -397,6 +397,11 @@ occurence of CHAR."
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (flet ((process-list ())) ad-do-it))
 ;; -------------------- stop asking active process when exit --------------------
+
+
+;; ==================== browse-url ====================
+(global-set-key (kbd "C-c C-v") 'browse-url)
+;; -------------------- browse-url --------------------
 
 
 ;; (provide 'my-misc-settings)
