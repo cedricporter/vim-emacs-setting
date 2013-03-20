@@ -32,7 +32,7 @@ export SHELL=zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git cake command-not-found autojump coffee pip supervisor debian)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,8 +68,8 @@ alias ms='mysql -u root -p'
 # disable auto correct
 unsetopt correct_all
 
-# autojump
-[[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
+# # autojump
+# [[ -s /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
 # man
 vman () {
