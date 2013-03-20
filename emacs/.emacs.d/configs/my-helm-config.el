@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-03-19 13:47:29 Tuesday by Hua Liang>
+;; Time-stamp: <2013-03-20 10:18:41 Wednesday by Hua Liang>
 
 
 (require 'helm-config)
@@ -24,7 +24,7 @@
              (local-set-key (kbd "M-T") 'helm-gtags-pop-stack)
              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-             (local-set-key (kbd "C-c C-f") 'helm-gtags-pop-stack)))
+             ))
 
 
 ;;; my-helm-config.el ends here
