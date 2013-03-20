@@ -64,6 +64,10 @@ alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
 alias ms='mysql -u root -p'
 
+# display
+alias single-display="xrandr --output VGA-0 --off"
+alias double-display="xrandr --output VGA-0 --left-of LVDS-0 --auto"
+
 
 # disable auto correct
 unsetopt correct_all
