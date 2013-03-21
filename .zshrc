@@ -86,7 +86,7 @@ vman () {
                      -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
     # invoke man page
-    man $1
+    man $*
 
     # we muse unset the PAGER, so regular man pager is used afterwards
     unset PAGER
