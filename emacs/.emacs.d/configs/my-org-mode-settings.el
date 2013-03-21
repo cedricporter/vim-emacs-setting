@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-21 21:21:09 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-21 21:27:32 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -98,7 +98,7 @@
 	 :sitemap-title "Note Entries" ;"Stupid ET's Wiki"
          :sitemap-sort-files anti-chronologically
          :sitemap-sort-folders last
-         :sitemap-file-entry-format "(%d)  %t"
+         :sitemap-file-entry-format "「%d」 -  %t"
 	 :completion-function (lambda ()
 				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
 				 )
