@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-14 17:01:30 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-21 21:21:09 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -75,6 +75,11 @@
 	 )))
 
 ;; ==================== wiki ====================
+;; (require 'org-publish)
+
+;; WTF. It doesn't work.
+;; (setq org-publish-sitemap-sort-files 'anti-chronologically)
+
 (setq org-publish-project-alist
       '(
 	("org-wiki-notes"
@@ -86,15 +91,18 @@
 	 :headline-levels 4             ; Just the default for this project.
          :section-numbers t
 	 :auto-preamble t
+	 :language "zh-CN"
 	 :author "Hua Liang [Stupid ET]"
  	 :auto-sitemap t
-	 :language "zh-CN"
 	 :sitemap-filename "sitemap.org"
-	 :sitemap-title "" ;"Stupid ET's Wiki"
+	 :sitemap-title "Note Entries" ;"Stupid ET's Wiki"
+         :sitemap-sort-files anti-chronologically
+         :sitemap-sort-folders last
+         :sitemap-file-entry-format "(%d)  %t"
 	 :completion-function (lambda ()
 				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
 				 )
-         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"   ; useless
+         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"
 	 )
 	("org-wiki-static"
 	 :base-directory "~/octopress/org-wiki/"
