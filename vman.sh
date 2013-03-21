@@ -12,6 +12,8 @@ export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
                      -c 'map q :q!<CR>' \
                      -c 'map d <C-D>' \
                      -c 'map u <C-U>' \
+                     -c 'map j <C-E>' \
+                     -c 'map k <C-Y>' \
                      -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
 # export MANPAGER="/usr/bin/most -s"

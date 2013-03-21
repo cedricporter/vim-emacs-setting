@@ -83,6 +83,8 @@ vman () {
                      -c 'map q :q!<CR>' \
                      -c 'map d <C-D>' \
                      -c 'map u <C-U>' \
+                     -c 'map j <C-E>' \
+                     -c 'map k <C-Y>' \
                      -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
     # invoke man page
