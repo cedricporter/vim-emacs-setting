@@ -1,7 +1,7 @@
 ;;; my-themes.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-02-07 18:46:56 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-21 09:08:55 Thursday by Hua Liang>
 
 
 ;;==================== color theme ====================
@@ -36,12 +36,12 @@
                       (4 . (lambda () (load-theme 'Amelie t)))
                       ))
 
-;; (dolist (item my-theme-list)
-;;   (let ((theme-num (car item)))
-;;     (global-set-key (kbd (format "C-c , t %d" theme-num))
-;;                     `(lambda ()
-;;                        (interactive)
-;;                        (change-my-theme ,theme-num)))))
+(dolist (item my-theme-list)
+  (let ((theme-num (car item)))
+    (global-set-key (kbd (format "C-c , t %d" theme-num))
+                    `(lambda ()
+                       (interactive)
+                       (change-my-theme ,theme-num)))))
 
 (defun set-theme (what-theme)
   (funcall (cdr (assoc what-theme my-theme-list))))

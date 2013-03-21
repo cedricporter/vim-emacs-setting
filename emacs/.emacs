@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-03-20 20:45:31 Wednesday by Hua Liang>
+;; Time-stamp: <2013-03-20 23:17:44 Wednesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -109,4 +109,5 @@
  '(org-startup-folded nil)
  '(org-startup-truncated nil)
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
- '(session-use-package t nil (session)))
+ '(session-use-package t nil (session))
+ '(vc-follow-symlinks t))

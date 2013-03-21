@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-30 22:46:58 Wednesday by Hua Liang>
+;; Time-stamp: <2013-03-20 23:24:10 Wednesday by Hua Liang>
 
 ;; ==================== bzr cedet ====================
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
@@ -26,7 +26,7 @@
   (local-set-key "\C-c=" 'semantic-decoration-include-visit)
 
   (local-set-key (kbd "C-.") 'semantic-ia-fast-jump)
-  (local-set-key (kbd "C->")  ;; go back
+  (local-set-key (kbd "C-,")  ;; go back
                  (lambda ()
                    (interactive)
                    (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
