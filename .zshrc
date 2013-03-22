@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export SHELL=zsh
 
 
@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="ec ~/.zshrc"
 alias ohmyzsh="ec ~/.oh-my-zsh"
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 alias lst='ls -tr'
