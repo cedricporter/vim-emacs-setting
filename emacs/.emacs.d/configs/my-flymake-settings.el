@@ -1,16 +1,48 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-01-15 11:27:08 Tuesday by Hua Liang>
+;; Time-stamp: <2013-03-22 13:44:05 Friday by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
 ;; 对于c/c++，Makefile需要加上
 ;; check-syntax:
-;;     $(CXXCOMPILE) -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
+;;     gcc -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
+
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+
+;; ==================== temp file ====================
+;; Nope, I want my copies in the system temp dir.
+(setq flymake-run-in-place nil)
+;; This lets me say where my temp dir is.
+(setq temporary-file-directory "~/.emacs.d/tmp/")
+;; -------------------- temp file --------------------
+
+
+;; ==================== privilege ====================
+;; ;; http://www.emacswiki.org/emacs/FlyMake#toc14
+;; (defun cwebber/safer-flymake-find-file-hook ()
+;;   "Don't barf if we can't open this flymake file"
+;;   (let ((flymake-filename
+;;          (flymake-create-temp-inplace (buffer-file-name) "flymake")))
+;;     (if (file-writable-p flymake-filename)
+;;         (flymake-find-file-hook)
+;;       (message
+;;        (format
+;;         "Couldn't enable flymake; permission denied on %s" flymake-filename)))))
+
+;; (add-hook 'find-file-hook 'cwebber/safer-flymake-find-file-hook)
+;; -------------------- privilege --------------------
+
+
 (setq flymake-gui-warnings-enabled nil) ;烦死了
 (setq flymake-log-level 0)
+
+
+;; Nope, I want my copies in the system temp dir.
+(setq flymake-run-in-place nil)
+;; This lets me say where my temp dir is.
+(setq temporary-file-directory "~/.emacs.d/tmp/")
 
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-20 23:24:10 Wednesday by Hua Liang>
+;; Time-stamp: <2013-03-22 12:30:25 Friday by Hua Liang>
 
 ;; ==================== bzr cedet ====================
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
@@ -140,5 +140,11 @@
 (global-set-key [f7] 'alexott/compile)
 ;; -------------------- bzr cedet --------------------
 
+
+(when (file-exists-p "~/projects/ethttpd/README.md")
+  (ede-cpp-root-project "ethttpd"
+                        :file "~/projects/ethttpd/README.md"
+                        ;; :compile-command "cd Debug && make -j2"
+                        ))
 
 ;; (provide 'my-cedet-settings)

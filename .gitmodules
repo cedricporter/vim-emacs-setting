@@ -40,3 +40,6 @@
 [submodule "emacs/.emacs.d/plugins/gc-refresh-mode"]
 	path = emacs/.emacs.d/plugins/gc-refresh-mode
 	url = git@github.com:cedricporter/gc-refresh-mode.git
+[submodule "emacs/.emacs.d/plugins/emacs-flymake"]
+	path = emacs/.emacs.d/plugins/emacs-flymake
+	url = https://github.com/illusori/emacs-flymake.git

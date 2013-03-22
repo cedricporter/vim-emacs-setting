@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-19 13:18:31 Tuesday by Hua Liang>
+;; Time-stamp: <2013-03-22 13:42:02 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -14,6 +14,8 @@
 ;; temp
 (require 'undo-tree)
 (global-undo-tree-mode)
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-flymake")
+(load "~/.emacs.d/plugins/emacs-flymake/flymake.el")
 
 (require 'el-get-status)
 

@@ -68,6 +68,9 @@ alias ms='mysql -u root -p'
 alias single-display="xrandr --output VGA-0 --off"
 alias double-display="xrandr --output VGA-0 --left-of LVDS-0 --auto"
 
+# goagent
+alias goagent="export http_proxy=127.0.0.1:8087 && export https_proxy=127.0.0.1:8087"
+alias ungoagent="export http_proxy= && export https_proxy="
 
 # disable auto correct
 unsetopt correct_all
