@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-03-20 10:18:41 Wednesday by Hua Liang>
+;; Time-stamp: <2013-03-22 16:32:53 Friday by Hua Liang>
 
 
 (require 'helm-config)
@@ -15,7 +15,7 @@
 ;; customize
 (setq helm-gtags-path-style 'relative)
 (setq helm-gtags-ignore-case t)
-(setq helm-gtags-read-only t)
+(setq helm-gtags-read-only nil)
 
 ;; key bindings
 (add-hook 'helm-gtags-mode-hook

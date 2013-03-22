@@ -45,6 +45,9 @@ alias ohmyzsh="ec ~/.oh-my-zsh"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lst='ls -tr'
+alias lsd='ls -d */'		# list dir
+alias lsdt='ls -dt */ '		# list dir
 alias n4='ssh -l root -p 1990 new.everet.org'
 alias ras='ssh -l root -p 1990 ras.everet.org'
 alias ec='emacsclient -t -a=""'

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-22 13:44:05 Friday by Hua Liang>
+;; Time-stamp: <2013-03-22 13:47:11 Friday by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -9,6 +9,9 @@
 
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+
+;; I want to see at most the first 4 errors for a line.
+(setq flymake-number-of-errors-to-display 4)
 
 
 ;; ==================== temp file ====================
