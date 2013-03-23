@@ -41,7 +41,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Example aliases
 alias zshconfig="ec ~/.zshrc"
-alias ohmyzsh="ec ~/.oh-my-zsh"
+alias zshreload="source ~/.zshrc"
+# alias ohmyzsh="ec ~/.oh-my-zsh"
 
 alias ll='ls -ahlF'
 alias la='ls -A'
@@ -78,6 +79,7 @@ alias ms='mysql -u root -p'
 
 # Easily search running processes (alias).
 alias 'psg'='ps ax | grep '
+alias 'psl'='ps awwfux | less -S'
 
 # display
 alias single-display="xrandr --output VGA-0 --off"
@@ -112,7 +114,7 @@ vman () {
     unset PAGER
 }
 
-alias man=vman
+alias man=vman                  # use \man to invoke original man
 
 # cd path
 CDPATH=:..:~:~/projects
@@ -125,5 +127,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-# entertaiment
+# entertainment
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
