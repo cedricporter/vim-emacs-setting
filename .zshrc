@@ -62,6 +62,7 @@ alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias gcam='git commit -am '
 
 alias ra='ranger'
 alias i='info'
