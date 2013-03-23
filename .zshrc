@@ -120,7 +120,10 @@ alias man=vman                  # use \man to invoke original man
 CDPATH=:..:~:~/projects
 
 # prompt, forked from robbyrussell
-PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead) %{$fg_bold[blue]%} % %{$reset_color%}'
+
+# Format for git_prompt_ahead()
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
