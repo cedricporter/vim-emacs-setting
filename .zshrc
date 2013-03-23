@@ -42,30 +42,42 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="ec ~/.zshrc"
 alias ohmyzsh="ec ~/.oh-my-zsh"
+
 alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 alias lst='ls -tr'
 alias lsd='ls -d */'		# list dir
 alias lsdt='ls -dt */ '		# list dir
+alias dud='du -hs * | sort -h'
+
 alias n4='ssh -l root -p 1990 new.everet.org'
 alias ras='ssh -l root -p 1990 ras.everet.org'
+
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
+
 alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
 alias ra='ranger'
 alias i='info'
+
 alias rp='rake publish'
 alias rgp='rake generate && rake preview'
+
 alias ipy='ipython'
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
+
 alias sc='screen'
 alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
 alias ms='mysql -u root -p'
+
+# Easily search running processes (alias).
+alias 'psg'='ps ax | grep '
 
 # display
 alias single-display="xrandr --output VGA-0 --off"
@@ -102,6 +114,8 @@ vman () {
 
 alias man=vman
 
+# cd path
+CDPATH=:..:~:~/projects
 
 # prompt, forked from robbyrussell
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
@@ -110,3 +124,6 @@ ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+# entertaiment
+alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'

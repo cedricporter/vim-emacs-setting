@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-19 15:55:22 Tuesday by Hua Liang>
+;; Time-stamp: <2013-03-23 10:03:40 Saturday by Hua Liang>
 
 
 
@@ -108,7 +108,7 @@
 (global-set-key [(control meta r)] 'isearch-backward)
 
 ;; ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-B") 'ibuffer)
 ; hide all buffers starting with an asterisk. http://www.emacswiki.org/emacs/IbufferMode
 (require 'ibuf-ext)
 (add-to-list 'ibuffer-never-show-predicates "^\\*")

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-22 13:42:02 Friday by Hua Liang>
+;; Time-stamp: <2013-03-23 10:03:14 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -225,7 +225,8 @@
 		   (require 'helm-files)
 		   (setq helm-idle-delay 0.1)
 		   (setq helm-input-idle-delay 0.1)
-		   (global-set-key (kbd "C-x b") 'helm-for-files)
+                   (global-set-key (kbd "C-x b") 'helm-for-files)
+                   (global-set-key (kbd "C-x C-b") 'helm-for-files)
 		   (global-set-key (kbd "C-c i") 'helm-imenu)
 		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.odt$" "\\.pdf$")
 			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
