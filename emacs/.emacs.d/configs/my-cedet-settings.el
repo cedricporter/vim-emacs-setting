@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-22 12:30:25 Friday by Hua Liang>
+;; Time-stamp: <2013-03-24 18:34:30 Sunday by Hua Liang>
 
 ;; ==================== bzr cedet ====================
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
@@ -25,20 +25,21 @@
   (local-set-key "\C-c>" 'semantic-comsemantic-ia-complete-symbolplete-analyze-inline)
   (local-set-key "\C-c=" 'semantic-decoration-include-visit)
 
-  (local-set-key (kbd "C-.") 'semantic-ia-fast-jump)
-  (local-set-key (kbd "C-,")  ;; go back
-                 (lambda ()
-                   (interactive)
-                   (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-                       (error "Semantic Bookmark ring is currently empty!!!"))
-                   (let* ((ring (oref semantic-mru-bookmark-ring ring))
-                          (alist (semantic-mrub-ring-to-assoc-list ring))
-                          (first (cdr (car alist))))
-                     (if (semantic-equivalent-tag-p (oref first tag)
-                                                    (semantic-current-tag))
-                         (setq first (cdr (car (cdr alist)))))
-                     ;; (message "%s-%s" alist first)
-                     (semantic-mrub-switch-tags first))))
+  ;; (local-set-key (kbd "C-.") 'semantic-ia-fast-jump)
+  ;; (local-set-key (kbd "C-,")  ;; go back
+  ;;                (lambda ()
+  ;;                  (interactive)
+  ;;                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+  ;;                      (error "Semantic Bookmark ring is currently empty!!!"))
+  ;;                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
+  ;;                         (alist (semantic-mrub-ring-to-assoc-list ring))
+  ;;                         (first (cdr (car alist))))
+  ;;                    (if (semantic-equivalent-tag-p (oref first tag)
+  ;;                                                   (semantic-current-tag))
+  ;;                        (setq first (cdr (car (cdr alist)))))
+  ;;                    ;; (message "%s-%s" alist first)
+  ;;                    (semantic-mrub-switch-tags first))))
+  
   (local-set-key "\C-cq" 'semantic-ia-show-doc)
 ;  (local-set-key "\C-cs" 'semantic-ia-show-summary)
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
