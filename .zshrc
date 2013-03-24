@@ -82,6 +82,9 @@ alias ms='mysql -u root -p'
 alias 'psg'='ps ax | grep '
 alias 'psl'='ps awwfux | less -S'
 
+# apt-get
+alias ai='sudo apt-get install '
+
 # display
 alias single-display="xrandr --output VGA-0 --off"
 alias double-display="xrandr --output VGA-0 --left-of LVDS-0 --auto"
@@ -120,6 +123,7 @@ alias man=vman                  # use \man to invoke original man
 # cd path
 CDPATH=:..:~:~/projects
 
+# ========================= theme =========================
 # prompt, forked from robbyrussell
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead) %{$fg_bold[blue]%} % %{$reset_color%}'
 
@@ -130,6 +134,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+# ------------------------- theme -------------------------
 
 # entertainment
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
