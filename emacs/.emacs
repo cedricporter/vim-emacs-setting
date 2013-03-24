@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-03-21 10:30:56 Thursday by Hua Liang>
+;; Time-stamp: <2013-03-24 18:27:25 Sunday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -70,6 +70,8 @@
 (load "~/.emacs.d/configs/my-helm-config.el")
 
 (load "~/.emacs.d/configs/my-gtags-config.el")
+
+(load "~/.emacs.d/configs/my-c-mode-config.el")
 
 ;; 解决一些global按键绑定被minor给覆盖的问题
 (load "~/.emacs.d/configs/my-minor-key-map.el")
