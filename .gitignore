@@ -7,3 +7,5 @@
 /emacs/.emacs.d/eshell/lastdir
 /build/pip-delete-this-directory.txt
 /emacs/.emacs.d/.mc-lists.el
+core
+emacs/.emacs.d/tmp/*
