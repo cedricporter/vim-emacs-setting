@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-23 10:03:14 Saturday by Hua Liang>
+;; Time-stamp: <2013-03-29 16:45:57 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -261,6 +261,12 @@
 		   (desktop-save-mode)))
 
    )
+
+
+   ;; (:name highlight-indentation
+   ;;        after: (progn
+   ;;                 (add-hook 'python-mode-hook 'highlight-indentation)))
+
  )
 
 ;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
