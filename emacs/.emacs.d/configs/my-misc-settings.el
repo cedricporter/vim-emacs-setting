@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-23 11:21:47 Saturday by Hua Liang>
+;; Time-stamp: <2013-03-29 13:38:51 Friday by Hua Liang>
 
 
 
@@ -408,5 +408,21 @@ occurence of CHAR."
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh-theme$" . sh-mode))
 ;; -------------------- zsh --------------------
+
+
+;; ==================== google ====================
+(defun google ()
+  "Google the selected region if any, display a query prompt otherwise."
+  (interactive)
+  (browse-url
+   (concat
+    "https://www.google.com.hk/search?ie=utf-8&oe=utf-8&q="
+    (url-hexify-string (if mark-active
+         (buffer-substring (region-beginning) (region-end))
+         (read-string "Google: "))))))
+
+(global-set-key (kbd "C-c g") 'google)
+;; -------------------- google --------------------
+
 
 ;; (provide 'my-misc-settings)
