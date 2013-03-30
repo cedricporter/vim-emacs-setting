@@ -95,6 +95,10 @@ alias double-display="xrandr --output VGA-0 --left-of LVDS-0 --auto"
 alias goagent="export http_proxy=127.0.0.1:8087 && export https_proxy=127.0.0.1:8087"
 alias ungoagent="export http_proxy= && export https_proxy="
 
+# ssh
+alias sshproxy="cp ~/.ssh/config-proxy ~/.ssh/config"
+alias unsshproxy="rm ~/.ssh/config"
+
 # disable auto correct
 unsetopt correct_all
 
