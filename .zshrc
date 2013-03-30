@@ -81,7 +81,7 @@ alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
 alias ms='mysql -u root -p'
 
 # Easily search running processes (alias).
-alias 'psg'='ps ax | grep '
+alias 'psg'='ps aux | grep '
 alias 'psl'='ps awwfux | less -S'
 
 # apt-get

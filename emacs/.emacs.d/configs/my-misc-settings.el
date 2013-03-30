@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-29 13:38:51 Friday by Hua Liang>
+;; Time-stamp: <2013-03-30 13:16:17 Saturday by Hua Liang>
 
 
 
@@ -424,5 +424,15 @@ occurence of CHAR."
 (global-set-key (kbd "C-c g") 'google)
 ;; -------------------- google --------------------
 
+
+;; ==================== woman ====================
+;; woman => w/o man, WithOut man
+(defalias 'man 'woman)
+(eval-after-load 'woman '(defalias 'man 'woman))
+(global-set-key (kbd "<M-f12>") (lambda ()
+                                  (interactive)
+                                  (let ((woman-use-topic-at-point t))
+                                    (woman))))
+;; -------------------- woman --------------------
 
 ;; (provide 'my-misc-settings)
