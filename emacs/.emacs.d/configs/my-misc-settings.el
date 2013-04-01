@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-30 16:38:21 Saturday by Hua Liang>
+;; Time-stamp: <2013-04-01 15:13:04 Monday by Hua Liang>
 
 
 
@@ -434,5 +434,11 @@ occurence of CHAR."
                                   (let ((woman-use-topic-at-point t))
                                     (woman))))
 ;; -------------------- woman --------------------
+
+
+;; ==================== frame ====================
+(global-set-key (kbd "C-x 5 o") 'display-buffer-other-frame)
+(global-set-key (kbd "C-x 5 f") 'ido-find-file-other-frame)
+;; -------------------- frame --------------------
 
 ;; (provide 'my-misc-settings)
