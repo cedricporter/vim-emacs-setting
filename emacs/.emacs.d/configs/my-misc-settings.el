@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-30 13:16:17 Saturday by Hua Liang>
+;; Time-stamp: <2013-03-30 16:38:21 Saturday by Hua Liang>
 
 
 
@@ -427,8 +427,8 @@ occurence of CHAR."
 
 ;; ==================== woman ====================
 ;; woman => w/o man, WithOut man
-(defalias 'man 'woman)
-(eval-after-load 'woman '(defalias 'man 'woman))
+;; (defalias 'man 'woman)
+;; (eval-after-load 'woman '(defalias 'man 'woman))
 (global-set-key (kbd "<M-f12>") (lambda ()
                                   (interactive)
                                   (let ((woman-use-topic-at-point t))

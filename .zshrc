@@ -99,6 +99,27 @@ alias ungoagent="export http_proxy= && export https_proxy="
 alias sshproxy="cp ~/.ssh/config-proxy ~/.ssh/config"
 alias unsshproxy="rm ~/.ssh/config"
 
+# safe rm
+# alias rm='rm -i'
+mkdir -p ~/.trash
+alias rm=trash
+alias rl='ls ~/.trash'
+alias ur=undelfile
+undelfile()
+{
+    mv -i ~/.trash/$@ ./
+}
+trash()
+{
+    mv --verbose -f --backup=numbered --target-directory ~/.trash/ $@
+}
+cleartrash()
+{
+    vared -c -p "y/n" confirm
+    echo $confirm
+    [[ $confirm == 'y' ]] || [[ $confirm == 'Y' ]] && \rm -rf ~/.trash/*
+}
+
 # disable auto correct
 unsetopt correct_all
 
