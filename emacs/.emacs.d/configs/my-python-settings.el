@@ -1,5 +1,5 @@
-;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 19:08:59 Monday by Hua Liang>
+;; Author: Hua Liang [Stupid ET]
+;; Time-stamp: <2013-04-01 19:48:15 Monday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -72,7 +72,7 @@
              (local-set-key (kbd "C-,") 'jedi:jump-back)
              (local-set-key (kbd "C-c d") 'jedi:show-doc)
              (local-set-key (kbd "C-<tab>") 'jedi:complete)
-             (local-set-key (kbd "C-c r") 'helm-jedi-related-names)
+             ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
              ))
 ;; -------------------- jedi --------------------
 
@@ -85,19 +85,19 @@
 ;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/pymacs")
 
-;; (require 'pymacs)
-;; (autoload 'pymacs-apply "pymacs")
-;; (autoload 'pymacs-call "pymacs")
-;; (autoload 'pymacs-eval "pymacs" nil t)
-;; (autoload 'pymacs-exec "pymacs" nil t)
-;; (autoload 'pymacs-load "pymacs" nil t)
-;; (autoload 'pymacs-autoload "pymacs")
-;; ;;(eval-after-load "pymacs"
-;; ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+(require 'pymacs)
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+(autoload 'pymacs-autoload "pymacs")
+;;(eval-after-load "pymacs"
+;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
 
-;; ;;; Initialize Rope
-;; (pymacs-load "ropemacs" "rope-")
-;; (setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+;;; Initialize Rope
+(pymacs-load "ropemacs" "rope-")
+(setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
 
 ;; (ac-ropemacs-initialize)
 ;; (add-hook 'python-mode-hook

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 19:08:25 Monday by Hua Liang>
+;; Time-stamp: <2013-04-01 19:39:20 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -60,6 +60,11 @@
    ido-ubiquitous
    python-mode
    gtags
+
+   rope
+   ropemacs
+   ropemode
+   pymacs
 
    (:name zencoding-mode					; http://www.emacswiki.org/emacs/ZenCoding
 	  :after (progn
