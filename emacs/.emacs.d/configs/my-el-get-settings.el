@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 14:41:48 Monday by Hua Liang>
+;; Time-stamp: <2013-04-01 15:07:37 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -231,6 +231,15 @@
 		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.odt$" "\\.pdf$")
 			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
 		   ))
+
+   (:name emacs-helm-gtags
+          :website "https://github.com/syohex/emacs-helm-gtags.git"
+          :type github
+          :pkgname "syohex/emacs-helm-gtags"
+          :features "helm-gtags"
+          :compile "helm-gtags.el"
+          :depends helm
+          )
 
    (:name buffer-move			; have to add your own keys
 	  :after (progn
