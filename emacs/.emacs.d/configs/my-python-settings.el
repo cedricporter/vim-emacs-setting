@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-12 20:53:18 Tuesday by Hua Liang>
+;; Time-stamp: <2013-04-01 19:08:59 Monday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -47,6 +47,34 @@
 			       'delete-trailing-whitespace)))
 
 (setq python-check-command "pyflakes")
+
+
+;; ==================== jedi ====================
+;; http://txt.arboreus.com/2013/02/21/jedi.el-jump-to-definition-and-back.html
+(defvar jedi:goto-stack '())
+(defun jedi:jump-to-definition ()
+  (interactive)
+  (add-to-list 'jedi:goto-stack
+               (list (buffer-name) (point)))
+  (jedi:goto-definition))
+(defun jedi:jump-back ()
+  (interactive)
+  (let ((p (pop jedi:goto-stack)))
+    (if p (progn
+            (switch-to-buffer (nth 0 p))
+            (goto-char (nth 1 p))))))
+
+;; redefine jedi's C-. (jedi:goto-definition)
+;; to remember position, and set C-, to jump back
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
+             (local-set-key (kbd "C-,") 'jedi:jump-back)
+             (local-set-key (kbd "C-c d") 'jedi:show-doc)
+             (local-set-key (kbd "C-<tab>") 'jedi:complete)
+             (local-set-key (kbd "C-c r") 'helm-jedi-related-names)
+             ))
+;; -------------------- jedi --------------------
 
 
 

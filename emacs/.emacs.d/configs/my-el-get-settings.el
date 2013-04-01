@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 15:07:37 Monday by Hua Liang>
+;; Time-stamp: <2013-04-01 19:08:25 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -109,14 +109,14 @@
 
    (:name jedi
 	  :prepare (progn
-		     (setq jedi:setup-keys t)
+		     ;; (setq jedi:setup-keys t)
 		     )
 	  :after (progn
+                   (setq jedi:setup-keys nil) ; use custom
+
 		   (autoload 'jedi:setup "jedi" nil t)
-		   (add-hook 'python-mode-hook
-			     '(lambda ()
-				(define-key python-mode-map (kbd "C-c r") 'helm-jedi-related-names)
-				(jedi:setup)))
+		   (add-hook 'python-mode-hook 'jedi:setup)
+
 		   (require 'jedi)
 		   ;; I want to use my favorite Python executable.
 		   (setq jedi:server-command (list "/usr/bin/python" jedi:server-script))
