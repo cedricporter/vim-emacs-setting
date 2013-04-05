@@ -60,11 +60,14 @@ alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 
+# git
 alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gcam='git commit -am '
+alias gitproxy='export GIT_PROXY_COMMAND="~/bin/proxy-wrapper"'
+alias ungitproxy='export GIT_PROXY_COMMAND=""'
 
 alias ra='ranger'
 alias i='info'

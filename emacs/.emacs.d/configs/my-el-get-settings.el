@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 19:39:20 Monday by Hua Liang>
+;; Time-stamp: <2013-04-05 12:49:49 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -270,7 +270,7 @@
 
    (:name session
 	  :after (progn
-                   (if (not (and (daemonp) (not server-process)))
+                   (if (not (daemonp))
                        (progn
                          (add-hook 'after-init-hook 'session-initialize)
                          (load "desktop")
