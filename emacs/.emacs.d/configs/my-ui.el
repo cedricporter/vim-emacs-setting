@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-03-09 16:36:51 Saturday by Hua Liang>
+;; Time-stamp: <2013-04-28 17:02:11 Sunday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -129,7 +129,8 @@
    (list
     ;; the buffer name; the file name as a tool tip
     '(:eval (propertize "%b " 'face 'font-lock-keyword-face
-			'help-echo (buffer-file-name)))
+        		'help-echo (format "%s" (buffer-file-name))
+                        ))
 
     "[" ;; insert vs overwrite mode, input-method in a tooltip
     '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
@@ -201,6 +202,8 @@
     ;; i don't want to see minor-modes; but if you want, uncomment this:
     ;; minor-mode-alist  ;; list of minor modes
     "%-" ;; fill with '-'
+
+    ;; mode-line-modes mode-line-misc-info mode-line-end-spaces
     ))
   ;; 这里不知道Emacs发生啥事，初始化完成后，mode-line-format就被设置回默认值。
   ;; (setq default-mode-line-format mode-line-format) ; 奇葩了，没有这行它就没法设置成功

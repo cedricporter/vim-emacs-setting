@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-10 19:17:39 Sunday by Hua Liang>
+;; Time-stamp: <2013-04-28 10:34:31 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -203,6 +203,14 @@
 (global-set-key (kbd "C-c C-h") 'hs-enable-and-toggle)
 (global-set-key (kbd "C-c C-j") 'hs-enable-and-hideshow-all)
 ;; -------------------- hs-mode --------------------
+
+
+;; ==================== csv ====================
+;; (require 'csv-mode)
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode"
+  "Major mode for editing comma-separated value files." t)
+;; -------------------- csv --------------------
 
 
 ;; (provide 'my-small-tools)

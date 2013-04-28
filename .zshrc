@@ -44,6 +44,8 @@ alias zshconfig="ec ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 # alias ohmyzsh="ec ~/.oh-my-zsh"
 
+alias tp='gtypist'
+
 alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -155,7 +157,7 @@ CDPATH=:..:~:~/projects
 
 # ========================= theme =========================
 # prompt, forked from robbyrussell
-PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)%{$fg_bold[blue]%} $ %{$reset_color%}'
+PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)%{$fg_bold[blue]%} %# %{$reset_color%}'
 
 # Format for git_prompt_ahead()
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
