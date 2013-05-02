@@ -83,6 +83,7 @@ alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
 alias sc='screen'
 alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
+alias tmn='tmux -2 new -s "`mktemp`"'
 alias ms='mysql -u root -p'
 
 # Easily search running processes (alias).
@@ -153,7 +154,7 @@ vman () {
 alias man=vman                  # use \man to invoke original man
 
 # cd path
-CDPATH=:..:~:~/projects
+# CDPATH=:..:~:~/projects
 
 # ========================= theme =========================
 # prompt, forked from robbyrussell
