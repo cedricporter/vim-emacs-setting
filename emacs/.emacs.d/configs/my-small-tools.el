@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-28 10:34:31 Sunday by Hua Liang>
+;; Time-stamp: <2013-05-07 21:24:37 Tuesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -211,6 +211,20 @@
 (autoload 'csv-mode "csv-mode"
   "Major mode for editing comma-separated value files." t)
 ;; -------------------- csv --------------------
+
+
+;; ==================== eval-and-replace ====================
+(defun eval-and-replace ()
+  "Replace the preceding sexp with its value."
+  (interactive)
+  (backward-kill-sexp)
+  (condition-case nil
+      (prin1 (eval (read (current-kill 0)))
+             (current-buffer))
+    (error (message "Invalid expression")
+           (insert (current-kill 0)))))
+(global-set-key (kbd "C-x g e") 'eval-and-replace)
+;; -------------------- eval-and-replace --------------------
 
 
 ;; (provide 'my-small-tools)

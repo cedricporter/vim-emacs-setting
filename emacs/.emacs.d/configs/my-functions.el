@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-01 08:36:36 Friday by Hua Liang>
+;; Time-stamp: <2013-05-07 21:23:42 Tuesday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -57,16 +57,6 @@ opinion. "
 	  new-file-name
 	  )
       )))
-
-(defun eval-and-replace ()
-  "Replace the preceding sexp with its value."
-  (interactive)
-  (backward-kill-sexp)
-  (condition-case nil
-      (prin1 (eval (read (current-kill 0)))
-             (current-buffer))
-    (error (message "Invalid expression")
-           (insert (current-kill 0)))))
 
 ;; borrow from http://alpha-blog.wanglianghome.org/2010/08/26/emacs-startup-log/
 (defmacro require-maybe (feature &optional file)
