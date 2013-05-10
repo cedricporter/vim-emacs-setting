@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-01 15:13:04 Monday by Hua Liang>
+;; Time-stamp: <2013-05-10 16:17:08 Friday by Hua Liang>
 
 
 
@@ -440,5 +440,6 @@ occurence of CHAR."
 (global-set-key (kbd "C-x 5 o") 'display-buffer-other-frame)
 (global-set-key (kbd "C-x 5 f") 'ido-find-file-other-frame)
 ;; -------------------- frame --------------------
+
 
 ;; (provide 'my-misc-settings)
