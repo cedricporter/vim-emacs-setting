@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-04-28 17:02:11 Sunday by Hua Liang>
+;; Time-stamp: <2013-05-12 11:38:09 Sunday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -113,6 +113,21 @@
 
 
 ;; ==================== mode line ====================
+
+;; ==================== line count ====================
+;; borrow from http://stackoverflow.com/questions/8190277/how-do-i-display-the-total-number-of-lines-in-the-emacs-modeline
+(defvar my-mode-line-buffer-line-count nil)
+(make-variable-buffer-local 'my-mode-line-buffer-line-count)
+
+(defun my-mode-line-count-lines ()
+  (setq my-mode-line-buffer-line-count (int-to-string (count-lines (point-min) (point-max)))))
+
+(add-hook 'find-file-hook 'my-mode-line-count-lines)
+(add-hook 'after-save-hook 'my-mode-line-count-lines)
+(add-hook 'after-revert-hook 'my-mode-line-count-lines)
+(add-hook 'dired-after-readin-hook 'my-mode-line-count-lines)
+;; -------------------- line count --------------------
+
 (setq show-buffer-file-name nil)
 (defun toggle-show-buffer-file-name ()
   "toggle show or hide buffer full file name in mode line"
@@ -160,11 +175,13 @@
     ;; relative position, size of file
     "["
     (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-    "/"
+
     ;; (propertize "%I" 'face 'font-lock-constant-face) ;; size
-    '(:eval (propertize (format "%dL" (count-lines (point-min) (point-max))) ;; total line
-			'face 'font-lock-type-face
-			))
+    '(:eval (when (and (not (buffer-modified-p)) my-mode-line-buffer-line-count)
+              (propertize (concat "/" my-mode-line-buffer-line-count "L")
+                          'face 'font-lock-type-face
+                          )))
+
     "] "
 
     ;; the current major mode for the buffer.

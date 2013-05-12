@@ -1,6 +1,6 @@
 ;;; my-minor-key-map.el
 ;;
-;; Time-stamp: <2013-05-10 16:17:02 Friday by Hua Liang>
+;; Time-stamp: <2013-05-10 21:31:40 Friday by Hua Liang>
 
 ;; Took from http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
 
@@ -20,9 +20,9 @@
 
 
 ;; ==================== tab ====================
-(define-key my-keys-minor-mode-map (kbd "C-i") (lambda ()
-                                                 (interactive)
-                                                 (insert "\t")))
+(define-key my-keys-minor-mode-map (kbd "<C-M-tab>") (lambda ()
+                                                     (interactive)
+                                                     (insert "\t")))
 ;; -------------------- tab --------------------
 
 
