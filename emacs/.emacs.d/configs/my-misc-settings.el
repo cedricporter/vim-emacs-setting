@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-10 16:17:08 Friday by Hua Liang>
+;; Time-stamp: <2013-05-13 11:30:30 Monday by Hua Liang>
 
 
 
@@ -440,6 +440,27 @@ occurence of CHAR."
 (global-set-key (kbd "C-x 5 o") 'display-buffer-other-frame)
 (global-set-key (kbd "C-x 5 f") 'ido-find-file-other-frame)
 ;; -------------------- frame --------------------
+
+
+;; ==================== c-macro-expand ====================
+;; If you often use a particular set of flags:
+(setq c-macro-cppflags (concat "-I ./ -I ../ -I ../../ "
+                               "-I ./include -I ../include "
+                               "-I ./includes -I ../includes "
+
+                               ;; for nginx
+                               "-I ../os/unix/ "
+                               "-I ../core "
+                               "-I ../../objs "
+                               "-I ../../os/unix/ "
+                               "-I ../../core "
+                               "-I ../../../objs "
+
+                               "-DDEBUG "))
+
+;; If you want the "Preprocessor arguments: " prompt:
+(setq c-macro-prompt-flag nil)
+;; -------------------- c-macro-expand --------------------
 
 
 ;; (provide 'my-misc-settings)
