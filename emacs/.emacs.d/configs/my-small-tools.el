@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-07 21:24:37 Tuesday by Hua Liang>
+;; Time-stamp: <2013-05-21 20:35:59 Tuesday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -176,6 +176,7 @@
 
 
 ;; ==================== reload chrome ====================
+;; use `gc-refresh-mode` to invoke chromium auto reload
 (add-to-list 'load-path "~/.emacs.d/plugins/gc-refresh-mode")
 (require 'gc-refresh-mode)
 ;; -------------------- reload chrome --------------------

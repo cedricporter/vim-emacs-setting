@@ -1,7 +1,7 @@
 ;;; my-themes.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-04-05 12:48:09 Friday by Hua Liang>
+;; Time-stamp: <2013-05-20 01:12:14 Monday by Hua Liang>
 
 
 ;;==================== color theme ====================

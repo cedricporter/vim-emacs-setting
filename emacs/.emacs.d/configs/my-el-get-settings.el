@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-05 12:49:49 Friday by Hua Liang>
+;; Time-stamp: <2013-05-21 16:47:02 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -65,14 +65,6 @@
    ropemacs
    ropemode
    pymacs
-
-   (:name zencoding-mode					; http://www.emacswiki.org/emacs/ZenCoding
-	  :after (progn
-		   (add-hook 'web-mode 'zencoding-mode)
-		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
-		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
-		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
-		   ))
 
    (:name minimap
 	  :after (progn
@@ -141,6 +133,14 @@
 		       (local-set-key (kbd "C-c c") 'web-mode-comment-or-uncomment)
 		       (setq zencoding-indentation 2)
 		       ))
+		   ))
+
+   (:name zencoding-mode					; http://www.emacswiki.org/emacs/ZenCoding
+	  :after (progn
+		   (add-hook 'web-mode-hook 'zencoding-mode)
+		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
+		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
+		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
 		   ))
 
    (:name flymake-coffee
