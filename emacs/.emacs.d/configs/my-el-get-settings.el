@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-21 16:47:02 Tuesday by Hua Liang>
+;; Time-stamp: <2013-07-19 21:07:16 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -65,6 +65,18 @@
    ropemacs
    ropemode
    pymacs
+
+   showtip
+   (:name sdcv
+          :after (progn
+                   (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
+						       ;; "牛津现代英汉双解词典"
+                                                       ;; "英汉双解计算机词典"
+                                                       ;; "简明英汉词典"
+                                                       ))
+
+                   (global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
+                   (global-set-key (kbd "C-c ]") 'sdcv-search-input)))
 
    (:name minimap
 	  :after (progn
