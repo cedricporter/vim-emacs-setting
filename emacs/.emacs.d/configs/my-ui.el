@@ -31,7 +31,9 @@
 
 ;; Font Setting
 
-(setq my-font "Monaco-11")
+(if (member "Monaco" (font-family-list))
+    (setq my-font "Monaco-11")
+  (setq my-font "Consolas-11"))
 
 (add-to-list 'default-frame-alist
              '(font . my-font))

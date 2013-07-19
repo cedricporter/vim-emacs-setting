@@ -15,6 +15,16 @@
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 
+(when (string-equal system-type "cygwin")
+  (push "/usr/bin" exec-path)
+  (setenv "PATH"
+	  (concat
+	   "C:/cygwin/usr/local/bin" ";"
+	   "C:/cygwin/usr/bin" ";"
+	   "C:/cygwin/bin" ";"
+	   (getenv "PATH")
+	   )
+	  ))
 
 ;; UI
 (load "~/.emacs.d/configs/my-themes.el")
