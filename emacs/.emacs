@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-04-28 17:10:05 Sunday by Hua Liang>
+;; Time-stamp: <2013-07-19 23:58:16 Friday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -103,7 +103,7 @@
  '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
- '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))) t)
+ '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))))
  '(xref-keyword-face ((t (:foreground "LightBlue"))))
  '(xref-list-pilot-face ((t (:foreground "blue violet"))))
  '(xref-list-symbol-face ((t (:foreground "light sky blue")))))
@@ -118,6 +118,7 @@
  '(ecb-options-version "2.40")
  '(ede-project-directories (quote ("/home/cedricporter/projects/ethttpd/include" "/home/cedricporter/projects/ethttpd/src" "/home/cedricporter/projects/ethttpd")))
  '(fci-rule-color "#383838")
+ '(org-agenda-files (quote ("~/octopress/org-wiki/git.org")))
  '(org-startup-folded nil)
  '(org-startup-truncated nil)
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
