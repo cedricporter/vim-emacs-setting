@@ -126,6 +126,24 @@ cleartrash()
     [[ $confirm == 'y' ]] || [[ $confirm == 'Y' ]] && \rm -rf ~/.trash/*
 }
 
+# kill processes that match pattern
+psgkill()
+{
+    processes=`ps aux | grep $1 | grep -v grep`
+    if [ -n "$processes" ]; then
+	pids=`echo $processes | awk '{print $2}'`
+	echo "Killing processes matched \"$1\":"
+	echo "$processes"
+	echo -n "Are you sure to kill all of them. [Y/n]: "
+	read y_or_n
+	if [ "$y_or_n" = "y" -o "$y_or_n" = "Y" -o -z "$y_or_n" ]; then
+	    echo $pids | xargs kill
+	fi
+    else
+	echo "Not found any processes match pattern \"$1\""
+    fi
+}
+
 # disable auto correct
 unsetopt correct_all
 
@@ -171,6 +189,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # entertainment
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
+
 
 
 # set PATH so it includes user's private bin if it exists
