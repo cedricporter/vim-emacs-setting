@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-07-19 21:07:16 Friday by Hua Liang>
+;; Time-stamp: <2013-07-24 22:39:55 星期三 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -60,7 +60,8 @@
    ido-ubiquitous
    python-mode
    gtags
-
+   json
+   
    rope
    ropemacs
    ropemode
