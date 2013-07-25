@@ -6,6 +6,8 @@
 #
 
 apt-get -y install ttf-mscorefonts-installer ack-grep zsh emacs vim dosbox virtualbox inotify-tools
+apt-get -y install libnotify4 python-gobject
+
 apt-get build-dep emacs
 
 # for emacs jedi
