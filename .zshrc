@@ -62,6 +62,9 @@ alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 
+# syntax highlight cat
+alias ccat='pygmentize -g'
+
 # git
 alias gs='git status'
 alias gp='git push'
@@ -196,3 +199,5 @@ alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unbloc
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# export LC_CTYPE="zh_CN.UTF-8"
