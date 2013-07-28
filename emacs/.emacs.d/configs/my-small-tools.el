@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-21 20:35:59 Tuesday by Hua Liang>
+;; Time-stamp: <2013-07-28 23:07:01 Sunday by Hua Liang>
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：
@@ -226,6 +226,19 @@
            (insert (current-kill 0)))))
 (global-set-key (kbd "C-x g e") 'eval-and-replace)
 ;; -------------------- eval-and-replace --------------------
+
+
+;; ==================== sdcv ====================
+(require 'sdcv)
+(setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
+				    ;; "牛津现代英汉双解词典"
+				    ;; "英汉双解计算机词典"
+				    ;; "简明英汉词典"
+				    ))
+(global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
+(global-set-key (kbd "C-c ]") 'sdcv-search-input)
+
+;; -------------------- sdcv --------------------
 
 
 ;; (provide 'my-small-tools)

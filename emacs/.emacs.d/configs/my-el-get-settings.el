@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-07-24 22:39:55 星期三 by Hua Liang>
+;; Time-stamp: <2013-07-28 23:06:15 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -68,16 +68,15 @@
    pymacs
 
    showtip
-   (:name sdcv
-          :after (progn
-                   (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
-						       ;; "牛津现代英汉双解词典"
-                                                       ;; "英汉双解计算机词典"
-                                                       ;; "简明英汉词典"
-                                                       ))
-
-                   (global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
-                   (global-set-key (kbd "C-c ]") 'sdcv-search-input)))
+   ;; (:name sdcv
+   ;;        :after (progn
+   ;;                 (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
+   ;; 						       ;; "牛津现代英汉双解词典"
+   ;;                                                     ;; "英汉双解计算机词典"
+   ;;                                                     ;; "简明英汉词典"
+   ;;                                                     ))
+   ;;                 (global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
+   ;;                 (global-set-key (kbd "C-c ]") 'sdcv-search-input)))
 
    (:name minimap
 	  :after (progn
@@ -116,6 +115,16 @@
           :description "Explains the meaning of an HTTP status code in minibuffer."
           :type github
           :pkgname "rspivak/httpcode.el")
+
+   ;; (:name sdcv-mode
+   ;; 	  :website "https://github.com/gucong/emacs-sdcv"
+   ;; 	  :description "forked version of sdcv.el or sdcv-mode.el"
+   ;; 	  :type github
+   ;; 	  :pkgname "gucong/emacs-sdcv"
+   ;; 	  :after (progn
+   ;; 		   (global-set-key (kbd "C-c [") 'sdcv-search)
+   ;; 		   )
+   ;; 	  )
 
    (:name jedi
 	  :prepare (progn
