@@ -12,6 +12,8 @@ ln -vsf $PWD/emacs/.emacs.d ~/.emacs.d
 ln -vsf $PWD/vim/.vimrc ~/.vimrc
 ln -vsf $PWD/vim/.vim ~/.vim
 
+ln -vsf $PWD/.zshrc ~/.zshrc
+
 # pull submodule
 echo "# Pulling submodule"
 git submodule init
@@ -26,8 +28,3 @@ git submodule update
 # git submodule update
 # cd $current_dir
 # echo "cd $PWD"
-
-
-
-
-
