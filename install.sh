@@ -13,6 +13,8 @@ ln -vsf $PWD/vim/.vimrc ~/.vimrc
 ln -vsf $PWD/vim/.vim ~/.vim
 
 ln -vsf $PWD/.zshrc ~/.zshrc
+ln -vsf $PWD/.tmux.conf ~/.tmux.conf
+
 
 # pull submodule
 echo "# Pulling submodule"
