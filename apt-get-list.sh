@@ -11,4 +11,4 @@ apt-get -y install libnotify4 python-gobject
 apt-get build-dep emacs
 
 # for emacs jedi
-pip install jedi epc
+pip install jedi epc remote-webkit-debug
