@@ -39,6 +39,18 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# bash completion
+autoload bashcompinit
+bashcompinit
+
+bash_completion_list=("/etc/bash_completion.d/igor"
+    # "/etc/bash_completion.d/ack-grep"
+)
+for f in $bash_completion_list; do
+    [[ -s $f ]] && source $f;
+done
+
+
 # Example aliases
 alias zshconfig="ec ~/.zshrc"
 alias zshreload="source ~/.zshrc"
@@ -59,6 +71,8 @@ alias ras='ssh -l root -p 1990 ras.everet.org'
 alias n46='ssh -l root -p 1990 ipv6.everet.org'
 alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
 alias debian='ssh -l root debian.xxx'
+alias sah='ssh-add ~/.ssh/id_rsa_home'
+alias saw='ssh-add ~/.ssh/id_rsa_work'
 
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
