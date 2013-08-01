@@ -50,6 +50,7 @@ for f in $bash_completion_list; do
     [[ -s $f ]] && source $f;
 done
 
+# export EDITOR='emacsclient -t -a="" +%d %s'
 
 # Example aliases
 alias zshconfig="ec ~/.zshrc"
@@ -57,6 +58,8 @@ alias zshreload="source ~/.zshrc"
 # alias ohmyzsh="ec ~/.oh-my-zsh"
 
 alias tp='gtypist'
+
+alias gitroot='cd $(git rev-parse --show-cdup)'
 
 alias ll='ls -ahlF'
 alias la='ls -A'
