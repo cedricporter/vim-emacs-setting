@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-07-19 23:58:16 Friday by Hua Liang>
+;; Time-stamp: <2013-08-04 20:10:34 Sunday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -118,7 +118,7 @@
  '(ecb-options-version "2.40")
  '(ede-project-directories (quote ("/home/cedricporter/projects/ethttpd/include" "/home/cedricporter/projects/ethttpd/src" "/home/cedricporter/projects/ethttpd")))
  '(fci-rule-color "#383838")
- '(org-agenda-files (quote ("~/octopress/org-wiki/git.org")))
+ '(org-agenda-files (quote ("~/octopress/org-wiki/python.org" "~/octopress/org-wiki/git.org")))
  '(org-startup-folded nil)
  '(org-startup-truncated nil)
  '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))

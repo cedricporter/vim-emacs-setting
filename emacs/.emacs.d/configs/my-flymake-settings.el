@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-22 13:47:11 Friday by Hua Liang>
+;; Time-stamp: <2013-08-05 19:07:41 Monday by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -68,4 +68,3 @@
 
 
 ;; (provide 'my-flymake-settings.el)
-
