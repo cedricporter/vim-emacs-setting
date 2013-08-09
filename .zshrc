@@ -84,6 +84,8 @@ alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 alias ccat='pygmentize -g'
 
 alias igms='igor mysql'
+alias igdp='igor deploy -nc'
+alias igop='igor open'
 
 # git
 alias gs='git status'

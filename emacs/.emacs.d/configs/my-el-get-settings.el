@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-02 15:13:57 Friday by Hua Liang>
+;; Time-stamp: <2013-08-07 17:12:26 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -68,6 +68,7 @@
    pymacs
 
    showtip
+
    (:name sdcv
           :after (progn
                    (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"

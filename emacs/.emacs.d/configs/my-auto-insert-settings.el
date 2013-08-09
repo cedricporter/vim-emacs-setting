@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-02-26 20:14:13 Tuesday by Hua Liang>
+;; Time-stamp: <2013-08-06 17:52:53 Tuesday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
