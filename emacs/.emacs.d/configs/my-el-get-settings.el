@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-07 17:12:26 Wednesday by Hua Liang>
+;; Time-stamp: <2013-08-10 22:20:25 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -117,6 +117,21 @@
           :type github
           :pkgname "rspivak/httpcode.el")
 
+   ;; (:name emmet-mode
+   ;; 	  :website "https://github.com/smihica/emmet-mode"
+   ;; 	  :description "Unofficial emmet's support for emacs. http://www.emacswiki.org/emacs/ZenCoding"
+   ;; 	  :type github
+   ;; 	  :pkgname "smihica/emmet-mode"
+   ;; 	  :after (progn
+   ;; 		   (add-hook 'web-mode-hook 'emmet-mode)
+   ;; 		   (setq emmet-indentation 2)
+   ;; 		   (define-key emmet-mode-keymap (kbd "C-j") nil)
+   ;; 		   (define-key emmet-mode-keymap (kbd "C-<return>") nil)
+   ;; 		   (define-key emmet-mode-keymap (kbd "C-;") 'emmet-expand-line)
+   ;; 		   (add-hook 'sgml-mode-hook 'emmet-mode)
+   ;; 		   (add-hook 'css-mode-hook  'emmet-mode)
+   ;; 		   ))
+
    ;; (:name sdcv-mode
    ;; 	  :website "https://github.com/gucong/emacs-sdcv"
    ;; 	  :description "forked version of sdcv.el or sdcv-mode.el"
@@ -154,17 +169,17 @@
 					 (browse-url (buffer-file-name))))
 		       (define-key web-mode-map (kbd "C-;") nil)
 		       (local-set-key (kbd "C-c c") 'web-mode-comment-or-uncomment)
-		       (setq zencoding-indentation 2)
 		       ))
 		   ))
 
    (:name zencoding-mode					; http://www.emacswiki.org/emacs/ZenCoding
-	  :after (progn
-		   (add-hook 'web-mode-hook 'zencoding-mode)
-		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
-		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
-		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
-		   ))
+   	  :after (progn
+   		   (add-hook 'web-mode-hook 'zencoding-mode)
+   		   (setq zencoding-indentation 2)
+   		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
+   		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
+   		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
+   		   ))
 
    (:name flymake-coffee
 	  :after (progn

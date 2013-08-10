@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-08-06 17:52:53 Tuesday by Hua Liang>
+;; Time-stamp: <2013-08-10 22:38:46 Saturday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
@@ -10,6 +10,7 @@
 
 (setq auto-insert-alist '(
                           ("\\.sh$" . ["insert.sh" alexott/auto-update-defaults])
+                          ("\\.js$" . ["insert.js" alexott/auto-update-defaults])
                           ("\\.lisp$" . ["insert.lisp" alexott/auto-update-defaults])
                           ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
                           ("\\.py$" . ["insert.py" alexott/auto-update-defaults])
