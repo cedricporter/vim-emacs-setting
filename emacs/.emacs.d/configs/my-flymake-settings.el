@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-05 19:07:41 Monday by Hua Liang>
+;; Time-stamp: <2013-08-14 16:22:43 Wednesday by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -38,6 +38,21 @@
 ;; -------------------- privilege --------------------
 
 
+;; ;; ==================== pylint ====================
+;; (when (load "flymake" t)
+;;   (defun flymake-pylint-init ()
+;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;; 		       'flymake-create-temp-inplace))
+;;            (local-file (file-relative-name
+;;                         temp-file
+;;                         (file-name-directory buffer-file-name))))
+;;       (list "epylint" (list local-file))))
+;;   (add-to-list 'flymake-allowed-file-name-masks
+;; 	       '("\\.py\\'" flymake-pylint-init)))
+;; ;; -------------------- pylint --------------------
+
+
+
 (setq flymake-gui-warnings-enabled nil) ;烦死了
 (setq flymake-log-level 0)
 
@@ -50,13 +65,13 @@
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-	       'flymake-create-temp-inplace))
-       (local-file (file-relative-name
-	    temp-file
-	    (file-name-directory buffer-file-name))))
+		       'flymake-create-temp-inplace))
+	   (local-file (file-relative-name
+			temp-file
+			(file-name-directory buffer-file-name))))
       (list "pycheckers"  (list local-file))))
-   (add-to-list 'flymake-allowed-file-name-masks
-	     '("\\.py\\'" flymake-pyflakes-init)))
+  (add-to-list 'flymake-allowed-file-name-masks
+	       '("\\.py\\'" flymake-pyflakes-init)))
 
 (load-library "flymake-cursor")
 
