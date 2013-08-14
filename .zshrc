@@ -39,6 +39,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+autoload -U zmv
+
 # bash completion
 autoload bashcompinit
 bashcompinit
@@ -82,6 +84,7 @@ alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
 
 # syntax highlight cat
 alias ccat='pygmentize -g'
+alias pylint='pylint --output-format=colorized'
 
 alias igms='igor mysql'
 alias igdp='igor deploy -nc'

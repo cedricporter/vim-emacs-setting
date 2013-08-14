@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-10 22:20:25 Saturday by Hua Liang>
+;; Time-stamp: <2013-08-14 20:32:05 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -61,6 +61,7 @@
    python-mode
    gtags
    json
+   any-ini-mode
 
    rope
    ropemacs
@@ -160,6 +161,7 @@
    (:name web-mode
 	  :after (progn
 		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+		   (add-to-list 'auto-mode-alist '("\\.tmpl?\\'" . web-mode))
 		   (add-hook
 		    'web-mode-hook
 		    '(lambda ()
