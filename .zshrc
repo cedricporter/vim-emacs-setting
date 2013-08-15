@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+setopt share_history
 autoload -U zmv
 
 # bash completion
