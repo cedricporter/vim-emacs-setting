@@ -39,12 +39,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# has bugs with teamocil
+export DISABLE_AUTO_TITLE="true"
+
 setopt share_history
 autoload -U zmv
 
 # bash completion
 autoload bashcompinit
 bashcompinit
+
+compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 bash_completion_list=("/etc/bash_completion.d/igor"
     # "/etc/bash_completion.d/ack-grep"
@@ -59,6 +64,8 @@ done
 alias zshconfig="ec ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 # alias ohmyzsh="ec ~/.oh-my-zsh"
+
+alias to="teamocil --here"
 
 alias tp='gtypist'
 
