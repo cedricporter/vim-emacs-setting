@@ -14,6 +14,7 @@ ln -vsf $PWD/vim/.vim ~/.vim
 
 ln -vsf $PWD/.zshrc ~/.zshrc
 ln -vsf $PWD/.tmux.conf ~/.tmux.conf
+ln -vsf $PWD/.teamocil ~/.teamocil
 
 
 # pull submodule

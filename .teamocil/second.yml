@@ -17,8 +17,13 @@ session:
       panes:
         - cmd: "tail -F /tmp/everet.log"
         - cmd: "tail -F /var/log/uwsgi.log"
-    - name: "shell"
+    - name: "minipj"
       layout: even-horizontal
       root: "~/igor/gzhualiang-minipj-orz"
+      panes:
+        - cmd: "ls"
+    - name: "bank"
+      layout: even-horizontal
+      root: "~/igor/gzhualiang-bank-orz"
       panes:
         - cmd: "ls"

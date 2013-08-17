@@ -79,7 +79,7 @@ alias lsd='ls -d */'		# list dir
 alias lsdt='ls -dt */ '		# list dir
 alias dud='du -hs * | sort -h'
 
-alias n4='ssh -l root -p 1990 new.everet.org'
+alias 84='ssh -l root -p 1990 84.everet.org'
 alias ras='ssh -l root -p 1990 ras.everet.org'
 alias n46='ssh -l root -p 1990 ipv6.everet.org'
 alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
