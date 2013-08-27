@@ -1,5 +1,13 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-01 22:02:11 Thursday by Hua Liang>
+;; Time-stamp: <2013-08-26 15:57:52 Monday by Hua Liang>
+
+
+;; ==================== sql ====================
+(add-hook 'sql-mode-hook
+          (lambda ()
+            (sql-highlight-mysql-keywords)))
+;; -------------------- sql --------------------
+
 
 ;; ====================      line number      ====================
 ;; 调用linum.el(line number)来显示行号：

@@ -19,11 +19,13 @@ session:
         - cmd: "tail -F /var/log/uwsgi.log"
     - name: "minipj"
       layout: even-horizontal
-      root: "~/igor/gzhualiang-minipj-orz"
+      root: "~/igor/gzhualiang-minipj-demo"
       panes:
         - cmd: "ls"
+        - cmd: "iglt"
     - name: "bank"
       layout: even-horizontal
       root: "~/igor/gzhualiang-bank-orz"
       panes:
         - cmd: "ls"
+        - cmd: "iglt"

@@ -84,6 +84,7 @@ alias ras='ssh -l root -p 1990 ras.everet.org'
 alias n46='ssh -l root -p 1990 ipv6.everet.org'
 alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
 alias debian='ssh -l root debian.xxx'
+alias linode='ssh -A root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
 
@@ -97,6 +98,7 @@ alias pylint='pylint --output-format=colorized'
 alias igms='igor mysql'
 alias igdp='igor deploy -nc'
 alias igop='igor open'
+alias iglt='igor log.tail'
 
 # git
 alias gs='git status'
@@ -106,6 +108,7 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias gcam='git commit -am '
 alias gitproxy='export GIT_PROXY_COMMAND="~/bin/proxy-wrapper"'
 alias ungitproxy='export GIT_PROXY_COMMAND=""'
+alias gsfpl='git submodule foreach git pull'
 
 alias ra='ranger'
 alias i='info'
