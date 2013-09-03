@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-14 20:32:05 Wednesday by Hua Liang>
+;; Time-stamp: <2013-09-03 17:34:09 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -62,6 +62,7 @@
    gtags
    json
    any-ini-mode
+   apache-mode
 
    rope
    ropemacs

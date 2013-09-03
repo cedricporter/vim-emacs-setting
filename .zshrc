@@ -239,5 +239,8 @@ fi
 if [ -d "$HOME/local/bin" ] ; then
     PATH="$HOME/local/bin:$PATH"
 fi
+if [ -d "$HOME/local/lib" ] ; then
+    LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
+fi
 
 # export LC_CTYPE="zh_CN.UTF-8"
