@@ -84,9 +84,10 @@ alias ras='ssh -l root -p 1990 ras.everet.org'
 alias n46='ssh -l root -p 1990 ipv6.everet.org'
 alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
 alias debian='ssh -l root debian.xxx'
-alias linode='ssh -A root@linode.everet.org'
+alias linode='ssh -A -p 1990 root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
+alias testsvr='ssh gzhualiang@123.125.49.210 -p 32200'
 
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
@@ -234,6 +235,9 @@ alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unbloc
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/local/bin" ] ; then
+    PATH="$HOME/local/bin:$PATH"
 fi
 
 # export LC_CTYPE="zh_CN.UTF-8"
