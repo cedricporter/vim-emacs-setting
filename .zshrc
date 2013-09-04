@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="juanghurtado"  #"robbyrussell"
 
 # export TERM=xterm-256color
 export SHELL=zsh
@@ -32,7 +32,7 @@ export SHELL=zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git cake command-not-found autojump coffee pip supervisor debian)
+plugins=(git cake svn command-not-found autojump coffee pip supervisor debian)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -216,7 +216,20 @@ alias man=vman                  # use \man to invoke original man
 
 # ========================= theme =========================
 # prompt, forked from robbyrussell
-PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)%{$fg_bold[blue]%} %# %{$reset_color%}'
+
+PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[blue]%}$(svn_prompt_info)$(git_prompt_info)$(git_prompt_ahead)%{$fg_bold[blue]%} %# %{$reset_color%}'
+
+# Prompt format
+RPROMPT='$FG[244] %n@%m%{$reset_color%}'
+
+# SVN
+ZSH_THEME_SVN_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
+
+ZSH_THEME_SVN_PROMPT_PREFIX="svn:(%{$fg[red]%}"
+ZSH_THEME_SVN_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_SVN_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_SVN_PROMPT_CLEAN="%{$fg[blue]%})"
+
 
 # Format for git_prompt_ahead()
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
