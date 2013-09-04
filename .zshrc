@@ -223,8 +223,9 @@ PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%~ %{$fg_bold[bl
 RPROMPT='$FG[244] %n@%m%{$reset_color%}'
 
 # SVN
-ZSH_THEME_SVN_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
+SVN_SHOW_BRANCH="true"
 
+ZSH_THEME_SVN_PROMPT_AHEAD="%{$fg[yellow]%} ⚙ %{$reset_color%}"
 ZSH_THEME_SVN_PROMPT_PREFIX="svn:(%{$fg[red]%}"
 ZSH_THEME_SVN_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_SVN_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
