@@ -101,6 +101,9 @@ alias igdp='igor deploy -nc'
 alias igop='igor open'
 alias iglt='igor log.tail'
 
+# svn
+alias ss='svn status'
+
 # git
 alias gs='git status'
 alias gp='git push'

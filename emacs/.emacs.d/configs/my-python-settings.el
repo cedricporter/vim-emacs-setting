@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-14 17:10:18 Wednesday by Hua Liang>
+;; Time-stamp: <2013-09-04 16:11:17 Wednesday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -111,5 +111,7 @@
 
 ;; 去掉cedet
 (remove-hook 'python-mode-hook 'wisent-python-default-setup)
+
+(define-coding-system-alias 'GB18030 'gb18030)
 
 ;; (provide 'my-python-settings)
