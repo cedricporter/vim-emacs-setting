@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-04 16:11:17 Wednesday by Hua Liang>
+;; Time-stamp: <2013-09-05 11:32:38 Thursday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -35,6 +35,7 @@
 		   python-indent-offset 4
 		   ;; comment-start " # "
 		   )
+
 	     (set-variable 'python-indent-offset 4)
 	     (set-variable 'python-indent-guess-indent-offset nil)
 	     (local-set-key (kbd "<f5>") 'flymake-goto-next-error)
@@ -73,6 +74,13 @@
              (local-set-key (kbd "C-c d") 'jedi:show-doc)
              (local-set-key (kbd "C-<tab>") 'jedi:complete)
              ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
+
+	     (local-set-key (kbd "<f12>") 'flymake-mode)
+	     (local-set-key (kbd "<f11>")
+			    (lambda ()
+			      (interactive)
+			      (setq indent-tabs-mode
+				    (not indent-tabs-mode))))
              ))
 ;; -------------------- jedi --------------------
 
@@ -113,5 +121,6 @@
 (remove-hook 'python-mode-hook 'wisent-python-default-setup)
 
 (define-coding-system-alias 'GB18030 'gb18030)
+(define-coding-system-alias 'GB2312 'gb2312)
 
 ;; (provide 'my-python-settings)

@@ -128,6 +128,7 @@ alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
 alias tmn='tmux -2 new -s "`mktemp`"'
 alias ms='mysql -u root -p'
+alias msgbk='luit -encoding gbk mysql -u root -p'
 
 # Easily search running processes (alias).
 alias 'psg'='ps aux | grep '
@@ -247,6 +248,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 # entertainment
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
+
+svndiff() {
+    svn diff "${@}" | colordiff
+}
 
 
 # set PATH so it includes user's private bin if it exists
