@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-03 17:34:09 Tuesday by Hua Liang>
+;; Time-stamp: <2013-09-06 10:07:53 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -163,6 +163,7 @@
 	  :after (progn
 		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 		   (add-to-list 'auto-mode-alist '("\\.tmpl?\\'" . web-mode))
+		   (add-to-list 'auto-mode-alist '("\\.pat?\\'" . web-mode))
 		   (add-hook
 		    'web-mode-hook
 		    '(lambda ()

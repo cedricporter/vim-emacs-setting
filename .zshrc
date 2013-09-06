@@ -103,6 +103,9 @@ alias iglt='igor log.tail'
 
 # svn
 alias ss='svn status'
+alias sd='svn diff'
+alias scm='svn commit -m '
+alias sls='svn log --stop-on-copy'
 
 # git
 alias gs='git status'
@@ -247,11 +250,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # entertainment
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
-
-
-svndiff() {
-    svn diff "${@}" | colordiff
-}
 
 
 # set PATH so it includes user's private bin if it exists
