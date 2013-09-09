@@ -102,10 +102,15 @@ alias igop='igor open'
 alias iglt='igor log.tail'
 
 # svn
+function svn_repo {
+    repo=`svn info | sed -n "s/URL: //p" | sed -n "s/\/$(svn_get_branch_name)//p"`
+    return $repo
+}
 alias ss='svn status'
 alias sd='svn diff'
 alias scm='svn commit -m '
 alias sls='svn log --stop-on-copy'
+alias svn_br='svn ls -v $(svn_repo)/branches'
 
 # git
 alias gs='git status'

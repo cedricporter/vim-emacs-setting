@@ -18,6 +18,7 @@ apt-get -y install libnotify-dev python-gobject libnotify4
 
 # for emacs jedi
 apt-get -y install python-pip python-dev build-essential ipython python-openssl
-pip install jedi epc remote-webkit-debug pylint virtualenv
+
+pip install jedi epc remote-webkit-debug pylint virtualenv jedi epc
 
 gem install teamocil bundler
