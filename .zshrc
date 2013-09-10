@@ -107,6 +107,7 @@ function svn_repo {
     return $repo
 }
 alias ss='svn status'
+alias ssgbk='luit -encoding gbk svn diff'
 alias sd='svn diff'
 alias scm='svn commit -m '
 alias sls='svn log --stop-on-copy'
