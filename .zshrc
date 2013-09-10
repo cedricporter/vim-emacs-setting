@@ -111,6 +111,7 @@ alias ssgbk='luit -encoding gbk svn diff'
 alias sd='svn diff'
 alias scm='svn commit -m '
 alias sls='svn log --stop-on-copy'
+alias sl='svn log --limit 5'
 alias svn_br='svn ls -v $(svn_repo)/branches'
 
 # git
