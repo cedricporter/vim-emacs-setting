@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-06 15:40:59 Friday by Hua Liang>
+;; Time-stamp: <2013-09-10 22:54:50 星期二 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -41,14 +41,15 @@
 	     (local-set-key (kbd "<f5>") 'flymake-goto-next-error)
 	     ))
 
-;; 删除行尾的空白字符
-(add-hook 'python-mode-hook
-	  '(lambda ()
-	     (when (not (string-match "/work/" (buffer-file-name)))
-	       (message "turn on delete-trailing-whitespace")
-	       (add-to-list
-		'write-file-functions
-		'delete-trailing-whitespace))))
+;; ;; 删除行尾的空白字符
+;; (add-hook 'python-mode-hook
+;; 	  '(lambda ()
+;; 	     (when (not (string-match "/work/" (buffer-file-name)))
+;; 	       (message "turn on delete-trailing-whitespace")
+;; 	       (add-to-list
+;; 		'write-file-functions
+;; 		'delete-trailing-whitespace)
+;; 	       )))
 
 (setq python-check-command "pyflakes")
 
