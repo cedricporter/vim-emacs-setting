@@ -1,3 +1,5 @@
 map J gT
 map K gt
 map ,b :bmarks<Space>
+map PP i<C-S-P>
+set "editor=emacsclient -c"
