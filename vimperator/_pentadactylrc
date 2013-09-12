@@ -1,0 +1,46 @@
+"hg6948
+
+" Maps {
+    map -count -modes=n,v J <count>gT
+    map -count -modes=n,v K <count>gt
+     
+    map -count -modes=n,v ,r -builtin :restart<Return>
+    map -count -modes=n,v ,a -builtin :addons<Return>
+    map -count -modes=n,v ,d -builtin :downloads<Return>
+" }
+
+set editor="emacsclient -c"
+
+" Qmarks {
+    silent qmark e http://everet.org
+    silent qmark y https://app.yinxiang.com/Home.action
+    silent qmark f http://cloud.feedly.com/#category%2F%E5%85%B3%E6%B3%A8%E7%9A%84%E5%8D%9A%E5%AE%A2
+    silent qmark c https://www.google.com/calendar/render
+" }
+
+set nextpattern='(下|后)一?(页|頁|篇|章|张)|次のページ|次へ','^\bnext\b','\bnext\b','\bsuivant\b','^(>|›)$','^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set nextpattern=\s*下一页|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
+set previouspattern=\s*上一页|上一张|上一篇|上页|前页\s*,^\bprev|previous\b,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$
+
+colorscheme solarized-light
+
+set passkeys+=mail.google.com:jk/<CR>,gi,another.domain.com:hjkl,gt,gT
+
+map t -js str=util.domToString(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.NEW_TAB}):CommandExMode().open("tabopen ")
+map o -js str=util.domToString(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.CURRENT_TAB}):CommandExMode().open("open ")
+
+set hintkeys=asdfg;lkjh
+
+command! gs -nargs=* tabopen http://www.google.com.hk/search?9&q=<args>
+
+map s :gs
+
+map <silent> S :exe ":gs "+content.getSelection()<CR>
+
+command! dict -nargs=* tabopen http://dict.cn/<args>
+
+map w :dict
+
+map <silent> W :exe ":dict "+content.getSelection()<CR>
+
+" vim: set ft=pentadactyl:
