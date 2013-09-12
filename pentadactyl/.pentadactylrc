@@ -7,6 +7,8 @@
     map -count -modes=n,v ,r -builtin :restart<Return>
     map -count -modes=n,v ,a -builtin :addons<Return>
     map -count -modes=n,v ,d -builtin :downloads<Return>
+    map -count -modes=n,v ,b -builtin :bmarks!<space>
+    map -count -modes=n,v ,s -builtin :source! ~/.pentadactylrc<Return>
 " }
 
 set editor="emacsclient -c"
