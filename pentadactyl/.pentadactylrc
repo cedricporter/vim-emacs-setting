@@ -18,6 +18,7 @@ set editor="emacsclient -c"
     silent qmark y https://app.yinxiang.com/Home.action
     silent qmark f http://cloud.feedly.com/#category%2F%E5%85%B3%E6%B3%A8%E7%9A%84%E5%8D%9A%E5%AE%A2
     silent qmark c https://www.google.com/calendar/render
+    silent qmark g https://github.com/cedricporter?tab=repositories
 " }
 
 set nextpattern='(下|后)一?(页|頁|篇|章|张)|次のページ|次へ','^\bnext\b','\bnext\b','\bsuivant\b','^(>|›)$','^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
