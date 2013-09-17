@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-12 14:09:55 星期四 by Hua Liang>
+;; Time-stamp: <2013-09-16 17:13:17 星期一 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -41,15 +41,22 @@
 	     (local-set-key (kbd "<f5>") 'flymake-goto-next-error)
 	     ))
 
+(defun my-add-delete-trailing-whitespace ()
+  (interactive)
+    (message "turn on delete-trailing-whitespace")
+    (add-to-list
+     'write-file-functions
+     'delete-trailing-whitespace))
+
+(global-set-key (kbd "<C-f11>")
+		(lambda ()
+		  (interactive)
+		  (message "add delete-trailing-whitespace")
+		  (my-add-delete-trailing-whitespace)
+		  ))
+
 ;; 删除行尾的空白字符
-(add-hook 'python-mode-hook
-	  '(lambda ()
-	     (when (not (string-match "/work/" (buffer-file-name)))
-	       (message "turn on delete-trailing-whitespace")
-	       (add-to-list
-		'write-file-functions
-		'delete-trailing-whitespace)
-	       )))
+(add-hook 'python-mode-hook 'my-add-delete-trailing-whitespace)
 
 (setq python-check-command "pyflakes")
 
@@ -69,6 +76,13 @@
             (switch-to-buffer (nth 0 p))
             (goto-char (nth 1 p))))))
 
+(defun switch-to-vipbar-mode ()
+  (interactive)
+  (message "switch-to-vipbar-mode")
+  (setq indent-tabs-mode t)
+  (delete 'delete-trailing-whitespace write-file-functions)
+  )
+
 ;; redefine jedi's C-. (jedi:goto-definition)
 ;; to remember position, and set C-, to jump back
 (add-hook 'python-mode-hook
@@ -80,14 +94,7 @@
              ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
 
 	     (local-set-key (kbd "<f12>") 'flymake-mode)
-	     (local-set-key (kbd "<f11>")
-			    (lambda ()
-			      (interactive)
-			      (setq indent-tabs-mode
-				    (not indent-tabs-mode))
-			      (message "switch indent-tabs-mode to %s"
-				       indent-tabs-mode)
-			      ))
+	     (local-set-key (kbd "<f11>") 'switch-to-vipbar-mode)
              ))
 ;; -------------------- jedi --------------------
 

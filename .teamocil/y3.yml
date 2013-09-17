@@ -1,0 +1,24 @@
+session:
+  name: "y3"
+  windows:
+    - name: "iPython"
+      clear: true
+      root: "~/igor/y3-hsy"
+      panes:
+        - cmd: "ipy"
+    - name: "MySQL"
+      root: "~/igor/y3-hsy"
+      panes:
+        - cmd: "igms"
+    - name: "deploy & log"
+      clear: true
+      layout: even-horizontal
+      root: "~/igor/y3-hsy"
+      panes:
+        - cmd: "ls"
+        - cmd: "iglt"
+    - name: "y3"
+      layout: even-horizontal
+      root: "~/igor/y3-hsy"
+      panes:
+        - cmd: "ls"
