@@ -7,14 +7,14 @@
 
 apt-get update
 
-apt-get -y install ttf-mscorefonts-installer ack-grep zsh emacs vim dosbox virtualbox inotify-tools
+apt-get -y install ttf-mscorefonts-installer ack-grep zsh emacs24 vim dosbox virtualbox inotify-tools
 apt-get -y install libnotify4 python-gobject mercurial git git-svn bzr python-pygments xclip
 
 apt-get -y intall graphviz ruby1.9.3 rubygems tmux htop stardict sdcv
 
 apt-get build-dep emacs24
 
-apt-get -y install libnotify-dev python-gobject libnotify4
+apt-get -y install libnotify-dev python-gobject libnotify4 htop openvpn
 
 # for emacs jedi
 apt-get -y install python-pip python-dev build-essential ipython python-openssl

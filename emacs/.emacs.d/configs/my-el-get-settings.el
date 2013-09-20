@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-16 19:58:25 星期一 by Hua Liang>
+;; Time-stamp: <2013-09-20 13:09:11 星期五 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -59,7 +59,7 @@
    ;;python-magic
    dired-details
    dired-details+
-   ido-ubiquitous
+   ;; ido-ubiquitous
    python-mode
    gtags
    json
