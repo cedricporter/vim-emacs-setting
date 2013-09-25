@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-16 17:13:17 星期一 by Hua Liang>
+;; Time-stamp: <2013-09-25 16:06:26 星期三 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -43,10 +43,11 @@
 
 (defun my-add-delete-trailing-whitespace ()
   (interactive)
-    (message "turn on delete-trailing-whitespace")
-    (add-to-list
-     'write-file-functions
-     'delete-trailing-whitespace))
+    ;; (message "turn on delete-trailing-whitespace")
+    ;; (add-to-list
+    ;;  'write-file-functions
+    ;;  'delete-trailing-whitespace)
+    )
 
 (global-set-key (kbd "<C-f11>")
 		(lambda ()
@@ -83,6 +84,14 @@
   (delete 'delete-trailing-whitespace write-file-functions)
   )
 
+(defun disable-vipbar-mode ()
+  (interactive)
+  (message "disable-vipbar-mode")
+  (setq indent-tabs-mode nil)
+  (add-to-list 'write-file-functions 'delete-trailing-whitespace)
+  )
+
+
 ;; redefine jedi's C-. (jedi:goto-definition)
 ;; to remember position, and set C-, to jump back
 (add-hook 'python-mode-hook
@@ -95,6 +104,7 @@
 
 	     (local-set-key (kbd "<f12>") 'flymake-mode)
 	     (local-set-key (kbd "<f11>") 'switch-to-vipbar-mode)
+	     (local-set-key (kbd "<S-f11>") 'disable-vipbar-mode)
              ))
 ;; -------------------- jedi --------------------
 

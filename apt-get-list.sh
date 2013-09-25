@@ -10,7 +10,7 @@ apt-get update
 apt-get -y install ttf-mscorefonts-installer ack-grep zsh emacs vim dosbox virtualbox inotify-tools
 apt-get -y install libnotify4 python-gobject mercurial git git-svn bzr python-pygments xclip
 
-apt-get -y intall graphviz ruby1.9.3 rubygems tmux htop stardict sdcv
+apt-get -y intall graphviz ruby1.9.3 rubygems tmux htop stardict sdcv pep8 pyflakes
 
 apt-get build-dep emacs24
 
