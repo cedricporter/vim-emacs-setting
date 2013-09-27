@@ -123,7 +123,7 @@ alias gcam='git commit -am '
 alias gitproxy='export GIT_PROXY_COMMAND="~/bin/proxy-wrapper"'
 alias ungitproxy='export GIT_PROXY_COMMAND=""'
 alias gsfpl='git submodule foreach git pull'
-alias gdlast='git diff git diff HEAD^ HEAD'
+alias gdlast='git diff HEAD^ HEAD'
 
 alias ra='ranger'
 alias i='info'
