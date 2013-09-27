@@ -6,14 +6,11 @@ session:
       root: "~/igor/y3-hsy-test"
       panes:
         - cmd: "ipy"
-    - name: "MySQL[test]"
-      root: "~/igor/y3-hsy-test"
-      panes:
-        - cmd: "igms"
     - name: "deploy[test]"
       layout: even-horizontal
       root: "~/igor/y3-hsy-test"
       panes:
+        - cmd: "igms"
         - cmd: "ls"
     - name: "deploy[real]"
       layout: even-horizontal
