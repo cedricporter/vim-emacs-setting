@@ -1,24 +1,23 @@
 session:
   name: "y3"
   windows:
-    - name: "iPython"
+    - name: "iPython[test]"
       clear: true
-      root: "~/igor/y3-hsy"
+      root: "~/igor/y3-hsy-test"
       panes:
         - cmd: "ipy"
-    - name: "MySQL"
+    - name: "MySQL[test]"
+      root: "~/igor/y3-hsy-test"
+      panes:
+        - cmd: "igms"
+    - name: "deploy[test]"
+      layout: even-horizontal
+      root: "~/igor/y3-hsy-test"
+      panes:
+        - cmd: "ls"
+    - name: "deploy[real]"
+      layout: even-horizontal
       root: "~/igor/y3-hsy"
       panes:
         - cmd: "igms"
-    - name: "deploy & log"
-      clear: true
-      layout: even-horizontal
-      root: "~/igor/y3-hsy"
-      panes:
-        - cmd: "ls"
-        - cmd: "iglt"
-    - name: "y3"
-      layout: even-horizontal
-      root: "~/igor/y3-hsy"
-      panes:
         - cmd: "ls"
