@@ -1,0 +1,14 @@
+session:
+  name: "hjy"
+  windows:
+    - name: "iPython[test]"
+      clear: true
+      root: "~/igor/yxsg-hjy"
+      panes:
+        - cmd: "ipy"
+    - name: "deploy[test]"
+      layout: even-horizontal
+      root: "~/igor/yxsg-hjy"
+      panes:
+        - cmd: "igms"
+        - cmd: "ls"
