@@ -12,3 +12,9 @@ session:
       panes:
         - cmd: "igms"
         - cmd: "ls"
+    - name: "deploy[real]"
+      layout: even-horizontal
+      root: "~/igor/yxsg-hjy-real"
+      panes:
+        - cmd: "igms"
+        - cmd: "ls"
