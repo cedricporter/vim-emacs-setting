@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-14 16:22:43 Wednesday by Hua Liang>
+;; Time-stamp: <2013-10-22 11:18:50 星期二 by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -51,27 +51,22 @@
 ;; 	       '("\\.py\\'" flymake-pylint-init)))
 ;; ;; -------------------- pylint --------------------
 
-
-
 (setq flymake-gui-warnings-enabled nil) ;烦死了
 (setq flymake-log-level 0)
 
-
-;; Nope, I want my copies in the system temp dir.
-(setq flymake-run-in-place nil)
-;; This lets me say where my temp dir is.
-(setq temporary-file-directory "~/.emacs.d/tmp/")
-
 (when (load "flymake" t)
+  (defun flymake-create-temp-in-system-tempdir (filename prefix)
+    (make-temp-file (or prefix "flymake")))
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		       'flymake-create-temp-inplace))
+		       'flymake-create-temp-in-system-tempdir))
 	   (local-file (file-relative-name
 			temp-file
 			(file-name-directory buffer-file-name))))
       (list "pycheckers"  (list local-file))))
   (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pyflakes-init)))
+	       '("\\.py\\'" flymake-pyflakes-init))
+  )
 
 (load-library "flymake-cursor")
 
