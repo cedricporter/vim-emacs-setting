@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-08-26 15:57:52 Monday by Hua Liang>
+;; Time-stamp: <2013-10-23 16:54:45 星期三 by Hua Liang>
 
 
 ;; ==================== sql ====================
@@ -166,6 +166,7 @@
 ;; ==================== toggle-case ====================
 (require 'toggle-case)
 (global-set-key (kbd "M-u") 'toggle-case)
+(global-set-key (kbd "M-c") 'toggle-case-by-word)
 ;; -------------------- toggle-case --------------------
 
 

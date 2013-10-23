@@ -88,6 +88,7 @@ alias linode='ssh -A -p 1990 root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
 alias testsvr='ssh gzhualiang@123.125.49.210 -p 32200'
+alias testsvr2='ssh gzhualiang@123.58.173.226 -p 32200'
 
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
