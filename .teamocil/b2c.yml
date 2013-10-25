@@ -1,0 +1,13 @@
+session:
+  name: "b2c"
+  windows:
+    - name: "iPython"
+      clear: true
+      root: "~/projects/vipbar-b2c"
+      panes:
+        - cmd: "ipy"
+    - name: "zsh"
+      layout: even-horizontal
+      root: "~/projects/vipbar-b2c"
+      panes:
+        - cmd: "ls"
