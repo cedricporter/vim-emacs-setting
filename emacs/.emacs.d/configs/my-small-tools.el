@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-10-23 16:54:45 星期三 by Hua Liang>
+;; Time-stamp: <2013-10-31 17:13:07 星期四 by Hua Liang>
 
 
 ;; ==================== sql ====================
@@ -236,6 +236,21 @@
 (global-set-key (kbd "C-x g e") 'eval-and-replace)
 ;; -------------------- eval-and-replace --------------------
 
+
+;; ==================== window control ====================
+(global-set-key (kbd "C-M-^") '(lambda ()
+				 (interactive)
+				(enlarge-window 10)))
+(global-set-key (kbd "C-M-&") '(lambda ()
+				 (interactive)
+				(enlarge-window -10)))
+(global-set-key (kbd "C-M-{") '(lambda ()
+				 (interactive)
+				(enlarge-window-horizontally -20)))
+(global-set-key (kbd "C-M-}") '(lambda ()
+				 (interactive)
+				(enlarge-window-horizontally 20)))
+;; -------------------- window control --------------------
 
 
 ;; (provide 'my-small-tools)

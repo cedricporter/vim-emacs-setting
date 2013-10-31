@@ -90,6 +90,7 @@ alias saw='ssh-add ~/.ssh/id_rsa_work'
 alias svr0='ssh gzhualiang@svr.everet.org -p 32200'
 alias testsvr='ssh gzhualiang@testsvr.everet.org -p 32200'
 alias testsvr2='ssh gzhualiang@testsvr2.everet.org -p 32200'
+alias sscp='scp -r -P 32200 '
 
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
