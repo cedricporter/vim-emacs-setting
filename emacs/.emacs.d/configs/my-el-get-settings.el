@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-25 16:10:33 星期三 by Hua Liang>
+;; Time-stamp: <2013-11-05 19:28:43 星期二 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -72,6 +72,8 @@
    pymacs
 
    showtip
+
+   go-mode
 
    (:name sdcv
           :after (progn

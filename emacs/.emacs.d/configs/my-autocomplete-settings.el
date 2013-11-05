@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-15 20:33:41 Friday by Hua Liang>
+;; Time-stamp: <2013-11-05 19:42:39 星期二 by Hua Liang>
 
 ;;==================== auto complete ====================
 ;; auto complete with clang
@@ -16,8 +16,6 @@
 (add-to-list 'ac-modes 'markdown-mode)
 (add-to-list 'ac-modes 'web-mode)
 (add-to-list 'ac-modes 'js2-mode)
-
-
 
 ;; -------------------- end of auto complete --------------------
 
