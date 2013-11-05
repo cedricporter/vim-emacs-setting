@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-03-24 18:34:58 Sunday by Hua Liang>
+;; Time-stamp: <2013-11-05 23:19:51 星期二 by Hua Liang>
 
 
 (require 'helm-config)
@@ -26,5 +26,23 @@
              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
              ))
 
+(defun helm-mini ()
+  "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
+  (interactive)
+  (require 'helm-files)
+  (helm-other-buffer '(helm-source-buffers-list
+                       helm-source-files-in-current-dir
+                       helm-source-ls-git
+                       helm-source-recentf
+                       helm-source-file-cache)
+                     "*helm mini*"))
+
+(setq helm-for-files-preferred-list '(helm-source-buffers-list
+                                      helm-source-files-in-current-dir
+                                      helm-source-ls-git
+                                      helm-source-recentf
+                                      helm-source-bookmarks
+                                      helm-source-file-cache
+                                      helm-source-locate))
 
 ;;; my-helm-config.el ends here

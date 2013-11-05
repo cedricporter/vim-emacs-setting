@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-05 19:28:43 星期二 by Hua Liang>
+;; Time-stamp: <2013-11-05 23:19:22 星期二 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -71,10 +71,10 @@
    ropemode
    pymacs
 
-   showtip
 
    go-mode
-
+   
+   showtip
    (:name sdcv
           :after (progn
                    (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
@@ -269,19 +269,23 @@
 		   ;; you can select the key you prefer to
 		   (global-set-key (kbd "M-l") 'ace-jump-mode)
 		   ))
-
+   
+   helm-ls-git
    (:name helm
 	  :after (progn
 		   (require 'helm-config)
 		   (require 'helm-files)
+                   (require 'helm-ls-git)
 		   (setq helm-idle-delay 0.1)
 		   (setq helm-input-idle-delay 0.1)
+                   ;; (global-set-key (kbd "C-x b") 'helm-mini)
                    (global-set-key (kbd "C-x b") 'helm-for-files)
                    (global-set-key (kbd "C-x C-b") 'switch-to-buffer)
 		   (global-set-key (kbd "C-c i") 'helm-imenu)
 		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.odt$" "\\.pdf$")
 			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
 		   ))
+
 
    (:name emacs-helm-gtags
           :website "https://github.com/syohex/emacs-helm-gtags.git"
