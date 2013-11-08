@@ -142,8 +142,8 @@ alias scb='screen -dr normaltask || screen -S normaltask'
 alias tmux='tmux -2'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
 alias tmn='tmux -2 new -s "`mktemp`"'
-alias ms='mysql -u root -p'
-alias msgbk='luit -encoding gbk mysql -u root -p'
+alias ms='mysql -u root'
+alias msgbk='luit -encoding gbk mysql -u root'
 
 # Easily search running processes (alias).
 alias 'psg'='ps aux | grep '

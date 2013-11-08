@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-11-05 23:19:51 星期二 by Hua Liang>
+;; Time-stamp: <2013-11-07 14:50:11 星期四 by Hua Liang>
 
 
 (require 'helm-config)
@@ -38,8 +38,8 @@
                      "*helm mini*"))
 
 (setq helm-for-files-preferred-list '(helm-source-buffers-list
-                                      helm-source-files-in-current-dir
                                       helm-source-ls-git
+                                      helm-source-files-in-current-dir
                                       helm-source-recentf
                                       helm-source-bookmarks
                                       helm-source-file-cache
