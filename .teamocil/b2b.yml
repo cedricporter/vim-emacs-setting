@@ -1,0 +1,23 @@
+session:
+  name: "b2b"
+  windows:
+    - name: "iPython"
+      clear: true
+      root: "~/projects/vipbar-b2b"
+      panes:
+        - cmd: "ipy"
+    - name: "log"
+      layout: even-horizontal
+      root: "~/project/b2b/var/log"
+      panes:
+        - cmd: "tail -F root.log"
+        - cmd: "tail -F uwsgi.log"
+    - name: "b2b-deploy"
+      clear: true
+      root: "~/projects/vipbar-b2b"
+      panes:
+        - cmd: "ls"
+    - name: "tool"
+      root: "~/project/b2b/"
+      panes:
+        - cmd: "source ~/project/b2b/virtualenv/bin/activate; ls"

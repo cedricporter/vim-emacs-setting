@@ -278,3 +278,5 @@ if [ -d "$HOME/local/lib" ] ; then
 fi
 
 # export LC_CTYPE="zh_CN.UTF-8"
+
+export PATH=~/npm/bin:$PATH
