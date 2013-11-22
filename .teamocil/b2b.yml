@@ -3,7 +3,7 @@ session:
   windows:
     - name: "iPython"
       clear: true
-      root: "~/projects/vipbar-b2b"
+      root: "~/git/b2b"
       panes:
         - cmd: "ipy"
     - name: "log"
@@ -12,12 +12,17 @@ session:
       panes:
         - cmd: "tail -F root.log"
         - cmd: "tail -F uwsgi.log"
+    - name: "MySQL"
+      clear: true
+      root: "~/git/b2b"
+      panes:
+        - cmd: ["ms -D b2b", "show tables;"]
     - name: "b2b-deploy"
       clear: true
-      root: "~/projects/vipbar-b2b"
+      root: "~/git/b2b"
       panes:
         - cmd: "ls"
-    - name: "tool"
+    - name: "tools"
       root: "~/project/b2b/"
       panes:
         - cmd: "source ~/project/b2b/virtualenv/bin/activate; ls"
