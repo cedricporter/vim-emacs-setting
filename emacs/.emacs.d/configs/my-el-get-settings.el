@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-05 23:19:22 星期二 by Hua Liang>
+;; Time-stamp: <2013-11-13 20:17:36 星期三 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -237,9 +237,13 @@
 			   '(("github\\.com" . markdown-mode)
 			     ("i\\.everet\\.org" . moinmoin-mode))))))
 
-   (:name js2-mode
+   (:name js3-mode
 	  :after (progn
-		   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
+		   (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))))
+
+   ;; (:name js2-mode
+   ;;        :after (progn
+   ;;      	   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
 
    ;; (:name evil-numbers
    ;;  	  :after (progn
@@ -337,3 +341,6 @@
 
 ;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
 (el-get 'sync (mapcar 'el-get-source-name el-get-sources))
+
+
+(load-library "sdcv")

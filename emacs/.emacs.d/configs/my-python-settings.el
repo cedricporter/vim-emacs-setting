@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-09-25 16:06:26 星期三 by Hua Liang>
+;; Time-stamp: <2013-11-13 10:20:55 星期三 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -146,5 +146,6 @@
 
 (define-coding-system-alias 'GB18030 'gb18030)
 (define-coding-system-alias 'GB2312 'gb2312)
+(define-coding-system-alias 'utf8 'utf-8)
 
 ;; (provide 'my-python-settings)
