@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-07 21:23:42 Tuesday by Hua Liang>
+;; Time-stamp: <2013-11-24 16:57:15 星期日 by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -39,6 +39,8 @@ opinion. "
 (defun copy-file-from-clipboard-to-path (dst-dir)
   "copy file to desired path from clipboard"
   (interactive)
+  (message "[copy-file-from-clipboard-to-path]")
+  (message dst-dir)
   (let* ((full-file-name) (file-name) (ext) (new-file-name))
     (setq full-file-name (get-clipboard-contents-as-string))
     (if (eq (search "file://" full-file-name) 0)
@@ -53,6 +55,9 @@ opinion. "
 				 (format-time-string "_%Y%m%d_%H%M%S_"))) ext))
 	  (setq new-full-file-name (concat dst-dir new-file-name))
 	  (copy-file full-file-name new-full-file-name)
+	  (message full-file-name new-full-file-name)
+	  (message new-full-file-name)
+	  (message "------")
 	  (chmod new-full-file-name (file-modes-symbolic-to-number "u=rw,go=r"))
 	  new-file-name
 	  )

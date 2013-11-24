@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-07-28 16:17:12 Sunday by Hua Liang>
+;; Time-stamp: <2013-11-24 16:57:55 星期日 by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -70,25 +70,40 @@
 ;; -------------------- orgmode-octopress --------------------
 
 
+(defun my-git-root ()
+  (if buffer-file-name
+      (let* ((current-directory (file-name-directory buffer-file-name))
+             (git-directory (concat current-directory ".git")))
+        (while (and
+                current-directory
+                (not (file-exists-p git-directory)))
+          (setq current-directory (file-name-directory (substring current-directory 0 -1)))
+          (setq git-directory (concat current-directory ".git")))
+        current-directory)))
 
-(setq octopress-image-dir (expand-file-name "~/octopress/source/imgs/"))
+(defun get-octopress-image-dir ()
+  (concat (my-git-root) "source/imgs/"))
+
 (setq octopress-image-url "/imgs/")
 
 ;; Screenshot
 (defun markdown-screenshot (arg)
   "Take a screenshot for Octopress"
   (interactive "P")
-  (let* ((dir_path octopress-image-dir)
+  (let* ((dir_path (get-octopress-image-dir))
 	 (url (concat octopress-image-url (my-screenshot dir_path))))
     (if arg
 	(insert "![](" url ")")
-      (insert "{% img " url " %}"))))
+      (insert "{% img " url " %}"))
+    (message "------------")
+    (message dir_path)
+    ))
 
 ;; Insert Image From Clip Board
 (defun markdown-insert-image-from-clipboard (arg)
   "Insert an image from clipboard and copy it to desired path"
   (interactive "P")
-  (let ((url (concat octopress-image-url (copy-file-from-clipboard-to-path octopress-image-dir))))
+  (let ((url (concat octopress-image-url (copy-file-from-clipboard-to-path (get-octopress-image-dir)))))
     (if arg
 	(insert "![](" url ")")
       (insert "{% img " url " %}"))))
