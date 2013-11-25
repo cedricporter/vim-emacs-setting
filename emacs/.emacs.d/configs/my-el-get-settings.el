@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-13 20:17:36 星期三 by Hua Liang>
+;; Time-stamp: <2013-11-24 17:14:44 星期日 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -44,6 +44,7 @@
    yaml-mode
    puppet-mode
    quickrun
+   date-calc
    highlight-parentheses
    flymake-cursor
    browse-kill-ring
