@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-13 10:20:55 星期三 by Hua Liang>
+;; Time-stamp: <2013-11-25 17:01:23 星期一 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -106,6 +106,7 @@
 	     (local-set-key (kbd "<f11>") 'switch-to-vipbar-mode)
 	     (local-set-key (kbd "<S-f11>") 'disable-vipbar-mode)
              ))
+
 ;; -------------------- jedi --------------------
 
 
@@ -130,6 +131,12 @@
 ;;; Initialize Rope
 (pymacs-load "ropemacs" "rope-")
 (setq ropemacs-enable-autoimport t) ;; Too slow when I am saving
+
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-M-.") 'rope-goto-definition)
+             (local-set-key (kbd "C-M-,") 'rope-pop-mark)
+             ))
 
 ;; (ac-ropemacs-initialize)
 ;; (add-hook 'python-mode-hook

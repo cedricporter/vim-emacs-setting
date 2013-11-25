@@ -6,8 +6,13 @@ session:
       root: "~/projects/vipbar-b2c"
       panes:
         - cmd: "ipy"
+    - name: "deploy"
+      layout: even-horizontal
+      root: "~/projects/vipbar-b2c"
+      panes:
+        - cmd: ["ls", "auto-deploy-by-rsync . gzhualiang@testsvr2.everet.org:~/my-proj/b2c"]
     - name: "zsh"
       layout: even-horizontal
       root: "~/projects/vipbar-b2c"
       panes:
-        - cmd: "ls"
+        - cmd: ["ls", ]
