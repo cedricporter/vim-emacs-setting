@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-10-31 17:13:07 星期四 by Hua Liang>
+;; Time-stamp: <2013-11-26 16:34:40 星期二 by Hua Liang>
 
 
 ;; ==================== sql ====================
