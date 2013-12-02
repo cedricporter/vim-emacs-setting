@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-24 17:14:44 星期日 by Hua Liang>
+;; Time-stamp: <2013-12-02 20:48:36 星期一 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -178,6 +178,11 @@
 					 (browse-url (buffer-file-name))))
 		       (define-key web-mode-map (kbd "C-;") nil)
 		       (local-set-key (kbd "C-c c") 'web-mode-comment-or-uncomment)
+                       (setq web-mode-markup-indent-offset 4)
+                       (setq web-mode-css-indent-offset 4)
+                       (setq web-mode-code-indent-offset 4)
+                       (setq web-mode-indent-style 4)
+                       (setq tab-width 4)
 		       ))
 		   ))
 
