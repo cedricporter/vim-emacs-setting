@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-02 20:48:36 星期一 by Hua Liang>
+;; Time-stamp: <2013-12-04 19:13:23 星期三 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -169,6 +169,9 @@
 		   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 		   (add-to-list 'auto-mode-alist '("\\.tmpl?\\'" . web-mode))
 		   (add-to-list 'auto-mode-alist '("\\.pat?\\'" . web-mode))
+                   (setq web-mode-engines-alist
+                         '(("django"    . "\\.html\\'"))
+                         )                   
 		   (add-hook
 		    'web-mode-hook
 		    '(lambda ()
