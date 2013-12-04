@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Author: Hua Liang[Stupid ET]
 
-curl -s "http://ip138.com/ips138.asp?ip=$1&action=2" | iconv -f gb2312 -t utf8 | grep center | sed -n '9p'| awk '{match($0, "<li>([^<]*)</li>", a)} END {print a[1]}'
+curl -s "http://ip138.com/ips138.asp?ip=$1&action=2" | iconv -f gb2312 -t utf8 | grep center | sed -n '9p'| gawk '{match($0, "<li>([^<]*)</li>", a)} END {print a[1]}'
