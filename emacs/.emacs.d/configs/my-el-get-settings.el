@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-05 11:28:54 星期四 by Hua Liang>
+;; Time-stamp: <2013-12-05 11:32:29 星期四 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -250,7 +250,8 @@
 	  :after (progn
 		   (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
                    (add-hook 'js3-mode-hook '(lambda()
-                                               (setq js3-indent-level 4)))
+                                               (setq js3-indent-level 4)
+                                               ))
                    ))
 
    ;; (:name js2-mode

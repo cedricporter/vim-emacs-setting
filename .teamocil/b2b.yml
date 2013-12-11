@@ -6,23 +6,10 @@ session:
       root: "~/git/b2b"
       panes:
         - cmd: "ipy"
-    - name: "log"
-      layout: even-horizontal
-      root: "~/project/b2b/var/log"
-      panes:
-        - cmd: "tail -F root.log"
-        - cmd: "tail -F uwsgi.log"
-    - name: "MySQL"
-      clear: true
-      root: "~/git/b2b"
-      panes:
-        - cmd: ["ms -D b2b", "show tables;"]
     - name: "b2b-deploy"
+      layout: even-horizontal
       clear: true
       root: "~/git/b2b"
       panes:
+        - cmd: "auto-deploy-by-rsync . gzhualiang@testsvr2.everet.org:~/git/b2b"
         - cmd: "ls"
-    - name: "tools"
-      root: "~/project/b2b/"
-      panes:
-        - cmd: "source ~/project/b2b/virtualenv/bin/activate; ls"
