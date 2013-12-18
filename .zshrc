@@ -87,11 +87,15 @@ alias debian='ssh -l root debian.xxx'
 alias linode='ssh -A -p 1990 root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
-alias rdb137='konsole --new-tab --profile "online" -e ssh gzhualiang@123.58.173.137 -p 32200'
-alias r10='konsole --new-tab --profile "online" -e ssh gzhualiang@10.63.2.10 -p 32200'
-alias r11='konsole --new-tab --profile "online" -e ssh gzhualiang@10.63.2.11 -p 32200'
-alias testsvr='ssh gzhualiang@testsvr.everet.org -p 32200'
-alias testsvr2='ssh gzhualiang@testsvr2.everet.org -p 32200'
+
+alias rdb137='ssh gzhualiang@host137.b2c -p 32200'
+alias r10='ssh gzhualiang@10.63.2.10 -p 32200'
+alias r11='ssh gzhualiang@10.63.2.11 -p 32200'
+
+alias ssh2="ssh -l gzhualiang -p 32200"
+
+alias testsvr='ssh gzhualiang@dev.ip.163.com -p 32200'
+alias testsvr2='ssh gzhualiang@b2c.dev.163.com -p 32200'
 alias sscp='scp -r -P 32200 '
 
 alias ec='emacsclient -t -a=""'
@@ -144,7 +148,7 @@ alias scb='screen -dr normaltask || screen -S normaltask'
 
 # tmux
 custom_tmux() {
-    tmux -2 attach -t $1 || tmux -2 new -s $1    
+    tmux -2 attach -t $1 || tmux -2 new -s $1
 }
 
 alias tmux='tmux -2'
@@ -290,3 +294,6 @@ fi
 # export LC_CTYPE="zh_CN.UTF-8"
 
 export PATH=~/npm/bin:$PATH
+
+# server list completion
+complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh

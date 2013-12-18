@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-25 17:01:23 星期一 by Hua Liang>
+;; Time-stamp: <2013-12-12 12:39:48 星期四 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -43,10 +43,10 @@
 
 (defun my-add-delete-trailing-whitespace ()
   (interactive)
-    ;; (message "turn on delete-trailing-whitespace")
-    ;; (add-to-list
-    ;;  'write-file-functions
-    ;;  'delete-trailing-whitespace)
+    (message "turn on delete-trailing-whitespace")
+    (add-to-list
+     'write-file-functions
+     'delete-trailing-whitespace)
     )
 
 (global-set-key (kbd "<C-f11>")

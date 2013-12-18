@@ -2,5 +2,5 @@
 
 # epylint "$1" 2>/dev/null
 pyflakes "$1"
-pep8 --ignore=E501 --repeat "$1"
+pep8 --ignore=E501,E502,E128,E125,E391 --repeat "$1"
 true

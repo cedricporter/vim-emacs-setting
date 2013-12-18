@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-05 11:32:29 星期四 by Hua Liang>
+;; Time-stamp: <2013-12-12 15:09:50 星期四 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -74,7 +74,7 @@
 
 
    go-mode
-   
+
    showtip
    (:name sdcv
           :after (progn
@@ -171,7 +171,7 @@
 		   (add-to-list 'auto-mode-alist '("\\.pat?\\'" . web-mode))
                    (setq web-mode-engines-alist
                          '(("django"    . "\\.html\\'"))
-                         )                   
+                         )
 		   (add-hook
 		    'web-mode-hook
 		    '(lambda ()
@@ -251,6 +251,7 @@
 		   (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
                    (add-hook 'js3-mode-hook '(lambda()
                                                (setq js3-indent-level 4)
+                                               (setq tab-width 4)
                                                ))
                    ))
 
@@ -286,7 +287,7 @@
 		   ;; you can select the key you prefer to
 		   (global-set-key (kbd "M-l") 'ace-jump-mode)
 		   ))
-   
+
    helm-ls-git
    (:name helm
 	  :after (progn
