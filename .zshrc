@@ -296,4 +296,4 @@ fi
 export PATH=~/npm/bin:$PATH
 
 # server list completion
-complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh
+# complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh

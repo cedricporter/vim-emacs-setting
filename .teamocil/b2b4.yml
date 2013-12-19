@@ -1,0 +1,12 @@
+windows:
+  - name: "b2b4"
+    clear: true
+    root: "~/"
+    layout: tiled
+    options:
+      synchronize-panes: true
+    panes:
+      - cmd: "ssh2 host10.b2b"
+      - cmd: "ssh2 host11.b2b"
+      - cmd: "ssh2 host31.b2b"
+      - cmd: "ssh2 host32.b2b"
