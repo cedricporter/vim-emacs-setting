@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-04-05 23:40:42 Friday by Hua Liang>
+;; Time-stamp: <2013-12-20 17:16:54 星期五 by Hua Liang>
 
 ;; ==================== bzr cedet ====================
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
@@ -126,6 +126,9 @@
 (setq compilation-disable-input nil)
 (setq compilation-scroll-output t)
 (setq mode-compile-always-save-buffer-p t)
+
+;; limit it to stop semantic
+(setq semantic-idle-scheduler-max-buffer-size 100000)
 
 (defun alexott/compile ()
   "Saves all unsaved buffers, and runs 'compile'."

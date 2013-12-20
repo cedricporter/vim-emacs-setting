@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-12 12:39:48 星期四 by Hua Liang>
+;; Time-stamp: <2013-12-20 17:15:38 星期五 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -64,18 +64,19 @@
 
 ;; ==================== jedi ====================
 ;; http://txt.arboreus.com/2013/02/21/jedi.el-jump-to-definition-and-back.html
-(defvar jedi:goto-stack '())
-(defun jedi:jump-to-definition ()
-  (interactive)
-  (add-to-list 'jedi:goto-stack
-               (list (buffer-name) (point)))
-  (jedi:goto-definition))
-(defun jedi:jump-back ()
-  (interactive)
-  (let ((p (pop jedi:goto-stack)))
-    (if p (progn
-            (switch-to-buffer (nth 0 p))
-            (goto-char (nth 1 p))))))
+
+;; (defvar jedi:goto-stack '())
+;; (defun jedi:jump-to-definition ()
+;;   (interactive)
+;;   (add-to-list 'jedi:goto-stack
+;;                (list (buffer-name) (point)))
+;;   (jedi:goto-definition))
+;; (defun jedi:jump-back ()
+;;   (interactive)
+;;   (let ((p (pop jedi:goto-stack)))
+;;     (if p (progn
+;;             (switch-to-buffer (nth 0 p))
+;;             (goto-char (nth 1 p))))))
 
 (defun switch-to-vipbar-mode ()
   (interactive)
@@ -96,11 +97,14 @@
 ;; to remember position, and set C-, to jump back
 (add-hook 'python-mode-hook
           '(lambda ()
-             (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
-             (local-set-key (kbd "C-,") 'jedi:jump-back)
-             (local-set-key (kbd "C-c d") 'jedi:show-doc)
-             (local-set-key (kbd "C-<tab>") 'jedi:complete)
-             ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
+             ;; (local-set-key (kbd "C-.") 'jedi:jump-to-definition)
+             ;; (local-set-key (kbd "C-,") 'jedi:jump-back)
+             ;; (local-set-key (kbd "C-c d") 'jedi:show-doc)
+             ;; (local-set-key (kbd "C-<tab>") 'jedi:complete)
+             ;; ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
+
+             (when (< buffer-size 10000)
+               (flymake-mode-on))
 
 	     (local-set-key (kbd "<f12>") 'flymake-mode)
 	     (local-set-key (kbd "<f11>") 'switch-to-vipbar-mode)
@@ -134,8 +138,8 @@
 
 (add-hook 'python-mode-hook
           '(lambda ()
-             (local-set-key (kbd "C-M-.") 'rope-goto-definition)
-             (local-set-key (kbd "C-M-,") 'rope-pop-mark)
+             (local-set-key (kbd "C-.") 'rope-goto-definition)
+             (local-set-key (kbd "C-,") 'rope-pop-mark)
              ))
 
 ;; (ac-ropemacs-initialize)

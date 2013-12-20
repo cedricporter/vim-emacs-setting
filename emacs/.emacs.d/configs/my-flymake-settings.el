@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-10-22 11:18:50 星期二 by Hua Liang>
+;; Time-stamp: <2013-12-20 17:13:17 星期五 by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -57,15 +57,18 @@
 (when (load "flymake" t)
   (defun flymake-create-temp-in-system-tempdir (filename prefix)
     (make-temp-file (or prefix "flymake")))
+
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
 		       'flymake-create-temp-in-system-tempdir))
 	   (local-file (file-relative-name
 			temp-file
 			(file-name-directory buffer-file-name))))
-      (list "pycheckers"  (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pyflakes-init))
+      (list "pycheckers"  (list local-file))
+      ))
+
+  ;; (add-to-list 'flymake-allowed-file-name-masks
+  ;;              '("\\.py\\'" flymake-pyflakes-init))
   )
 
 (load-library "flymake-cursor")
@@ -73,8 +76,6 @@
 (global-set-key "\C-c\C-ep" 'flymake-goto-prev-error)
 (global-set-key "\C-c\C-en" 'flymake-goto-next-error)
 ;; -------------------- flymake --------------------
-
-
 
 
 ;; (provide 'my-flymake-settings.el)

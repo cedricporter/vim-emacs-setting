@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-12 15:09:50 星期四 by Hua Liang>
+;; Time-stamp: <2013-12-20 16:36:40 星期五 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -149,20 +149,20 @@
    ;; 		   )
    ;; 	  )
 
-   (:name jedi
-	  :prepare (progn
-		     ;; (setq jedi:setup-keys t)
-		     )
-	  :after (progn
-                   (setq jedi:setup-keys nil) ; use custom
+   ;; (:name jedi
+   ;;        :prepare (progn
+   ;;      	     ;; (setq jedi:setup-keys t)
+   ;;      	     )
+   ;;        :after (progn
+   ;;                 (setq jedi:setup-keys nil) ; use custom
 
-		   (autoload 'jedi:setup "jedi" nil t)
-		   (add-hook 'python-mode-hook 'jedi:setup)
+   ;;      	   (autoload 'jedi:setup "jedi" nil t)
+   ;;      	   (add-hook 'python-mode-hook 'jedi:setup)
 
-		   (require 'jedi)
-		   ;; I want to use my favorite Python executable.
-		   (setq jedi:server-command (list "/usr/bin/python" jedi:server-script))
-		   ))
+   ;;      	   (require 'jedi)
+   ;;      	   ;; I want to use my favorite Python executable.
+   ;;      	   (setq jedi:server-command (list "/usr/bin/python" jedi:server-script))
+   ;;      	   ))
 
    (:name web-mode
 	  :after (progn
