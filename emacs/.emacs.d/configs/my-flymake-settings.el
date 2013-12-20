@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-20 17:13:17 星期五 by Hua Liang>
+;; Time-stamp: <2013-12-20 17:38:13 星期五 by Hua Liang>
 
 ;; ==================== flymake ====================
 ;; flymake
@@ -8,7 +8,6 @@
 ;;     gcc -Wall -Wextra -pedantic -fsyntax-only $(CHK_SOURCES)
 
 
-(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; I want to see at most the first 4 errors for a line.
 (setq flymake-number-of-errors-to-display 4)
@@ -67,9 +66,18 @@
       (list "pycheckers"  (list local-file))
       ))
 
-  ;; (add-to-list 'flymake-allowed-file-name-masks
-  ;;              '("\\.py\\'" flymake-pyflakes-init))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init))
+
+  ;; python-mode不自动启动flymake
+  (add-hook 'find-file-hook '(lambda ()
+                               (when (not (equal major-mode 'python-mode))
+                                 (flymake-find-file-hook)
+                                 )
+                               ))
+
   )
+
 
 (load-library "flymake-cursor")
 

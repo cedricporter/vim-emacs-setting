@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-20 17:15:38 星期五 by Hua Liang>
+;; Time-stamp: <2013-12-20 17:38:26 星期五 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -103,7 +103,8 @@
              ;; (local-set-key (kbd "C-<tab>") 'jedi:complete)
              ;; ;; (local-set-key (kbd "C-c r") 'jedi:key-related-names)
 
-             (when (< buffer-size 10000)
+             (when (< (buffer-size) 10000)
+               (message "turn on flymake")
                (flymake-mode-on))
 
 	     (local-set-key (kbd "<f12>") 'flymake-mode)
