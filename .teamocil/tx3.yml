@@ -1,0 +1,18 @@
+session:
+  name: "tx3"
+  windows:
+    - name: "iPython"
+      clear: true
+      root: "~/igor/tx3"
+      panes:
+        - cmd: "ipy"
+    - name: "MySQL"
+      root: "~/igor/tx3"
+      panes:
+        - cmd: "igms"
+    - name: "deploy"
+      layout: even-horizontal
+      root: "~/igor/tx3"
+      panes:
+        - cmd: "ls"
+        - cmd: "iglt"

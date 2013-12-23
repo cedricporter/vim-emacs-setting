@@ -3,7 +3,7 @@
 " Maps {
     map -count -modes=n,v J <count>gT
     map -count -modes=n,v K <count>gt
-     
+
     map -count -modes=n,v ,r -builtin :restart<Return>
     map -count -modes=n,v ,a -builtin :addons<Return>
     map -count -modes=n,v ,d -builtin :downloads<Return>
@@ -32,9 +32,9 @@ set passkeys+=mail.google.com:jk/<CR>,gi,another.domain.com:hjkl,gt,gT
 map t -js str=DOM.stringify(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.NEW_TAB}):CommandExMode().open("tabopen ")
 map o -js str=DOM.stringify(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.CURRENT_TAB}):CommandExMode().open("open ")
 
-" set hintkeys=asdfg;lkjh
+set hintkeys=asdfg;lkjh
 
-command! gs -nargs=* tabopen http://www.google.com.hk/search?9&q=<args>
+command! gs -nargs=* tabopen https://www.google.com.hk/search?9&q=<args>
 
 map s :gs
 
