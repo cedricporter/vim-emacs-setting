@@ -3,7 +3,7 @@
 " Maps {
     map -count -modes=n,v J <count>gT
     map -count -modes=n,v K <count>gt
-
+    map -count -modes=n,v ,p -builtin :pintab!<Return>
     map -count -modes=n,v ,r -builtin :restart<Return>
     map -count -modes=n,v ,a -builtin :addons<Return>
     map -count -modes=n,v ,d -builtin :downloads<Return>

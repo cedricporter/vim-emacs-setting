@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-20 16:36:40 星期五 by Hua Liang>
+;; Time-stamp: <2013-12-21 14:17:47 星期六 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -357,4 +357,6 @@
 (el-get 'sync (mapcar 'el-get-source-name el-get-sources))
 
 
+;; 这些貌似没有正常加载，所以手动加载它们
 (load-library "sdcv")
+(load-library "python-mode")
