@@ -3,13 +3,13 @@ session:
   windows:
     - name: "iPython"
       clear: true
-      root: "~/git/b2b"
+      root: "~/git/vip-bar-b2b"
       panes:
         - cmd: "ipy"
     - name: "b2b-deploy"
       layout: even-horizontal
       clear: true
-      root: "~/git/b2b"
+      root: "~/git/vip-bar-b2b"
       panes:
-        - cmd: "auto-deploy-by-rsync . gzhualiang@testsvr2.everet.org:~/git/b2b"
+        - cmd: "auto-deploy-by-rsync . gzhualiang@testsvr2.everet.org:~/git/vip-bar-b2b"
         - cmd: "ls"
