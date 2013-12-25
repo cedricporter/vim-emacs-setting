@@ -13,6 +13,8 @@
 
 set editor="emacsclient -c"
 
+js editor.defaultRegister="+"
+
 " Qmarks {
     silent qmark e http://everet.org
     silent qmark y https://app.yinxiang.com/Home.action
