@@ -21,7 +21,7 @@ map <silent> <C-F12> :w<cr>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<
 
 
 " Vimgdb
-:run macros/gdb_mappings.vim 
+" :run macros/gdb_mappings.vim 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
