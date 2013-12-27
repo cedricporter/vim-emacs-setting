@@ -297,3 +297,14 @@ export PATH=~/npm/bin:$PATH
 
 # server list completion
 # complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh
+
+if [ -d "/usr/lib/jvm/jdk7" ] ; then
+    export JAVA_HOME=/usr/lib/jvm/jdk7
+    export JRE_HOME=${JAVA_HOME}/jre
+    export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+    export PATH=${JAVA_HOME}/bin:$PATH
+
+    # Android SDK
+    export ANDROID_SDK=/home/cedricporter/adt-bundle-linux-x86_64-20131030/sdk
+    export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
+fi
