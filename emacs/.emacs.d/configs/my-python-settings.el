@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-20 17:38:26 星期五 by Hua Liang>
+;; Time-stamp: <2013-12-29 22:31:43 星期日 by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -49,12 +49,12 @@
      'delete-trailing-whitespace)
     )
 
-(global-set-key (kbd "<C-f11>")
-		(lambda ()
-		  (interactive)
-		  (message "add delete-trailing-whitespace")
-		  (my-add-delete-trailing-whitespace)
-		  ))
+;; (global-set-key (kbd "<C-f11>")
+;; 		(lambda ()
+;; 		  (interactive)
+;; 		  (message "add delete-trailing-whitespace")
+;; 		  (my-add-delete-trailing-whitespace)
+;; 		  ))
 
 ;; 删除行尾的空白字符
 (add-hook 'python-mode-hook 'my-add-delete-trailing-whitespace)
