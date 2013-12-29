@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-21 14:17:47 星期六 by Hua Liang>
+;; Time-stamp: <2013-12-29 11:08:26 星期日 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -342,7 +342,20 @@
                        (progn
                          (add-hook 'after-init-hook 'session-initialize)
                          (load "desktop")
-                         (desktop-save-mode)))))
+                         (setq history-length 250)
+                         (desktop-save-mode 1)
+                         ;; Specifying Files Not to be Opened
+                         (setq desktop-buffers-not-to-save
+                               (concat "\\("
+                                       "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
+                                       "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
+                                       "\\)$"))
+                         (add-to-list 'desktop-modes-not-to-save 'dired-mode)
+                         (add-to-list 'desktop-modes-not-to-save 'Info-mode)
+                         (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
+                         (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
+                         (global-set-key (kbd "C-x g d") 'desktop-change-dir)
+                         ))))
 
    )
 

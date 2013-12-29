@@ -3,7 +3,7 @@
 ;; website:     http://EverET.org
 ;; This is about auto setting window style.
 ;; You can read the diagram.
-;; Time-stamp: <2013-01-28 19:19:32 Monday by Hua Liang>
+;; Time-stamp: <2013-12-29 10:52:30 星期日 by Hua Liang>
 
 (eval-when-compile (require 'cl))
 
@@ -356,6 +356,20 @@
 (global-set-key (kbd "C-S-k") 'windmove-up)
 (global-set-key (kbd "C-S-h") 'windmove-left)
 (global-set-key (kbd "C-S-l") 'windmove-right)
+
+
+(global-set-key (kbd "C-M-^") '(lambda ()
+				 (interactive)
+				(enlarge-window 10)))
+(global-set-key (kbd "C-M-&") '(lambda ()
+				 (interactive)
+				(enlarge-window -10)))
+(global-set-key (kbd "C-M-{") '(lambda ()
+				 (interactive)
+				(enlarge-window-horizontally -20)))
+(global-set-key (kbd "C-M-}") '(lambda ()
+				 (interactive)
+				(enlarge-window-horizontally 20)))
 
 ;; -------------------- key bindings --------------------
 

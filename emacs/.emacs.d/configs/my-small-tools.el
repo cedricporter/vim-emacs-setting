@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-26 16:34:40 星期二 by Hua Liang>
+;; Time-stamp: <2013-12-29 10:52:20 星期日 by Hua Liang>
 
 
 ;; ==================== sql ====================
@@ -88,15 +88,6 @@
   (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
 ;; -------------------- dired --------------------
 
-
-
-;; ;; ==================== session ====================
-;; ;; session
-;; (require 'session)
-;; (add-hook 'after-init-hook 'session-initialize)
-;; (load "desktop")
-;; (desktop-save-mode)
-;; ;; -------------------- session --------------------
 
 
 ;; ==================== saveplace ====================
@@ -236,21 +227,6 @@
 (global-set-key (kbd "C-x g e") 'eval-and-replace)
 ;; -------------------- eval-and-replace --------------------
 
-
-;; ==================== window control ====================
-(global-set-key (kbd "C-M-^") '(lambda ()
-				 (interactive)
-				(enlarge-window 10)))
-(global-set-key (kbd "C-M-&") '(lambda ()
-				 (interactive)
-				(enlarge-window -10)))
-(global-set-key (kbd "C-M-{") '(lambda ()
-				 (interactive)
-				(enlarge-window-horizontally -20)))
-(global-set-key (kbd "C-M-}") '(lambda ()
-				 (interactive)
-				(enlarge-window-horizontally 20)))
-;; -------------------- window control --------------------
 
 
 ;; (provide 'my-small-tools)
