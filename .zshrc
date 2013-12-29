@@ -305,6 +305,6 @@ if [ -d "/usr/lib/jvm/jdk7" ] ; then
     export PATH=${JAVA_HOME}/bin:$PATH
 
     # Android SDK
-    export ANDROID_SDK=/home/cedricporter/adt-bundle-linux-x86_64-20131030/sdk
+    export ANDROID_SDK=$HOME/adt-bundle-linux-x86_64-20131030/sdk
     export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
 fi
