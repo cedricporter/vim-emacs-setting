@@ -1,0 +1,10 @@
+windows:
+  - name: "ugame2"
+    clear: true
+    root: "~/"
+    layout: even-horizontal
+    options:
+      synchronize-panes: true
+    panes:
+      - cmd: "ssh2 host20.ugame"
+      - cmd: "ssh2 host21.ugame"
