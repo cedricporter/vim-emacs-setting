@@ -3,7 +3,7 @@
 ;; website:     http://EverET.org
 ;; This is about auto setting window style.
 ;; You can read the diagram.
-;; Time-stamp: <2013-12-29 10:52:30 星期日 by Hua Liang>
+;; Time-stamp: <2014-01-28 22:58:53 Tuesday by Hua Liang>
 
 (eval-when-compile (require 'cl))
 
@@ -25,12 +25,15 @@
 ;; 最大化
 (defun my-maximized ()
   (interactive)
-  (x-send-client-message
-   nil 0 nil "_NET_WM_STATE" 32
-   '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  (x-send-client-message
-   nil 0 nil "_NET_WM_STATE" 32
-   '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+  (if (fboundp 'x-send-client-message)
+      (progn
+	(x-send-client-message
+	 nil 0 nil "_NET_WM_STATE" 32
+	 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+	(x-send-client-message
+	 nil 0 nil "_NET_WM_STATE" 32
+	 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+	))
   )
 ;; 启动emacs时窗口最大化
 (when window-system

@@ -209,10 +209,10 @@
                    (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
                    ))
 
-   (:name ipython
-   	  :after (progn
-   		   (setq ipython-completion-command-string ;fix completion bug
-   			 "print(';'.join(get_ipython().Completer.complete('%s')[1])) #PYTHON-MODE SILENT\n")))
+   ;(:name ipython
+   ;	  :after (progn
+   ;		   (setq ipython-completion-command-string ;fix completion bug
+   ;			 "print(';'.join(get_ipython().Completer.complete('%s')[1])) #PYTHON-MODE SILENT\n")))
 
    (:name expand-region
           :after (progn

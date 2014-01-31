@@ -15,6 +15,7 @@
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 (push "~/local/bin" exec-path)
+(push "/usr/local/bin" exec-path)
 
 (when (string-equal system-type "cygwin")
   (push "/usr/bin" exec-path)

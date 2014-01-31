@@ -71,6 +71,7 @@ alias tp='gtypist'
 
 alias gitroot='cd $(git rev-parse --show-cdup)'
 
+alias ls="ls --color=auto"
 alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -307,4 +308,12 @@ if [ -d "/usr/lib/jvm/jdk7" ] ; then
     # Android SDK
     export ANDROID_SDK=$HOME/adt-bundle-linux-x86_64-20131030/sdk
     export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
+fi
+
+
+if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
+if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi

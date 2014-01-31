@@ -1,7 +1,10 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-05-13 11:30:30 Monday by Hua Liang>
+;; Time-stamp: <2014-01-30 11:42:07 Thursday by Hua Liang>
 
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
 
+(setq ns-pop-up-frames nil)
 
 ;; ==================== time-stamp ====================
 (add-hook 'write-file-hooks 'time-stamp)
