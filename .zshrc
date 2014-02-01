@@ -89,10 +89,6 @@ alias linode='ssh -A -p 1990 root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
 
-alias rdb137='ssh gzhualiang@host137.b2c -p 32200'
-alias r10='ssh gzhualiang@10.63.2.10 -p 32200'
-alias r11='ssh gzhualiang@10.63.2.11 -p 32200'
-
 alias ssh2="ssh -l gzhualiang -p 32200"
 
 alias testsvr='ssh gzhualiang@dev.ip.163.com -p 32200'
@@ -161,7 +157,7 @@ alias ms='mysql -u root'
 alias msgbk='luit -encoding gbk mysql -u root'
 
 # Easily search running processes (alias).
-alias 'psg'='ps aux | grep '
+alias 'psg'='ps auxf | grep '
 alias 'psl'='ps awwfux | less -S'
 
 # apt-get
@@ -181,26 +177,6 @@ alias unsshproxy="rm ~/.ssh/config"
 
 # safe rm
 alias rm="trash-put"
-
-# alias rm='rm -i'
-# mkdir -p ~/.trash
-# alias rm=trash
-# alias rl='ls ~/.trash'
-# alias ur=undelfile
-# undelfile()
-# {
-#     mv -i ~/.trash/$@ ./
-# }
-# trash()
-# {
-#     mv --verbose -f --backup=numbered --target-directory ~/.trash/ $@
-# }
-# cleartrash()
-# {
-#     vared -c -p "y/n" confirm
-#     echo $confirm
-#     [[ $confirm == 'y' ]] || [[ $confirm == 'Y' ]] && \rm -rf ~/.trash/*
-# }
 
 # kill processes that match pattern
 psgkill()
@@ -288,14 +264,17 @@ fi
 if [ -d "$HOME/local/bin" ] ; then
     PATH="$HOME/local/bin:$PATH"
 fi
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 if [ -d "$HOME/local/lib" ] ; then
     LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 fi
+if [ -d "$HOME/npm/bin" ] ; then
+    PATH="$HOME/npm/bin:$PATH"
+fi
 
 # export LC_CTYPE="zh_CN.UTF-8"
-
-export PATH=~/npm/bin:$PATH
-export PATH=~/.local/bin:$PATH
 
 # server list completion
 # complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh
@@ -317,4 +296,15 @@ if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
 fi
 if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
+
+# do some os specific config
+if [ "$(uname)" = "Darwin" ]; then
+    alias 'psg'='ps aux | grep '
+    # Do something under Mac OS X platform
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+    # Do something under Linux platform
+elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
+    # Do something under Windows NT platform
 fi
