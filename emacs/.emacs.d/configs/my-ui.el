@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2014-01-29 17:10:17 Wednesday by Hua Liang>
+;; Time-stamp: <2014-02-01 22:39:09 Saturday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -30,7 +30,7 @@
 ;; ==================== UI setting ====================
 
 ;; Font Setting
-;; (setq my-font "Monaco-11")
+(setq my-font "Monaco-11")
 (if (member "Monaco" (font-family-list))
     (progn
       (if (string= (system-name) "ET-Mac.local") ; for retina

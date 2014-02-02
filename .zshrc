@@ -32,7 +32,7 @@ export SHELL=zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git cake svn command-not-found autojump coffee pip supervisor debian)
+plugins=(vagrant brew bundler encode64 git git-flow github gem npm osx cake svn command-not-found autojump coffee pip pep8 python ruby rvm tmux supervisor debian)
 
 source $ZSH/oh-my-zsh.sh
 
