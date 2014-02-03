@@ -138,7 +138,7 @@ alias rp='rake publish'
 alias rgp='rake generate && rake preview'
 
 alias ipy='ipython'
-alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack-grep -a'
+alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack '
 
 alias sc='screen'
 alias scb='screen -dr normaltask || screen -S normaltask'
@@ -273,11 +273,17 @@ fi
 if [ -d "$HOME/npm/bin" ] ; then
     PATH="$HOME/npm/bin:$PATH"
 fi
+if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
+if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+if [ -d "/usr/local/bin" ] ; then
+    export PATH="/usr/local/bin:$PATH"
+fi
 
 # export LC_CTYPE="zh_CN.UTF-8"
-
-# server list completion
-# complete -W "$(echo `cat /etc/hosts | sed -n '/SERVER_LIST/,$p' | tr -s '\t' ' ' | sed -e "/^#.*/d" -e "/^$/d" | sort | cut -f 2 -d ' '`)" ssh
 
 if [ -d "/usr/lib/jvm/jdk7" ] ; then
     export JAVA_HOME=/usr/lib/jvm/jdk7
@@ -289,15 +295,6 @@ if [ -d "/usr/lib/jvm/jdk7" ] ; then
     export ANDROID_SDK=$HOME/adt-bundle-linux-x86_64-20131030/sdk
     export PATH=$ANDROID_SDK/platform-tools:$ANDROID_SDK/tools:$PATH
 fi
-
-
-if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-fi
-if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
-    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-fi
-
 
 # do some os specific config
 if [ "$(uname)" = "Darwin" ]; then
