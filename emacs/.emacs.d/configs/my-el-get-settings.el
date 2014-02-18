@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-29 11:08:26 星期日 by Hua Liang>
+;; Time-stamp: <2014-02-18 11:46:59 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -72,7 +72,6 @@
    ropemode
    pymacs
 
-
    go-mode
 
    showtip
@@ -85,6 +84,13 @@
                                                        ))
                    (global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
                    (global-set-key (kbd "C-c ]") 'sdcv-search-input)))
+
+   (:name eclim
+          :after (progn
+                   (global-eclim-mode)
+                   (require 'eclimd)
+                   (setq eclim-eclipse-dirs '("/Users/cedricporter/adt-bundle-mac-x86_64-20131030/eclipse/Eclipse.app/Contents/MacOS"))
+                   ))
 
    (:name minimap
 	  :after (progn
@@ -355,6 +361,22 @@
                          (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
                          (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
                          (global-set-key (kbd "C-x g d") 'desktop-change-dir)
+
+			 (setq session-key-dir-map '(("c" "~/git/vipbar-b2c")
+						     ("u" "~/git/ugame")
+						     ("b" "~/svn/vipbar")
+						     ("w" "~/cedricporter@gmail.com/weekly")
+						     ("o" "~/octopress")
+						     ))
+			 (while session-key-dir-map
+			   (lexical-let* ((item (car session-key-dir-map))
+				  (key (car item))
+				  (path (car (cdr item))))
+			     (global-set-key (kbd (concat "C-x g g " key))
+					     #'(lambda () (interactive) (desktop-change-dir path)))
+			     (setq session-key-dir-map (cdr session-key-dir-map)))
+			   )
+
                          ))))
 
    )

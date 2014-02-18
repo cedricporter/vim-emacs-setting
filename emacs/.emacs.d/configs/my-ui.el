@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2014-02-01 22:39:09 Saturday by Hua Liang>
+;; Time-stamp: <2014-02-10 15:19:41 Monday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -26,6 +26,8 @@
 (setq display-time-day-and-date t)
 ;;----------------------    END    time setting    ---------------------
 
+(prefer-coding-system 'utf-8)
+(modify-coding-system-alist 'file "\\.pat\\'" 'chinese-iso-8bit)
 
 ;; ==================== UI setting ====================
 

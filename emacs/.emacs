@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2013-11-05 19:47:50 星期二 by Hua Liang>
+;; Time-stamp: <2014-02-15 14:01:20 Saturday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -15,7 +15,9 @@
 ;; Environment
 (push "~/.emacs.d/plugins/bin" exec-path)
 (push "~/local/bin" exec-path)
+(push "~/.local/bin" exec-path)
 (push "/usr/local/bin" exec-path)
+(push "/usr/local/opt/coreutils/libexec/gnubin" exec-path)
 
 (when (string-equal system-type "cygwin")
   (push "/usr/bin" exec-path)

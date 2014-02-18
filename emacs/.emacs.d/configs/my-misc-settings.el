@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-01-30 11:42:07 Thursday by Hua Liang>
+;; Time-stamp: <2014-02-10 14:34:05 Monday by Hua Liang>
 
 (setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
@@ -464,6 +464,10 @@ occurence of CHAR."
 ;; If you want the "Preprocessor arguments: " prompt:
 (setq c-macro-prompt-flag nil)
 ;; -------------------- c-macro-expand --------------------
+
+;; ==================== revert-buffer ====================
+(global-set-key (kbd "C-x g r") 'revert-buffer-with-coding-system)
+;; -------------------- revert-buffer --------------------
 
 
 ;; (provide 'my-misc-settings)

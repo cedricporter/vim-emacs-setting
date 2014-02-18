@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-05 19:42:39 星期二 by Hua Liang>
+;; Time-stamp: <2014-02-09 22:23:38 Sunday by Hua Liang>
 
 ;;==================== auto complete ====================
 ;; auto complete with clang
@@ -16,6 +16,9 @@
 (add-to-list 'ac-modes 'markdown-mode)
 (add-to-list 'ac-modes 'web-mode)
 (add-to-list 'ac-modes 'js2-mode)
+
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
 
 ;; -------------------- end of auto complete --------------------
 

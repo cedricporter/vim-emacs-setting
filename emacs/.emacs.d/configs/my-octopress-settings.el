@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-24 17:13:34 星期日 by Hua Liang>
+;; Time-stamp: <2014-02-03 16:14:53 Monday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -47,7 +47,7 @@
 (defun mysource-octopress ()
   (let ((line-text (thing-at-point 'line)))
     (cond ((string-match "^\\(tags:\\|categories:\\)" line-text)
-	   (split-string (shell-command-to-string (concat "~/local/bin/tags.py " "~/octopress/source"))))
+	   (split-string (shell-command-to-string (concat "tags.py " "~/octopress/source"))))
 	  ;; ((string-match "^categories:" line-text)
 	  ;;  (directory-files "~/octopress/public/category")))
 	  )
