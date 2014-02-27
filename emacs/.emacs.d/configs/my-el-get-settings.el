@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-02-18 16:29:40 Tuesday by Hua Liang>
+;; Time-stamp: <2014-02-27 17:41:06 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -364,7 +364,7 @@
 
 			 (setq session-key-dir-map '(("c" "~/git/vipbar-b2c")
 						     ("u" "~/git/ugame")
-						     ("m" "~/git/mg_channel")
+						     ("m" "~/git/mg-channel")
 						     ("b" "~/svn/vipbar")
 						     ("n" "~/git/vip-bar-b2b")
 						     ("w" "~/cedricporter@gmail.com/weekly")
