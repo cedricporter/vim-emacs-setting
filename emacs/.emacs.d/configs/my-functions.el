@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-11-24 16:57:15 星期日 by Hua Liang>
+;; Time-stamp: <2014-03-01 22:50:07 Saturday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -32,8 +32,11 @@ opinion. "
 (defun get-clipboard-contents-as-string ()
     "Return the value of the clipboard contents as a string."
     (let ((x-select-enable-clipboard t))
-      (or (x-cut-buffer-or-selection-value)
-          x-last-selected-text-clipboard)))
+      (or (if (fboundp 'x-cut-buffer-or-selection-value) (x-cut-buffer-or-selection-value))
+          (if (fboundp 'x-last-selected-text-clipboard) x-last-selected-text-clipboard)
+	  (if (fboundp 'pbcopy-selection-value) (pbcopy-selection-value))
+          )
+      ))
 
 
 (defun copy-file-from-clipboard-to-path (dst-dir)
@@ -44,8 +47,10 @@ opinion. "
   (let* ((full-file-name) (file-name) (ext) (new-file-name))
     (setq full-file-name (get-clipboard-contents-as-string))
     (if (eq (search "file://" full-file-name) 0)
+	(setq full-file-name (substring full-file-name 7))
+      )
+    (if (eq (search "/" full-file-name) 0)
 	(progn
-	  (setq full-file-name (substring full-file-name 7))
 	  (setq file-name (my-base-name full-file-name))
 	  (setq ext (concat "." (file-name-extension file-name)))
 	  (setq new-file-name
