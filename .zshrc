@@ -121,6 +121,7 @@ alias sl='svn log --limit 5'
 alias svn_br='svn ls -v $(svn_repo)/branches'
 
 # git
+alias gr='gitroot'
 alias gs='git status'
 alias gp='git push'
 alias gpt='git push --tags'
@@ -307,3 +308,4 @@ elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
 fi
 
 export SVN_EDITOR=vim
+export EDITOR=vim
