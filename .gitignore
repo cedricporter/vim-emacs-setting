@@ -10,3 +10,4 @@
 core
 emacs/.emacs.d/tmp/*
 pentadactyl/.pentadactyl/info/
+*.pyo
