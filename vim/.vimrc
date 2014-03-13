@@ -124,16 +124,15 @@ elseif MySys() == "linux"
   set shell=/bin/bash
 endif
 
+set nu
 if has("gui_running")
   set guioptions-=T
   set t_Co=256
   set background=dark
   colorscheme peaksea
-  set nu		"开启行号显示
 else
   colorscheme zellner
   set background=dark
-  set nonu
 endif
 
 set encoding=utf8
@@ -199,6 +198,8 @@ map <leader>tm :tabmove
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
+
+map zz ZQ
 
 """"""""""""""""""""""""""""""
 " => Statusline

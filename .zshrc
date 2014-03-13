@@ -309,3 +309,6 @@ fi
 
 export SVN_EDITOR=vim
 export EDITOR=vim
+
+export COCOS_CONSOLE_ROOT=/Users/cedricporter/cocos2d-x/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
