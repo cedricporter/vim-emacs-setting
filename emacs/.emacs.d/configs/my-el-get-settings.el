@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-03-01 22:34:32 Saturday by Hua Liang>
+;; Time-stamp: <2014-03-16 10:08:30 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -73,6 +73,12 @@
    pymacs
 
    go-mode
+
+   (:name dash-at-point
+          :after (progn
+		   (global-set-key (kbd "C-c d") 'dash-at-point)
+		   (global-set-key (kbd "C-c e") 'dash-at-point-with-docset)
+		   ))
 
    (:name pbcopy
           :after (progn

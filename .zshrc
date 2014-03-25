@@ -310,5 +310,20 @@ fi
 export SVN_EDITOR=vim
 export EDITOR=vim
 
-export COCOS_CONSOLE_ROOT=/Users/cedricporter/cocos2d-x/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
+export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
+export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export ANT_ROOT=/usr/local/bin/
+export PATH=$ANT_ROOT:$PATH
+
+export NDK_ROOT="$HOME/android-ndk-r9d"
+if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
+    export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
+fi
+
+random-string()
+{
+    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+}
