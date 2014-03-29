@@ -1,0 +1,13 @@
+session:
+  name: "contact01"
+  windows:
+    - name: "contact01"
+      layout: even-horizontal
+      root: "~/games/contact01/"
+      panes:
+        - cmd: ["ls"]
+        - cmd: ["ls"]
+    - name: "contact01"
+      root: "~/games/contact01/"
+      panes:
+        - cmd: ["ls"]
