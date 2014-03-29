@@ -1,0 +1,10 @@
+[color]
+	ui = true
+[user]
+	name = Cedric Porter
+	email = cedricporter@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore
+    gitproxy = ~/vim-emacs-setting/git_sock5_proxy_wrapper
