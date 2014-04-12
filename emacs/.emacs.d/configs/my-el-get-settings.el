@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-03-16 10:08:30 Sunday by Hua Liang>
+;; Time-stamp: <2014-04-12 12:40:46 Saturday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -73,6 +73,7 @@
    pymacs
 
    go-mode
+   lua-mode
 
    (:name dash-at-point
           :after (progn
