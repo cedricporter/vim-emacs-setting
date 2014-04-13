@@ -1,4 +1,4 @@
-;; Time-stamp: <2013-08-10 22:38:46 Saturday by Hua Liang>
+;; Time-stamp: <2014-04-13 22:42:22 Sunday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
@@ -14,6 +14,7 @@
                           ("\\.lisp$" . ["insert.lisp" alexott/auto-update-defaults])
                           ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
                           ("\\.py$" . ["insert.py" alexott/auto-update-defaults])
+                          ("\\.lua$" . ["insert.lua" alexott/auto-update-defaults])
                           ("\\.org$" . ["insert.org" alexott/auto-update-defaults])
                           ))
 
