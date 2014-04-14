@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-29 22:31:43 星期日 by Hua Liang>
+;; Time-stamp: <2014-04-14 10:23:20 Monday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -57,7 +57,7 @@
 ;; 		  ))
 
 ;; 删除行尾的空白字符
-(add-hook 'python-mode-hook 'my-add-delete-trailing-whitespace)
+;; (add-hook 'python-mode-hook 'my-add-delete-trailing-whitespace)
 
 (setq python-check-command "pyflakes")
 

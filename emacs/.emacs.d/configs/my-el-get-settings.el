@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-04-12 17:28:52 Saturday by Hua Liang>
+;; Time-stamp: <2014-04-14 10:41:23 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -382,8 +382,12 @@
 						     ("m" "~/git/mg-channel")
 						     ("b" "~/svn/vipbar")
 						     ("n" "~/git/vip-bar-b2b")
+                                                     
 						     ("w" "~/cedricporter@gmail.com/weekly")
 						     ("o" "~/octopress")
+                                                     
+						     ("e" "~/games/everlost")
+                                                     
 						     ))
 			 (while session-key-dir-map
 			   (lexical-let* ((item (car session-key-dir-map))
