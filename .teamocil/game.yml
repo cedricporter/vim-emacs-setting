@@ -1,0 +1,16 @@
+session:
+  name: "game"
+  windows:
+    - name: "lua"
+      clear: true
+      root: "~/"
+      panes:
+        - cmd: "lua"
+    - name: "lua5.1"
+      root: "~/projects/lua-5.1.5"
+      panes:
+        - cmd: ["ls"]
+    - name: "everlost"
+      root: "~/games/everlost/"
+      panes:
+        - cmd: ["ls"]

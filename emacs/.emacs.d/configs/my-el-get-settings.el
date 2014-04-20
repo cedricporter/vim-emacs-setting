@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-04-14 10:41:23 Monday by Hua Liang>
+;; Time-stamp: <2014-04-20 12:36:36 Sunday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -386,6 +386,7 @@
 						     ("w" "~/cedricporter@gmail.com/weekly")
 						     ("o" "~/octopress")
                                                      
+						     ("l" "~/projects/learn-lua/")
 						     ("e" "~/games/everlost")
                                                      
 						     ))
