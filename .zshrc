@@ -318,7 +318,7 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/usr/local/bin/
 export PATH=$ANT_ROOT:$PATH
 
-export NDK_ROOT="$HOME/android-ndk-r9d"
+export NDK_ROOT="$HOME/android-ndk-r9b"
 if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
     export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
 fi
