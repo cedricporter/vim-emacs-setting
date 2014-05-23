@@ -81,6 +81,7 @@ alias lsdt='ls -dt */ '		# list dir
 alias dud='du -hs * | sort -h'
 
 alias 84='ssh -l root -p 1990 84.everet.org'
+alias sscp='scp -r -P 32200 '
 alias ras='ssh -l root -p 1990 ras.everet.org'
 alias n46='ssh -l root -p 1990 ipv6.everet.org'
 alias ras6='ssh -t -p 1990 root@ipv6.everet.org ssh -p 1990 root@ras.everet.org'
@@ -88,12 +89,6 @@ alias debian='ssh -l root debian.xxx'
 alias linode='ssh -A -p 1990 root@linode.everet.org'
 alias sah='ssh-add ~/.ssh/id_rsa_home'
 alias saw='ssh-add ~/.ssh/id_rsa_work'
-
-alias ssh2="ssh -l gzhualiang -p 32200"
-
-alias testsvr='ssh gzhualiang@dev.ip.163.com -p 32200'
-alias testsvr2='ssh gzhualiang@b2c.dev.163.com -p 32200'
-alias sscp='scp -r -P 32200 '
 
 alias ec='emacsclient -t -a=""'
 alias se='SUDO_EDITOR="emacsclient -t" sudo -e'
