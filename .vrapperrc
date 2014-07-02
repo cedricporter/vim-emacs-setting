@@ -1,0 +1,14 @@
+map <SPACE>  4j
+map H    gT
+map L    gt
+
+set incsearch
+set hlsearch
+
+set nu
+set autoindent
+set ignorecase 
+set smartcase
+
+set softtabstop=4
+set autochdir

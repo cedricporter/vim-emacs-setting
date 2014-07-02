@@ -7,4 +7,4 @@
 	default = simple
 [core]
 	excludesfile = ~/.gitignore
-    gitproxy = ~/vim-emacs-setting/git_sock5_proxy_wrapper
+    gitproxy = /Users/cedricporter/vim-emacs-setting/git_sock5_proxy_wrapper

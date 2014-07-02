@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-11-07 14:50:11 星期四 by Hua Liang>
+;; Time-stamp: <2014-06-26 22:13:17 Thursday by Hua Liang>
 
 
 (require 'helm-config)
@@ -11,6 +11,7 @@
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'java-mode-hook 'helm-gtags-mode)
 
 ;; customize
 (setq helm-gtags-path-style 'relative)
