@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-02-09 22:23:38 Sunday by Hua Liang>
+;; Time-stamp: <2014-06-26 20:22:19 星期四 by Hua Liang>
 
 ;;==================== auto complete ====================
 ;; auto complete with clang
