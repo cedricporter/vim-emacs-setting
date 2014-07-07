@@ -12,3 +12,5 @@ set smartcase
 
 set softtabstop=4
 set autochdir
+
+nnoremap ,w :w<cr>
