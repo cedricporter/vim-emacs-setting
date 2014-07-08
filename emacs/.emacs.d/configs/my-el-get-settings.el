@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-04-20 12:36:36 Sunday by Hua Liang>
+;; Time-stamp: <2014-07-08 14:46:06 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -71,6 +71,8 @@
    ropemacs
    ropemode
    pymacs
+
+   csharp-mode
 
    go-mode
    (:name lua-mode

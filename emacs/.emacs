@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2014-02-15 14:01:20 Saturday by Hua Liang>
+;; Time-stamp: <2014-07-08 14:51:31 Tuesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -88,6 +88,8 @@
 (load "~/.emacs.d/configs/my-gtags-config.el")
 
 (load "~/.emacs.d/configs/my-c-mode-config.el")
+
+(load "~/.emacs.d/configs/my-csharp-mode-config.el")
 
 (load "~/.emacs.d/configs/my-golang-settings.el")
 
