@@ -1,5 +1,9 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-12-29 10:52:20 星期日 by Hua Liang>
+;; Time-stamp: <2014-07-23 09:18:29 Wednesday by Hua Liang>
+
+
+(autoload 'smali-mode "smali-mode" "Major mode for editing and viewing smali issues" t)
+(add-to-list 'auto-mode-alist '(".smali$" . smali-mode))
 
 
 ;; ==================== sql ====================
