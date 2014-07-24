@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-07-08 14:46:06 Tuesday by Hua Liang>
+;; Time-stamp: <2014-07-24 15:09:44 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -26,7 +26,6 @@
  '(el-get				; el-get is self-hosting
    escreen            			; screen for emacs, C-\ C-h
    php-mode-improved			; if you're into php...
-   switch-window			; takes over C-x o
    rainbow-mode				; show color
    rainbow-delimiters
    graphviz-dot-mode
@@ -85,6 +84,13 @@
 		   (global-set-key (kbd "C-c d") 'dash-at-point)
 		   (global-set-key (kbd "C-c e") 'dash-at-point-with-docset)
 		   ))
+
+
+   (:name switch-window			; takes over C-x o
+	  :after (progn
+		   (global-set-key (kbd "C-x o") 'switch-window)
+		   ))
+
 
    (:name pbcopy
           :after (progn
