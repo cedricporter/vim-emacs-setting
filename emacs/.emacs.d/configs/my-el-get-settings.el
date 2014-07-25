@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-07-24 15:09:44 Thursday by Hua Liang>
+;; Time-stamp: <2014-07-25 14:50:11 Friday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -74,6 +74,8 @@
    csharp-mode
 
    go-mode
+
+   
    (:name lua-mode
 	  :after (progn
 		   (setq lua-indent-level 4)
@@ -152,6 +154,19 @@
           :description "Explains the meaning of an HTTP status code in minibuffer."
           :type github
           :pkgname "rspivak/httpcode.el")
+
+   (:name vlf
+	  :website "https://github.com/m00natic/vlfi"
+	  :description "View Large Files in Emacs"
+	  :type github
+	  :pkgname "m00natic/vlfi"
+	  :after (progn
+		   (require 'vlf-integrate)
+		   (eval-after-load "vlf"
+		     '(define-key vlf-prefix-map "\C-cv" vlf-mode-map))
+		   )
+	  )
+
 
    ;; (:name emmet-mode
    ;; 	  :website "https://github.com/smihica/emmet-mode"
