@@ -1,0 +1,19 @@
+session:
+  name: "rec"
+  windows:
+    - name: "everlost"
+      root: "~/games/everlost/"
+      panes:
+        - cmd: ["ls"]
+    - name: "u3d-rec"
+      root: "~/games/unity/4/AngryBots/src/com/netease/gamerecorder"
+      panes:
+        - cmd: ["ls"]
+    - name: "shell"
+      root: "~/games/everlost/"
+      panes:
+        - cmd: ["adb shell"]
+    - name: "logcat"
+      root: "~/games/everlost/"
+      panes:
+        - cmd: ["adb logcat"]
