@@ -1,8 +1,17 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-02-10 14:34:05 Monday by Hua Liang>
+;; Time-stamp: <2014-08-02 13:06:22 Saturday by Hua Liang>
 
-(setq mac-option-modifier 'super)
-(setq mac-command-modifier 'meta)
+;; not change key in daemon mode because I switch alt and command in iterm2
+(if (not (and (fboundp 'daemonp) (daemonp)))
+    (progn
+      (setq mac-option-modifier 'super)
+      (setq mac-command-modifier 'meta)
+      )
+  )
+
+;; (setq mac-option-modifier 'super)
+;; (setq mac-command-modifier 'meta)
+
 
 (setq ns-pop-up-frames nil)
 
