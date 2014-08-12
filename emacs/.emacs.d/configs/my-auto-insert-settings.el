@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-04-13 22:42:22 Sunday by Hua Liang>
+;; Time-stamp: <2014-08-09 10:49:14 Saturday by Hua Liang>
 ;; Modified From Alex Ott's config
 
 ;; https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-auto-insert.el
@@ -18,10 +18,10 @@
                           ("\\.org$" . ["insert.org" alexott/auto-update-defaults])
                           ))
 
-(add-to-list 'auto-insert-alist '(".*/projects/.*\\.cpp$" . ["insert-home.cpp" alexott/auto-update-c-source-file]))
-(add-to-list 'auto-insert-alist '(".*/projects/.*\\.h$"   . ["insert-home.h" alexott/auto-update-header-file]))
-(add-to-list 'auto-insert-alist '(".*/projects/.*\\.hpp$"   . ["insert-home.h" alexott/auto-update-header-file]))
-(add-to-list 'auto-insert-alist '(".*/projects/.*\\.c$" . ["insert-home.cpp" alexott/auto-update-c-source-file]))
+(add-to-list 'auto-insert-alist '(".*\\.cpp$" . ["insert-home.cpp" alexott/auto-update-c-source-file]))
+(add-to-list 'auto-insert-alist '(".*\\.h$"   . ["insert-home.h" alexott/auto-update-header-file]))
+(add-to-list 'auto-insert-alist '(".*\\.hpp$"   . ["insert-home.h" alexott/auto-update-header-file]))
+(add-to-list 'auto-insert-alist '(".*\\.c$" . ["insert-home.cpp" alexott/auto-update-c-source-file]))
 
 (defun alexott/auto-replace-header-name ()
   (save-excursion

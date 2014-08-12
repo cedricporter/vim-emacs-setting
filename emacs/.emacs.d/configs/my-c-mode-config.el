@@ -16,4 +16,6 @@
 
 (define-key c-mode-base-map "{" 'my-c-mode-insert-lcurly)
 
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;;; my-c-mode-config.el ends here

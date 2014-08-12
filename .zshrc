@@ -314,7 +314,7 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/usr/local/bin/
 export PATH=$ANT_ROOT:$PATH
 
-export NDK_ROOT="$HOME/android-ndk-r9b"
+export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
 if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
     export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
 fi
@@ -325,3 +325,6 @@ random-string()
 }
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# mount the android file image
+function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }

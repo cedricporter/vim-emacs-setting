@@ -7,7 +7,7 @@
  * 
  */
 
-#ifndef ###
-#define ###
+#ifndef ###_
+#define ###_
 
-#endif /* ### */
+#endif /* ###_ */

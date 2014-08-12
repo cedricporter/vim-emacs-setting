@@ -17,3 +17,7 @@ session:
       root: "~/games/everlost/"
       panes:
         - cmd: ["adb logcat"]
+    - name: "librec"
+      root: "~/git/libgamerecorder/jni"
+      panes:
+        - cmd: ["ls"]
