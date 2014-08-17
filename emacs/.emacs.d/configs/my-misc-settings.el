@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-02 13:06:22 Saturday by Hua Liang>
+;; Time-stamp: <2014-08-17 23:53:11 Sunday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -237,11 +237,6 @@
 
 ;;支持emacs和外部程序的拷贝粘贴
 (setq x-select-enable-clipboard t)
-
-;;在标题栏提示当前位置
-(setq frame-title-format
-      (list "ψωETωψ ◎ "
-        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;;使用C-k删掉指针到改行末的所有东西
 (setq-default kill-whole-line t)

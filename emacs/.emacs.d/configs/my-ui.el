@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2014-07-16 14:03:11 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-17 23:54:00 Sunday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -138,6 +138,13 @@
 (add-hook 'dired-after-readin-hook 'my-mode-line-count-lines)
 ;; -------------------- line count --------------------
 
+
+;;在标题栏提示当前位置
+(setq frame-title-format
+      (list "[" (projectile-project-name) "]" " ψωETωψ ◎ "
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
+
 (setq show-buffer-file-name nil)
 (defun toggle-show-buffer-file-name ()
   "toggle show or hide buffer full file name in mode line"
@@ -206,6 +213,8 @@
 		      (propertize (string-strip (format "%s" vc-mode)) 'face 'font-lock-variable-name-face)
 		      "] "
 		      )))
+
+    ;; '(:eval (format "Proj[%s] " (projectile-project-name)))
 
     ;; add the time, with the date and the emacs uptime in the tooltip
     '(:eval (propertize (format-time-string "%H:%M:%S")

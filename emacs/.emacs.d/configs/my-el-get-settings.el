@@ -1,15 +1,22 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-07-25 14:50:11 Friday by Hua Liang>
+;; Time-stamp: <2014-08-18 00:10:47 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
+;; (unless (require 'el-get nil 'noerror)
+;;   (with-current-buffer
+;;       (url-retrieve-synchronously
+;;        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+;;     (let (el-get-master-branch)
+;;       (goto-char (point-max))
+;;       (eval-print-last-sexp))))
+
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
+   (lambda (s)
+     (end-of-buffer)
+     (eval-print-last-sexp))))
 
 ;; temp
 (require 'undo-tree)
@@ -19,62 +26,32 @@
 
 (require 'el-get-status)
 
-;; now either el-get is `require'd already, or have been `load'ed by the
-;; el-get installer.
+;; set local recipes, el-get-sources should only accept PLIST element
+
 (setq
  el-get-sources
- '(el-get				; el-get is self-hosting
-   escreen            			; screen for emacs, C-\ C-h
-   php-mode-improved			; if you're into php...
-   rainbow-mode				; show color
-   rainbow-delimiters
-   graphviz-dot-mode
-   ;; nrepl
-   slime
-   coffee-mode
-   htmlize
-   ;; undo-tree
-   ;; yascroll
-   full-ack
-   scss-mode
-   ascii
-   autopair
-   eassist
-   yaml-mode
-   puppet-mode
-   quickrun
-   date-calc
-   highlight-parentheses
-   flymake-cursor
-   browse-kill-ring
-   browse-kill-ring+
-   xml-rpc
-   second-sel
-   xcscope
-   xcscope+
-   tabbar
-   google-c-style
-   ;; diminish
-   mmm-mode
-   ;;python-magic
-   dired-details
-   dired-details+
-   ;; ido-ubiquitous
-   python-mode
-   gtags
-   json
-   any-ini-mode
-   apache-mode
+ '(
+   (:name projectile
+	  :after (progn
+		   (projectile-global-mode)
+		   (setq projectile-enable-caching t)
+		   (persp-mode)
+		   (require 'persp-projectile)
+		   ;; (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
 
-   rope
-   ropemacs
-   ropemode
-   pymacs
+		   (global-set-key (kbd "C-c h") 'projectile-find-file)
+		   ))
 
-   csharp-mode
-
-   go-mode
-
+   (:name flx
+	  :after (progn
+		   (require 'flx-ido)
+		   (ido-mode 1)
+		   (ido-everywhere 1)
+		   (flx-ido-mode 1)
+		   ;; disable ido faces to see flx highlights.
+		   (setq ido-enable-flex-matching t)
+		   (setq ido-use-faces nil)
+		   ))
    
    (:name lua-mode
 	  :after (progn
@@ -99,7 +76,6 @@
                     ;; (turn-on-pbcopy)
                     ))
 
-   showtip
    (:name sdcv
           :after (progn
                    (setq sdcv-dictionary-simple-list '("朗道英汉字典5.0"
@@ -268,11 +244,6 @@
    (:name auto-complete
 	  :after (load "~/.emacs.d/configs/my-autocomplete-settings.el"))
 
-   auto-complete-emacs-lisp
-   auto-complete-latex
-   auto-complete-css
-   auto-complete-etags
-
    (:name yasnippet
 	  :after (progn
 		   (load "~/.emacs.d/configs/my-yasnippet-settings.el")))
@@ -332,7 +303,6 @@
 		   (global-set-key (kbd "M-l") 'ace-jump-mode)
 		   ))
 
-   helm-ls-git
    (:name helm
 	  :after (progn
 		   (require 'helm-config)
@@ -341,7 +311,7 @@
 		   (setq helm-idle-delay 0.1)
 		   (setq helm-input-idle-delay 0.1)
                    ;; (global-set-key (kbd "C-x b") 'helm-mini)
-                   (global-set-key (kbd "C-x b") 'helm-for-files)
+                   (global-set-key (kbd "C-x b") 'helm-projectile)
                    (global-set-key (kbd "C-x C-b") 'switch-to-buffer)
 		   (global-set-key (kbd "C-c i") 'helm-imenu)
 		   (loop for ext in '("\\.swf$" "\\.elc$" "\\.pyc$" "\\.odt$" "\\.pdf$")
@@ -424,18 +394,87 @@
 
                          ))))
 
-   )
-
-
    ;; (:name highlight-indentation
    ;;        after: (progn
    ;;                 (add-hook 'python-mode-hook 'highlight-indentation)))
 
- )
+   ))
 
-;; 完全同步，初始化的顺序严格按照el-get-sources中的顺序完成
-(el-get 'sync (mapcar 'el-get-source-name el-get-sources))
+;; now set our own packages
+(setq
+ my:el-get-packages
+ '(el-get				; el-get is self-hosting
+   ;; diminish
+   ;; ido-ubiquitous
+   ;; nrepl
+   ;; undo-tree
+   ;; yascroll
+   ;;python-magic
 
+   showtip
+   perspective
+   auto-complete-emacs-lisp
+   auto-complete-latex
+   auto-complete-css
+   auto-complete-etags
+   ag
+   any-ini-mode
+   anzu
+   apache-mode
+   ascii
+   auto-complete			; complete as you type with overlays
+   autopair
+   browse-kill-ring
+   browse-kill-ring+
+   coffee-mode
+   color-theme		                ; nice looking emacs
+   color-theme-tango
+   csharp-mode
+   date-calc
+   dired-details
+   dired-details+
+   eassist
+   ein
+   escreen            			; screen for emacs, C-\ C-h
+   flymake-cursor
+   full-ack
+   go-mode
+   google-c-style
+   graphviz-dot-mode
+   gtags
+   highlight-parentheses
+   htmlize
+   json
+   mmm-mode
+   php-mode-improved			; if you're into php...
+   puppet-mode
+   pymacs
+   python-mode
+   quickrun
+   rainbow-delimiters
+   rainbow-mode				; show color
+   rope
+   ropemacs
+   ropemode
+   scss-mode
+   second-sel
+   slime
+   switch-window			; takes over C-x o
+   tabbar
+   xcscope
+   xcscope+
+   xml-rpc
+   yaml-mode
+   helm-ls-git
+   zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
+))
+
+(setq my:el-get-packages
+      (append my:el-get-packages
+              (mapcar #'el-get-source-name el-get-sources)))
+
+;; install new packages and init already installed packages
+(el-get 'sync my:el-get-packages)
 
 ;; 这些貌似没有正常加载，所以手动加载它们
 (load-library "sdcv")

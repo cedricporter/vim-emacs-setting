@@ -120,6 +120,7 @@ alias svn_br='svn ls -v $(svn_repo)/branches'
 alias gr='gitroot'
 alias gs='git status'
 alias gp='git push'
+alias gf='git flow'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gcam='git commit -am '
@@ -136,6 +137,8 @@ alias rgp='rake generate && rake preview'
 
 alias ipy='ipython'
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack '
+
+alias ag='\ag --pager "less -R"'
 
 alias sc='screen'
 alias scb='screen -dr normaltask || screen -S normaltask'
