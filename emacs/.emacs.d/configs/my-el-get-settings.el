@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-18 09:41:39 Monday by Hua Liang>
+;; Time-stamp: <2014-08-18 23:57:32 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -33,12 +33,25 @@
    (:name projectile
 	  :after (progn
 		   (projectile-global-mode)
-		   (setq projectile-enable-caching t)
+		   ;; (setq projectile-enable-caching t)
+
 		   (persp-mode)
 		   (require 'persp-projectile)
+
 		   ;; (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
 
 		   (global-set-key (kbd "C-c h") 'projectile-find-file)
+
+		   (setq projectile-globally-ignored-directories (append
+		   						  '(".ropeproject/")
+		   						  projectile-globally-ignored-directories))
+		   (setq projectile-globally-ignored-files (append
+							    '("*.svn-base" "*.o" "*.pyc" ".DS_Store"
+							      "*.swp" "GPATH" "GRTAGS" "GTAGS"
+							      ".emacs.desktop" ".emacs.desktop.lock"
+							      )
+							    projectile-globally-ignored-files))
+
 		   ))
 
    (:name flx
@@ -56,7 +69,7 @@
 	  :after (progn
 		   (global-undo-tree-mode)
 		   ))
-   
+
    (:name lua-mode
 	  :after (progn
 		   (setq lua-indent-level 4)
@@ -379,13 +392,13 @@
 						     ("m" "~/git/mg-channel")
 						     ("b" "~/svn/vipbar")
 						     ("n" "~/git/vip-bar-b2b")
-                                                     
+
 						     ("w" "~/cedricporter@gmail.com/weekly")
 						     ("o" "~/octopress")
-                                                     
+
 						     ("l" "~/projects/learn-lua/")
 						     ("e" "~/games/everlost")
-                                                     
+
 						     ))
 			 (while session-key-dir-map
 			   (lexical-let* ((item (car session-key-dir-map))
@@ -416,6 +429,7 @@
    ;;python-magic
 
    showtip
+   git-timemachine
    perspective
    auto-complete-emacs-lisp
    auto-complete-latex
