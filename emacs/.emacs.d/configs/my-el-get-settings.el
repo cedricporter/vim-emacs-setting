@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-18 00:10:47 Monday by Hua Liang>
+;; Time-stamp: <2014-08-18 09:41:39 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -19,8 +19,6 @@
      (eval-print-last-sexp))))
 
 ;; temp
-(require 'undo-tree)
-(global-undo-tree-mode)
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-flymake")
 (load "~/.emacs.d/plugins/emacs-flymake/flymake.el")
 
@@ -31,6 +29,7 @@
 (setq
  el-get-sources
  '(
+   ;; `C-c p C-h` to get all key binding
    (:name projectile
 	  :after (progn
 		   (projectile-global-mode)
@@ -51,6 +50,11 @@
 		   ;; disable ido faces to see flx highlights.
 		   (setq ido-enable-flex-matching t)
 		   (setq ido-use-faces nil)
+		   ))
+
+   (:name undo-tree
+	  :after (progn
+		   (global-undo-tree-mode)
 		   ))
    
    (:name lua-mode
@@ -477,5 +481,4 @@
 (el-get 'sync my:el-get-packages)
 
 ;; 这些貌似没有正常加载，所以手动加载它们
-(load-library "sdcv")
 (load-library "python-mode")
