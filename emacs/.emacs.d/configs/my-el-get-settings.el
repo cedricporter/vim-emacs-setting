@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-18 23:57:32 Monday by Hua Liang>
+;; Time-stamp: <2014-08-19 09:53:52 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -63,6 +63,32 @@
 		   ;; disable ido faces to see flx highlights.
 		   (setq ido-enable-flex-matching t)
 		   (setq ido-use-faces nil)
+		   ))
+
+   (:name guide-key
+	  :after (progn
+		   (guide-key-mode 1)  ; Enable guide-key-mode
+		   ;; (setq guide-key/idle-delay 0.1)
+
+		   (defun guide-key/my-hook-function-for-python-mode ()
+		     (guide-key/add-local-guide-key-sequence "C-c")
+		     (guide-key/add-local-highlight-command-regexp "rope-")
+		     (guide-key/add-local-highlight-command-regexp "py-")
+		     (guide-key/add-local-highlight-command-regexp "python-"))
+		   (add-hook 'python-mode-hook 'guide-key/my-hook-function-for-python-mode)
+
+		   (defun guide-key/my-hook-function-for-org-mode ()
+		     (guide-key/add-local-guide-key-sequence "C-c")
+		     (guide-key/add-local-guide-key-sequence "C-c C-x")
+		     (guide-key/add-local-highlight-command-regexp "org-"))
+		   (add-hook 'org-mode-hook 'guide-key/my-hook-function-for-org-mode)
+
+		   (setq guide-key/guide-key-sequence
+			 '("C-x r" "C-x 4" "C-x 5" "C-c p"
+			   (org-mode "C-c C-x")
+			   (outline-minor-mode "C-c @")
+			   (markdown-mode "C-c C-a")
+			   ))
 		   ))
 
    (:name undo-tree
