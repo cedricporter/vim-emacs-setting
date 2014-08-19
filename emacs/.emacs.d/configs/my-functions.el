@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-03-01 22:50:07 Saturday by Hua Liang>
+;; Time-stamp: <2014-08-19 21:52:25 Tuesday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -20,7 +20,13 @@ opinion. "
 	  (concat (make-temp-name (concat dir_path (buffer-name) "_" (format-time-string "%Y%m%d_%H%M%S_"))) ".png"))
 	 (file-name (my-base-name full-file-name))
 	 )
-    (call-process-shell-command "scrot" nil nil nil (concat "-s " "\"" full-file-name "\""))
+
+    ;; For Linux
+    ;; (call-process-shell-command "scrot" nil nil nil (concat "-s " "\"" full-file-name "\""))
+
+    ;; For Mac OS X
+    (call-process-shell-command "screencapture" nil nil nil (concat "-i " "\"" full-file-name "\""))
+    (call-process-shell-command "convert" nil nil nil (concat "\"" full-file-name "\"" " -resize " "\" 800x> \"" "\"" full-file-name "\""))
     file-name
     ))
 
@@ -46,10 +52,16 @@ opinion. "
   (message dst-dir)
   (let* ((full-file-name) (file-name) (ext) (new-file-name))
     (setq full-file-name (get-clipboard-contents-as-string))
-    (if (eq (search "file://" full-file-name) 0)
-	(setq full-file-name (substring full-file-name 7))
+    ;; Copy QQ screenshot file for Mac OS X
+    (when (string-equal system-type "darwin")
+	(setq full-file-name (concat "~/Pictures/com.tencent.ScreenCapture/" full-file-name))
+	(message full-file-name)
       )
-    (if (eq (search "/" full-file-name) 0)
+    (when (eq (search "file://" full-file-name) 0)
+	(setq full-file-name (substring full-file-name 7))
+	(message full-file-name)
+      )
+    (if (or (eq (search "/" full-file-name) 0) (string-equal system-type "darwin"))
 	(progn
 	  (setq file-name (my-base-name full-file-name))
 	  (setq ext (concat "." (file-name-extension file-name)))

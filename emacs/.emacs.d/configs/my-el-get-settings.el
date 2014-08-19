@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 20:19:05 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-19 20:25:06 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -81,6 +81,7 @@
 			   (outline-minor-mode "C-c @")
 			   (markdown-mode "C-c C-a")
 			   ))
+		   (setq guide-key/recursive-key-sequence-flag t)
 		   ))
 
    (:name undo-tree

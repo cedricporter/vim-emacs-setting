@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 00:03:13 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-19 21:47:19 Tuesday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -123,7 +123,7 @@
 (global-set-key (kbd "C-x C-i") 'ibuffer)
 ; hide all buffers starting with an asterisk. http://www.emacswiki.org/emacs/IbufferMode
 (require 'ibuf-ext)
-(add-to-list 'ibuffer-never-show-predicates "^\\*")
+;; (add-to-list 'ibuffer-never-show-predicates "^\\*")
 
 ;; Mark Set
 (global-unset-key (kbd "C-SPC"))

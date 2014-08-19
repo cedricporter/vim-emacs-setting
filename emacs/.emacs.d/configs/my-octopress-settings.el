@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-02-03 16:14:53 Monday by Hua Liang>
+;; Time-stamp: <2014-08-19 21:36:00 Tuesday by Hua Liang>
 
 ;; ==================== octopress ====================
 (require 'octopress)
@@ -99,9 +99,20 @@
     (message dir_path)
     ))
 
+
 ;; Insert Image From Clip Board
 (defun markdown-insert-image-from-clipboard (arg)
   "Insert an image from clipboard and copy it to desired path"
+  (interactive "P")
+  (let ((url (concat octopress-image-url (copy-file-from-clipboard-to-path (get-octopress-image-dir)))))
+    (if arg
+	(insert "![](" url ")")
+      (insert "{% img " url " %}"))))
+
+
+;; Insert QQ Image From Clip Board
+(defun markdown-insert-qq-image-from-clipboard (arg)
+  "Insert an QQ image from clipboard and copy it to desired path"
   (interactive "P")
   (let ((url (concat octopress-image-url (copy-file-from-clipboard-to-path (get-octopress-image-dir)))))
     (if arg
@@ -114,6 +125,7 @@
 	     (define-key markdown-mode-map (kbd "C-c d") 'add-strike-for-list)
 	     (define-key markdown-mode-map (kbd "C-c C-s s") 'markdown-screenshot)
 	     (define-key markdown-mode-map (kbd "C-c C-s i") 'markdown-insert-image-from-clipboard)
+	     (define-key markdown-mode-map (kbd "C-c C-s I") 'markdown-insert-qq-image-from-clipboard)
 	     ))
 
 ;; (provide 'my-octopress-settings)
