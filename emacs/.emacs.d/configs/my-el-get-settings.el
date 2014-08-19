@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 09:53:52 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-19 10:09:28 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -495,6 +495,7 @@
    pymacs
    python-mode
    quickrun
+   ibuffer-vc
    rainbow-delimiters
    rainbow-mode				; show color
    rope
