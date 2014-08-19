@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-17 23:53:11 Sunday by Hua Liang>
+;; Time-stamp: <2014-08-19 00:03:13 Tuesday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -472,6 +472,12 @@ occurence of CHAR."
 ;; ==================== revert-buffer ====================
 (global-set-key (kbd "C-x g r") 'revert-buffer-with-coding-system)
 ;; -------------------- revert-buffer --------------------
+
+
+;; ==================== start scratch ====================
+(setq initial-major-mode 'org-mode)
+(setq initial-scratch-message nil)
+;; -------------------- start scratch --------------------
 
 
 ;; (provide 'my-misc-settings)
