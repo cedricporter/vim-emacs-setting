@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2012-12-31 16:37:14 by Hua Liang>
+;; Time-stamp: <2014-08-20 09:21:01 Wednesday by Hua Liang>
 
 ;; ==================== lisp ====================
 (require 'slime)
@@ -28,5 +28,6 @@
 			    (push 'ac-source-slime ac-sources)
 			    (auto-complete-mode)))
 ;; -------------------- lisp --------------------
+
 
 ;; (provide 'my-lisp-settings)

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 21:47:19 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-20 09:19:06 Wednesday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -478,6 +478,8 @@ occurence of CHAR."
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
 ;; -------------------- start scratch --------------------
+
+
 
 
 ;; (provide 'my-misc-settings)
