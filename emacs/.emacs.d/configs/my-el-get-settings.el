@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 20:25:06 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-20 13:00:17 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -7,7 +7,8 @@
   (url-retrieve
    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
    (lambda (s)
-     (end-of-buffer)
+     ;; (end-of-buffer)
+     (goto-char (point-max))
      (eval-print-last-sexp))))
 
 ;; temp
@@ -94,12 +95,12 @@
 		   (setq lua-indent-level 4)
 		   ))
 
+   ;; dash emacs integrate 
    (:name dash-at-point
           :after (progn
 		   (global-set-key (kbd "C-c d") 'dash-at-point)
 		   (global-set-key (kbd "C-c e") 'dash-at-point-with-docset)
 		   ))
-
 
    (:name switch-window			; takes over C-x o
 	  :after (progn
@@ -343,7 +344,7 @@
 	  :after (progn
 		   (require 'helm-config)
 		   (require 'helm-files)
-                   (require 'helm-ls-git)
+                   ;(require 'helm-ls-git)
 		   (setq helm-idle-delay 0.1)
 		   (setq helm-input-idle-delay 0.1)
                    ;; (global-set-key (kbd "C-x b") 'helm-mini)
@@ -354,6 +355,14 @@
 			 do (add-to-list 'helm-c-boring-file-regexp-list ext))
 		   ))
 
+   ;; helm-ls-git  ;; this is replaced by projectile
+
+   (:name helm-ag
+	  :after (progn
+		   (global-set-key (kbd "M-g .") 'helm-ag)
+		   (global-set-key (kbd "M-g ,") 'helm-ag-pop-stack)
+		   (setq helm-ag-insert-at-point 'symbol)
+		   ))
 
    (:name emacs-helm-gtags
           :website "https://github.com/syohex/emacs-helm-gtags.git"
@@ -366,10 +375,11 @@
 
    (:name buffer-move			; have to add your own keys
 	  :after (progn
-		   (global-set-key (kbd "<C-S-up>")     'buf-move-up)
-		   (global-set-key (kbd "<C-S-down>")   'buf-move-down)
-		   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
-		   (global-set-key (kbd "<C-S-right>")  'buf-move-right)))
+		   (global-set-key (kbd "<C-s-up>")     'buf-move-up)
+		   (global-set-key (kbd "<C-s-down>")   'buf-move-down)
+		   (global-set-key (kbd "<C-s-left>")   'buf-move-left)
+		   (global-set-key (kbd "<C-s-right>")  'buf-move-right)
+		   ))
 
    (:name smex				; a better (ido like) M-x
 	  :after (progn
@@ -434,6 +444,20 @@
    ;;        after: (progn
    ;;                 (add-hook 'python-mode-hook 'highlight-indentation)))
 
+   ;; A minor mode which displays current match and total matches information 
+   ;; in the mode-line in various search mode.
+   ;; https://github.com/syohex/emacs-anzu
+   (:name anzu
+	  :after (progn
+		   (global-anzu-mode +1)
+		   (global-set-key (kbd "M-%") 'anzu-query-replace)
+		   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+		   (defun my/anzu-update-func (here total)
+		     (propertize (format "<%d/%d>" here total)
+				 'face '((:foreground "yellow" :weight bold))))
+		   (setq anzu-mode-line-update-function 'my/anzu-update-func)
+		   ))
+
    ))
 
 ;; now set our own packages
@@ -456,7 +480,6 @@
    auto-complete-etags
    ag
    any-ini-mode
-   anzu
    apache-mode
    ascii
    auto-complete			; complete as you type with overlays
@@ -503,7 +526,7 @@
    xcscope+
    xml-rpc
    yaml-mode
-   helm-ls-git
+   ;helm-ls-git
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
 ))
 
