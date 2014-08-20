@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 13:33:01 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-20 13:34:05 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -470,6 +470,8 @@
 		   ;; (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
 		   (add-to-list 'git-gutter:update-commands 'other-window)
 		   (add-to-list 'git-gutter:update-commands 'switch-window)
+		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
+		   (add-to-list 'git-gutter:update-commands 'tabbar-forward)
 
 		   (set-face-background 'git-gutter:modified "purple") ;; background color
 		   (set-face-foreground 'git-gutter:added "yellow")
