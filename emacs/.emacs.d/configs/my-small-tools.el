@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-07-23 09:18:29 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-20 21:41:39 Wednesday by Hua Liang>
 
 
 (autoload 'smali-mode "smali-mode" "Major mode for editing and viewing smali issues" t)
@@ -231,6 +231,12 @@
 (global-set-key (kbd "C-x g e") 'eval-and-replace)
 ;; -------------------- eval-and-replace --------------------
 
+
+;; ==================== insert time ====================
+(defun insert-current-date ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+;; -------------------- insert time --------------------
 
 
 ;; (provide 'my-small-tools)
