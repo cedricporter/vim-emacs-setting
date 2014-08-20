@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 14:44:18 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-20 14:58:42 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -373,6 +373,7 @@
           :depends helm
           )
 
+   ;; List match lines to another buffer.
    ;; https://github.com/ShingoFukuyama/helm-swoop
    (:name helm-swoop
 	  :after (progn
@@ -503,6 +504,17 @@
 		   ;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 		   ))
 
+   ;; Minor mode for editing parentheses. Strict parenthesis auto-pairing and easy depth adjustment.
+   ;; Compatible with Lisp/Scheme/Clojure.
+   (:name paredit
+	  :after (progn 
+		   (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+		   (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+		   (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+		   (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+		   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+		   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+		   ))
 
    ))
 
