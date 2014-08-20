@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 13:34:05 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-20 14:44:18 Wednesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -373,6 +373,13 @@
           :depends helm
           )
 
+   ;; https://github.com/ShingoFukuyama/helm-swoop
+   (:name helm-swoop
+	  :after (progn
+		   (global-set-key (kbd "M-i") 'helm-swoop)
+		   (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+		   ))
+
    (:name buffer-move			; have to add your own keys
 	  :after (progn
 		   (global-set-key (kbd "<C-s-up>")     'buf-move-up)
@@ -453,8 +460,8 @@
 		   (global-set-key (kbd "M-%") 'anzu-query-replace)
 		   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
 		   (defun my/anzu-update-func (here total)
-		     (propertize (format "<%d/%d>" here total)
-				 'face '((:foreground "yellow" :weight bold))))
+		     (propertize (format "<%d/%d> " here total)
+				 'face '((:foreground "chocolate1" :weight bold))))
 		   (setq anzu-mode-line-update-function 'my/anzu-update-func)
 		   ))  
 
@@ -467,7 +474,7 @@
 		   ;; If you would like to use git-gutter.el and linum-mode
 		   (git-gutter:linum-setup)
 
-		   ;; (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+		   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
 		   (add-to-list 'git-gutter:update-commands 'other-window)
 		   (add-to-list 'git-gutter:update-commands 'switch-window)
 		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
@@ -485,9 +492,9 @@
 		   (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
 		   ;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
 
-		   ;; ;; Jump to next/previous hunk
-		   ;; (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
-		   ;; (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+		   ;; Jump to next/previous hunk
+		   (global-set-key (kbd "C-x g p") 'git-gutter:previous-hunk)
+		   (global-set-key (kbd "C-x g n") 'git-gutter:next-hunk)
 
 		   ;; ;; Stage current hunk
 		   ;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
