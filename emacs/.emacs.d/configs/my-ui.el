@@ -1,7 +1,7 @@
 ;;; my-ui.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2014-08-18 09:23:47 Monday by Hua Liang>
+;; Time-stamp: <2014-08-24 15:34:20 Sunday by Hua Liang>
 
 ;;====================== time setting =====================
 ;;启用时间显示设置，在minibuffer上面的那个杠上（忘了叫什么来着）
@@ -204,9 +204,11 @@
 
     ;; the current major mode for the buffer.
     "["
-
+    ;; mode-line-modes ;; too much infomation
+    
     '(:eval (propertize "%m" 'face 'font-lock-string-face
-			'help-echo buffer-file-coding-system))
+    			'help-echo buffer-file-coding-system))
+    
     "] "
 
     '(:eval (when vc-mode
