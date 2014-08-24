@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 20:00:23 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-24 14:59:04 Sunday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -7,6 +7,10 @@
       (setq mac-option-modifier 'super)
       (setq mac-command-modifier 'meta)
       )
+  (progn
+    ;; set for iTerm 2 because `M-space` can't trigger
+    (global-set-key (kbd "M-'") 'set-mark-command)
+    )
   )
 
 ;; (setq mac-option-modifier 'super)
