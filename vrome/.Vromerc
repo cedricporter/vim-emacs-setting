@@ -2,7 +2,10 @@ map J gT
 map K gt
 map d dc
 
-set qm_f=http://cloud.feedly.com/#category%2F%E5%85%B3%E6%B3%A8%E7%9A%84%E5%8D%9A%E5%AE%A2
 set qm_e=http://everet.org
-set qm_g=https://github.com/cedricporter?tab=repositories
+set qm_g=https://github.com/cedricporter
 set qm_n=http://everet.org/notes
+set qm_ss=https://www.stupidet.com/
+set qm_sa=https://www.stupidet.com/ghost/
+
+set disablesites=mail.google.com, reader.google.com, feedly.com
