@@ -2,10 +2,15 @@ map J gT
 map K gt
 map d dc
 
+"== add custom quick marks ==
+set qm_ce=chrome://extensions
 set qm_e=http://everet.org
 set qm_g=https://github.com/cedricporter
 set qm_n=http://everet.org/notes
 set qm_ss=https://www.stupidet.com/
 set qm_sa=https://www.stupidet.com/ghost/
+" custom quick mark triggering JS (view below)
+" set qm_r=::javascript::CustomMark.readLater();
+
 
 set disablesites=mail.google.com, reader.google.com, feedly.com
