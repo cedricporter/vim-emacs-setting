@@ -16,8 +16,13 @@ session:
     - name: "logcat"
       root: "~/games/everlost/"
       panes:
-        - cmd: ["adb logcat"]
+        - cmd: ["logcat-color"]
     - name: "librec"
       root: "~/git/libgamerecorder/jni"
       panes:
+        - cmd: ["ls"]
+    - name: "upload"
+      root: "~/git/upload-server/"
+      panes:
+        - cmd: ["mac-auto-deploy . gzhualiang@dev35:~/git/upload-server"]
         - cmd: ["ls"]

@@ -1,6 +1,6 @@
 map J gT
 map K gt
-map d dc
+" map d dc
 
 "== add custom quick marks ==
 set qm_1=chrome://extensions
