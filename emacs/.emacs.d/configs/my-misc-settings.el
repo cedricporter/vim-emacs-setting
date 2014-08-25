@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-24 14:59:04 Sunday by Hua Liang>
+;; Time-stamp: <2014-08-24 15:57:10 Sunday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -132,6 +132,7 @@
 ;; Mark Set
 (global-unset-key (kbd "C-SPC"))
 (global-set-key (kbd "M-SPC") 'set-mark-command)
+(global-set-key (kbd "M-'") 'set-mark-command)
 
 
 ;; eliminate long "yes" or "no" prompts

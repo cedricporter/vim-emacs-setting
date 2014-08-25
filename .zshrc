@@ -257,6 +257,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 alias matrix='tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
 
+
+if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
+    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
+if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+if [ -d "/usr/local/bin" ] ; then
+    export PATH="/usr/local/bin:$PATH"
+fi
+
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -273,15 +285,7 @@ fi
 if [ -d "$HOME/npm/bin" ] ; then
     PATH="$HOME/npm/bin:$PATH"
 fi
-if [ -d "/usr/local/opt/coreutils/libexec/gnubin" ] ; then
-    export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-fi
-if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
-    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-fi
-if [ -d "/usr/local/bin" ] ; then
-    export PATH="/usr/local/bin:$PATH"
-fi
+
 
 # export LC_CTYPE="zh_CN.UTF-8"
 
