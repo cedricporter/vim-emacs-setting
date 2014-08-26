@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-24 15:57:10 Sunday by Hua Liang>
+;; Time-stamp: <2014-08-26 15:57:25 Tuesday by Hua Liang>
 
 ;; not change key in daemon mode because I switch alt and command in iterm2
 (if (not (and (fboundp 'daemonp) (daemonp)))
@@ -137,6 +137,20 @@
 
 ;; eliminate long "yes" or "no" prompts
 (fset 'yes-or-no-p 'y-or-n-p)
+
+
+;; ==================== no graphic dialog ====================
+;; http://superuser.com/questions/125569/how-to-fix-emacs-popup-dialogs-on-mac-os-x
+(defadvice yes-or-no-p (around prevent-dialog activate)
+  "Prevent yes-or-no-p from activating a dialog"
+  (let ((use-dialog-box nil))
+    ad-do-it))
+(defadvice y-or-n-p (around prevent-dialog-yorn activate)
+  "Prevent y-or-n-p from activating a dialog"
+  (let ((use-dialog-box nil))
+    ad-do-it))
+;; -------------------- no graphic dialog --------------------
+
 
 ;; ;; 防止页面滚动时跳动，可以很好的看到上下文。
 ;; (setq scroll-margin 3

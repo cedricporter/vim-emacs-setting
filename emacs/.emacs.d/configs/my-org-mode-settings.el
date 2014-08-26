@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2013-03-21 21:27:32 Thursday by Hua Liang>
+;; Time-stamp: <2014-08-26 09:35:34 Tuesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -87,7 +87,7 @@
 	 :base-extension "org"
 	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
-	 :publishing-function org-publish-org-to-html
+	 :publishing-function org-html-export-to-html
 	 :headline-levels 4             ; Just the default for this project.
          :section-numbers t
 	 :auto-preamble t
@@ -120,7 +120,7 @@
 	 :publishing-directory "~/octopress/source/wiki/"
 	 :sub-superscript ""
 	 :recursive t
-	 :publishing-function org-publish-org-to-html
+	 :publishing-function org-html-export-to-html
 	 :headline-levels 4
 	 :html-extension "markdown"
 	 :body-only t
