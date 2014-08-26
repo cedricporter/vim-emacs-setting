@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 14:58:42 Wednesday by Hua Liang>
+;; Time-stamp: <2014-08-26 19:16:07 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -167,6 +167,18 @@
           :description "Explains the meaning of an HTTP status code in minibuffer."
           :type github
           :pkgname "rspivak/httpcode.el")
+   
+   (:name vimrc-mode
+          :website "https://github.com/mcandre/vimrc-mode"
+          :description "Enables syntax highlighting for .vimrc/_vimrc files"
+          :type github
+          :pkgname "mcandre/vimrc-mode"
+	  :after (progn
+		   (add-to-list 'auto-mode-alist '(".vim\\(rc\\)?$" . vimrc-mode))
+		   (add-to-list 'auto-mode-alist '(".pentadactylrc$" . vimrc-mode))
+		   (add-to-list 'auto-mode-alist '(".Vromerc$" . vimrc-mode))
+		   )
+	  )
 
    (:name vlf
 	  :website "https://github.com/m00natic/vlfi"
