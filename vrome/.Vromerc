@@ -12,4 +12,4 @@ set qm_a=https://www.stupidet.com/ghost/
 " set qm_r=::javascript::CustomMark.readLater();
 
 
-set disablesites=mail.google.com, reader.google.com, feedly.com
+set disablesites=mail.google.com, reader.google.com, feedly.com, www.stupidet.com
