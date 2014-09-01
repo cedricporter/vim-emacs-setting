@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-26 09:35:34 Tuesday by Hua Liang>
+;; Time-stamp: <2014-08-28 14:18:13 Thursday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -10,22 +10,22 @@
 (require 'org)
 (define-key org-mode-map (kbd "C-<tab>") 'pcomplete)
 
-;; ==================== Fix yasnippet's TAB ====================
-(add-hook 'org-mode-hook
-          (lambda ()
-            (org-set-local 'yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field-or-maybe-expand)))
+;; ;; ==================== Fix yasnippet's TAB ====================
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (org-set-local 'yas/trigger-key [tab])
+;;             (define-key yas/keymap [tab] 'yas/next-field-or-maybe-expand)))
 
-(defun yas/org-very-safe-expand ()
-  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+;; (defun yas/org-very-safe-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-            (define-key yas/keymap [tab] 'yas/next-field)))
-;; -------------------- Fix yasnippet's TAB --------------------
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (make-variable-buffer-local 'yas/trigger-key)
+;;             (setq yas/trigger-key [tab])
+;;             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+;;             (define-key yas/keymap [tab] 'yas/next-field)))
+;; ;; -------------------- Fix yasnippet's TAB --------------------
 
 (add-hook 'org-mode-hook
           (lambda ()
@@ -87,7 +87,7 @@
 	 :base-extension "org"
 	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
-	 :publishing-function org-html-export-to-html
+	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4             ; Just the default for this project.
          :section-numbers t
 	 :auto-preamble t
@@ -120,7 +120,7 @@
 	 :publishing-directory "~/octopress/source/wiki/"
 	 :sub-superscript ""
 	 :recursive t
-	 :publishing-function org-html-export-to-html
+	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4
 	 :html-extension "markdown"
 	 :body-only t

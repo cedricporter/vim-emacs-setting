@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2014-08-17 23:55:16 Sunday by Hua Liang>
+;; Time-stamp: <2014-09-01 10:56:40 Monday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -92,6 +92,8 @@
 (load "~/.emacs.d/configs/my-csharp-mode-config.el")
 
 (load "~/.emacs.d/configs/my-golang-settings.el")
+
+(load "~/.emacs.d/configs/my-hippie-expand.el")
 
 ;; 解决一些global按键绑定被minor给覆盖的问题
 (load "~/.emacs.d/configs/my-minor-key-map.el")
