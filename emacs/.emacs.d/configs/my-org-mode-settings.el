@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-28 14:18:13 Thursday by Hua Liang>
+;; Time-stamp: <2014-09-01 17:48:56 Monday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -27,9 +27,17 @@
 ;;             (define-key yas/keymap [tab] 'yas/next-field)))
 ;; ;; -------------------- Fix yasnippet's TAB --------------------
 
+(defun my-org-publish-current-project ()
+  "change theme to solarized and publish project"
+  (interactive)
+  (if (not (eq theme-current 'solarized-light))
+      (change-color-theme 'solarized-light)
+      )
+  (org-publish-current-project))
+
 (add-hook 'org-mode-hook
           (lambda ()
-            (local-set-key (kbd "<f7>") 'org-publish-current-project)
+            (local-set-key (kbd "<f7>") 'my-org-publish-current-project)
 	    ))
 
 
@@ -88,6 +96,7 @@
 	 :publishing-directory "~/octopress/source/notes/" ; "/ssh:user@host:~/html/notebook/"
 	 :recursive t
 	 :publishing-function org-publish-org-to-html
+	 ;; :publishing-function org-html-publish-to-html
 	 :headline-levels 4             ; Just the default for this project.
          :section-numbers t
 	 :auto-preamble t
@@ -96,13 +105,16 @@
  	 :auto-sitemap t
 	 :sitemap-filename "sitemap.org"
 	 :sitemap-title "Note Entries" ;"Stupid ET's Wiki"
-         :sitemap-sort-files anti-chronologically
+         ;; :sitemap-sort-files anti-chronologically
+         :sitemap-sort-files alphabetically
          :sitemap-sort-folders last
-         :sitemap-file-entry-format "「%d」 -  %t"
+         ;; :sitemap-file-entry-format "「%d」 -  %t"
+         :sitemap-file-entry-format "%t"
 	 :completion-function (lambda ()
 				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
 				 )
-         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"
+         ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"
+         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/solarized-light.min.css\" />"
 	 )
 	("org-wiki-static"
 	 :base-directory "~/octopress/org-wiki/"
@@ -113,18 +125,18 @@
 	 )
 	("wiki" :components ("org-wiki-notes" "org-wiki-static"))
 
-	;; new
-	("owiki"
-	 :base-directory "~/octopress/source/_org_posts/"
-	 :base-extension "org"
-	 :publishing-directory "~/octopress/source/wiki/"
-	 :sub-superscript ""
-	 :recursive t
-	 :publishing-function org-publish-org-to-html
-	 :headline-levels 4
-	 :html-extension "markdown"
-	 :body-only t
-	 )
+	;; ;; new
+	;; ("owiki"
+	;;  :base-directory "~/octopress/source/_org_posts/"
+	;;  :base-extension "org"
+	;;  :publishing-directory "~/octopress/source/wiki/"
+	;;  :sub-superscript ""
+	;;  :recursive t
+	;;  :publishing-function org-publish-org-to-html
+	;;  :headline-levels 4
+	;;  :html-extension "markdown"
+	;;  :body-only t
+	;;  )
 
 	))
 ;; -------------------- wiki --------------------

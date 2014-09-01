@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-26 19:16:07 Tuesday by Hua Liang>
+;; Time-stamp: <2014-09-01 17:00:16 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -95,7 +95,7 @@
 		   (setq lua-indent-level 4)
 		   ))
 
-   ;; dash emacs integrate 
+   ;; dash emacs integrate
    (:name dash-at-point
           :after (progn
 		   (global-set-key (kbd "C-c d") 'dash-at-point)
@@ -148,8 +148,10 @@
    (:name flymake-easy
           :type elpa)
 
-   ;; use builtin org-mode
+   ;; ;; not use builtin org-mode
    ;; (:name org-mode
+   ;; 	  ;; :build ("make clean" "make" "make doc"
+   ;; 	  ;; 	  "make INSTALL_INFO=ginstall-info infodir=~/.emacs.d/info/org install-info")
    ;;  	  :prepare (progn
    ;;  		     (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
    ;;  		     ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/contrib/lisp")
@@ -157,7 +159,9 @@
    ;;        :after (progn
    ;;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.2/lisp/org" load-path))
    ;;  		   (setq load-path (remove "/home/cedricporter/my/share/emacs/24.3.50/lisp/org" load-path))
-   ;;  		   (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
+   ;;  		   (setq load-path (remove "/usr/local/share/emacs/24.3/lisp/org" load-path))
+
+   ;;  		   ;; (require-maybe 'ox-odt)	; 如果这里不require一下，在导出那里就没有odt的选项。貌似没有自动加载...
    ;;  		   )
    ;;  	  )
 
@@ -167,7 +171,7 @@
           :description "Explains the meaning of an HTTP status code in minibuffer."
           :type github
           :pkgname "rspivak/httpcode.el")
-   
+
    (:name vimrc-mode
           :website "https://github.com/mcandre/vimrc-mode"
           :description "Enables syntax highlighting for .vimrc/_vimrc files"
@@ -464,7 +468,7 @@
    ;;        after: (progn
    ;;                 (add-hook 'python-mode-hook 'highlight-indentation)))
 
-   ;; A minor mode which displays current match and total matches information 
+   ;; A minor mode which displays current match and total matches information
    ;; in the mode-line in various search mode.
    ;; https://github.com/syohex/emacs-anzu
    (:name anzu
@@ -476,50 +480,50 @@
 		     (propertize (format "<%d/%d> " here total)
 				 'face '((:foreground "chocolate1" :weight bold))))
 		   (setq anzu-mode-line-update-function 'my/anzu-update-func)
-		   ))  
-
-   ;; https://github.com/syohex/emacs-git-gutter
-   (:name git-gutter
-	  :after (progn
-		   ;; If you enable global minor mode
-		   (global-git-gutter-mode t)
-
-		   ;; If you would like to use git-gutter.el and linum-mode
-		   (git-gutter:linum-setup)
-
-		   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
-		   (add-to-list 'git-gutter:update-commands 'other-window)
-		   (add-to-list 'git-gutter:update-commands 'switch-window)
-		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
-		   (add-to-list 'git-gutter:update-commands 'tabbar-forward)
-
-		   (set-face-background 'git-gutter:modified "purple") ;; background color
-		   (set-face-foreground 'git-gutter:added "yellow")
-		   (set-face-foreground 'git-gutter:deleted "red")
-
-		   ;; If you enable git-gutter-mode for some modes
-		   (add-hook 'emacs-lisp-mode-hook 'git-gutter-mode)
-		   (add-hook 'ruby-mode-hook 'git-gutter-mode)
-		   (add-hook 'python-mode-hook 'git-gutter-mode) 
-
-		   (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
-		   ;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
-
-		   ;; Jump to next/previous hunk
-		   (global-set-key (kbd "C-x g p") 'git-gutter:previous-hunk)
-		   (global-set-key (kbd "C-x g n") 'git-gutter:next-hunk)
-
-		   ;; ;; Stage current hunk
-		   ;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
-
-		   ;; ;; Revert current hunk
-		   ;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 		   ))
+
+   ;; ;; https://github.com/syohex/emacs-git-gutter
+   ;; (:name git-gutter
+   ;; 	  :after (progn
+   ;; 		   ;; If you enable global minor mode
+   ;; 		   (global-git-gutter-mode t)
+
+   ;; 		   ;; If you would like to use git-gutter.el and linum-mode
+   ;; 		   (git-gutter:linum-setup)
+
+   ;; 		   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+   ;; 		   (add-to-list 'git-gutter:update-commands 'other-window)
+   ;; 		   (add-to-list 'git-gutter:update-commands 'switch-window)
+   ;; 		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
+   ;; 		   (add-to-list 'git-gutter:update-commands 'tabbar-forward)
+
+   ;; 		   (set-face-background 'git-gutter:modified "purple") ;; background color
+   ;; 		   (set-face-foreground 'git-gutter:added "yellow")
+   ;; 		   (set-face-foreground 'git-gutter:deleted "red")
+
+   ;; 		   ;; If you enable git-gutter-mode for some modes
+   ;; 		   (add-hook 'emacs-lisp-mode-hook 'git-gutter-mode)
+   ;; 		   (add-hook 'ruby-mode-hook 'git-gutter-mode)
+   ;; 		   (add-hook 'python-mode-hook 'git-gutter-mode)
+
+   ;; 		   (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+   ;; 		   ;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+
+   ;; 		   ;; Jump to next/previous hunk
+   ;; 		   (global-set-key (kbd "C-x g p") 'git-gutter:previous-hunk)
+   ;; 		   (global-set-key (kbd "C-x g n") 'git-gutter:next-hunk)
+
+   ;; 		   ;; ;; Stage current hunk
+   ;; 		   ;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+
+   ;; 		   ;; ;; Revert current hunk
+   ;; 		   ;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+   ;; 		   ))
 
    ;; Minor mode for editing parentheses. Strict parenthesis auto-pairing and easy depth adjustment.
    ;; Compatible with Lisp/Scheme/Clojure.
    (:name paredit
-	  :after (progn 
+	  :after (progn
 		   (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 		   (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
 		   (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
@@ -527,6 +531,12 @@
 		   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 		   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 		   ))
+
+   (:name color-theme-solarized
+          :after (progn
+                   (load "~/.emacs.d/configs/my-themes.el")
+                   )
+          )
 
    ))
 
@@ -555,8 +565,6 @@
    browse-kill-ring
    browse-kill-ring+
    coffee-mode
-   color-theme		                ; nice looking emacs
-   color-theme-tango
    csharp-mode
    date-calc
    dired-details

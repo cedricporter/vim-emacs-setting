@@ -1,16 +1,16 @@
 ;;; my-themes.el ---
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-08-02 15:48:35 Friday by Hua Liang>
+;; Time-stamp: <2014-09-01 17:42:05 Monday by Hua Liang>
 
 
 ;;==================== color theme ====================
-(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/")
-(require 'color-theme)
-(load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
+;; (add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0/")
+;; (require 'color-theme)
+;; (load-file "~/.emacs.d/plugins/color-theme-6.6.0/themes/color-theme-library.el")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/zenburn-emacs")
 
 ;; change font key bindings
 (defun change-my-theme (theme-num)
@@ -30,10 +30,16 @@
       (switch-to-buffer origin-buffer)
       ))))
 
-(setq my-theme-list '((1 . color-theme-taylor-et)
-                      (2 . (lambda () (load-theme 'tango t)))
-                      (3 . (lambda () (load-theme 'zenburn t)))
-                      (4 . (lambda () (load-theme 'Amelie t)))
+(setq my-theme-list '(
+                      ;; (1 . color-theme-taylor-et)
+                      ;; (2 . (lambda () (load-theme 'tango t)))
+                      (3 . (lambda ()
+                             (change-color-theme 'zenburn)
+                             ))
+                      ;; (4 . (lambda () (load-theme 'Amelie t)))
+                      (5 . (lambda ()
+                             (change-color-theme 'solarized-light)
+                             ))
                       ))
 
 (dolist (item my-theme-list)
@@ -41,7 +47,8 @@
     (global-set-key (kbd (format "C-c , t %d" theme-num))
                     `(lambda ()
                        (interactive)
-                       (change-my-theme ,theme-num)))))
+                       (change-my-theme ,theme-num)
+                       ))))
 
 (defun set-theme (what-theme)
   (funcall (cdr (assoc what-theme my-theme-list))))

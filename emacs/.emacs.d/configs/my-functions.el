@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-19 21:52:25 Tuesday by Hua Liang>
+;; Time-stamp: <2014-09-01 17:38:55 Monday by Hua Liang>
 
 
 ;; ==================== My Functions ====================
@@ -96,6 +96,14 @@ opinion. "
            (add-text-properties start-pos (point) startup-status-face)
            (insert "]\n"))))
      require-result))
+
+(setq theme-current nil)
+(defun change-color-theme (theme)
+  "change and save theme"
+  (interactive "P")
+  (load-theme theme t)
+  (setq theme-current theme)
+  )
 
 ;; -------------------- My Functions --------------------
 
