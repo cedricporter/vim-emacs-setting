@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-01 17:00:16 Monday by Hua Liang>
+;; Time-stamp: <2014-09-01 19:55:13 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -335,14 +335,17 @@
 
    (:name nginx-mode
 	  :after (progn
-		   (add-hook
-		    'find-file-hook
-		    '(lambda ()
-		       (when (string-match
-			      "^\\(/etc/nginx\\|/home/cedricporter/my\\).*?\\.\\(com\\|org\\|net\\|conf\\)$"
-			      (buffer-file-name))
-			 (nginx-mode)
-			 )))))
+		   (add-to-list 'auto-mode-alist '("/etc/nginx/sites-available/.*" . nginx-mode))  
+		   (add-to-list 'auto-mode-alist '("/etc/nginx/.*\.conf$" . nginx-mode))  
+		   ;; (add-hook
+		   ;;  'find-file-hook
+		   ;;  '(lambda ()
+		   ;;     (when (string-match
+		   ;; 	      "^\\(/etc/nginx\\|/home/cedricporter/my\\).*?\\.\\(com\\|org\\|net\\|conf\\)$"
+		   ;; 	      (buffer-file-name))
+		   ;; 	 (nginx-mode)
+		   ;; 	 )))
+		   ))
 
    (:name ace-jump-mode
 	  :after (progn

@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2014-09-01 17:39:38 Monday by Hua Liang>
+;; Time-stamp: <2014-09-01 20:23:27 Monday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -113,6 +113,7 @@
  '(ecb-history-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-method-face ((t (:inherit ecb-default-highlight-face :background "dark magenta"))))
  '(ecb-tag-header-face ((((class color) (background dark)) (:background "SeaGreen4"))))
+ '(font-lock-comment-face ((t (:slant normal))))
  '(which-func ((((class color) (min-colors 88) (background dark)) (:foreground "LightBlue1"))))
  '(xref-keyword-face ((t (:foreground "LightBlue"))))
  '(xref-list-pilot-face ((t (:foreground "blue violet"))))
