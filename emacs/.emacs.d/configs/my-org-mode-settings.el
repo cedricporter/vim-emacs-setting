@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-01 17:48:56 Monday by Hua Liang>
+;; Time-stamp: <2014-09-02 10:08:12 Tuesday by Hua Liang>
 
 ;; ; org-mode install
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/org-mode/lisp")
@@ -108,13 +108,13 @@
          ;; :sitemap-sort-files anti-chronologically
          :sitemap-sort-files alphabetically
          :sitemap-sort-folders last
-         ;; :sitemap-file-entry-format "「%d」 -  %t"
-         :sitemap-file-entry-format "%t"
+         :sitemap-file-entry-format "「%d」 -  %t"
+         ;; :sitemap-file-entry-format "%t"
 	 :completion-function (lambda ()
 				 (shell-command "cp -rf ~/octopress/source/notes ~/octopress/public/")
 				 )
          ;; :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/default.css\" />"
-         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/solarized-light.min.css\" />"
+         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/solarized-light.min.css\" /><link href=\"/favicon.png\" rel=\"icon\">"
 	 )
 	("org-wiki-static"
 	 :base-directory "~/octopress/org-wiki/"

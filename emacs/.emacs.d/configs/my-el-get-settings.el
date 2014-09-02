@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-01 19:55:13 Monday by Hua Liang>
+;; Time-stamp: <2014-09-01 22:54:03 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -65,6 +65,7 @@
 
 		   (defun guide-key/my-hook-function-for-python-mode ()
 		     (guide-key/add-local-guide-key-sequence "C-c")
+		     (guide-key/add-local-guide-key-sequence "C-x")
 		     (guide-key/add-local-highlight-command-regexp "rope-")
 		     (guide-key/add-local-highlight-command-regexp "py-")
 		     (guide-key/add-local-highlight-command-regexp "python-"))
@@ -72,6 +73,7 @@
 
 		   (defun guide-key/my-hook-function-for-org-mode ()
 		     (guide-key/add-local-guide-key-sequence "C-c")
+		     (guide-key/add-local-guide-key-sequence "C-x")
 		     (guide-key/add-local-guide-key-sequence "C-c C-x")
 		     (guide-key/add-local-highlight-command-regexp "org-"))
 		   (add-hook 'org-mode-hook 'guide-key/my-hook-function-for-org-mode)
@@ -335,8 +337,8 @@
 
    (:name nginx-mode
 	  :after (progn
-		   (add-to-list 'auto-mode-alist '("/etc/nginx/sites-available/.*" . nginx-mode))  
-		   (add-to-list 'auto-mode-alist '("/etc/nginx/.*\.conf$" . nginx-mode))  
+		   (add-to-list 'auto-mode-alist '("/etc/nginx/sites-available/.*" . nginx-mode))
+		   (add-to-list 'auto-mode-alist '("/etc/nginx/.*\.conf$" . nginx-mode))
 		   ;; (add-hook
 		   ;;  'find-file-hook
 		   ;;  '(lambda ()
