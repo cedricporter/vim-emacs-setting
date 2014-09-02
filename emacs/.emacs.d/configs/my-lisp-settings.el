@@ -1,9 +1,12 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 09:21:01 Wednesday by Hua Liang>
+;; Time-stamp: <2014-09-02 14:20:06 星期二 by Hua Liang>
 
 ;; ==================== lisp ====================
 (require 'slime)
+(require 'slime-autoloads)
+
 (slime-setup '(slime-fancy))
+(setq slime-contribs '(slime-fancy))
 
 ;; From http://d.hatena.ne.jp/tsz/20091222/1261492959
 (defvar ac-slime-modes
@@ -27,6 +30,8 @@
 			    (slime-mode t)
 			    (push 'ac-source-slime ac-sources)
 			    (auto-complete-mode)))
+
+(setq inferior-lisp-program "sbcl")
 ;; -------------------- lisp --------------------
 
 

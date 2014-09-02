@@ -21,8 +21,13 @@ session:
       root: "~/git/libgamerecorder/jni"
       panes:
         - cmd: ["ls"]
+    - name: "rec"
+      root: "~/git/gamerecorder/"
+      panes:
+        - cmd: ["ls"]
     - name: "upload"
+      layout: even-horizontal
       root: "~/git/upload-server/"
       panes:
-        - cmd: ["mac-auto-deploy . gzhualiang@dev35:~/git/upload-server"]
+        - cmd: ["mac-auto-deploy . gzhualiang@dev35:~/git/upload-server-dev"]
         - cmd: ["ls"]

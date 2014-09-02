@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-01 22:54:03 Monday by Hua Liang>
+;; Time-stamp: <2014-09-02 14:09:54 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -487,43 +487,43 @@
 		   (setq anzu-mode-line-update-function 'my/anzu-update-func)
 		   ))
 
-   ;; ;; https://github.com/syohex/emacs-git-gutter
-   ;; (:name git-gutter
-   ;; 	  :after (progn
-   ;; 		   ;; If you enable global minor mode
-   ;; 		   (global-git-gutter-mode t)
+   ;; https://github.com/syohex/emacs-git-gutter
+   (:name git-gutter
+   	  :after (progn
+   		   ;; If you enable global minor mode
+   		   (global-git-gutter-mode t)
 
-   ;; 		   ;; If you would like to use git-gutter.el and linum-mode
-   ;; 		   (git-gutter:linum-setup)
+   		   ;; If you would like to use git-gutter.el and linum-mode
+   		   (git-gutter:linum-setup)
 
-   ;; 		   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
-   ;; 		   (add-to-list 'git-gutter:update-commands 'other-window)
-   ;; 		   (add-to-list 'git-gutter:update-commands 'switch-window)
-   ;; 		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
-   ;; 		   (add-to-list 'git-gutter:update-commands 'tabbar-forward)
+   		   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+   		   (add-to-list 'git-gutter:update-commands 'other-window)
+   		   (add-to-list 'git-gutter:update-commands 'switch-window)
+   		   (add-to-list 'git-gutter:update-commands 'tabbar-backward)
+   		   (add-to-list 'git-gutter:update-commands 'tabbar-forward)
 
-   ;; 		   (set-face-background 'git-gutter:modified "purple") ;; background color
-   ;; 		   (set-face-foreground 'git-gutter:added "yellow")
-   ;; 		   (set-face-foreground 'git-gutter:deleted "red")
+   		   (set-face-background 'git-gutter:modified "purple") ;; background color
+   		   (set-face-foreground 'git-gutter:added "yellow")
+   		   (set-face-foreground 'git-gutter:deleted "red")
 
-   ;; 		   ;; If you enable git-gutter-mode for some modes
-   ;; 		   (add-hook 'emacs-lisp-mode-hook 'git-gutter-mode)
-   ;; 		   (add-hook 'ruby-mode-hook 'git-gutter-mode)
-   ;; 		   (add-hook 'python-mode-hook 'git-gutter-mode)
+   		   ;; ;; If you enable git-gutter-mode for some modes
+   		   ;; (add-hook 'emacs-lisp-mode-hook 'git-gutter-mode)
+   		   ;; (add-hook 'ruby-mode-hook 'git-gutter-mode)
+   		   ;; (add-hook 'python-mode-hook 'git-gutter-mode)
 
-   ;; 		   (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
-   ;; 		   ;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+   		   (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+   		   ;; (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
 
-   ;; 		   ;; Jump to next/previous hunk
-   ;; 		   (global-set-key (kbd "C-x g p") 'git-gutter:previous-hunk)
-   ;; 		   (global-set-key (kbd "C-x g n") 'git-gutter:next-hunk)
+   		   ;; Jump to next/previous hunk
+   		   (global-set-key (kbd "C-x g p") 'git-gutter:previous-hunk)
+   		   (global-set-key (kbd "C-x g n") 'git-gutter:next-hunk)
 
-   ;; 		   ;; ;; Stage current hunk
-   ;; 		   ;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+   		   ;; ;; Stage current hunk
+   		   ;; (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
 
-   ;; 		   ;; ;; Revert current hunk
-   ;; 		   ;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
-   ;; 		   ))
+   		   ;; ;; Revert current hunk
+   		   ;; (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+   		   ))
 
    ;; Minor mode for editing parentheses. Strict parenthesis auto-pairing and easy depth adjustment.
    ;; Compatible with Lisp/Scheme/Clojure.
@@ -542,6 +542,11 @@
                    (load "~/.emacs.d/configs/my-themes.el")
                    )
           )
+
+   (:name slime
+          :after (progn
+                   (load "~/.emacs.d/configs/my-lisp-settings.el")
+                   ))
 
    ))
 
@@ -600,7 +605,6 @@
    ropemode
    scss-mode
    second-sel
-   slime
    switch-window			; takes over C-x o
    tabbar
    xcscope
