@@ -61,6 +61,7 @@ done
 # export EDITOR='emacsclient -t -a="" +%d %s'
 
 # Example aliases
+alias pc="proxychains4"
 alias zshconfig="ec ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 # alias ohmyzsh="ec ~/.oh-my-zsh"
