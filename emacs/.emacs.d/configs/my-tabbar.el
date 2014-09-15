@@ -2,7 +2,7 @@
 
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2013-01-27 20:45:53 Sunday by Hua Liang>
+;; Time-stamp: <2014-09-03 13:15:39 Wednesday by Hua Liang>
 
 ;; ==================== tabbar ====================
 ;;tabbar
@@ -59,6 +59,7 @@
                     :foreground "#dcdccc"
                     :height 1.0
                     )
+
 ;; 设置左边按钮外观：外框框边大小和颜色
 (set-face-attribute 'tabbar-button nil
                     :inherit 'tabbar-default

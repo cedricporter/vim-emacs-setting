@@ -1,0 +1,13 @@
+map d removeTab
+map u restoreTab
+map H previousTab
+map L nextTab
+unmap J
+unmap K
+map <c-u> scrollFullPageUp
+map <c-d> scrollFullPageDown
+map zz zoomReset
+map t Vomnibar.activateInNewTab
+unmap O
+unmap x
+unmap X

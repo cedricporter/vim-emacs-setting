@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-02 14:09:54 Tuesday by Hua Liang>
+;; Time-stamp: <2014-09-11 15:40:51 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -124,13 +124,6 @@
                                                        ))
                    (global-set-key (kbd "C-c [") 'sdcv-search-pointer+)
                    (global-set-key (kbd "C-c ]") 'sdcv-search-input)))
-
-   (:name eclim
-          :after (progn
-                   (global-eclim-mode)
-                   (require 'eclimd)
-                   (setq eclim-eclipse-dirs '("/Users/cedricporter/adt-bundle-mac-x86_64-20131030/eclipse/Eclipse.app/Contents/MacOS"))
-                   ))
 
    (:name minimap
 	  :after (progn
@@ -303,6 +296,20 @@
 	  :after (progn
 		   (load "~/.emacs.d/configs/my-yasnippet-settings.el")))
 
+   (:name eclim
+          :after (progn
+                   (global-eclim-mode)
+                   (require 'eclimd)
+                   (setq eclim-eclipse-dirs '("/Users/cedricporter/adt-bundle-mac-x86_64-20140624/eclipse/Eclipse.app/Contents/MacOS"))
+		   (require 'ac-emacs-eclim-source)
+		   (ac-emacs-eclim-config)
+
+		   ;; (setq help-at-pt-display-when-idle t)
+		   ;; (setq help-at-pt-timer-delay 0.1)
+		   ;; (help-at-pt-set-timer)
+
+                   ))
+
    (:name markdown-mode
 	  :after (progn
 		   (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
@@ -316,18 +323,19 @@
 			   '(("github\\.com" . markdown-mode)
 			     ("i\\.everet\\.org" . moinmoin-mode))))))
 
-   (:name js3-mode
-	  :after (progn
-		   (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
-                   (add-hook 'js3-mode-hook '(lambda()
-                                               (setq js3-indent-level 4)
-                                               (setq tab-width 4)
-                                               ))
-                   ))
+   ;; (:name js3-mode
+   ;; 	  :after (progn
+   ;; 		   (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+   ;;                 (add-hook 'js3-mode-hook '(lambda()
+   ;;                                             (setq js3-indent-level 4)
+   ;;                                             (setq tab-width 4)
+   ;;                                             ))
+   ;;                 ))
 
-   ;; (:name js2-mode
-   ;;        :after (progn
-   ;;      	   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
+   (:name js2-mode
+          :after (progn
+        	   (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+		   ))
 
    ;; (:name evil-numbers
    ;;  	  :after (progn
@@ -535,6 +543,15 @@
 		   (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 		   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 		   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+                   ;; (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+                   ;; ;; Stop SLIME's REPL from grabbing DEL,
+                   ;; ;; which is annoying when backspacing over a '('
+                   ;; (defun override-slime-repl-bindings-with-paredit ()
+                   ;;   (define-key slime-repl-mode-map
+                   ;;     (read-kbd-macro paredit-backward-delete-key) nil))
+                   ;; (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
+
 		   ))
 
    (:name color-theme-solarized

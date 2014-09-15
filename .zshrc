@@ -125,6 +125,7 @@ alias gf='git flow'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gcam='git commit -am '
+alias gcm='git commit -m '
 alias gitproxy='export GIT_PROXY_COMMAND="~/bin/proxy-wrapper"'
 alias ungitproxy='export GIT_PROXY_COMMAND=""'
 alias gsfpl='git submodule foreach git pull'
@@ -322,7 +323,10 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/usr/local/bin/
 export PATH=$ANT_ROOT:$PATH
 
-export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
+if [ -d "$HOME/android-ndk/android-ndk-r9d/" ]; then
+    export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
+    export PATH=$NDK_ROOT:$PATH
+fi
 if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
     export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
 fi
