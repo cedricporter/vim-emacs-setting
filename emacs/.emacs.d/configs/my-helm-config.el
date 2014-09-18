@@ -1,7 +1,7 @@
 ;;; my-helm-config.el
 ;;
 ;; Author: Hua Liang[Stupid ET] <et@everet.org>
-;; Time-stamp: <2014-06-26 22:13:17 Thursday by Hua Liang>
+;; Time-stamp: <2014-09-18 19:13:58 Thursday by Hua Liang>
 
 
 (require 'helm-config)
@@ -18,14 +18,16 @@
 (setq helm-gtags-ignore-case t)
 (setq helm-gtags-read-only nil)
 
+(defun my-helm-gtags-func ()
+  (interactive)
+  (local-set-key (kbd "C-.") 'helm-gtags-find-tag-from-here)
+  (local-set-key (kbd "C-,") 'helm-gtags-pop-stack)
+  (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
+  (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+  )
+
 ;; key bindings
-(add-hook 'helm-gtags-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "C-.") 'helm-gtags-find-tag)
-             (local-set-key (kbd "C-,") 'helm-gtags-pop-stack)
-             (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-             (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-             ))
+(add-hook 'helm-gtags-mode-hook 'my-helm-gtags-func)
 
 (defun helm-mini ()
   "Preconfigured `helm' lightweight version \(buffer -> recentf\)."
