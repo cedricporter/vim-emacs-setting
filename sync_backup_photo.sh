@@ -9,11 +9,11 @@ echo "================================="
 echo "Syncing folder structure\n"
 
 echo "================================="
-echo "New start to backup 收藏\n"
+echo "Now start to backup 收藏\n"
 rsync --size-only --ignore-existing -rvhH --progress --delete /Volumes/Photos2/收藏 /Volumes/Photos/
 
 echo "================================="
-echo "New start to backup 照片\n"
+echo "Now start to backup 照片\n"
 rsync --size-only --ignore-existing -rvhH --progress --delete /Volumes/Photos2/照片 /Volumes/Photos/
 
 echo "================================="
@@ -30,3 +30,8 @@ echo "Now compress lightroom backup folder\n"
 echo "================================="
 echo "Now compress lightroom backup folder\n"
 rsync --size-only --ignore-existing -rvh --include '*/' --include '*.tgz' --exclude '*' --prune-empty-dirs --progress ~/Lightroom/ET/ET/Backups /Volumes/Photos2/Lightroom_Backups
+
+
+echo "================================="
+echo "Deleting backup folder after compress\n"
+(cd ~/Lightroom/ET/ET/Backups ; find . -mindepth 1 -maxdepth 1 -type d | tr "\n" "\000" | xargs -0 rm -rf ;)
