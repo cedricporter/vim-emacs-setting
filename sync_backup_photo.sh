@@ -20,3 +20,13 @@ echo "================================="
 echo "Now updating xmp file\n"
 rsync -rv --include '*/' --include '*.xmp' --exclude '*' --prune-empty-dirs /Volumes/Photos2/收藏 /Volumes/Photos/
 rsync -rv --include '*/' --include '*.xmp' --exclude '*' --prune-empty-dirs /Volumes/Photos2/照片 /Volumes/Photos/
+
+
+echo "================================="
+echo "Now compress lightroom backup folder\n"
+(cd ~/Lightroom/ET/ET/Backups ; find . -mindepth 1 -maxdepth 1 -type d -exec tar zcvf {}.tgz {} \;)
+
+
+echo "================================="
+echo "Now compress lightroom backup folder\n"
+rsync --size-only --ignore-existing -rvh --include '*/' --include '*.tgz' --exclude '*' --prune-empty-dirs --progress ~/Lightroom/ET/ET/Backups /Volumes/Photos2/Lightroom_Backups

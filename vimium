@@ -2,8 +2,8 @@ map d removeTab
 map u restoreTab
 map H previousTab
 map L nextTab
-unmap J
-unmap K
+map J goBack
+map K goForward
 map <c-u> scrollFullPageUp
 map <c-d> scrollFullPageDown
 map zz zoomReset
