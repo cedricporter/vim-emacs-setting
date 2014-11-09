@@ -322,14 +322,19 @@ export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/usr/local/bin/
 export PATH=$ANT_ROOT:$PATH
+export QUICK_V3_ROOT=`cat ~/.QUICK_V3_ROOT`
 
 if [ -d "$HOME/android-ndk/android-ndk-r9d/" ]; then
     export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
+    export ANDROID_NDK_ROOT=$NDK_ROOT
     export PATH=$NDK_ROOT:$PATH
 fi
 if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
     export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
 fi
+
+# add by quick-cocos2d-x setup, DATE: 2014-11-05 TIME: 14:22:56
+export QUICK_COCOS2DX_ROOT=`cat ~/.QUICK_COCOS2DX_ROOT`
 
 random-string()
 {

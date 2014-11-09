@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2014-09-02 14:49:52 Tuesday by Hua Liang>
+;; Time-stamp: <2014-11-10 00:52:02 Monday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -48,6 +48,8 @@
 (load "~/.emacs.d/configs/window-setting.el")
 
 (load "~/.emacs.d/configs/my-python-settings.el")
+
+(load "~/.emacs.d/configs/my-lua-config.el")
 
 (load "~/.emacs.d/configs/my-javascript-mode.el")
 
