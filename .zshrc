@@ -318,6 +318,7 @@ export EDITOR=vim
 export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 export ANDROID_SDK_ROOT=$HOME/adt-bundle-mac-x86_64-20131030/sdk
+export ANDROID_HOME=$ANDROID_SDK_ROOT
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 export ANT_ROOT=/usr/local/bin/

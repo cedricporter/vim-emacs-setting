@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-09-11 15:40:51 Thursday by Hua Liang>
+;; Time-stamp: <2014-11-13 14:53:14 Thursday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -95,6 +95,7 @@
    (:name lua-mode
 	  :after (progn
 		   (setq lua-indent-level 4)
+		   (define-key lua-mode-map (kbd "C-.") 'ag)
 		   ))
 
    ;; dash emacs integrate
