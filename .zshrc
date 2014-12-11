@@ -327,6 +327,7 @@ export QUICK_V3_ROOT=`cat ~/.QUICK_V3_ROOT`
 
 if [ -d "$HOME/android-ndk/android-ndk-r9d/" ]; then
     export NDK_ROOT="$HOME/android-ndk/android-ndk-r9d/"
+    export NDKROOT=$NDK_ROOT
     export ANDROID_NDK_ROOT=$NDK_ROOT
     export PATH=$NDK_ROOT:$PATH
 fi
