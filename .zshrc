@@ -347,3 +347,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # mount the android file image
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/cedricporter/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1

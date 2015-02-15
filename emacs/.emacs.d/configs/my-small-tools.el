@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-20 21:41:39 Wednesday by Hua Liang>
+;; Time-stamp: <2015-02-16 00:18:33 Monday by Hua Liang>
 
 
 (autoload 'smali-mode "smali-mode" "Major mode for editing and viewing smali issues" t)
@@ -181,8 +181,8 @@
 
 ;; ==================== reload chrome ====================
 ;; use `gc-refresh-mode` to invoke chromium auto reload
-(add-to-list 'load-path "~/.emacs.d/plugins/gc-refresh-mode")
-(require 'gc-refresh-mode)
+;; (add-to-list 'load-path "~/.emacs.d/plugins/gc-refresh-mode")
+;; (require 'gc-refresh-mode)
 ;; -------------------- reload chrome --------------------
 
 
