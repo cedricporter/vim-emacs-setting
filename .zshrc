@@ -336,7 +336,9 @@ if [ -d "$HOME/adt-bundle-mac-x86_64-20131030/sdk" ]; then
 fi
 
 # add by quick-cocos2d-x setup, DATE: 2014-11-05 TIME: 14:22:56
-export QUICK_COCOS2DX_ROOT=`cat ~/.QUICK_COCOS2DX_ROOT`
+if [ -f "$HOME/.QUICK_COCOS2DX_ROOT" ]; then
+    export QUICK_COCOS2DX_ROOT=`cat ~/.QUICK_COCOS2DX_ROOT`
+fi
 
 random-string()
 {
