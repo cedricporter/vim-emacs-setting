@@ -20,6 +20,8 @@ Plugin 'L9'
 
 Plugin 'Zenburn'
 
+Plugin 'https://github.com/kien/ctrlp.vim'
+
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 
@@ -46,7 +48,11 @@ call vundle#end()            " required
 " Put your non-Plugin stuff after this line
 "
 
+set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
+set laststatus=2
+
 let g:airline#extensions#tabline#enabled = 1
+
 " let g:zenburn_high_Contrast=1
 colors zenburn
 
@@ -104,7 +110,3 @@ set wrap "Wrap lines
 
 map zz ZQ
 
-set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
-
-let w:airline_disabled = 0
-set laststatus=2
