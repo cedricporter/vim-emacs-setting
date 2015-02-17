@@ -37,3 +37,6 @@
 [submodule "emacs/.emacs.d/plugins/emacs-flymake"]
 	path = emacs/.emacs.d/plugins/emacs-flymake
 	url = https://github.com/illusori/emacs-flymake.git
+[submodule "vim/.vim/bundle/Vundle.vim"]
+	path = vim/.vim/bundle/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim.git
