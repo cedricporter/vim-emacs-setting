@@ -31,9 +31,10 @@ Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+" filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -49,14 +50,12 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:zenburn_high_Contrast=1
 colors zenburn
 
-set nocompatible "不要vim模仿vi模式，建议设置，否则会有很多不兼容的问题
-
 " Sets how many lines of history VIM has to remember
 set history=700
 
 " Enable filetype plugin
-filetype plugin on
-filetype indent on
+" filetype plugin on
+" filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -74,10 +73,10 @@ set smartcase
 
 " Set 5 lines to the curors - when moving vertical..
 set so=5
-set wildmenu "Turn on Wild menu
-set ruler "Always show current position
-set cmdheight=2 "The commandbar height
-set hid "Change buffer - without saving
+" set wildmenu "Turn on Wild menu
+" set ruler "Always show current position
+" set cmdheight=2 "The commandbar height
+" set hid "Change buffer - without saving
 
 set hlsearch "Highlight search things
 set incsearch "Make search act like search in modern browsers
@@ -105,3 +104,7 @@ set wrap "Wrap lines
 
 map zz ZQ
 
+set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
+
+let w:airline_disabled = 0
+set laststatus=2
