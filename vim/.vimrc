@@ -25,7 +25,7 @@ Plugin 'saltstack/salt-vim'
 Plugin 'https://github.com/kien/ctrlp.vim'
 
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
