@@ -20,6 +20,8 @@ Plugin 'L9'
 
 Plugin 'Zenburn'
 
+Plugin 'saltstack/salt-vim'
+
 Plugin 'https://github.com/kien/ctrlp.vim'
 
 " Git plugin not hosted on GitHub
