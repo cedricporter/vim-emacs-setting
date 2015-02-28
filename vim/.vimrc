@@ -82,9 +82,17 @@ set smartcase
 " Set 5 lines to the curors - when moving vertical..
 set so=5
 " set wildmenu "Turn on Wild menu
+set wildmenu 
+set wildmode=list:longest,list:full
+set wildignore+=.git,*.swp,*/tmp/*,.svn
+set wildignore+=*.so,*.zip     " MacOSX/Linux
+set path=.,**
 " set ruler "Always show current position
 " set cmdheight=2 "The commandbar height
 " set hid "Change buffer - without saving
+
+" ctrlp
+let g:ctrlp_working_path_mode = 'ra'
 
 set hlsearch "Highlight search things
 set incsearch "Make search act like search in modern browsers
@@ -110,5 +118,29 @@ set ai "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
 
-map zz ZQ
+" map zz ZQ
+
+" buffers
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+nmap L :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+nmap H :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
 
