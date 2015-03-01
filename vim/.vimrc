@@ -94,6 +94,8 @@ set path=.,**
 " ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 
+set ignorecase
+set smartcase
 set hlsearch "Highlight search things
 set incsearch "Make search act like search in modern browsers
 set nolazyredraw "Don't redraw while executing macros 
