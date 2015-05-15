@@ -70,6 +70,8 @@ alias to="teamocil --here"
 
 alias tp='gtypist'
 
+alias fuck='eval $(thefuck $(fc -ln -1))'
+
 alias gitroot='cd $(git rev-parse --show-cdup)'
 
 alias ls="ls --color=auto"
@@ -356,3 +358,5 @@ function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/androi
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/cedricporter/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
