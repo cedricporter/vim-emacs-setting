@@ -1,0 +1,21 @@
+session:
+  name: "et"
+  windows:
+    - name: "qmht"
+      clear: true
+      root: "~/git/qmht2"
+      panes:
+        - cmd: "git status"
+    - name: "stock"
+      root: "~/git/stockcrawler"
+      panes:
+        - cmd: ["ls"]
+    - name: "stock.js"
+      root: "~/git/stockcrawler/js"
+      panes:
+        - cmd: ["ls"]
+    - name: "qmht.apk"
+      clear: true
+      root: "~/git/qmht2/app/apk"
+      panes:
+        - cmd: "ls"
