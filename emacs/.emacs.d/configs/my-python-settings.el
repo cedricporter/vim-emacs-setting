@@ -1,5 +1,5 @@
 ;; Author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-08-18 14:50:22 Monday by Hua Liang>
+;; Time-stamp: <2015-07-23 12:42:55 Thursday by Hua Liang>
 
 ;; (assq-delete-all "\\.py$" auto-mode-alist)
 ;; (assq-delete-all "\\.py\\" auto-mode-alist)
@@ -159,5 +159,7 @@
 (define-coding-system-alias 'GB18030 'gb18030)
 (define-coding-system-alias 'GB2312 'gb2312)
 (define-coding-system-alias 'utf8 'utf-8)
+
+(load "~/.emacs.d/plugins/autoflake.el")
 
 ;; (provide 'my-python-settings)

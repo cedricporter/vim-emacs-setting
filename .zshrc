@@ -140,6 +140,7 @@ alias rp='rake publish'
 alias rgp='rake generate && rake preview'
 
 alias ipy='ipython'
+alias ipyl='ipython --pylab=auto'
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" ack '
 
 alias ag='\ag --pager "less -R"'
@@ -360,3 +361,8 @@ export DOCKER_CERT_PATH=/Users/cedricporter/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
 export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox
+
+ulimit -n 65536
+ulimit -u 2048
+
+export GOPATH="$HOME/.go"
