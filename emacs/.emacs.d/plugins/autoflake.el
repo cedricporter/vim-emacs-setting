@@ -23,10 +23,10 @@ $ autoflake --remove-all-unused-imports -i unused_imports.py"
     (revert-buffer t t t))
   nil)
 
-(eval-after-load 'python
-  '(if python-autoflake-path
-       (add-hook 'after-save-hook 'python-remove-unused-imports)
-     (message "Unable to find autoflake. Configure `python-autoflake-path`")))
+;; (eval-after-load 'python
+;;   '(if python-autoflake-path
+;;        (add-hook 'after-save-hook 'python-remove-unused-imports)
+;;      (message "Unable to find autoflake. Configure `python-autoflake-path`")))
 
 (provide 'auto-remove)
 
