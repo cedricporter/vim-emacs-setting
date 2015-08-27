@@ -62,7 +62,7 @@ done
 
 # Example aliases
 alias pc="proxychains4"
-alias zshconfig="ec ~/.zshrc"
+alias zshconfig="vi ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 # alias ohmyzsh="ec ~/.oh-my-zsh"
 
@@ -121,6 +121,7 @@ alias svn_br='svn ls -v $(svn_repo)/branches'
 
 # git
 alias gr='gitroot'
+alias grb='git fetch && git rebase origin/develop'
 alias gs='git status'
 alias gp='git push'
 alias gf='git flow'

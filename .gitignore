@@ -12,3 +12,4 @@ emacs/.emacs.d/tmp/*
 pentadactyl/.pentadactyl/info/
 *.pyo
 emacs/.emacs.d/elpa/
+vim/.vim/.netrwhist
