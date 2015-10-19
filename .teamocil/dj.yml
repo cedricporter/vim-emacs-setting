@@ -1,16 +1,17 @@
 session:
   name: "et"
   windows:
-    - name: "quantor"
+    - name: "dj-py"
       clear: true
-      root: "~/git/quantor"
+      root: "~/git/dj/dj-py"
       panes:
         - cmd: "git status"
-    - name: "backtest"
-      root: "~/git/backtest/backtest"
+    - name: "dj-admin"
+      clear: true
+      root: "~/git/dj/dj-admin"
       panes:
-        - cmd: ["ls"]
-    - name: "trading"
-      root: "~/git/trading-system/"
+        - cmd: "git status"
+    - name: "user"
+      root: "~/git/dj/android-user"
       panes:
         - cmd: ["ls"]

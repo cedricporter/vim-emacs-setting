@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2014-11-13 14:53:14 Thursday by Hua Liang>
+;; Time-stamp: <2015-10-19 11:57:38 Monday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -22,6 +22,12 @@
 (setq
  el-get-sources
  '(
+   (:name exec-path-from-shell
+    :after (progn
+	     (when (memq window-system '(mac ns))
+	       (exec-path-from-shell-initialize))
+	     )
+    )
    ;; `C-c p C-h` to get all key binding
    (:name projectile
 	  :after (progn

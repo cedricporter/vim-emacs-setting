@@ -1,3 +1,24 @@
+# set PATH so it includes user's private bin if it exists
+if [ -d "/usr/local/bin" ] ; then
+    export PATH="/usr/local/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/local/bin" ] ; then
+    PATH="$HOME/local/bin:$PATH"
+fi
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/local/lib" ] ; then
+    LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
+fi
+if [ -d "$HOME/npm/bin" ] ; then
+    PATH="$HOME/npm/bin:$PATH"
+fi
+
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -124,6 +145,7 @@ alias gr='gitroot'
 alias grb='git fetch && git rebase origin/develop'
 alias gs='git status'
 alias gp='git push'
+alias gpl='git pull --rebase'
 alias gf='git flow'
 alias gpt='git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
@@ -273,29 +295,6 @@ fi
 if [ -d "/usr/local/opt/coreutils/libexec/gnuman" ] ; then
     MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
-if [ -d "/usr/local/bin" ] ; then
-    export PATH="/usr/local/bin:$PATH"
-fi
-
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/local/bin" ] ; then
-    PATH="$HOME/local/bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-if [ -d "$HOME/local/lib" ] ; then
-    LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
-fi
-if [ -d "$HOME/npm/bin" ] ; then
-    PATH="$HOME/npm/bin:$PATH"
-fi
-
-
 # export LC_CTYPE="zh_CN.UTF-8"
 
 if [ -d "/usr/lib/jvm/jdk7" ] ; then
