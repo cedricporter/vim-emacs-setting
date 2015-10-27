@@ -1,0 +1,13 @@
+windows:
+  - name: "quantor"
+    root: "~/git/quantor"
+    panes:
+      - git status
+  - name: "backtest"
+    root: "~/git/backtest/backtest"
+    panes:
+      - ls
+  - name: "trading"
+    root: "~/git/trading-system/"
+    panes:
+      - ls

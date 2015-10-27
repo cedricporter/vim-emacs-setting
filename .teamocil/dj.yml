@@ -1,17 +1,19 @@
-session:
-  name: "et"
-  windows:
-    - name: "dj-py"
-      clear: true
-      root: "~/git/dj/dj-py"
-      panes:
-        - cmd: "git status"
-    - name: "dj-admin"
-      clear: true
-      root: "~/git/dj/dj-admin"
-      panes:
-        - cmd: "git status"
-    - name: "user"
-      root: "~/git/dj/android-user"
-      panes:
-        - cmd: ["ls"]
+windows:
+  - name: "dj-py"
+    root: "~/git/dj/dj-py"
+    panes:
+      - git status
+  - name: "run dj-py"
+    root: "~/git/dj/dj-py"
+    layout: even-horizontal
+    panes:
+      - cd admin
+      - cd weixin
+  - name: "bd"
+    root: "~/git/dj/android-bd"
+    panes:
+      - git status
+  - name: "user"
+    root: "~/git/dj/android-user"
+    panes:
+      - ls
