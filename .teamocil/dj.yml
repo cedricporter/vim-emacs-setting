@@ -2,16 +2,24 @@ windows:
   - name: "dj-py"
     root: "~/git/dj/dj-py"
     panes:
-      - git status
+      - commands:
+        - cd ..
+        - cd -
+        - git status
   - name: "tools"
     root: "~/git/dj/dj-py/tools"
     panes:
-      - git status
+      - commands:
+        - cd ..
+        - cd -
+        - git status
   - name: "admin"
     root: "~/git/dj/dj-py/admin/"
     layout: even-vertical
     panes:
-      - ls
+      - commands:
+        - cd ..
+        - cd -
       - commands:
         - cd logs
         - tail -F cgi.log
@@ -19,7 +27,9 @@ windows:
     root: "~/git/dj/dj-py/weixin/"
     layout: even-vertical
     panes:
-      - ls
+      - commands:
+        - cd ..
+        - cd -
       - commands:
         - cd logs
         - tail -F cgi.log
