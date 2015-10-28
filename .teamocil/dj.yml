@@ -3,13 +3,27 @@ windows:
     root: "~/git/dj/dj-py"
     panes:
       - git status
-  - name: "run dj-py"
-    root: "~/git/dj/dj-py"
-    layout: even-horizontal
+  - name: "tools"
+    root: "~/git/dj/dj-py/tools"
     panes:
-      - cd admin
-      - cd weixin
-  - name: "bd"
+      - git status
+  - name: "admin"
+    root: "~/git/dj/dj-py/admin/"
+    layout: even-vertical
+    panes:
+      - ls
+      - commands:
+        - cd logs
+        - tail -F cgi.log
+  - name: "wechat"
+    root: "~/git/dj/dj-py/weixin/"
+    layout: even-vertical
+    panes:
+      - ls
+      - commands:
+        - cd logs
+        - tail -F cgi.log
+  - name: "an-bd"
     root: "~/git/dj/android-bd"
     panes:
       - git status
