@@ -147,7 +147,7 @@ alias gs='git status'
 alias gp='git push'
 alias gpl='git pull --rebase'
 alias gf='git flow'
-alias gpt='git push --tags'
+alias gpt='git push && git push --tags'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gcam='git commit -am '
 alias gcm='git commit -m '

@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2015-10-19 11:57:38 Monday by Hua Liang>
+;; Time-stamp: <2015-10-31 10:55:02 星期六 by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -268,9 +268,9 @@
    	  :after (progn
    		   (add-hook 'web-mode-hook 'zencoding-mode)
    		   (setq zencoding-indentation 2)
-   		   (define-key zencoding-mode-keymap (kbd "C-j") nil)
-   		   (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
-   		   (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
+   		   ;; (define-key zencoding-mode-keymap (kbd "C-j") nil)
+   		   ;; (define-key zencoding-mode-keymap (kbd "C-<return>") nil)
+   		   ;; (define-key zencoding-mode-keymap (kbd "C-;") 'zencoding-expand-line)
    		   ))
 
    (:name flymake-coffee
@@ -400,14 +400,15 @@
 		   (setq helm-ag-insert-at-point 'symbol)
 		   ))
 
-   (:name emacs-helm-gtags
-          :website "https://github.com/syohex/emacs-helm-gtags.git"
-          :type github
-          :pkgname "syohex/emacs-helm-gtags"
-          :features "helm-gtags"
-          :compile "helm-gtags.el"
-          :depends helm
-          )
+   helm-gtags
+   ;; (:name emacs-helm-gtags
+   ;;        :website "https://github.com/syohex/emacs-helm-gtags.git"
+   ;;        :type github
+   ;;        :pkgname "syohex/emacs-helm-gtags"
+   ;;        :features "helm-gtags"
+   ;;        :compile "helm-gtags.el"
+   ;;        :depends helm
+   ;;        )
 
    ;; List match lines to another buffer.
    ;; https://github.com/ShingoFukuyama/helm-swoop
@@ -591,7 +592,7 @@
    auto-complete-css
    auto-complete-etags
    ag
-   any-ini-mode
+   ;; any-ini-mode
    apache-mode
    ascii
    auto-complete			; complete as you type with overlays
@@ -635,7 +636,7 @@
    xcscope+
    xml-rpc
    yaml-mode
-   zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
+   ;; zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
 ))
 
 (setq my:el-get-packages
