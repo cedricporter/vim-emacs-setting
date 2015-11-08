@@ -1,7 +1,7 @@
 ;; Setting By Hua Liang [ [ Stupid ET ] Cedric Porter ]
 ;; Mail:    et@everet.org
 ;; website: http://EverET.org
-;; Time-stamp: <2014-11-10 00:52:02 Monday by Hua Liang>
+;; Time-stamp: <2015-11-03 23:49:16 Tuesday by Hua Liang>
 
 ;;Personal information
 (setq user-full-name "Hua Liang")
@@ -59,7 +59,7 @@
 
 (load "~/.emacs.d/configs/my-octopress-settings.el")
 
-(load "~/.emacs.d/configs/my-cedet-settings.el")
+;; (load "~/.emacs.d/configs/my-cedet-settings.el")
 
 ;(load-file "~/.emacs.d/plugins/cedet-bzr/cedet-devel-load.el")
 

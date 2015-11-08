@@ -11,3 +11,11 @@ windows:
     root: "~/git/trading-system/"
     panes:
       - ls
+  - name: "backtest"
+    root: "~/git/backtest/backtest"
+    panes:
+      - ls
+  - name: "backtest"
+    root: "~/git/backtest/backtest"
+    panes:
+      - ls

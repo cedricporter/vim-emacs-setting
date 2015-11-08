@@ -178,6 +178,7 @@ custom_tmux() {
 
 alias tmux='tmux -2'
 alias tmb='tmux -2 attach -t normaltask || tmux -2 new -s normaltask'
+alias tmc='tmux -2 attach -t quantor || tmux -2 new -s quantor'
 alias tmn=custom_tmux
 
 

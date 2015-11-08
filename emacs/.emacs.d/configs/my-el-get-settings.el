@@ -1,5 +1,5 @@
 ;; author: Hua Liang [Stupid ET]
-;; Time-stamp: <2015-10-31 10:55:02 星期六 by Hua Liang>
+;; Time-stamp: <2015-11-03 23:26:50 Tuesday by Hua Liang>
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -636,6 +636,7 @@
    xcscope+
    xml-rpc
    yaml-mode
+   cython-mode
    ;; zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
 ))
 
