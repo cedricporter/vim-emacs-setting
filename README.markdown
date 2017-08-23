@@ -1,5 +1,7 @@
 # 我的各种配置文件
 
+因为隐私问题，修改都 push 到 bitbucket 的私有仓库了。这边就不再更新了。
+
 ## Vim
 I have a long time no using vim.
 
